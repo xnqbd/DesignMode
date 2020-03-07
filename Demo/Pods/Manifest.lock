@@ -1,0 +1,26 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.4.1)
+  - Masonry (1.1.0)
+  - SDWebImage (3.8.3):
+    - SDWebImage/Core (= 3.8.3)
+  - SDWebImage/Core (3.8.3)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - Masonry
+  - SDWebImage (~> 3.7)
+
+SPEC REPOS:
+  trunk:
+    - ActionSheetPicker-3.0
+    - Masonry
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d236f0b663123e4b404a3bc04b338c1e805ac910
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+
+PODFILE CHECKSUM: 50666695426d723ecd26c0abeb3a5849641c1288
+
+COCOAPODS: 1.8.4
