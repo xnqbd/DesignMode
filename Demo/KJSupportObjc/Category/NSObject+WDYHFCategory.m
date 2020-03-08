@@ -2559,8 +2559,6 @@ CGFloat WDAPP_ScreenHeight(void) {
     return codeImage;
 }
 
-
-
 //改变图片的大小
 - ( UIImage *)kjwd_scaleToSize:(CGSize)size {
 //     这个失真
@@ -2589,6 +2587,33 @@ CGFloat WDAPP_ScreenHeight(void) {
     }
     
     return scaledImage;   //返回的就是已经改变的图片
+}
+
+- (UIImage *)kjwd_noTransformScaleToWidth:(NSNumber *_Nullable)newWidthNumber height:(NSNumber *_Nullable)newHeightNumber {
+    
+    if (WDKJ_IsNull_Num(newWidthNumber) && WDKJ_IsNull_Num(newHeightNumber)) {
+        return self;
+    }
+   
+    CGFloat oldWidth = self.size.width, oldHeight = self.size.height;
+    
+    if (oldWidth == 0 || oldHeight == 0) {
+        return self;
+    }
+    
+    if (newWidthNumber) {
+        CGFloat newWidth = newWidthNumber.floatValue;
+        if (newWidth > 0) {
+            return [self kjwd_scaleToSize:CGSizeMake(newWidth, newWidth * oldHeight / oldWidth)];
+        }
+    }
+    if (newHeightNumber) {
+        CGFloat newHeight = newHeightNumber.floatValue;
+        if (newHeight > 0) {
+            return [self kjwd_scaleToSize:CGSizeMake(newHeight * oldWidth / oldHeight, newHeight)];
+        }
+    }
+    return self;
 }
 
 

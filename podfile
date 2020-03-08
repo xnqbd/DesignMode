@@ -13,4 +13,9 @@ target 'Demo' do
   pod 'SDWebImage', '~> 3.7'
   pod 'MBProgressHUD'
   
+  pod 'SwiftyJSON'
+  pod 'SwifterSwift'
+  pod 'SnapKit'
+  pod 'Alamofire'
+  
 end

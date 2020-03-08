@@ -163,7 +163,8 @@
     
     
     if (model.showLine) {
-        cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
+//        cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
+        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     } else {
         cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width + 1000, 0, 0);
     }
@@ -1271,7 +1272,7 @@
     return NO;
 }
 
-- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail didSelectRowBlock:(nullable CKJInputCellModelRowBlock)didSelectRowBlock  {
+- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail {
 
     CKJInputHaveTitleStyle *style = self.simpleStyle.haveTitleStyle;
 
@@ -1300,7 +1301,7 @@
 
         detail ? detail(m) : nil;
 
-    } didSelectRowBlock:didSelectRowBlock];
+    } didSelectRowBlock:nil];
     return model;
 }
 

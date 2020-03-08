@@ -254,7 +254,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)verityInputFail;
 
 
-- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail didSelectRowBlock:(nullable CKJInputCellModelRowBlock)didSelectRowBlock;
+- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail;
 
 
 

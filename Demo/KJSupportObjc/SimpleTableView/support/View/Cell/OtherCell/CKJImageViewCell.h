@@ -18,9 +18,9 @@ typedef void(^CKJImageViewCellRowBlock)(__kindof CKJImageViewCellModel *_Nonnull
 
 @interface CKJImageViewCellModel : CKJCommonCellModel
 
-@property (assign, nonatomic) UIEdgeInsets imageEdge;
-@property (assign, nonatomic) UIViewContentMode contentMode;
 
+@property (assign, nonatomic) UIViewContentMode contentMode;
+@property (copy, nonatomic) void(^updateConstraint)(MASConstraintMaker *make, UIView *superview);
 
 
 @property (strong, nonatomic) UIImage *localImage;
@@ -30,7 +30,7 @@ typedef void(^CKJImageViewCellRowBlock)(__kindof CKJImageViewCellModel *_Nonnull
 @property (strong, nonatomic, nullable) UIImage *r_placeholderImage;
 
 
-+ (nonnull instancetype)imageViewWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJImageViewCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJImageViewCellRowBlock)didSelectRowBlock;
++ (instancetype)imageViewWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJImageViewCellRowBlock)detailSettingBlock updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
 
 @end
 

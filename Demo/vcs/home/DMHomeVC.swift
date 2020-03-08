@@ -30,10 +30,10 @@ class DMHomeVC: CKJBaseTableVC {
         let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
             
             
-            let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), cellModel_id: nil, detailSettingBlock: { (m) in
-                m.localImage = UIImage.kjwd_imageNamed("backgroundimage")
-            }, didSelectRowBlock: nil)
-            _sec.add(logo)
+//            let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), cellModel_id: nil, detailSettingBlock: { (m) in
+//                m.localImage = UIImage.kjwd_imageNamed("backgroundimage")
+//            }, didSelectRowBlock: nil)
+//            _sec.add(logo)
             
             let items = CKJBtnItemData.returnItems(withDicsnew: DMRes.item2()) { (cd: CKJBtnItemData, index: UInt) in
                 cd.layout_Button = { (btn: UIButton) in
@@ -64,15 +64,15 @@ class DMHomeVC: CKJBaseTableVC {
                 m.likePrice61Model = CKJLikePriceLabel61Model.likePriceModel(withAttText: WDAtt15_5("CKJCell"), left: 0, right: 10)
                 m.arrow9Model = CKJArrow9Model.arrow9System();
             }, didSelectRowBlock: nil)
-            let model3 = self.simpleTableView._newtitle("用户名", tfText: "", placeholder: "请输入用户名", emptyRequirdText: nil, cellId: kOInput_Name, detail: { (m) in
-
-                m.updateTFModel { (tfm) in
-//                    tfm.
-                }
-            }, didSelectRowBlock: nil)
+//            let model3 = self.simpleTableView._newtitle("用户名", tfText: "", placeholder: "请输入用户名", emptyRequirdText: nil, cellId: kOInput_Name, detail: { (m) in
+//
+//                m.updateTFModel { (tfm) in
+////                    tfm.
+//                }
+//            }, didSelectRowBlock: nil)
             
             
-            _sec.modelArray = [model1, model2, model3]
+//            _sec.modelArray = [model1, model2, model3]
         }
         simpleTableView.dataArr = [section1, section2]
     }

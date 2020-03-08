@@ -85,16 +85,16 @@
     
     CKJCommonSectionModel *section5 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"一些其他的", [UIColor kjwd_subTitleColor969696], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
 
-        CKJImageViewCellModel *model1 = [CKJImageViewCellModel imageViewWithCellHeight:@100 cellModel_id:nil detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
-            m.localImage = [UIImage imageNamed:@"newhome_banner"];
-            m.imageEdge = UIEdgeInsetsMake(10, 10, 20, 20);
-        } didSelectRowBlock:nil];
-        CKJImageViewCellModel *model2 = [CKJImageViewCellModel imageViewWithCellHeight:@200 cellModel_id:nil detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
-            m.r_Image_URL = @"http://img4.makepolo.net/img4/270/039/100015427039_14262161434971.jpg";
-            m.r_placeholderImage = [UIImage imageNamed:@"newhome_预交金"];
-           } didSelectRowBlock:nil];
-        
-        _sec.modelArray = @[model1, model2];
+//        CKJImageViewCellModel *model1 = [CKJImageViewCellModel imageViewWithCellHeight:@100 cellModel_id:nil detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
+//            m.localImage = [UIImage imageNamed:@"newhome_banner"];
+//            m.imageEdge = UIEdgeInsetsMake(10, 10, 20, 20);
+//        } didSelectRowBlock:nil];
+//        CKJImageViewCellModel *model2 = [CKJImageViewCellModel imageViewWithCellHeight:@200 cellModel_id:nil detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
+//            m.r_Image_URL = @"http://img4.makepolo.net/img4/270/039/100015427039_14262161434971.jpg";
+//            m.r_placeholderImage = [UIImage imageNamed:@"newhome_预交金"];
+//           } didSelectRowBlock:nil];
+//        
+//        _sec.modelArray = @[model1, model2];
     }];
     
     

@@ -12,8 +12,10 @@
 
 @implementation CKJImageViewCellModel
 
-+ (nonnull instancetype)imageViewWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJImageViewCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJImageViewCellRowBlock)didSelectRowBlock {
-    return [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:detailSettingBlock didSelectRowBlock:didSelectRowBlock];
++ (instancetype)imageViewWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJImageViewCellRowBlock)detailSettingBlock updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
+    CKJImageViewCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detailSettingBlock didSelectRowBlock:nil];
+    m.updateConstraint = updateConstraint;
+    return m;
 }
 
 - (instancetype)init {
@@ -59,9 +61,7 @@
     }
     _imageV.clipsToBounds = YES;
  
-    [_imageV kjwd_mas_updateConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
-        make.edges.equalTo(superview).insets(model.imageEdge);
-    }];
+    [_imageV kjwd_mas_remakeConstraints:model.updateConstraint];
 }
 
 

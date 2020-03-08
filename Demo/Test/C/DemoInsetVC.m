@@ -35,11 +35,11 @@
     
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
-        CKJInputCellModel *name = [self.simpleTableView _newtitle:@"姓名" tfText:@"" placeholder:@"请输入家长真实姓名" emptyRequirdText:@"姓名" cellId:kOInput_Name detail:nil didSelectRowBlock:nil];
+        CKJInputCellModel *name = [self.simpleTableView _newtitle:@"姓名" tfText:@"" placeholder:@"请输入家长真实姓名" emptyRequirdText:@"姓名" cellId:kOInput_Name detail:nil];
         
         CKJInputCellModel *phone = [self.simpleTableView _newtitle:@"手机号" tfText:@"" placeholder:@"请输入手机号" emptyRequirdText:@"手机号" cellId:kOInput_Phone detail:^(__kindof CKJInputCellModel * _Nonnull m) {
             [m addRequired:[CKJInputExpressionRequiredModel system_phoneRegError]];
-        } didSelectRowBlock:nil];
+        }];
         
         CKJInputCellModel *code = [self.simpleTableView _newtitle:@"验证码" tfText:@"" placeholder:@"请输入验证码" emptyRequirdText:@"验证码" cellId:kOInput_VerityCode detail:^(__kindof CKJInputCellModel * _Nonnull m) {
             [m addRequired:[CKJInputExpressionRequiredModel system_verityCodeLengthError]];
@@ -60,16 +60,16 @@
                 //                    }
                 //                }];
             } detailSettingBlock:nil];
-        } didSelectRowBlock:nil];
+        }];
         
         
 
-        CKJInputCellModel *pwd = [self.simpleTableView _newtitle:@"密码" tfText:@"" placeholder:@"请输入密码" emptyRequirdText:@"密码" cellId:kOInput_Pwd detail:nil didSelectRowBlock:nil];
+        CKJInputCellModel *pwd = [self.simpleTableView _newtitle:@"密码" tfText:@"" placeholder:@"请输入密码" emptyRequirdText:@"密码" cellId:kOInput_Pwd detail:nil];
         
         
         CKJInputCellModel *confirmPwd = [self.simpleTableView _newtitle:@"确认密码" tfText:@"" placeholder:@"请再次输入密码" emptyRequirdText:@"确认密码" cellId:kOInput_ConfirmPwd detail:^(__kindof CKJInputCellModel * _Nonnull m) {
             [m addRequired:[CKJInputExpressionRequiredModel system_confirmPwdNotEqualPwdWithTableView:self.simpleTableView]];
-        } didSelectRowBlock:nil];
+        }];
         
         
         _sec.modelArray = @[name, phone, code, pwd, confirmPwd];

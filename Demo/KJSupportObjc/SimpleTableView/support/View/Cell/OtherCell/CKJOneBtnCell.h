@@ -12,12 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CKJOneBtnCellModel;
 
+typedef void(^CKJOneBtnCellClickBtn)(__kindof CKJOneBtnCellModel *cm, UIButton *btn);
+
 typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
 
 
 @interface CKJOneBtnCellModel : CKJCommonCellModel
 
-@property (assign, nonatomic) UIEdgeInsets btnEdge;
+@property (copy, nonatomic) void(^updateConstraint)(MASConstraintMaker *make, UIView *superview);
 
 @property (strong, nonatomic) CKJBtnItemData *btnData;
 
@@ -25,9 +27,10 @@ typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
 
 - (void)updateBtnData:(void(^)(CKJBtnItemData *btnData))block;
 
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock;
-+ (instancetype)oneBtnWithTitle:(NSString *)title didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock;
-+ (instancetype)oneBtnWithAttTitle:(NSAttributedString *)attTitle didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock;
+/// 在detailSettingBlock详细设置
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
+/// 标题
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight attTitle:(NSAttributedString *)attTitle detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
 
 @end
 

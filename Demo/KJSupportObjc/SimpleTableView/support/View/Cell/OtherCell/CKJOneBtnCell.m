@@ -16,21 +16,20 @@
     }
 }
 
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock {
-    return [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:detailSettingBlock didSelectRowBlock:didSelectRowBlock];
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
+    CKJOneBtnCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detailSettingBlock didSelectRowBlock:nil];
+    m.updateConstraint = updateConstraint;
+    m.clickBtn = clickBtn;
+    return m;
+}
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight attTitle:(NSAttributedString *)attTitle detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
+    CKJOneBtnCellModel *m = [self oneBtnWithCellHeight:cellHeight detailSettingBlock:detailSettingBlock clickBtn:clickBtn updateConstraint:updateConstraint];
+    [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
+        btnData.normalAttTitle = attTitle;
+    }];
+    return m;
 }
 
-+ (instancetype)oneBtnWithTitle:(NSString *)title didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock {
-    return [self oneBtnWithAttTitle:WDAttTitle(title) didSelectRowBlock:didSelectRowBlock];
-}
-+ (instancetype)oneBtnWithAttTitle:(NSAttributedString *)attTitle didSelectRowBlock:(nullable CKJOneBtnCellRowBlock)didSelectRowBlock {
-    return [self oneBtnWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
-        [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
-            btnData.normalAttTitle = attTitle;
-            btnData.enabled = NO;
-        }];
-    } didSelectRowBlock:didSelectRowBlock];
-}
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -65,11 +64,8 @@
 }
 
 - (void)setupData:(__kindof CKJOneBtnCellModel *)model section:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath tableView:(CKJSimpleTableView *)tableView {
-    UIEdgeInsets edge = model.btnEdge;
     [CKJWorker reloadBtn:_oneBtn btnData:model.btnData];
-    [self.oneBtn kjwd_mas_updateConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
-        make.edges.equalTo(superview).insets(edge);
-    }];
+    [self.oneBtn kjwd_mas_remakeConstraints:model.updateConstraint];
 }
 
 

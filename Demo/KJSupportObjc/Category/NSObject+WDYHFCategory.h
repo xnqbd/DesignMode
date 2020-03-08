@@ -882,6 +882,10 @@ imageTitleSpace:(CGFloat)space;
 /** 生成指定大小的图片 */
 - (UIImage *)kjwd_scaleToSize:(CGSize)size;
 
+/// 不拉伸缩放，可以传入宽度或者高度
+- (UIImage *)kjwd_noTransformScaleToWidth:(NSNumber *_Nullable)newWidthNumber height:(NSNumber *_Nullable)newHeightNumber;
+
+
 /** 设置圆角并生成新图片 */
 - (UIImage *)kjwd_setCornerRadius:(CGFloat)radius;
 
