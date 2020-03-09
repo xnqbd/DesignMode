@@ -21,6 +21,7 @@ typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
 
 @property (copy, nonatomic) void(^updateConstraint)(MASConstraintMaker *make, UIView *superview);
 
+
 @property (strong, nonatomic) CKJBtnItemData *btnData;
 
 @property (copy, nonatomic) void(^clickBtn)(__kindof CKJOneBtnCellModel *cm, UIButton *btn);

@@ -133,6 +133,11 @@
 		BC910D922413709D00280936 /* DMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC910D912413709D00280936 /* DMNavigationController.swift */; };
 		BC910D952414B28300280936 /* DMLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC910D942414B28300280936 /* DMLoginVC.swift */; };
 		BC910D982414B4E600280936 /* DMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC910D972414B4E600280936 /* DMLoginManager.swift */; };
+		BC94324224162F9500FB9B6F /* DMTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94324124162F9500FB9B6F /* DMTheme.swift */; };
+		BC943247241632F400FB9B6F /* HZYHFInterfacedConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */; };
+		BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */; };
+		BC943249241632F400FB9B6F /* HZYHFSelectHospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943246241632F400FB9B6F /* HZYHFSelectHospitalModel.swift */; };
+		BC94324B2416362100FB9B6F /* RJCombineHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */; };
 		BC9E19CC23D5963300169DB3 /* RootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */; };
 		BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */; };
 		BC9E1AB923D5A53C00169DB3 /* RJProjectResorce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB823D5A53C00169DB3 /* RJProjectResorce.swift */; };
@@ -367,6 +372,11 @@
 		BC910D912413709D00280936 /* DMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMNavigationController.swift; sourceTree = "<group>"; };
 		BC910D942414B28300280936 /* DMLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMLoginVC.swift; sourceTree = "<group>"; };
 		BC910D972414B4E600280936 /* DMLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMLoginManager.swift; sourceTree = "<group>"; };
+		BC94324124162F9500FB9B6F /* DMTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTheme.swift; sourceTree = "<group>"; };
+		BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFInterfacedConst.swift; sourceTree = "<group>"; };
+		BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFHTTPRequest.swift; sourceTree = "<group>"; };
+		BC943246241632F400FB9B6F /* HZYHFSelectHospitalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFSelectHospitalModel.swift; sourceTree = "<group>"; };
+		BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RJCombineHttpRequest.swift; sourceTree = "<group>"; };
 		BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarVC.swift; sourceTree = "<group>"; };
 		BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOBridge.h; sourceTree = "<group>"; };
 		BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeVC.swift; sourceTree = "<group>"; };
@@ -908,8 +918,19 @@
 			isa = PBXGroup;
 			children = (
 				BC910D972414B4E600280936 /* DMLoginManager.swift */,
+				BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */,
 			);
 			path = manager;
+			sourceTree = "<group>";
+		};
+		BC943243241632F400FB9B6F /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */,
+				BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */,
+				BC943246241632F400FB9B6F /* HZYHFSelectHospitalModel.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 		BC9E19CA23D5961200169DB3 /* root */ = {
@@ -992,8 +1013,10 @@
 				BCE959EA23D586F200B2C5FE /* LaunchScreen.storyboard */,
 				BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */,
 				BC910D8524136ABB00280936 /* RJInputData.h */,
+				BC94324124162F9500FB9B6F /* DMTheme.swift */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
+				BC943243241632F400FB9B6F /* HTTP */,
 				BCE959ED23D586F200B2C5FE /* Info.plist */,
 			);
 			path = Demo;
@@ -1161,6 +1184,7 @@
 				BC910CD8241365AE00280936 /* CKJTableViewCell1.m in Sources */,
 				BC910CC3241365AE00280936 /* CKJToolbar.m in Sources */,
 				BC910CC8241365AE00280936 /* CKJWorker.m in Sources */,
+				BC94324224162F9500FB9B6F /* DMTheme.swift in Sources */,
 				BC910CC4241365AE00280936 /* CKJPayBottomView.m in Sources */,
 				BC910D8624136ABB00280936 /* RJInputData.m in Sources */,
 				BC910D6824136A7D00280936 /* WDYHFHospitalItem.m in Sources */,
@@ -1208,6 +1232,7 @@
 				BC9E19CC23D5963300169DB3 /* RootTabBarVC.swift in Sources */,
 				BC910CC6241365AE00280936 /* CKJSimpleTableView.m in Sources */,
 				BC910CB6241365AE00280936 /* CKJBaseViewController.m in Sources */,
+				BC943247241632F400FB9B6F /* HZYHFInterfacedConst.swift in Sources */,
 				BC910D7724136A7D00280936 /* CKJGeneralCellVC.m in Sources */,
 				BC910D6D24136A7D00280936 /* RegisterDemo2VC.m in Sources */,
 				BC910CD6241365AE00280936 /* CKJImageViewCell.m in Sources */,
@@ -1218,10 +1243,12 @@
 				BC910D6F24136A7D00280936 /* RJSquareDemo1VC.m in Sources */,
 				BC910CD7241365AE00280936 /* CKJGeneralCell.m in Sources */,
 				BC910D7524136A7D00280936 /* DemoVC.m in Sources */,
+				BC94324B2416362100FB9B6F /* RJCombineHttpRequest.swift in Sources */,
 				BC910CBD241365AE00280936 /* CKJPickerView.m in Sources */,
 				BC910CE5241365AE00280936 /* CKJBtnsCell2.m in Sources */,
 				BC910D7A24136A7D00280936 /* CKJCellVC.m in Sources */,
 				BC910D7324136A7D00280936 /* DemoInsetVC.m in Sources */,
+				BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */,
 				BC910D6A24136A7D00280936 /* DemoCoreCellVC.m in Sources */,
 				BC910D7224136A7D00280936 /* KJSupportObjcListVC.m in Sources */,
 				BC910CDE241365AE00280936 /* CKJBaseTableViewCell.m in Sources */,
@@ -1234,6 +1261,7 @@
 				BC910CF2241365AF00280936 /* KJSupportHeader.m in Sources */,
 				BC910CEB241365AF00280936 /* CKJCell.m in Sources */,
 				BC910CB8241365AE00280936 /* CKJRSA.m in Sources */,
+				BC943249241632F400FB9B6F /* HZYHFSelectHospitalModel.swift in Sources */,
 				BC910CCD241365AE00280936 /* CKJSimpleBaseModel.m in Sources */,
 				BC910CBB241365AE00280936 /* CKJBaseModel.m in Sources */,
 				BC910D7924136A7D00280936 /* CKJImageLeftRightCellVC.m in Sources */,

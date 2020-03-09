@@ -12,5 +12,6 @@
 #import "KJSupportObjc.h"
 #import "DMRes.h"
 #import "KJSupportObjcListVC.h"
+#import "RJInputData.h"
 
 #endif /* SOBridge_h */

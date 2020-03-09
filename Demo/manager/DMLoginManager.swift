@@ -8,7 +8,17 @@
 
 import UIKit
 
+enum LoginState {
+    case online, offline
+}
+
 class DMLoginManager: CKJBaseModel {
     static let manager = DMLoginManager()
+    
+    var loginState = {
+       return LoginState.offline
+    }()
+    
+    
     
 }

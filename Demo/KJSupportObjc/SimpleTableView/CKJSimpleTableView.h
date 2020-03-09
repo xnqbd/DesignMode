@@ -254,6 +254,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)verityInputFail;
 
 
+/// 标题(可为空) 输入框
+/// @param title 如果不需要标题，可以设置为nil或""
+/// @param emptyRequirdText 如果不需要空必须，可以设置为nil或""
 - (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail;
 
 
