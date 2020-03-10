@@ -21,7 +21,7 @@
     CKJEmptyCellModel *headerEmpty = [CKJEmptyCellModel emptyCellModelWithHeight:emptyHeight showLine:NO];
     CKJEmptyCellModel *footerEmpty = [CKJEmptyCellModel emptyCellModelWithHeight:emptyHeight showLine:YES];
     
-    UIColor *color333 = [UIColor kjwd_titleColor333333];
+    UIColor *color333 = [UIColor kjwd_title];
     
     CGFloat margin = 20;
     CGFloat cellH = 0;

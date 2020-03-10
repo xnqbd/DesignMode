@@ -210,10 +210,10 @@ NSMutableAttributedString * WDCKJAttributed2(NSString *_Nullable text, UIColor *
 }
 
 NSMutableAttributedString * WDAttTitle(NSString *_Nullable text) {
-    return WDCKJAttributed2(text, [UIColor kjwd_titleColor333333], @15.5);
+    return WDCKJAttributed2(text, [UIColor kjwd_title], @15.5);
 }
 NSMutableAttributedString * WDAttSubTitle(NSString *_Nullable text) {
-    return WDCKJAttributed2(text, [UIColor kjwd_subTitleColor969696], @15.5);
+    return WDCKJAttributed2(text, [UIColor kjwd_subTitle], @15.5);
 }
 
 
@@ -223,7 +223,7 @@ NSMutableAttributedString * WDAtt13(NSString *_Nullable name) {
 
 
 NSMutableAttributedString * WDAtt15_5(NSString *_Nullable name) {
-    return WDCKJAttributed2(name, [UIColor kjwd_titleColor333333], @15.5);
+    return WDCKJAttributed2(name, [UIColor kjwd_title], @15.5);
 }
 
 
@@ -1372,11 +1372,11 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 
 
-+ ( UIColor *)kjwd_titleColor333333 {
++ ( UIColor *)kjwd_title {
     return [UIColor kjwd_colorWithHexString:@"333333"];
 }
 
-+ ( UIColor *)kjwd_subTitleColor969696 {
++ ( UIColor *)kjwd_subTitle {
     return [UIColor kjwd_colorWithHexString:@"969696"];
 }
 + ( UIColor *)kjwd_230Color {

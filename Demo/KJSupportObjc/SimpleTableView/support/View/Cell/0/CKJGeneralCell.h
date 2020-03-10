@@ -123,7 +123,7 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
      CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
          CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
              m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(@"关于") left:10];
-             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDAttTitle(@"复旦儿科"), [UIColor kjwd_subTitleColor969696], nil) left:0 right:0];
+             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDAttTitle(@"复旦儿科"), [UIColor kjwd_subTitle], nil) left:0 right:0];
              m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
          } didSelectRowBlock:nil];
          _sec.modelArray = @[model1];
@@ -150,7 +150,7 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 + (instancetype)generalWithTitle:(NSString *)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 /// image title 箭头
-+ (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(NSString *)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
++ (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 /// title 和 右标题
 + (instancetype)generalWithTitle:(NSString *)title likePriceAttText:(NSAttributedString *)likePriceAttText didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;

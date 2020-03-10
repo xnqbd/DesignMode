@@ -137,10 +137,14 @@
     } didSelectRowBlock:didSelectRowBlock];
 }
 
-+ (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(NSString *)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock {
++ (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock {
     return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
         m.image2Model = [CKJImage2Model image2ModelWithImageString:imageName size:imageSize left:15];
-        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(title) left:12];
+        if ([title isKindOfClass:[NSString class]]) {
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(title) left:12];
+        } else if ([title isKindOfClass:[NSAttributedString class]]) {
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
+        }
         if (arrow) {
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         }

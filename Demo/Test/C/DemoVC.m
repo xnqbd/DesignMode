@@ -38,13 +38,13 @@
         CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
             CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
                 m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttBold(@"行政部", [UIColor blackColor], @17) left:10];
-                m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitleColor969696], @14) left:0 right:15];
+                m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitle], @14) left:0 right:15];
             } didSelectRowBlock:nil];
             CKJGeneralCellModel *model2 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-                m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"张三", [UIColor kjwd_titleColor333333], nil) left:20];
+                m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"张三", [UIColor kjwd_title], nil) left:20];
             } didSelectRowBlock:nil];
             CKJGeneralCellModel *model3 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-                m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"李四", [UIColor kjwd_titleColor333333], nil) left:20];
+                m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"李四", [UIColor kjwd_title], nil) left:20];
             } didSelectRowBlock:nil];
             _sec.modelArray = @[model1];
         }];
@@ -55,13 +55,13 @@
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttBold(@"行政部", [UIColor blackColor], @17) left:10];
-            m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitleColor969696], @14) left:0 right:15];
+            m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitle], @14) left:0 right:15];
         } didSelectRowBlock:nil];
         CKJGeneralCellModel *model2 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"张三", [UIColor kjwd_titleColor333333], nil) left:20];
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"张三", [UIColor kjwd_title], nil) left:20];
         } didSelectRowBlock:nil];
         CKJGeneralCellModel *model3 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"李四", [UIColor kjwd_titleColor333333], nil) left:20];
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"李四", [UIColor kjwd_title], nil) left:20];
         } didSelectRowBlock:nil];
         _sec.modelArray = @[model1, model2, model3];
     }];

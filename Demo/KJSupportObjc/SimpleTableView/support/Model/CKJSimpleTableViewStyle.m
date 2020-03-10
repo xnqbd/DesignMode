@@ -55,7 +55,7 @@
     if (self = [super init]) {
         self.left = 15;
         self.right = 15;
-        self.titleAttributes = @{NSForegroundColorAttributeName : [UIColor kjwd_titleColor333333], NSFontAttributeName : [UIFont systemFontOfSize:14]};
+        self.titleAttributes = @{NSForegroundColorAttributeName : [UIColor kjwd_title], NSFontAttributeName : [UIFont systemFontOfSize:14]};
         self.tfTextAttributed = self.titleAttributes;
     }
     return self;

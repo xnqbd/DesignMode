@@ -41,7 +41,7 @@
     
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont systemFontOfSize:15.5];
-    label.textColor = [UIColor kjwd_titleColor333333];
+    label.textColor = [UIColor kjwd_title];
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;
 //    label.text = @"请点击下方取号按钮,\n凭号码到入院登记处办理入院手续。";

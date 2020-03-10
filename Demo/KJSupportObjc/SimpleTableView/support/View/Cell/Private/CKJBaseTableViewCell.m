@@ -83,7 +83,7 @@
     
     UILabel *title = [UILabel new];
     //    WDCKJBGColor_Arc4Color(title);
-    title.textColor = [UIColor kjwd_titleColor333333];
+    title.textColor = [UIColor kjwd_title];
     title.font = [UIFont systemFontOfSize:15];
     
     [self.subviews_SuperView addSubview:title];

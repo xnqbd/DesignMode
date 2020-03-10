@@ -25,8 +25,8 @@
     
     CKJGeneralCellModel *(^block)(NSString *title, NSString *likePrice8) = ^CKJGeneralCellModel *(NSString *title, NSString *likePrice8){
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(title, [UIColor kjwd_titleColor333333], nil) left:15];
-            m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(likePrice8, [UIColor kjwd_subTitleColor969696], @13) left:0 right:15];
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(title, [UIColor kjwd_title], nil) left:15];
+            m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(likePrice8, [UIColor kjwd_subTitle], @13) left:0 right:15];
             m.selectionStyle = UITableViewCellSelectionStyleNone;
         } didSelectRowBlock:nil];
         return model1;
@@ -46,7 +46,7 @@
 //    CKJGeneralCellModel *model103 = block(@"手机号", @"15522229999");
     
     CKJGeneralCellModel *card = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"就诊卡", [UIColor kjwd_titleColor333333], nil) left:15];
+        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"就诊卡", [UIColor kjwd_title], nil) left:15];
         m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"点击查看", [UIColor kjwd_blueBtnColor], @13) left:0 right:15];
         m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
     } didSelectRowBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
@@ -54,7 +54,7 @@
     }];
     
     CKJGeneralCellModel *status = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"实名状态", [UIColor kjwd_titleColor333333], nil) left:15];
+        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"实名状态", [UIColor kjwd_title], nil) left:15];
         UIImage *image = [[UIImage kjwd_imageNamed:@"new_personal_已实名"] kjwd_scaleToSize:CGSizeMake(60, 20)];
         m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:image right:@15];
         m.selectionStyle = UITableViewCellSelectionStyleNone;

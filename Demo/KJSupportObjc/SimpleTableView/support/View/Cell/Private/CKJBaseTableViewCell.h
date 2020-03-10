@@ -37,7 +37,7 @@ typedef void(^CKJBaseTableViewCellRowBlock)(__kindof CKJBaseTableViewCellModel *
 @property (copy, nonatomic, nullable) NSAttributedString *textLabelAttStr;
 
 /**
- 设置textLabel 使用 [UIColor kjwd_titleColor333333], 15.5字号
+ 设置textLabel 使用 [UIColor kjwd_title], 15.5字号
  */
 - (void)_setText:(nullable NSString *)text;
 

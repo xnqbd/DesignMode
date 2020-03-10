@@ -39,7 +39,7 @@
 //        WDCKJBGColor_Arc4Color(btn);
         
         btn.titleLabel.font = [UIFont systemFontOfSize:15.5];
-        [btn setTitleColor:[UIColor kjwd_titleColor333333] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor kjwd_title] forState:UIControlStateNormal];
         
         [btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull sender) {
             NSArray *data = cell.cellModel.stackItems;

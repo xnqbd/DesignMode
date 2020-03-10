@@ -64,7 +64,7 @@
             //WDCKJBGColor_Arc4Color(btn);
             //__weak typeof(self) weakSelf = self;
             btn.titleLabel.font = [UIFont systemFontOfSize:15.5];
-            [btn setTitleColor:[UIColor kjwd_titleColor333333] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor kjwd_title] forState:UIControlStateNormal];
             
             __weak CKJXBtnItemData *weakItemData = item;
             

@@ -63,7 +63,7 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn addTarget:self action:@selector(dateAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn setImage:image forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor kjwd_titleColor333333] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor kjwd_title] forState:UIControlStateNormal];
         btn.backgroundColor = [UIColor whiteColor];
         [btn setTitle:date forState:UIControlStateNormal];
         [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];

@@ -53,13 +53,15 @@ class DMLoginVC: CKJBaseTableVC {
             
 //            let empty2 = CKJEmptyCellModel(height: 30, showLine: false)
                 
-            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftAttTitle: WDCKJAttributed2("忘记密码", UIColor.kjwd_subTitleColor969696(), NSNumber(value: 14)), leftHandle: { (cm, btn) in
-                
-            }, rightAttTitle: WDCKJAttributed2("注册", UIColor.kjwd_subTitleColor969696(), NSNumber(value: 14)), rightHandle: { (cm, btn) in
-                
-            }, detailSettingBlock: nil)
-//            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: <#T##NSNumber?#>, leftAttTitle: <#T##NSAttributedString?#>, leftHandle: <#T##CKJTwoBtnCellClickBtn?##CKJTwoBtnCellClickBtn?##(CKJTwoBtnCellModel, UIButton) -> Void#>, rightAttTitle: <#T##NSAttributedString?#>, rightHandle: <#T##CKJTwoBtnCellClickBtn?##CKJTwoBtnCellClickBtn?##(CKJTwoBtnCellModel, UIButton) -> Void#>, detailSettingBlock: <#T##CKJTwoBtnCellBlock?##CKJTwoBtnCellBlock?##(CKJTwoBtnCellModel) -> Void#>)
+//            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: <#T##NSNumber?#>, leftTitle: <#T##String?#>, leftHandle: <#T##CKJBtnClick?##CKJBtnClick?##(UIButton, CKJBtnItemData) -> Void#>, rightTitle: <#T##String?#>, rightHandle: <#T##CKJBtnClick?##CKJBtnClick?##(UIButton, CKJBtnItemData) -> Void#>, fontSize: nil, textColor: nil, detailSettingBlock: <#T##CKJTwoBtnCellBlock?##CKJTwoBtnCellBlock?##(CKJTwoBtnCellModel) -> Void#>)
             
+            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { (btn, data) in
+                let cell = btn.kjwd_getCell()
+
+            }, rightTitle: "注册", rightHandle: { (btn, data) in
+
+            }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
+
             _sec.modelArray = [logo, phone, pwd, empty1, login, leftRight]
         }
         

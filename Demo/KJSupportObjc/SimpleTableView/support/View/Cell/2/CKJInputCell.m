@@ -109,7 +109,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
         self.keyboardType = UIKeyboardTypeDefault;
         self.rightMargin = 0;
         self.tfTextAttributed = @{NSFontAttributeName : [UIFont systemFontOfSize:15],
-                                  NSForegroundColorAttributeName : [UIColor kjwd_titleColor333333]};
+                                  NSForegroundColorAttributeName : [UIColor kjwd_title]};
     }
     return self;
 }

@@ -36,7 +36,7 @@
     CKJGeneralCellModel *(^block)(NSString *title, NSString *vcClass) = ^CKJGeneralCellModel *(NSString *title, NSString *vcClass) {
         
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(title, [UIColor kjwd_titleColor333333], @16) left:15];
+            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(title, [UIColor kjwd_title], @16) left:15];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             UIViewController *vc = [[NSClassFromString(vcClass) alloc] init];
@@ -77,13 +77,13 @@
     }];
     
     
-    CKJCommonSectionModel *section4 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"一些其他的", [UIColor kjwd_subTitleColor969696], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section4 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"一些其他的", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJCommonCellModel *model1 = block(@"自定义Cell、配置Cell、聚合Cell", @"RJConfigVC");
         _sec.modelArray = @[model1];
     }];
     
     
-    CKJCommonSectionModel *section5 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"一些其他的", [UIColor kjwd_subTitleColor969696], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section5 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"一些其他的", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
 
 //        CKJImageViewCellModel *model1 = [CKJImageViewCellModel imageViewWithCellHeight:@100 cellModel_id:nil detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
 //            m.localImage = [UIImage imageNamed:@"newhome_banner"];

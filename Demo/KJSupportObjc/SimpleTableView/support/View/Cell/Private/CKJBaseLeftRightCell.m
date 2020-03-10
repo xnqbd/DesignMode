@@ -64,7 +64,7 @@
     UILabel *title = [UILabel new];
     //    title.numberOfLines = 0;
     //    WDCKJBGColor_Arc4Color(title);
-    title.textColor = [UIColor kjwd_titleColor333333];
+    title.textColor = [UIColor kjwd_title];
     title.font = [UIFont systemFontOfSize:15];
     
     [self.subviews_SuperView addSubview:title];
@@ -73,7 +73,7 @@
     UILabel *subTitle = [UILabel new];
     subTitle.numberOfLines = 0;
     //    WDCKJBGColor_Arc4Color(subTitle);
-    subTitle.textColor = [UIColor kjwd_subTitleColor969696];
+    subTitle.textColor = [UIColor kjwd_subTitle];
     subTitle.font = [UIFont systemFontOfSize:15];
     [self.subviews_SuperView addSubview:subTitle];
     self.rightLab = subTitle;

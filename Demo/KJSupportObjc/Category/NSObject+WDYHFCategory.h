@@ -481,8 +481,8 @@ CGFloat WDAPP_ScreenHeight(void);
 
 + (UIColor *)kjwd_colorWithHexString:(NSString *)color;
 
-+ (UIColor *)kjwd_titleColor333333;
-+ (UIColor *)kjwd_subTitleColor969696;
++ (UIColor *)kjwd_title;
++ (UIColor *)kjwd_subTitle;
 
 + (UIColor *)kjwd_230Color;
 

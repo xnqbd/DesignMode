@@ -13,12 +13,23 @@
 
 
 
-+ (instancetype)twoBtnWithCellHeight:(nullable NSNumber *)cellHeight leftAttTitle:(nullable NSAttributedString *)leftAttTitle leftHandle:(nullable CKJTwoBtnCellClickBtn)leftHandle rightAttTitle:(nullable NSAttributedString *)rightAttTitle rightHandle:(nullable CKJTwoBtnCellClickBtn)rightHandle detailSettingBlock:(nullable CKJTwoBtnCellBlock)detailSettingBlock {
-    CKJBtnItemData *left = [[CKJBtnItemData alloc] init];
-    left.normalAttTitle = leftAttTitle;
++ (instancetype)twoBtnWithCellHeight:(nullable NSNumber *)cellHeight leftTitle:(nullable NSString *)leftTitle leftHandle:(nullable CKJBtnClick)leftHandle rightTitle:(nullable NSString *)rightTitle rightHandle:(nullable CKJBtnClick)rightHandle fontSize:(nullable NSNumber *)fontSize textColor:(nullable UIColor *)textColor detailSettingBlock:(nullable CKJTwoBtnCellBlock)detailSettingBlock {
+
+    if (WDKJ_IsNull_Num(fontSize)) {
+        fontSize = @14;
+    }
+    if (WDKJ_IsNullObj(textColor, [UIColor class])) {
+        textColor = [UIColor kjwd_subTitle];
+    }
+    
+    
+CKJBtnItemData *left = [[CKJBtnItemData alloc] init];
+    left.normalAttTitle = WDCKJAttributed2(leftTitle, textColor, fontSize);
+    left.click_Button = leftHandle;
     
     CKJBtnItemData *right = [[CKJBtnItemData alloc] init];
-    right.normalAttTitle = rightAttTitle;
+    right.normalAttTitle =  WDCKJAttributed2(rightTitle, textColor, fontSize);
+    right.click_Button = rightHandle;
     
     CKJTwoBtnCellModel *cm = [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detailSettingBlock didSelectRowBlock:nil];
     cm.leftBtnData = left;
@@ -37,9 +48,10 @@
     self.leftBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-            //        if (weakSelf.cellModel.clickBtn) {
-            //            weakSelf.cellModel.clickBtn(weakSelf.cellModel, _sender);
-            //        }
+            CKJTwoBtnCellModel *cm = weakSelf.cellModel;
+            if (cm.leftBtnData.click_Button) {
+                cm.leftBtnData.click_Button(_sender, cm.leftBtnData);
+            }
         }];
         [btn kjwd_masWithSuperView:self.subviews_SuperView makeConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
             make.centerY.equalTo(superview);
@@ -51,9 +63,10 @@
     self.rightBtn = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-            //        if (weakSelf.cellModel.clickBtn) {
-            //            weakSelf.cellModel.clickBtn(weakSelf.cellModel, _sender);
-            //        }
+            CKJTwoBtnCellModel *cm = weakSelf.cellModel;
+            if (cm.rightBtnData.click_Button) {
+                cm.rightBtnData.click_Button(_sender, cm.rightBtnData);
+            }
         }];
         [btn kjwd_masWithSuperView:self.subviews_SuperView makeConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
             make.centerY.equalTo(self.leftBtn);

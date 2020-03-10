@@ -23,7 +23,7 @@ class DMLoginManager: CKJBaseModel {
     
     func login(username: String, pwd: String) {
         
-        HZYHFHTTPRequest.kj_after(timeInterval: 2, callBackType: .Success, response: nil, success: { (suc) in
+        HZYHFHTTPRequest.kj_after(timeInterval: 0.5, callBackType: .Success, response: nil, success: { (suc) in
             self.loginSuccess()
         }, failure: { (fail) in
             self.loginFail()

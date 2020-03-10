@@ -10,11 +10,12 @@
 #import <UIKit/UIKit.h>
 #import "KJSupportHeader.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 @class CKJBtnItemData, CKJBaseBtnModel;
 
 typedef void(^CKJBtnItemBlock)(__kindof CKJBtnItemData *_Nonnull itemData);
-
+typedef void(^CKJBtnClick)(UIButton *btn, __kindof CKJBtnItemData *itemData);
 
 UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cellKEY;
 UIKIT_EXTERN NSString *_Nonnull const KJPrefix_isRegisterNibKEY;
@@ -47,7 +48,7 @@ UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cBorderColor;
 UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cCornerRadius;
 
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CKJWorker : CKJBaseModel
 
@@ -115,7 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 对UIButton的图片和文字 进行排布回调
 @property (copy, nonatomic, nullable) void (^layout_Button)(UIButton *btn);
-@property (copy, nonatomic, nullable) void (^click_Button)(UIButton *btn, __kindof CKJBtnItemData *itemData);
+@property (copy, nonatomic, nullable) CKJBtnClick click_Button;
 
 /**
  创建多个items对象
@@ -173,6 +174,21 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+
+
+typedef void(^CKJMyVCItemClick)(id param);
+
+/// 我的、个人界面
+@interface CKJMyVCItem : CKJBaseModel
+
+@property (copy, nonatomic, nullable) id image;
+@property (copy, nonatomic) id title;
+@property (copy, nonatomic) CKJMyVCItemClick click;
+
+
++ (instancetype)itemWithImage:(id)image title:(id)title click:(CKJMyVCItemClick)click;
+
+@end
 
 
 
