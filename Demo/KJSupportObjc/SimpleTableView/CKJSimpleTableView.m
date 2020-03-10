@@ -1323,6 +1323,7 @@
         NSStringFromClass([CKJOneBtnCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJOneBtnCell class]), KJPrefix_isRegisterNibKEY : @NO},
         NSStringFromClass([CKJLeftRightCenterEqualCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJLeftRightCenterEqualCell class]), KJPrefix_isRegisterNibKEY : @NO},
         NSStringFromClass([CKJLeftRightTopEqualCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJLeftRightTopEqualCell class]), KJPrefix_isRegisterNibKEY : @NO},
+        NSStringFromClass([CKJTwoBtnCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJTwoBtnCell class]), KJPrefix_isRegisterNibKEY : @NO},
 
         // 上面这几个不要删除，只需 这样的键值对添加即可
     };

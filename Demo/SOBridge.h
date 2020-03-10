@@ -13,5 +13,7 @@
 #import "DMRes.h"
 #import "KJSupportObjcListVC.h"
 #import "RJInputData.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
 
 #endif /* SOBridge_h */

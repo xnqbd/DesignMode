@@ -40,6 +40,9 @@
 #import "CKJLeftRightCenterEqualCell.h"
 #import "CKJLeftRightTopEqualCell.h"
 
+#import "CKJTwoBtnCell.h"
+
+
 @class CKJSimpleTableViewStyle;
 
 #define KJ_typeweakself __weak typeof(self) weakSelf = self;

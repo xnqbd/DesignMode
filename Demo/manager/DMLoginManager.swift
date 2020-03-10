@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 enum LoginState {
     case online, offline
 }
@@ -20,5 +21,22 @@ class DMLoginManager: CKJBaseModel {
     }()
     
     
+    func login(username: String, pwd: String) {
+        
+        HZYHFHTTPRequest.kj_after(timeInterval: 2, callBackType: .Success, response: nil, success: { (suc) in
+            self.loginSuccess()
+        }, failure: { (fail) in
+            self.loginFail()
+        }, exception: nil) {
+            
+        }
+    }
     
+    func loginSuccess() {
+        loginState = .online
+        UIWindow.kjwd_appdelegate().rootViewController = RootTabBarVC()
+    }
+    func loginFail() {
+        loginState = .offline
+    }
 }

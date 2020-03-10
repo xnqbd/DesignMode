@@ -10,11 +10,18 @@ import UIKit
 
 class DMLoginVC: CKJBaseTableVC {
     
+    override func simpleTableViewStyle() -> UITableView.Style {
+        return .plain
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.white
+        simpleTableView.backgroundColor = view.backgroundColor
         simpleTableView.updateStyle { (s) in
             s.rowHeight = NSNumber(40)
+            s.haveTitleStyle.left = 0
         }
         
         let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
@@ -25,11 +32,11 @@ class DMLoginVC: CKJBaseTableVC {
                 make.center.equalTo()(superView)
                 make.size.equalTo()(CGSize(width: 120, height: 120))
             }
-            let phone = self.simpleTableView._newtitle(nil, tfText: "177", placeholder: "手机号码", emptyRequirdText: "手机号", cellId: kOInput_Phone, detail: { (m) in
+            let phone = self.simpleTableView._newtitle(nil, tfText: "17724801294", placeholder: "手机号码", emptyRequirdText: "手机号", cellId: kOInput_Phone, detail: { (m) in
                 m.addRequired(CKJInputExpressionRequiredModel.system_phoneRegError())
             })
             
-            let pwd = self.simpleTableView._newtitle(nil, tfText: "1", placeholder: "密码", emptyRequirdText: "密码", cellId: kOInput_Pwd, detail: nil)
+            let pwd = self.simpleTableView._newtitle(nil, tfText: "111", placeholder: "密码", emptyRequirdText: "密码", cellId: kOInput_Pwd, detail: nil)
             
             let empty1 = CKJEmptyCellModel(height: 10, showLine: false)
             
@@ -44,16 +51,16 @@ class DMLoginVC: CKJBaseTableVC {
                 make.edges.equalTo()
             }
             
-            let empty2 = CKJEmptyCellModel(height: 30, showLine: false)
+//            let empty2 = CKJEmptyCellModel(height: 30, showLine: false)
+                
+            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftAttTitle: WDCKJAttributed2("忘记密码", UIColor.kjwd_subTitleColor969696(), NSNumber(value: 14)), leftHandle: { (cm, btn) in
+                
+            }, rightAttTitle: WDCKJAttributed2("注册", UIColor.kjwd_subTitleColor969696(), NSNumber(value: 14)), rightHandle: { (cm, btn) in
+                
+            }, detailSettingBlock: nil)
+//            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: <#T##NSNumber?#>, leftAttTitle: <#T##NSAttributedString?#>, leftHandle: <#T##CKJTwoBtnCellClickBtn?##CKJTwoBtnCellClickBtn?##(CKJTwoBtnCellModel, UIButton) -> Void#>, rightAttTitle: <#T##NSAttributedString?#>, rightHandle: <#T##CKJTwoBtnCellClickBtn?##CKJTwoBtnCellClickBtn?##(CKJTwoBtnCellModel, UIButton) -> Void#>, detailSettingBlock: <#T##CKJTwoBtnCellBlock?##CKJTwoBtnCellBlock?##(CKJTwoBtnCellModel) -> Void#>)
             
-            
-//            CKJInputCellModel *phone = [self.simpleTableView _newtitle:@"" tfText:"" placeholder:"请输入手机号" emptyRequirdText:@"手机号" cellId:kOInput_Phone detail:^(__kindof CKJInputCellModel * _Nonnull m) {
-//                [m addRequired:[CKJInputExpressionRequiredModel system_phoneRegError]];
-//            } didSelectRowBlock:nil];
-            
-            
-            
-            _sec.modelArray = [logo, phone, pwd, empty1, login, empty2]
+            _sec.modelArray = [logo, phone, pwd, empty1, login, leftRight]
         }
         
         simpleTableView.dataArr = [section1]
@@ -73,13 +80,7 @@ class DMLoginVC: CKJBaseTableVC {
         if (simpleTableView.verityInputFail()) {
             return
         }
-        
-        
-        
         let data = RJInputData(simpleTableView: simpleTableView)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            UIWindow.kjwd_appdelegate().rootViewController = RootTabBarVC()
-        }
+        DMLoginManager.manager.login(username: data.phone!, pwd: data.pwd!)
     }
 }
