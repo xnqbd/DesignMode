@@ -144,6 +144,8 @@
 		BC9E1ABF23D6BC3800169DB3 /* DMOCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */; };
 		BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE53667241777C60084274B /* CKJTwoBtnCell.m */; };
 		BCE5366A241883EE0084274B /* DMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE53669241883EE0084274B /* DMSettingVC.swift */; };
+		BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */; };
+		BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366D2418B0460084274B /* DMRegisterVC.swift */; };
 		BCE959E023D586F100B2C5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE959DF23D586F100B2C5FE /* AppDelegate.swift */; };
 		BCE959E423D586F100B2C5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE959E323D586F100B2C5FE /* ViewController.swift */; };
 		BCE959E723D586F100B2C5FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCE959E523D586F100B2C5FE /* Main.storyboard */; };
@@ -388,6 +390,8 @@
 		BCE53666241777C60084274B /* CKJTwoBtnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJTwoBtnCell.h; sourceTree = "<group>"; };
 		BCE53667241777C60084274B /* CKJTwoBtnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJTwoBtnCell.m; sourceTree = "<group>"; };
 		BCE53669241883EE0084274B /* DMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSettingVC.swift; sourceTree = "<group>"; };
+		BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMForgetPwdVC.swift; sourceTree = "<group>"; };
+		BCE5366D2418B0460084274B /* DMRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRegisterVC.swift; sourceTree = "<group>"; };
 		BCE959DC23D586F100B2C5FE /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE959DF23D586F100B2C5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCE959E323D586F100B2C5FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -916,6 +920,8 @@
 			isa = PBXGroup;
 			children = (
 				BC910D942414B28300280936 /* DMLoginVC.swift */,
+				BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */,
+				BCE5366D2418B0460084274B /* DMRegisterVC.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -1016,13 +1022,13 @@
 				BC910CF624136A7D00280936 /* Test */,
 				BCE959E823D586F200B2C5FE /* Assets.xcassets */,
 				BCE959EA23D586F200B2C5FE /* LaunchScreen.storyboard */,
-				BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */,
 				BC910D8524136ABB00280936 /* RJInputData.h */,
 				BC94324124162F9500FB9B6F /* DMTheme.swift */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
 				BCE959ED23D586F200B2C5FE /* Info.plist */,
+				BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -1195,6 +1201,7 @@
 				BC910D6824136A7D00280936 /* WDYHFHospitalItem.m in Sources */,
 				BC910CC1241365AE00280936 /* CKJXBtnsView.m in Sources */,
 				BC910CE0241365AE00280936 /* CKJLibraryHelper.m in Sources */,
+				BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */,
 				BC910CBF241365AE00280936 /* CKJDatePickerView.m in Sources */,
 				BC910CC7241365AE00280936 /* CKJButton.m in Sources */,
 				BC910D9024136EBC00280936 /* CKJLeftRightCenterEqCell.m in Sources */,
@@ -1239,6 +1246,7 @@
 				BC910CC6241365AE00280936 /* CKJSimpleTableView.m in Sources */,
 				BC910CB6241365AE00280936 /* CKJBaseViewController.m in Sources */,
 				BC943247241632F400FB9B6F /* HZYHFInterfacedConst.swift in Sources */,
+				BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */,
 				BC910D7724136A7D00280936 /* CKJGeneralCellVC.m in Sources */,
 				BC910D6D24136A7D00280936 /* RegisterDemo2VC.m in Sources */,
 				BC910CD6241365AE00280936 /* CKJImageViewCell.m in Sources */,

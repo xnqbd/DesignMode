@@ -14,6 +14,6 @@
 #import "KJSupportObjcListVC.h"
 #import "RJInputData.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
-
+#import "MBProgressHUD+KJSupport.h"
 
 #endif /* SOBridge_h */

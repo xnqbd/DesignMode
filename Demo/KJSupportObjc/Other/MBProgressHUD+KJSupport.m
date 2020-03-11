@@ -14,7 +14,7 @@
 + (void)kjwd_showMessage:(NSString *)msg {
     [self kjwd_showMessage:msg toView:[UIWindow kjwd_appdelegateWindow]];
 }
-+ (void)kjwd_showMessage:(NSString *)msg toView:(UIView *)view {
++ (void)kjwd_showMessage:(NSString *)msg toView:(nullable UIView *)view {
     if (WDKJ_IsNullObj(view, [UIView class])) {
         view = [UIWindow kjwd_appdelegateWindow];
     }

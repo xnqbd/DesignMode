@@ -44,6 +44,15 @@ class DMLoginManager: CKJBaseModel {
     /// 取消登录
     func cancelLogin() {
         loginState = .offline
-        UIWindow.kjwd_appdelegate().rootViewController = DMLoginVC()
+        UIWindow.kjwd_appdelegate().rootViewController = DMNavigationController(rootViewController:DMLoginVC())
+    }
+    
+    
+    func loginStateInit() {
+        if self.loginState == .online {
+            UIWindow.kjwd_appdelegate().rootViewController = RootTabBarVC()
+        } else {
+            UIWindow.kjwd_appdelegate().rootViewController = DMNavigationController(rootViewController:DMLoginVC())
+        }
     }
 }

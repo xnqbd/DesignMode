@@ -22,21 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        [IQKeyboardManager sharedManager].enable = YES;
     
         
-//        let online = true
-        let online = false
-        
-        
-//        switch DMLoginManager.manager.loginState {
-//        case .online:
-//
-//        case .offline:
-//        }
-        
-        if online {
-            window?.rootViewController = RootTabBarVC()
-        } else {
-            window?.rootViewController = DMLoginVC()
-        }
+        DMLoginManager.manager.loginStateInit()
         
         window?.makeKeyAndVisible()
         

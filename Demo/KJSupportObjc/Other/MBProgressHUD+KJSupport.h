@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MBProgressHUD (KJSupport)
 
 + (void)kjwd_showMessage:(NSString *)msg;
-+ (void)kjwd_showMessage:(NSString *)msg toView:(UIView *)view;
++ (void)kjwd_showMessage:(NSString *)msg toView:(nullable UIView *)view;
 
 
 @end

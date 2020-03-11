@@ -14,6 +14,15 @@ class DMLoginVC: CKJBaseTableVC {
         return .plain
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,15 +63,10 @@ class DMLoginVC: CKJBaseTableVC {
                 make.edges.equalTo()
             }
             
-//            let empty2 = CKJEmptyCellModel(height: 30, showLine: false)
-                
-//            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: <#T##NSNumber?#>, leftTitle: <#T##String?#>, leftHandle: <#T##CKJBtnClick?##CKJBtnClick?##(UIButton, CKJBtnItemData) -> Void#>, rightTitle: <#T##String?#>, rightHandle: <#T##CKJBtnClick?##CKJBtnClick?##(UIButton, CKJBtnItemData) -> Void#>, fontSize: nil, textColor: nil, detailSettingBlock: <#T##CKJTwoBtnCellBlock?##CKJTwoBtnCellBlock?##(CKJTwoBtnCellModel) -> Void#>)
-            
             let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { (btn, data) in
-                let cell = btn.kjwd_getCell()
-
+                self.navigationController?.pushViewController(DMForgetPwdVC())
             }, rightTitle: "注册", rightHandle: { (btn, data) in
-
+                    self.navigationController?.pushViewController(DMRegisterVC())
             }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
 
             _sec.modelArray = [logo, phone, pwd, empty1, login, leftRight]
