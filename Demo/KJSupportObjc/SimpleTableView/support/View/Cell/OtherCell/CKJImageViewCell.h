@@ -15,6 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CKJImageViewCellRowBlock)(__kindof CKJImageViewCellModel *_Nonnull m);
 
+/*
+ let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), detailSettingBlock: { (m) in
+     m.localImage = UIImage.kjwd_imageNamed("logo")
+     m.showLine = false;
+ }) { (make, superView) in
+     make.center.equalTo()(superView)
+     make.size.equalTo()(CGSize(width: 120, height: 120))
+ }
+ */
 
 @interface CKJImageViewCellModel : CKJCommonCellModel
 

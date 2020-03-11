@@ -16,7 +16,7 @@ class DMForgetPwdVC: CKJBaseTableVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = "找回密码"
+        navigationItem.title = "找回密码"
         view.backgroundColor = UIColor.white
         simpleTableView.backgroundColor = view.backgroundColor
         simpleTableView.updateStyle { (s) in

@@ -18,7 +18,16 @@ typedef void(^CKJTwoBtnCellBlock)(__kindof CKJTwoBtnCellModel *_Nonnull m);
 
 
 
+/*
+ 
 
+ let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { [weak self] (btn, data) in
+     self?.navigationController?.pushViewController(DMForgetPwdVC())
+     }, rightTitle: "注册", rightHandle: { [weak self] (btn, data) in
+         self?.navigationController?.pushViewController(DMRegisterVC())
+     }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
+ 
+ */
 @interface CKJTwoBtnCellModel : CKJCommonCellModel
 
 @property (assign, nonatomic) CGFloat leftMargin;

@@ -1533,7 +1533,7 @@ CGFloat WDAPP_ScreenHeight(void) {
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
 }
 - (void)kjwd_setTitleColorFontDic:(NSDictionary *)dic {
-    self.navigationBar.titleTextAttributes= dic;
+    self.navigationBar.titleTextAttributes = dic;
 }
 
 - (void)kjwd_setLeftRightBarButtonItemColor:(UIColor *)color {

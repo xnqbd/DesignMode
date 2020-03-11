@@ -25,7 +25,6 @@ class DMLoginVC: CKJBaseTableVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
         simpleTableView.backgroundColor = view.backgroundColor
         simpleTableView.updateStyle { (s) in
@@ -49,7 +48,7 @@ class DMLoginVC: CKJBaseTableVC {
             let pwd = self.simpleTableView._newtitle(nil, tfText: "111", placeholder: "密码", emptyRequirdText: "密码", cellId: kOInput_Pwd) {(m) in
                 m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
             }
-           
+            
             let empty1 = CKJEmptyCellModel(height: 10, showLine: false)
             
             let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("登录", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in
@@ -63,12 +62,12 @@ class DMLoginVC: CKJBaseTableVC {
                 make.edges.equalTo()
             }
             
-            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { (btn, data) in
-                self.navigationController?.pushViewController(DMForgetPwdVC())
-            }, rightTitle: "注册", rightHandle: { (btn, data) in
-                    self.navigationController?.pushViewController(DMRegisterVC())
-            }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
-
+            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { [weak self] (btn, data) in
+                self?.navigationController?.pushViewController(DMForgetPwdVC())
+                }, rightTitle: "注册", rightHandle: { [weak self] (btn, data) in
+                    self?.navigationController?.pushViewController(DMRegisterVC())
+                }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
+            
             _sec.modelArray = [logo, phone, pwd, empty1, login, leftRight]
         }
         

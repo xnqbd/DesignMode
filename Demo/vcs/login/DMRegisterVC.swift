@@ -12,7 +12,7 @@ class DMRegisterVC: CKJBaseTableVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = "注册"
+        navigationItem.title = "注册"
         view.backgroundColor = UIColor.white
         simpleTableView.backgroundColor = view.backgroundColor
         simpleTableView.updateStyle { (s) in

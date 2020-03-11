@@ -142,6 +142,7 @@
 		BC9E1AB923D5A53C00169DB3 /* RJProjectResorce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB823D5A53C00169DB3 /* RJProjectResorce.swift */; };
 		BC9E1ABC23D5A7DE00169DB3 /* DMRes.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1ABB23D5A7DE00169DB3 /* DMRes.m */; };
 		BC9E1ABF23D6BC3800169DB3 /* DMOCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */; };
+		BCB5E8C42418C88200B2B8E4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5E8C32418C88200B2B8E4 /* Person.swift */; };
 		BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE53667241777C60084274B /* CKJTwoBtnCell.m */; };
 		BCE5366A241883EE0084274B /* DMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE53669241883EE0084274B /* DMSettingVC.swift */; };
 		BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */; };
@@ -387,6 +388,7 @@
 		BC9E1ABB23D5A7DE00169DB3 /* DMRes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRes.m; sourceTree = "<group>"; };
 		BC9E1ABD23D6BC3800169DB3 /* DMOCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOCVC.h; sourceTree = "<group>"; };
 		BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOCVC.m; sourceTree = "<group>"; };
+		BCB5E8C32418C88200B2B8E4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BCE53666241777C60084274B /* CKJTwoBtnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJTwoBtnCell.h; sourceTree = "<group>"; };
 		BCE53667241777C60084274B /* CKJTwoBtnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJTwoBtnCell.m; sourceTree = "<group>"; };
 		BCE53669241883EE0084274B /* DMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSettingVC.swift; sourceTree = "<group>"; };
@@ -1024,6 +1026,7 @@
 				BCE959EA23D586F200B2C5FE /* LaunchScreen.storyboard */,
 				BC910D8524136ABB00280936 /* RJInputData.h */,
 				BC94324124162F9500FB9B6F /* DMTheme.swift */,
+				BCB5E8C32418C88200B2B8E4 /* Person.swift */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
@@ -1225,6 +1228,7 @@
 				BC910D7F24136A7D00280936 /* RJDemoScrollItemView.m in Sources */,
 				BC910D6C24136A7D00280936 /* PersonInfoDemoVC.m in Sources */,
 				BC910CBE241365AE00280936 /* CKJToolPickerView.m in Sources */,
+				BCB5E8C42418C88200B2B8E4 /* Person.swift in Sources */,
 				BC910CE3241365AE00280936 /* CKJChooseHelper.m in Sources */,
 				BC910D952414B28300280936 /* DMLoginVC.swift in Sources */,
 				BC910D922413709D00280936 /* DMNavigationController.swift in Sources */,
