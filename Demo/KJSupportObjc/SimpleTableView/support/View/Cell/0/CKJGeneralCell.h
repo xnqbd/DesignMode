@@ -147,13 +147,13 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 + (instancetype)generalWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJGeneralCellModelRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 /// title 和 箭头
-+ (instancetype)generalWithTitle:(NSString *)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
++ (instancetype)generalWithTitle:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 /// image title 箭头
 + (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 /// title 和 右标题
-+ (instancetype)generalWithTitle:(NSString *)title likePriceAttText:(NSAttributedString *)likePriceAttText didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 
 @end

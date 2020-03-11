@@ -58,10 +58,12 @@ typedef void(^CKJCommonCellModelRowBlock)(__kindof CKJCommonCellModel *m);
  */
 @property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;
 
-/**
- 是否显示分割线， 默认显示
- */
+
+/// 是否显示分割线， 默认显示(如果lineEdge有值，showLine属性不起作用)
 @property (assign, nonatomic) BOOL showLine;
+/// 分割线edge
+@property (strong, nonatomic, nullable) NSValue *lineEdge;
+
 
 /// 行高，依次看cell.cellHeight，section.rowHeight，style.rowHeight的值，如果都为nil，最后自适应高度，也可以设置UITableViewAutomaticDimension
 @property (copy, nonatomic, nullable) NSNumber *cellHeight;

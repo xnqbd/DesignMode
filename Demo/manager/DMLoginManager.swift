@@ -39,4 +39,11 @@ class DMLoginManager: CKJBaseModel {
     func loginFail() {
         loginState = .offline
     }
+    
+    
+    /// 取消登录
+    func cancelLogin() {
+        loginState = .offline
+        UIWindow.kjwd_appdelegate().rootViewController = DMLoginVC()
+    }
 }

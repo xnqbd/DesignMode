@@ -314,7 +314,7 @@ NSString *_Nonnull const KJPrefix_cCornerRadius = @"KJPrefix_cCornerRadius";
 
 @implementation CKJMyVCItem
 
-+ (instancetype)itemWithImage:(id)image title:(id)title click:(CKJMyVCItemClick)click {
++ (instancetype)itemWithImage:(nullable id)image title:(id)title click:(CKJMyVCItemClick)click {
     CKJMyVCItem *item = [[self alloc] init];
     item.image = image;
     item.title = title;

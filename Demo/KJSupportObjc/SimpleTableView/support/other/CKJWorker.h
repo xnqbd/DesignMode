@@ -186,7 +186,7 @@ typedef void(^CKJMyVCItemClick)(id param);
 @property (copy, nonatomic) CKJMyVCItemClick click;
 
 
-+ (instancetype)itemWithImage:(id)image title:(id)title click:(CKJMyVCItemClick)click;
++ (instancetype)itemWithImage:(nullable id)image title:(id)title click:(CKJMyVCItemClick)click;
 
 @end
 

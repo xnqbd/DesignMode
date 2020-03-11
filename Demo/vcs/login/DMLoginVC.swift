@@ -33,11 +33,14 @@ class DMLoginVC: CKJBaseTableVC {
                 make.size.equalTo()(CGSize(width: 120, height: 120))
             }
             let phone = self.simpleTableView._newtitle(nil, tfText: "17724801294", placeholder: "手机号码", emptyRequirdText: "手机号", cellId: kOInput_Phone, detail: { (m) in
+                m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
                 m.addRequired(CKJInputExpressionRequiredModel.system_phoneRegError())
             })
             
-            let pwd = self.simpleTableView._newtitle(nil, tfText: "111", placeholder: "密码", emptyRequirdText: "密码", cellId: kOInput_Pwd, detail: nil)
-            
+            let pwd = self.simpleTableView._newtitle(nil, tfText: "111", placeholder: "密码", emptyRequirdText: "密码", cellId: kOInput_Pwd) {(m) in
+                m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
+            }
+           
             let empty1 = CKJEmptyCellModel(height: 10, showLine: false)
             
             let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("登录", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in

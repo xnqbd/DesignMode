@@ -161,13 +161,17 @@
     
     [cell setupData:model section:section row:row selectIndexPath:indexPath tableView:tableView];
     
-    
-    if (model.showLine) {
-//        cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
-        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    // 分割线
+    if (WDKJ_IsNullObj(model.lineEdge, [NSValue class])) {
+        if (model.showLine) {
+            cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
+        } else {
+            cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width + 1000, 0, 0);
+        }
     } else {
-        cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width + 1000, 0, 0);
+        cell.separatorInset = model.lineEdge.UIEdgeInsetsValue;
     }
+    
     
     return cell;
 }

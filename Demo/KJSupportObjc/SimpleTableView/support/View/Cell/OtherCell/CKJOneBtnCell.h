@@ -16,7 +16,22 @@ typedef void(^CKJOneBtnCellClickBtn)(__kindof CKJOneBtnCellModel *cm, UIButton *
 
 typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
 
+/*
+ 
 
+ let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("登录", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in
+     m.updateBtnData { (d) in
+         d.cornerRadius = 4;
+         d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
+     }
+ }, clickBtn: {[weak self](m, btn) in
+     self?.commitAction()
+ }) { (make, superView) in
+     make.edges.equalTo()
+ }
+ 
+ 
+ */
 @interface CKJOneBtnCellModel : CKJCommonCellModel
 
 @property (copy, nonatomic) void(^updateConstraint)(MASConstraintMaker *make, UIView *superview);
