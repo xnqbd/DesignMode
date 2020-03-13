@@ -15,7 +15,8 @@ class DMNavigationController: UINavigationController {
 //        [UIImage imageNamed:@"headerImg"]
 //        navigationBar.backgroundImage(for: UIBarMetrics.default)
         
-        navigationBar.setBackgroundImage(UIImage.kjwd_imageNamed("headerImg"), for: UIBarMetrics.default)
+        navigationBar.barTintColor = UIColor(patternImage: UIImage.kjwd_imageNamed("headerImg"))
+//        navigationBar.setBackgroundImage(UIImage.kjwd_imageNamed("headerImg"), for: UIBarMetrics.default)
 //        navigationBar.titleTextAttributes = dic;
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }

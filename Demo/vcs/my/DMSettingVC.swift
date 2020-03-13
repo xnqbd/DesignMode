@@ -47,7 +47,6 @@ class DMSettingVC: CKJBaseTableVC {
         let section2 = CKJCommonSectionModel.section { (_sec) in
             let model1 = CKJOneBtnCellModel.oneBtn(withCellHeight: nil, attTitle: WDAttTitle("退出登录"), detailSettingBlock: nil, clickBtn: {[weak self](m, btn) in
 //                self?.commitAction()
-                
                 UIAlertController.kjwd_alertTitle("提示提示", message: "确定退出登录吗？", alertAction_Left: "取消", leftBlock: nil, right: "确定", rightBlock: {
                     DMLoginManager.manager.cancelLogin()
                 }, presentingVC: self)
@@ -56,6 +55,8 @@ class DMSettingVC: CKJBaseTableVC {
                 make.edges.equalTo()
             }
             _sec.modelArray = [model1]
+            
+            
         }
         simpleTableView.dataArr = [section1, section2]
     }

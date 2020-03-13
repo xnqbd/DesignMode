@@ -29,11 +29,12 @@ class DMHomeVC: CKJBaseTableVC {
         
         let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
             
-            
-//            let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), cellModel_id: nil, detailSettingBlock: { (m) in
-//                m.localImage = UIImage.kjwd_imageNamed("backgroundimage")
-//            }, didSelectRowBlock: nil)
-//            _sec.add(logo)
+           let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), detailSettingBlock: { (m) in
+                m.localImage = UIImage.kjwd_imageNamed("backgroundimage")
+            }) { (make, superView) in
+                make.edges.equalTo()
+            }
+            _sec.add(logo)
             
             let items = CKJBtnItemData.returnItems(withDicsnew: DMRes.item2()) { (cd: CKJBtnItemData, index: UInt) in
                 cd.layout_Button = { (btn: UIButton) in

@@ -51,6 +51,22 @@ typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 @end
 
 
+@interface CKJScrollViewCellIndicatorConfig : NSObject
+
+@property (assign, nonatomic) CGFloat longViewWidth;
+@property (assign, nonatomic) CGFloat longViewHeight;
+@property (assign, nonatomic) CGFloat shortViewWidth;
+
+@property (strong, nonatomic) UIColor *longViewColor;
+@property (strong, nonatomic) UIColor *shortViewColor;
+
+/// 默认0
+@property (assign, nonatomic) CGFloat bottom;
+
+@property (assign, nonatomic) CGFloat radius;
+
+@end
+
 
 
 @interface CKJScrollViewCellConfig : CKJCommonCellConfig
@@ -63,12 +79,19 @@ typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 @property (assign, nonatomic) CGFloat itemWidth;
 
 @property (assign, nonatomic) UIEdgeInsets items_Edge_ScrollView;
+
+
+/// bottom其实是距离指示器的距离， left、top、right是距离SuperView的距离
 @property (assign, nonatomic) UIEdgeInsets scrollView_Edge_SuperView;
 
-
-
 /** 指示器，默认隐藏 */
-@property (assign, nonatomic) BOOL showIndicator;
+@property (assign, nonatomic) BOOL showScrollViewIndicator;
+
+@property (strong, nonatomic) CKJScrollViewCellIndicatorConfig *indicatorConfig;
+
+
+- (void)updateIndicatorConfig:(void(^)(CKJScrollViewCellIndicatorConfig *i))indicatorConfig;
+
 
 @end
 

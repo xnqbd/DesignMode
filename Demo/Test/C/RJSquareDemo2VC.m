@@ -53,7 +53,12 @@
         m.itemWidth = 120;
         m.itemSpace = 20;
         m.items_Edge_ScrollView = UIEdgeInsetsMake(10, 20, 10, 20);
+//        m.scrollView_Edge_SuperView = UIEdgeInsetsMake(10, 20, 10, 20);
         m.delegate = self;
+        [m updateIndicatorConfig:^(CKJScrollViewCellIndicatorConfig * _Nonnull i) {
+            i.bottom = 10;
+            i.longViewHeight = 5;
+        }];
     }];
     return @{
         NSStringFromClass([CKJBtnsCell1Model class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJBtnsCell1 class]), KJPrefix_isRegisterNibKEY : @NO, KJPrefix_configDicKEY_ConfigModel : config1},
@@ -78,7 +83,6 @@
                 @{KJPrefix_cNormalAttTitle : WDAtt13(@"处方查询"), KJPrefix_cNormalImage : b_image(@"newhome_处方")},
                 @{KJPrefix_cNormalAttTitle : WDAtt13(@"药品查询"), KJPrefix_cNormalImage : b_image(@"newhome_药品")}
             ],
-            
             @[
                 @{KJPrefix_cNormalAttTitle : WDAtt13(@"精准预约"), KJPrefix_cNormalImage : b_image(@"newhome_预约")},
                 @{KJPrefix_cNormalAttTitle : WDAtt13(@"日间手术"), KJPrefix_cNormalImage : b_image(@"newhome_手术")},
@@ -153,7 +157,7 @@
     
     CKJCommonSectionModel *section3 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJScrollViewCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
-        CKJScrollViewCellModel *model1 = [CKJScrollViewCellModel scrollViewWithCellHeight:@85 cellModel_id:nil detailSettingBlock:^(__kindof CKJScrollViewCellModel * _Nonnull m) {
+        CKJScrollViewCellModel *model1 = [CKJScrollViewCellModel scrollViewWithCellHeight:@100 cellModel_id:nil detailSettingBlock:^(__kindof CKJScrollViewCellModel * _Nonnull m) {
             NSArray *data = @[
                 @{@"title" : @"入院取号", @"imageName" : @"newhome_入院取号"},
                 @{@"title" : @"出院取号", @"imageName" : @"newhome_出院取号"},
@@ -188,6 +192,8 @@
 - (void)updateItemView:(__kindof RJDemoScrollItemView *)itemView itemData:(__kindof RJDemoScrollItemData *)itemData index:(NSInteger)index {
     itemView.imageV.image = [UIImage kjwd_imageNamed:itemData.imageName];
     itemView.lab.text = WDKJ_SpaceString(itemData.title);
+//    WDCKJBGColor_Arc4Color(itemView.imageV);
+//    itemView.imageV.backgroundColor
 }
 
 
