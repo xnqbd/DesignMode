@@ -21,9 +21,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.simpleTableView.backgroundColor = [UIColor whiteColor];
+    
     [self.simpleTableView updateStyle:^(CKJSimpleTableViewStyle * _Nonnull s) {
         s.onlyViewEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
     }];
+
+    CKJCellModel *(^block)(NSString *rightTitle, CKJBlockType1 agree) = ^CKJCellModel *(NSString *rightTitle, CKJBlockType1 agree) {
+
+        CKJCellModel *one = [CKJCellModel ckjCellWithCellHeight:@30 cellModel_id:nil detailSettingBlock:^(__kindof CKJCellModel * _Nonnull m) {
+            m.selectionStyle = UITableViewCellSelectionStyleNone;
+            m.showLine = NO;
+            m.image2Model = [CKJImage2Model image2ModelWithNormalImage:[UIImage kjwd_imageNamed:@"login_radio"] size:[NSValue valueWithCGSize:CGSizeMake(50, 25)] left:10 detail:^(CKJImage2Model * _Nonnull i) {
+                i.selectedImage = [UIImage kjwd_imageNamed:@"login_radio_sle"];
+                i.normalAttributedTitle = WDCKJAttributed2(@" 同意", [UIColor orangeColor], @13);
+            } click:^(CKJBaseBtnModel * _Nonnull btnModel, UIButton * _Nonnull btn) {
+                btnModel.selected = !btnModel.selected;
+                btn.selected = btnModel.selected;
+            }];
+            m.subTitle4Model = [CKJSubTitle4Model subTitle4ModelWithAttributedText:WDCKJAttributed2(rightTitle, [UIColor kjwd_title], @13) top:0 left:0 bottom:0 right:0 click:^(__kindof CKJCell * _Nonnull c) {
+                NSLog(@"点击 《用户协议》");
+            }];
+        } didSelectRowBlock:nil];
+        return one;
+    };
+    
+    
     
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJImageViewCellModel *model1 = [CKJImageViewCellModel imageViewWithCellHeight:@230 detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
@@ -79,9 +102,16 @@
         }];
         
         
-        CKJOneBtnCellModel *login = [CKJOneBtnCellModel oneBtnWithCellHeight:@50 title:@"登录" detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
+        CKJCellModel *agree1 = block(@"《用户协议》", ^{
+            
+        });
+        CKJCellModel *agree2 = block(@"《用户隐私协议》", ^{
+            
+        });
+
+        
+        CKJOneBtnCellModel *login = [CKJOneBtnCellModel oneBtnWithCellHeight:@44 title:@"登录" detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
             [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
-                btnData.cornerRadius = 3;
                 btnData.normalBgImage = [UIImage kjwd_imageWithColor:[UIColor redColor] size:CGSizeMake(300, 40)];
             }];
         } clickBtn:^(__kindof CKJOneBtnCellModel * _Nonnull cm, UIButton * _Nonnull btn) {
@@ -90,7 +120,13 @@
             make.edges.equalTo(superview);
         }];
         
-        _sec.modelArray = @[model1, phone, pwd, login];
+        
+        CKJEmptyCellModel *emp = [CKJEmptyCellModel emptyCellModelWithHeight:15 showLine:NO];
+        [emp updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
+            bg.bgColor = [UIColor whiteColor];
+        }];
+        
+        _sec.modelArray = @[model1, phone, pwd, agree1, agree2, emp, login];
     }];
     
     self.simpleTableView.dataArr = @[section1];

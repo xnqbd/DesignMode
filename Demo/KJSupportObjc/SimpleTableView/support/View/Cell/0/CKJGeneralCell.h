@@ -12,19 +12,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class CKJGeneralCellModel, CKJGeneralCell;
+@class CKJGeneralCellModel, CKJGeneralCell, CKJCell;
 typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 
 
 
-@interface CKJImage2Model : CKJBaseModel
+@interface CKJImage2Model : CKJBaseBtnModel
 
-@property (strong, nonatomic, nullable) UIImage *normalImage;
-@property (assign, nonatomic) CGFloat cornerRadius;
-@property (strong, nonatomic) NSValue *sizeValue;
 @property (assign, nonatomic) CGFloat leftMargin;
+
 + (instancetype)image2ModelWithNormalImage:(nullable UIImage *)normalImage size:(nullable NSValue *)size left:(CGFloat)leftMargin;
 + (instancetype)image2ModelWithImageString:(NSString *)imageString size:(CGSize)size left:(CGFloat)leftMargin;
+
+/// 开启点击事件 详细设置
++ (instancetype)image2ModelWithNormalImage:(nullable UIImage *)normalImage size:(nullable NSValue *)size left:(CGFloat)leftMargin detail:(void(^_Nullable)(CKJImage2Model *i))detail click:(nullable CKJBaseBtnClick)click;
+
 
 
 @end
@@ -54,6 +56,8 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 
 @end
 
+typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
+
 @interface CKJSubTitle4Model : CKJBaseModel
 
 @property (copy, nonatomic, nullable) NSAttributedString *attributedText;
@@ -62,7 +66,14 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 @property (assign, nonatomic) CGFloat bottomMargin;
 @property (assign, nonatomic) CGFloat rightMargin;
 
+@property (assign, nonatomic) BOOL enable;
+
+/// 只有在enable为YES才出发
+@property (copy, nonatomic) CKJSubTitle4Click click;
+
 + (instancetype)subTitle4ModelWithAttributedText:(nullable NSAttributedString *)text top:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right;
+
++ (instancetype)subTitle4ModelWithAttributedText:(nullable NSAttributedString *)text top:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right click:(CKJSubTitle4Click _Nullable)click;
 
 
 /** 改变文字 */

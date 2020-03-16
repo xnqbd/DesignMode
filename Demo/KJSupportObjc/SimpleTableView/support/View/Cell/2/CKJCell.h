@@ -21,10 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CKJDidClickBtnHandle)(__kindof CKJCell *cell, CKJCellBtnModel *btnModel);
 
-//typedef void(^CKJDidClickbtn7Handle)(CKJCell *cell, CKJBtn7Model *btn7Model);
-//typedef void(^CKJDidClickbtn9Handle)(CKJCell *cell, CKJBtn9Model *btn7Model);
-
-
 typedef void(^CKJSwitch6Block)(BOOL switchOn, CKJCellModel *cellModel,  UISwitch *senderSwitch);
 
 typedef void(^CKJCellModelRowBlock)(__kindof CKJCellModel *m);
@@ -126,9 +122,9 @@ typedef void(^CKJCellModelRowBlock)(__kindof CKJCellModel *m);
 
 /*
 
- CKJCellModel *model1 = [CKJCellModel modelWithCellHeight:@84 cellModel_id:nil detailSettingBlock:^(CKJCellModel *m) {
+ CKJCellModel *model1 = [CKJCellModel ckjCellWithCellHeight:@40 cellModel_id:nil detailSettingBlock:^(__kindof CKJCellModel * _Nonnull m) {
      m.image2Model = [CKJImage2Model image2ModelWithImageString:@"touxiang.jpg" size:CGSizeMake(25, 25) left:0];
-     m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"title3") left:0];
+     m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(@"title3") left:0];
      m.subTitle4Model = [CKJSubTitle4Model subTitle4ModelWithAttributedText:WDCKJAttributed2(@"sub4", [UIColor kjwd_subTitle], @14) top:0 left:0 bottom:0 right:0];
      m.btn5Model = [CKJCellBtnModel btnModelWithSize:CGSizeMake(40, 40) normalImage:nil rightMargin:0 detailSettingBlock:^(CKJCellBtnModel * _Nonnull sender) {
          [sender changeNormalText:@"btn5"];
@@ -147,7 +143,6 @@ typedef void(^CKJCellModelRowBlock)(__kindof CKJCellModel *m);
      m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"price8", [UIColor kjwd_subTitle], @14) left:0 right:0];
      m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
  } didSelectRowBlock:nil];
- 
  
  */
 

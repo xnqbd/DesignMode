@@ -25,6 +25,8 @@
 + (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
     CKJOneBtnCellModel *m = [self oneBtnWithCellHeight:cellHeight detailSettingBlock:detailSettingBlock clickBtn:clickBtn updateConstraint:updateConstraint];
     [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
+        btnData.cornerRadius = 5;
+        
         if ([title isKindOfClass:[NSString class]]) {
             btnData.normalAttTitle = WDCKJAttributed2(title, [UIColor whiteColor], @15);
         } else if ([title isKindOfClass:[NSAttributedString class]]) {

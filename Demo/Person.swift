@@ -15,5 +15,4 @@ class Person: NSObject {
     deinit {
         print("Person销毁")
     }
-
 }

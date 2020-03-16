@@ -286,6 +286,14 @@
     [self.subviews_SuperView addSubview:subTitle4];
     
     self.subTitle4 = subTitle4;
+    
+    __weak typeof(self) weakSelf = self;
+    [subTitle4 kjwd_addGestureRecognizer:[[UITapGestureRecognizer alloc] init] handleBlock:^(UIGestureRecognizer * _Nonnull _gestureRecognizer, UIView * _Nonnull _currentView) {
+        CKJCellModel *m = (CKJCellModel *)weakSelf.cellModel;
+        if (m.subTitle4Model.click) {
+            m.subTitle4Model.click(weakSelf);
+        }
+    }];
 }
 
 - (void)create_btn5 {
@@ -373,6 +381,7 @@
     
     NSAttributedString *subTitle4 = subTitle4Model.attributedText;
     _subTitle4.attributedText = WDKJ_ConfirmAttString(subTitle4);
+    _subTitle4.userInteractionEnabled = subTitle4Model.enable;
     
     CGFloat topMargin = subTitle4Model.topMargin;
     CGFloat bottomMargin = subTitle4Model.bottomMargin;
@@ -399,17 +408,17 @@
     // [subTitle4  btn5  View5  tfWrapperView  kjSwitch6  price61  btn7]
     [CKJWorker reloadWithBtnModel:btn5Model btn:btn5 emptyHandle:^(CKJCellBtnModel * _Nonnull btnM) {
         
-        [_btn5 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+        [self.btn5 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
             make.centerY.equalTo(superview);
             make.width.height.equalTo(@0);
-            make.right.equalTo(_view5.mas_left);
+            make.right.equalTo(self.view5.mas_left);
         }];
     } noEmptyHandle:^(CKJCellBtnModel * _Nonnull btnM) {
         
-        [_btn5 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+        [self.btn5 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
             make.centerY.equalTo(superview).offset(btnM.centerYOffset);
             make.size.mas_equalTo(btnM.size);
-            make.right.equalTo(_view5.mas_left).offset(-(btnM.rightMargin));
+            make.right.equalTo(self.view5.mas_left).offset(-(btnM.rightMargin));
         }];
     }];
 }
@@ -443,8 +452,6 @@
     title.textAlignment = model.view5Model.topLabelTextAlignment;
     subTitle.textAlignment = model.view5Model.bottomLabelTextAlignment;
 }
-
-
 
 - (void)update_tfWrapperView_Constraint {
     
@@ -515,14 +522,14 @@
     
     [CKJWorker reloadWithBtnModel:btn7Model btn:btn7 emptyHandle:^(CKJCellBtnModel * _Nonnull btnM) {
         
-        [_btn7 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+        [self.btn7 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
             make.centerY.right.equalTo(superview);
             make.width.equalTo(@0);
             make.right.equalTo(superview);
         }];
     } noEmptyHandle:^(CKJCellBtnModel * _Nonnull btnM) {
         
-        [_btn7 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+        [self.btn7 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
             make.centerY.equalTo(superview).offset(btnM.centerYOffset);
             make.size.mas_equalTo(btnM.size);
             make.right.equalTo(superview).offset(-(btnM.rightMargin));

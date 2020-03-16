@@ -14,7 +14,7 @@ typedef void(^CKJTriggerCodeBlock)(NSUInteger seconds);
 
 NS_ASSUME_NONNULL_BEGIN
 
-UIKIT_EXTERN NSString *_Nonnull const kO_PleaseInputPhone;
+
 
 @class CKJInputCellModel, CKJTFModel, CKJInputExpressionRequiredModel;
 

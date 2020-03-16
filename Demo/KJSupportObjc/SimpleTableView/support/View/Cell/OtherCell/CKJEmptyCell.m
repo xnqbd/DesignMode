@@ -8,6 +8,7 @@
 
 #import "CKJEmptyCell.h"
 
+#import "CKJSimpleTableView.h"
 
 @implementation CKJEmptyCellModel
 
@@ -41,18 +42,15 @@
 @implementation CKJEmptyCell
 
 - (void)setupData:(__kindof CKJCommonCellModel *)model section:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath tableView:(CKJSimpleTableView *)tableView {
-#ifdef DEBUG
-//    self.emptyLabel.text = [NSString stringWithFormat:@"CKJEmptyCell   分区%ld 行%ld", section, row];
-//    self.emptyLabel.backgroundColor = [UIColor orangeColor];
-#endif
+//    WDCKJ_ifDEBUG(^{
+//        self.emptyLabel.text = [NSString stringWithFormat:@"CKJEmptyCell   分区%ld 行%ld", section, row];
+//        self.emptyLabel.backgroundColor = [UIColor orangeColor];
+//    }, nil);
 }
 
 - (void)setupSubViews {
-    //    self.textLabel.font = [UIFont systemFontOfSize:10];
-    self.subviews_SuperView.backgroundColor = [UIColor colorWithRed:247 / 255.0 green:247 / 255.0 blue:247 / 255.0 alpha:1];
-    
-    
-    UILabel *title = [UILabel new];
+    UILabel *title = [[UILabel alloc] init];
+    title.backgroundColor = [UIColor clearColor];
     //    WDCKJBGColor_Arc4Color(title);
     title.textColor = [UIColor kjwd_title];
     title.font = [UIFont systemFontOfSize:9];

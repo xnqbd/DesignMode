@@ -13,8 +13,6 @@
 #import <Masonry/Masonry.h>
 #import "MBProgressHUD+KJSupport.h"
 
-NSString *_Nonnull const kO_PleaseInputPhone = @"请输入手机号";
-
 
 // Empty required
 CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {

@@ -130,7 +130,7 @@ UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cCornerRadius;
 
 
 
-
+typedef void(^CKJBaseBtnClick)(CKJBaseBtnModel *btnModel, UIButton *btn);
 
 
 
@@ -164,12 +164,21 @@ UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cCornerRadius;
 @property (assign, nonatomic) CGFloat borderWidth;
 
 
+@property (weak, nonatomic) UIButton *currentBtn;
+
 
 /**
  对UIButton的图片和文字 进行排布回调
+ sender.layoutButton = ^(UIButton *btn) {
+ [btn kjwd_layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:0];
+ };
+ 
  */
 @property (copy, nonatomic, nullable) void (^layoutButton)(UIButton *_Nonnull btn);
 
+
+/// 点击事件
+@property (copy, nonatomic, nullable) CKJBaseBtnClick click;
 
 @end
 

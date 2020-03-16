@@ -23,6 +23,18 @@ typedef void(^CKJImageViewCellRowBlock)(__kindof CKJImageViewCellModel *_Nonnull
      make.center.equalTo()(superView)
      make.size.equalTo()(CGSize(width: 120, height: 120))
  }
+ 
+ CKJImageViewCellModel *model1 = [CKJImageViewCellModel imageViewWithCellHeight:@230 detailSettingBlock:^(__kindof CKJImageViewCellModel * _Nonnull m) {
+     [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
+         bg.edge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsZero];
+     }];
+     m.showLine = NO;
+     m.localImage = [UIImage kjwd_imageNamed:@"背景"];
+ } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+     make.edges.equalTo(superview);
+ }];
+ 
+ 
  */
 
 @interface CKJImageViewCellModel : CKJCommonCellModel

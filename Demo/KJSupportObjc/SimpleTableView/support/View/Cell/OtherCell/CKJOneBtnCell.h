@@ -31,6 +31,19 @@ typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
  }
  
  
+
+ CKJOneBtnCellModel *login = [CKJOneBtnCellModel oneBtnWithCellHeight:@50 title:@"登录" detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
+     [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
+         btnData.cornerRadius = 3;
+         btnData.normalBgImage = [UIImage kjwd_imageWithColor:[UIColor redColor] size:CGSizeMake(300, 40)];
+     }];
+ } clickBtn:^(__kindof CKJOneBtnCellModel * _Nonnull cm, UIButton * _Nonnull btn) {
+     NSLog(@"%@   ", @"点击登录");
+ } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+     make.edges.equalTo(superview);
+ }];
+ 
+ 
  */
 @interface CKJOneBtnCellModel : CKJCommonCellModel
 

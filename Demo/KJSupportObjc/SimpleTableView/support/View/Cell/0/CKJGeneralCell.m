@@ -8,26 +8,39 @@
 
 #import "CKJGeneralCell.h"
 
-
-
-
 @implementation CKJImage2Model
 
-+ (nonnull instancetype)image2ModelWithNormalImage:(nullable UIImage *)normalImage size:(nullable NSValue *)size left:(CGFloat)leftMargin {
++ (instancetype)image2ModelWithNormalImage:(nullable UIImage *)normalImage size:(nullable NSValue *)size left:(CGFloat)leftMargin {
     CKJImage2Model *model = [[self alloc] init];
     model.normalImage = normalImage;
-    model.sizeValue = size ? size : [NSValue valueWithCGSize:normalImage.size];
+    model.size = size ? size.CGSizeValue : normalImage.size;
     model.leftMargin = leftMargin;
     return model;
 }
 + (instancetype)image2ModelWithImageString:(NSString *)imageString size:(CGSize)size left:(CGFloat)leftMargin {
     CKJImage2Model *model = [[self alloc] init];
     model.normalImage = [UIImage kjwd_imageNamed:imageString];
-    model.sizeValue = [NSValue valueWithCGSize:size];
+    model.size = size;
     model.leftMargin = leftMargin;
     return model;
 }
 
++ (instancetype)image2ModelWithNormalImage:(nullable UIImage *)normalImage size:(nullable NSValue *)size left:(CGFloat)leftMargin detail:(void(^_Nullable)(CKJImage2Model *i))detail click:(nullable CKJBaseBtnClick)click {
+    CKJImage2Model *m = [self image2ModelWithNormalImage:normalImage size:size left:leftMargin];
+    m.userInteractionEnabled = YES;
+    m.click = click;
+    if (detail) {
+        detail(m);
+    }
+    return m;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.userInteractionEnabled = NO;
+    }
+    return self;
+}
 
 
 @end
@@ -67,6 +80,13 @@
     model.bottomMargin = bottom;
     return model;
 }
++ (instancetype)subTitle4ModelWithAttributedText:(nullable NSAttributedString *)text top:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right click:(CKJSubTitle4Click _Nullable)click {
+    CKJSubTitle4Model *m = [self subTitle4ModelWithAttributedText:text top:left left:right bottom:bottom right:right];
+    m.click = click;
+    m.enable = YES;
+    return m;
+}
+
 
 
 - (void)changeText:(nullable NSString *)text {
@@ -164,7 +184,7 @@
             m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
         }
         m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:margin];
-       } didSelectRowBlock:didSelectRowBlock];
+    } didSelectRowBlock:didSelectRowBlock];
 }
 
 
@@ -256,6 +276,15 @@
     self.title3 = title3;
     
     self.leftWrapView = leftWrapView;
+    
+    
+    __weak typeof(self) weakSelf = self;
+    [imageBtn2 kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
+        CKJImage2Model *image2Model = weakSelf.cellModel.image2Model;
+        if (image2Model.click) {
+            image2Model.click(image2Model, _sender);
+        }
+    }];
 }
 
 - (void)createCenter {
@@ -314,44 +343,60 @@
     
     CKJImage2Model *image2Model = model.image2Model;
 
-    UIImage *normalImage = image2Model.normalImage;
     CGFloat leftMargin = image2Model.leftMargin;
     
     CGFloat title3LeftMargin = self.cellModel.title3Model.leftMargin;
     
-    if (normalImage == nil) {
-        [_imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
-            make.left.equalTo(superview).offset(leftMargin);
-            make.centerY.equalTo(superview);
-            make.width.height.equalTo(@0);
-            make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
-        }];
-    } else {
-        [self.imageBtn2 setImage:normalImage forState:UIControlStateNormal];
-        CGSize size = image2Model.sizeValue.CGSizeValue;
-        [_imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
-            make.centerY.equalTo(superview);
-            make.left.equalTo(superview).offset(leftMargin);
-            make.width.equalTo(@(size.width));
-            make.height.equalTo(@(size.height));
-            make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
-        }];
-    }
+    [CKJWorker reloadWithBtnModel:image2Model btn:self.imageBtn2 emptyHandle:^(CKJImage2Model * _Nonnull btnM) {
+           [self.imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+               make.left.equalTo(superview).offset(leftMargin);
+               make.centerY.equalTo(superview);
+               make.width.height.equalTo(@0);
+               make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
+           }];
+       } noEmptyHandle:^(CKJImage2Model * _Nonnull btnM) {
+           CGSize size = image2Model.size;
+           [self.imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+               make.centerY.equalTo(superview);
+               make.left.equalTo(superview).offset(leftMargin);
+               make.width.equalTo(@(size.width));
+               make.height.equalTo(@(size.height));
+               make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
+           }];
+       }];
     
-    
-    CGFloat radius = image2Model.cornerRadius;
-    
-    if (radius <= 0) {
-        if (_imageBtn2.layer.cornerRadius != 0) {
-            _imageBtn2.layer.cornerRadius = 0;
-            _imageBtn2.clipsToBounds = NO;
-        }
-    } else {
-        if (_imageBtn2.layer.cornerRadius != radius) {
-            _imageBtn2.layer.cornerRadius = radius;
-            _imageBtn2.clipsToBounds = YES;
-        }
-    }
+//    if (normalImage == nil) {
+//        [_imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+//            make.left.equalTo(superview).offset(leftMargin);
+//            make.centerY.equalTo(superview);
+//            make.width.height.equalTo(@0);
+//            make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
+//        }];
+//    } else {
+//        [self.imageBtn2 setImage:normalImage forState:UIControlStateNormal];
+//        CGSize size = image2Model.size;
+//        [_imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+//            make.centerY.equalTo(superview);
+//            make.left.equalTo(superview).offset(leftMargin);
+//            make.width.equalTo(@(size.width));
+//            make.height.equalTo(@(size.height));
+//            make.right.equalTo(self.title3.mas_left).offset(-(title3LeftMargin));
+//        }];
+//    }
+//
+//    CGFloat radius = image2Model.cornerRadius;
+//
+//    if (radius <= 0) {
+//        if (_imageBtn2.layer.cornerRadius != 0) {
+//            _imageBtn2.layer.cornerRadius = 0;
+//            _imageBtn2.clipsToBounds = NO;
+//        }
+//    } else {
+//        if (_imageBtn2.layer.cornerRadius != radius) {
+//            _imageBtn2.layer.cornerRadius = radius;
+//            _imageBtn2.clipsToBounds = YES;
+//        }
+//    }
 }
 
 - (void)origin_title3_Constraint {
