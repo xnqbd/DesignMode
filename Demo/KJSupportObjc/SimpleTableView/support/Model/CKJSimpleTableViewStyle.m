@@ -75,4 +75,13 @@
     return self;
 }
 
+- (void)setOnlyViewEdge:(NSValue *)onlyViewEdge {
+    if (_onlyViewEdge == onlyViewEdge) return;
+    if (!WDKJ_IsNullObj(onlyViewEdge, [NSValue class])) {
+        _onlyViewEdge = onlyViewEdge;
+        self.needUpdateOnlyViewConstraints = YES;
+    }
+}
+
+
 @end

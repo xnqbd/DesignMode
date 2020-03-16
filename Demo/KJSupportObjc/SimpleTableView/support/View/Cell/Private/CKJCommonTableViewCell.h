@@ -40,8 +40,6 @@ typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *_m);
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier configDic:(NSDictionary *)configDic;
 
 
-
-
 /**
  和Cell一样大的唯一视图
  */
@@ -53,6 +51,7 @@ typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *_m);
  */
 @property (strong, nonatomic, nonnull) UIView *subviews_SuperView;
 
+@property (strong, nonatomic) UIImageView *bgImageView;
 
 @property (strong, nonatomic, nullable) CAShapeLayer *cornerLayer;
 
@@ -87,7 +86,10 @@ typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *_m);
 
 
 /// 这是私有方法，不要私自调用
-- (void)_privateMethodWithSimpleTableView:(CKJSimpleTableView *)tabV sectionModel:(CKJCommonSectionModel *)sectionModel section:(NSInteger)section row:(NSInteger)row;
+- (void)_privateMethodWithSimpleTableView:(nonnull CKJSimpleTableView *)tabV sectionModel:(CKJCommonSectionModel *)sectionModel section:(NSInteger)section row:(NSInteger)row cell:(CKJCommonTableViewCell *)cell model:(CKJCommonCellModel *)model;
+
+
+
 
 
 @end

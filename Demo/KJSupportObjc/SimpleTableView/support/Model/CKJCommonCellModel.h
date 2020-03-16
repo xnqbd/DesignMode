@@ -19,8 +19,19 @@ NS_ASSUME_NONNULL_BEGIN
 //    return self;
 //}
 
+@interface CKJCommonCellBGImageViewConfig : CKJBaseModel
 
-//UIKIT_EXTERN CGFloat const CKJAutoCell;
+@property (strong, nonatomic, nullable) UIImage *image;
+@property (strong, nonatomic) UIColor *bgColor;
+
+@property (assign, nonatomic) UIViewContentMode contentMode;
+@property (strong, nonatomic, nullable) NSValue *edge;
+
+@end
+
+
+
+
 
 
 
@@ -49,9 +60,10 @@ typedef void(^CKJCommonCellModelRowBlock)(__kindof CKJCommonCellModel *m);
 @interface CKJCommonCellModel<NetWorkDataType> : CKJSimpleBaseModel
 
 /**
- 默认白色
+ 背景设置
  */
-@property (strong, nonatomic, ) UIColor *cell_bgColor;
+@property (strong, nonatomic) CKJCommonCellBGImageViewConfig *bgConfig;
+- (void)updateBGConfig:(void(^_Nullable)(CKJCommonCellBGImageViewConfig *bg))BGConfig;
 
 /**
  选中Cell的效果

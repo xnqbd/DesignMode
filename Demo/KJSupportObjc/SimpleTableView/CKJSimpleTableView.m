@@ -68,7 +68,7 @@
 - (__kindof CKJCommonSectionModel *_Nullable)lastSection {
     return self.dataArr.lastObject;
 }
-- (void)updateStyle:(void(^)(CKJSimpleTableViewStyle *style))update {
+- (void)updateStyle:(void(^)(CKJSimpleTableViewStyle *s))update {
     if (update) {
         update(self.simpleStyle);
     }
@@ -154,10 +154,8 @@
     }
     
     [model _privateMethodWithCell:cell];
-    [cell _privateMethodWithSimpleTableView:tableView sectionModel:sectionModel section:section row:row];
-    if (cell.onlyView.backgroundColor != model.cell_bgColor) {
-        cell.onlyView.backgroundColor = model.cell_bgColor;
-    }
+    [cell _privateMethodWithSimpleTableView:tableView sectionModel:sectionModel section:section row:row cell:cell model:model];
+    
     
     [cell setupData:model section:section row:row selectIndexPath:indexPath tableView:tableView];
     
@@ -1288,24 +1286,14 @@
             [tfModel _setPlaceholder:placeholder];
             tfModel.text = text;
             tfModel.tfTextAttributed = style.tfTextAttributed;
-            
-            if ([cellId isEqualToString:kOInput_Phone]) {
-                 tfModel.keyboardType = UIKeyboardTypePhonePad;
-                tfModel.maxInputLength = @11;
-            } else if ([cellId isEqualToString:kOInput_VerityCode]) {
-                 tfModel.keyboardType = UIKeyboardTypeNumberPad;
-            } else if ([cellId isEqualToString:kOInput_Pwd] || [cellId isEqualToString:kOInput_ConfirmPwd]) {
-                tfModel.secureTextEntry = YES;
-            }
         }];
         
         if (!WDKJ_IsEmpty_Str(emptyRequirdText)) {
             [m addRequired:WDKJ_ER(emptyRequirdText)];
         }
-
         detail ? detail(m) : nil;
 
-    } didSelectRowBlock:nil];
+    }];
     return model;
 }
 

@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (strong, nonatomic) CKJSimpleTableViewStyle *simpleStyle;
-- (void)updateStyle:(void(^)(CKJSimpleTableViewStyle *style))update;
+- (void)updateStyle:(void(^)(CKJSimpleTableViewStyle *s))update;
 
 /**
  禁止估算高度(防止屏幕乱跳动)

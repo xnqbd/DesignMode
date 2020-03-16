@@ -67,21 +67,28 @@
 - (void)kjInit {
     
     
-    
     UIView *onlyView = [[CKJCommonCellOnlyView alloc] init];
     [self.contentView insertSubview:onlyView atIndex:0];
     [onlyView kjwd_mas_makeConstraints:^(MASConstraintMaker *make, UIView *superview) {
 //        make.center.equalTo(superview);
 //        make.width.equalTo(superview).priority(900);
 //        make.height.equalTo(superview).priority(900);
-        make.left.equalTo(superview);
-        make.right.equalTo(superview).priority(900);
-        make.top.equalTo(superview);
-        make.bottom.equalTo(superview).priority(900);
+#warning 如果这里变了，在setupData也要更新约束
+        make.left.equalTo(superview).offset(0);
+        make.right.equalTo(superview).offset(0).priority(900);
+        make.top.equalTo(superview).offset(0);
+        make.bottom.equalTo(superview).offset(0).priority(900);
     }];
     self.onlyView = onlyView;
     self.subviews_SuperView = onlyView;
     
+    UIImageView *imageV = [[UIImageView alloc] init];
+    [self.contentView insertSubview:imageV atIndex:0];
+    self.bgImageView = imageV;
+    
+    [imageV kjwd_mas_makeConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+        make.left.right.top.bottom.equalTo(onlyView);
+    }];
     
     
 
@@ -166,7 +173,7 @@
 - (void)setupData:(CKJCommonCellModel *)model section:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath tableView:(CKJSimpleTableView *)tableView {
 }
 
-- (void)_privateMethodWithSimpleTableView:(nonnull CKJSimpleTableView *)tabV sectionModel:(CKJCommonSectionModel *)sectionModel section:(NSInteger)section row:(NSInteger)row {
+- (void)_privateMethodWithSimpleTableView:(nonnull CKJSimpleTableView *)tabV sectionModel:(CKJCommonSectionModel *)sectionModel section:(NSInteger)section row:(NSInteger)row cell:(CKJCommonTableViewCell *)cell model:(CKJCommonCellModel *)model {
     if (self.simpleTableView != tabV) {
         self.simpleTableView = tabV;
     }
@@ -180,7 +187,35 @@
         self.row = row;
     }
     
+    // 背景
+    if (cell.bgImageView.backgroundColor != model.bgConfig.bgColor) {
+        cell.bgImageView.backgroundColor = model.bgConfig.bgColor;
+    }
+    if (cell.bgImageView.image != model.bgConfig.image) {
+        cell.bgImageView.image = model.bgConfig.image;
+    }
+    if (cell.bgImageView.contentMode != model.bgConfig.contentMode) {
+        cell.bgImageView.contentMode = model.bgConfig.contentMode;
+    }
     
+    CKJSimpleTableViewStyle *simpleStyle = self.simpleTableView.simpleStyle;
+    
+    if (simpleStyle.needUpdateOnlyViewConstraints) {
+        UIEdgeInsets edge = UIEdgeInsetsZero;
+        
+        if (model.bgConfig.edge) {
+            edge = model.bgConfig.edge.UIEdgeInsetsValue;
+        } else if (simpleStyle.onlyViewEdge) {
+            edge = simpleStyle.onlyViewEdge.UIEdgeInsetsValue;
+        }
+
+        [cell.onlyView kjwd_mas_updateConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+            make.left.equalTo(superview).offset(edge.left);
+            make.right.equalTo(superview).offset(-(edge.right)).priority(900);
+            make.top.equalTo(superview).offset(edge.top);
+            make.bottom.equalTo(superview).offset(-(edge.bottom)).priority(900);
+        }];
+    }
 }
 
 

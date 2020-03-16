@@ -62,7 +62,7 @@ class DMRegisterVC: CKJBaseTableVC {
                 m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
             }
             let empty1 = CKJEmptyCellModel(height: 20, showLine: false)
-            let regiter = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("注册", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in
+            let regiter = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"注册", detailSettingBlock: { (m) in
                 m.updateBtnData { (d) in
                     d.cornerRadius = 4;
                     d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))

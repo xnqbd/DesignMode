@@ -14,7 +14,7 @@
 
 
 + (instancetype)twoBtnWithCellHeight:(nullable NSNumber *)cellHeight leftTitle:(nullable NSString *)leftTitle leftHandle:(nullable CKJBtnClick)leftHandle rightTitle:(nullable NSString *)rightTitle rightHandle:(nullable CKJBtnClick)rightHandle fontSize:(nullable NSNumber *)fontSize textColor:(nullable UIColor *)textColor detailSettingBlock:(nullable CKJTwoBtnCellBlock)detailSettingBlock {
-
+    
     if (WDKJ_IsNull_Num(fontSize)) {
         fontSize = @14;
     }
@@ -23,7 +23,7 @@
     }
     
     
-CKJBtnItemData *left = [[CKJBtnItemData alloc] init];
+    CKJBtnItemData *left = [[CKJBtnItemData alloc] init];
     left.normalAttTitle = WDCKJAttributed2(leftTitle, textColor, fontSize);
     left.click_Button = leftHandle;
     
@@ -86,6 +86,9 @@ CKJBtnItemData *left = [[CKJBtnItemData alloc] init];
     [self.rightBtn kjwd_mas_updateConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
         make.right.equalTo(superview).offset(-(model.rightMargin));
     }];
+    
+    
+    
 }
 
 

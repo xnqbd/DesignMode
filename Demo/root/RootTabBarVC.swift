@@ -17,8 +17,10 @@ class RootTabBarVC: UITabBarController {
         
         let home = DMNavigationController.init(rootViewController: DMHomeVC())
         let my = DMNavigationController.init(rootViewController: MyVC())
+        let my2 = DMNavigationController.init(rootViewController: DMLogin2VC())
         
         addChildViewController(vc: home, title: "首页", iconNormal: "首页_icon", iconSelected: "首页蓝_icon")
+        addChildViewController(vc: my2, title: "我的", iconNormal: "我的_icon", iconSelected: "我的蓝_icon")
         addChildViewController(vc: my, title: "我的", iconNormal: "我的_icon", iconSelected: "我的蓝_icon")
     }
     

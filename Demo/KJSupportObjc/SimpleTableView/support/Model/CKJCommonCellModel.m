@@ -9,7 +9,35 @@
 #import "CKJCommonCellModel.h"
 #import "NSObject+WDYHFCategory.h"
 
-//CGFloat const CKJAutoCell = UITableViewAutomaticDimension;
+@implementation CKJCommonCellBGImageViewConfig
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.bgColor = [UIColor whiteColor];
+        self.contentMode = UIViewContentModeScaleToFill;
+    }
+    return self;
+}
+
+- (void)setImage:(UIImage *)image {
+    if (_image == image) return;
+    if (!WDKJ_IsNullObj(image, [UIImage class])) {
+        _image = image;
+    }
+}
+- (void)setBgColor:(UIColor *)bgColor {
+    if (_bgColor == bgColor) return;
+    if (!WDKJ_IsNullObj(bgColor, [UIColor class])) {
+        _bgColor = bgColor;
+    }
+}
+
+
+@end
+
+
+
+
 
 @interface CKJCommonCellModel ()
 
@@ -26,13 +54,19 @@
         self.displayInTableView = YES;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.showLine = YES;
-        self.cell_bgColor = [UIColor whiteColor];
+        self.bgConfig = [[CKJCommonCellBGImageViewConfig alloc] init];
     }
     return self;
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     
+}
+
+- (void)updateBGConfig:(void(^_Nullable)(CKJCommonCellBGImageViewConfig *bg))BGConfig {
+    if (BGConfig) {
+        BGConfig(self.bgConfig);
+    }
 }
 
 

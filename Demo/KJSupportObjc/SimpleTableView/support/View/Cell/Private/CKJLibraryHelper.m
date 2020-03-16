@@ -28,6 +28,7 @@
     tf.borderStyle = tfModel.borderStyle;
     tf.keyboardType = tfModel.keyboardType;
     tf.secureTextEntry = tfModel.secureTextEntry;
+    tf.clearButtonMode = tfModel.clearButtonMode;
     
     tf.textColor = tfModel.tfTextAttributed[NSForegroundColorAttributeName];
     tf.font = tfModel.tfTextAttributed[NSFontAttributeName];

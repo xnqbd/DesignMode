@@ -15,7 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CKJSectionBlock)(__kindof CKJCommonSectionModel * _sec);
 
+/*
 
+ CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+     
+     _sec.modelArray = @[model1, model2, model3, model4];
+ }];
+ 
+ self.simpleTableView.dataArr = @[section1];
+ 
+ 
+ */
 @interface CKJCommonSectionModel : CKJSimpleBaseModel
 
 

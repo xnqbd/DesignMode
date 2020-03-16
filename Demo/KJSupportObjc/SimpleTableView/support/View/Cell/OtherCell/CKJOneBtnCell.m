@@ -22,10 +22,14 @@
     m.clickBtn = clickBtn;
     return m;
 }
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight attTitle:(NSAttributedString *)attTitle detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
     CKJOneBtnCellModel *m = [self oneBtnWithCellHeight:cellHeight detailSettingBlock:detailSettingBlock clickBtn:clickBtn updateConstraint:updateConstraint];
     [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
-        btnData.normalAttTitle = attTitle;
+        if ([title isKindOfClass:[NSString class]]) {
+            btnData.normalAttTitle = WDCKJAttributed2(title, [UIColor whiteColor], @15);
+        } else if ([title isKindOfClass:[NSAttributedString class]]) {
+            btnData.normalAttTitle = title;
+        }
     }];
     return m;
 }

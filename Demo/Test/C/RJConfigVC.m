@@ -110,7 +110,7 @@
         _sec.footerHeight = @15;
         
         SelectDateCellModel *model1 = [SelectDateCellModel commonWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(SelectDateCellModel *m) {
-            m.cell_bgColor = [UIColor groupTableViewBackgroundColor];
+            m.bgConfig.bgColor = [UIColor groupTableViewBackgroundColor];
         } didSelectRowBlock:nil];
         
         _sec.modelArray = @[model1];

@@ -110,6 +110,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
         self.rightMargin = 0;
         self.tfTextAttributed = @{NSFontAttributeName : [UIFont systemFontOfSize:15],
                                   NSForegroundColorAttributeName : [UIColor kjwd_title]};
+        self.secureTextEntry = NO;
     }
     return self;
 }
@@ -185,8 +186,29 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     }
 }
 
-+ (nonnull instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJInputCellModelRowBlock)didSelectRowBlock {
-    return [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:detailSettingBlock didSelectRowBlock:didSelectRowBlock];
++ (nonnull instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock {
+    CKJInputCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:^(__kindof CKJCommonCellModel * _Nonnull m) {
+        [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
+            if ([cellModel_id isEqualToString:kOInput_Phone]) {
+                 tfModel.keyboardType = UIKeyboardTypePhonePad;
+                tfModel.maxInputLength = @11;
+                [tfModel _setPlaceholder:@"请输入手机号"];
+            } else if ([cellModel_id isEqualToString:kOInput_VerityCode]) {
+                 tfModel.keyboardType = UIKeyboardTypeNumberPad;
+                [tfModel _setPlaceholder:@"请输入验证码"];
+            } else if ([cellModel_id isEqualToString:kOInput_Pwd]) {
+                tfModel.secureTextEntry = YES;
+                [tfModel _setPlaceholder:@"请输入密码"];
+            } else if ([cellModel_id isEqualToString:kOInput_ConfirmPwd]) {
+                tfModel.secureTextEntry = YES;
+                [tfModel _setPlaceholder:@"请再次输入密码"];
+            }
+        }];
+        if (detailSettingBlock) {
+            detailSettingBlock(m);
+        }
+    } didSelectRowBlock:nil];
+    return m;
 }
 
 - (instancetype)init {

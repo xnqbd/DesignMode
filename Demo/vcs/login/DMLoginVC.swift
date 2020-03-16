@@ -30,6 +30,7 @@ class DMLoginVC: CKJBaseTableVC {
         simpleTableView.updateStyle { (s) in
             s.rowHeight = NSNumber(40)
             s.haveTitleStyle.left = 0
+            s.onlyViewEdge = NSValue(uiEdgeInsets: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
         }
         
         let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
@@ -51,7 +52,7 @@ class DMLoginVC: CKJBaseTableVC {
             
             let empty1 = CKJEmptyCellModel(height: 10, showLine: false)
             
-            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("登录", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in
+            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"登录", detailSettingBlock: { (m) in
                 m.updateBtnData { (d) in
                     d.cornerRadius = 4;
                     d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
@@ -77,12 +78,12 @@ class DMLoginVC: CKJBaseTableVC {
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
-    
-    override func layoutTableViewFrame(_ tableV: CKJSimpleTableView) {
-        tableV.kjwd_mas_makeConstraints { (make, superView) in
-            make.edges.equalTo()(UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20))
-        }
-    }
+//
+//    override func layoutTableViewFrame(_ tableV: CKJSimpleTableView) {
+//        tableV.kjwd_mas_makeConstraints { (make, superView) in
+//            make.edges.equalTo()(UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20))
+//        }
+//    }
     
     func commitAction() {
         if (simpleTableView.verityInputFail()) {

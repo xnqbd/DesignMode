@@ -60,9 +60,15 @@ typedef BOOL(^CKJExpressionRequiredBlock)(NSString *_Nullable text, __kindof CKJ
 
 @property (assign, nonatomic) BOOL userInteractionEnabled;
 
-@property(nonatomic)        UITextBorderStyle       borderStyle;
-@property(nonatomic)        UIKeyboardType keyboardType;
-@property(nonatomic)        BOOL secureTextEntry;
+@property (assign, nonatomic) UITextBorderStyle borderStyle;
+@property (assign, nonatomic) UIKeyboardType keyboardType;
+
+
+/// 如果是NO 就是明文
+@property (assign, nonatomic) BOOL secureTextEntry;
+
+// 默认不设置， 如果设置 一般设置UITextFieldViewModeWhileEditing
+@property (assign, nonatomic) UITextFieldViewMode clearButtonMode;
 
 /// 输入框文本的属性 只支持（文字大小和颜色）
 @property (strong, nonatomic) NSDictionary *tfTextAttributed;
@@ -157,7 +163,7 @@ typedef BOOL(^CKJExpressionRequiredBlock)(NSString *_Nullable text, __kindof CKJ
 
 - (NSString *_Nullable)tfText;
 
-+ (instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJInputCellModelRowBlock)didSelectRowBlock;
++ (instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock;
 
 
 @end

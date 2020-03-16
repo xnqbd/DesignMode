@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class CKJLeftView, CKJTopBottomView, CKJExtraView, CKJRightView;
 @class CKJCellModel, CKJCell, MASConstraintMaker, CKJCellBtnModel;
 
-typedef void(^CKJDidClickBtnHandle)(CKJCell *cell, CKJCellBtnModel *btn5Model);
+typedef void(^CKJDidClickBtnHandle)(__kindof CKJCell *cell, CKJCellBtnModel *btnModel);
 
 //typedef void(^CKJDidClickbtn7Handle)(CKJCell *cell, CKJBtn7Model *btn7Model);
 //typedef void(^CKJDidClickbtn9Handle)(CKJCell *cell, CKJBtn9Model *btn7Model);

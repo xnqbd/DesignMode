@@ -47,6 +47,8 @@
     
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"注意：如果是代码布局的Cell，请把子控件加入到CKJCommonTableViewCell.subviews_SuperView上", [UIColor redColor], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
+        CKJCommonCellModel *model00 = block(@"测试控制器", @"DemoTestVC");
+        
         CKJCommonCellModel *model0 = block(@"CKJGeneralCell示例", @"CKJGeneralCellVC");
         
         CKJCommonCellModel *model1 = block(@"CKJCell示例", @"CKJCellVC");
@@ -59,7 +61,7 @@
         CKJCommonCellModel *model7 = block(@"CKJTableViewCell示例", @"TableViewCellDemoVC");
         CKJCommonCellModel *model8 = block(@"CKJLeftRightCell示例", @"DemoLeftRightCellVC");
         
-        _sec.modelArray = @[model0, model1, model3, model5, model6, model7, model8];
+        _sec.modelArray = @[model00, model0, model1, model3, model5, model6, model7, model8];
     }];
     
     CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {

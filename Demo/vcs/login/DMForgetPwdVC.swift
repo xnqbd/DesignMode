@@ -59,7 +59,7 @@ class DMForgetPwdVC: CKJBaseTableVC {
             }
 
             
-            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), attTitle:WDCKJAttributed2("找回密码", UIColor.white, NSNumber(value: 14)), detailSettingBlock: { (m) in
+            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"找回密码", detailSettingBlock: { (m) in
                 m.updateBtnData { (d) in
                     d.cornerRadius = 4;
                     d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))

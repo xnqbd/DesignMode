@@ -65,6 +65,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CKJSimpleTableViewStyle : CKJBaseModel
 
+
+/// 是否需要更新OnlyView的约束（一般情况都是NO）
+@property (assign, nonatomic) BOOL needUpdateOnlyViewConstraints;
+@property (strong, nonatomic, nullable) NSValue *onlyViewEdge;
+
+
 /// CKJSimpleTableView 背景颜色
 @property (strong, nonatomic) UIColor *bgColor;
 

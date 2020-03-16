@@ -15,5 +15,6 @@
 #import "RJInputData.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "MBProgressHUD+KJSupport.h"
+#import "DMLogin2VC.h"
 
 #endif /* SOBridge_h */
