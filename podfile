@@ -17,5 +17,7 @@ target 'Demo' do
   pod 'SwifterSwift'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'JXCategoryView'
+  pod 'MJRefresh'
   
 end

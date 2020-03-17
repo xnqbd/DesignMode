@@ -146,6 +146,15 @@
 		BCB77737241F08AD008C0618 /* DMLogin2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB77736241F08AD008C0618 /* DMLogin2VC.m */; };
 		BCB7773E241F1E5F008C0618 /* DemoTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB7773C241F1E5F008C0618 /* DemoTestVC.m */; };
 		BCB7773F241F1E5F008C0618 /* DemoTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB7773D241F1E5F008C0618 /* DemoTestVC.xib */; };
+		BCC4429C24206AB400F20238 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4429B24206AB400F20238 /* HomeVC.m */; };
+		BCC4429F24206D1800F20238 /* VideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC4429E24206D1800F20238 /* VideoVC.m */; };
+		BCC442A224206D4200F20238 /* GraphicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442A124206D4200F20238 /* GraphicVC.m */; };
+		BCC442A524206D6000F20238 /* AdvisoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442A424206D6000F20238 /* AdvisoryVC.m */; };
+		BCC442AC242074BB00F20238 /* AdvisoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442AA242074BB00F20238 /* AdvisoryCell.m */; };
+		BCC442AD242074BB00F20238 /* AdvisoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC442AB242074BB00F20238 /* AdvisoryCell.xib */; };
+		BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442AF2420900400F20238 /* NetWorkResponse.m */; };
+		BCC442B4242094D000F20238 /* GraphicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442B2242094D000F20238 /* GraphicCell.m */; };
+		BCC442B5242094D000F20238 /* GraphicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC442B3242094D000F20238 /* GraphicCell.xib */; };
 		BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE53667241777C60084274B /* CKJTwoBtnCell.m */; };
 		BCE5366A241883EE0084274B /* DMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE53669241883EE0084274B /* DMSettingVC.swift */; };
 		BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */; };
@@ -397,6 +406,22 @@
 		BCB7773B241F1E5F008C0618 /* DemoTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTestVC.h; sourceTree = "<group>"; };
 		BCB7773C241F1E5F008C0618 /* DemoTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTestVC.m; sourceTree = "<group>"; };
 		BCB7773D241F1E5F008C0618 /* DemoTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTestVC.xib; sourceTree = "<group>"; };
+		BCC4429A24206AB400F20238 /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		BCC4429B24206AB400F20238 /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		BCC4429D24206D1700F20238 /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
+		BCC4429E24206D1800F20238 /* VideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoVC.m; sourceTree = "<group>"; };
+		BCC442A024206D4200F20238 /* GraphicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicVC.h; sourceTree = "<group>"; };
+		BCC442A124206D4200F20238 /* GraphicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicVC.m; sourceTree = "<group>"; };
+		BCC442A324206D6000F20238 /* AdvisoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvisoryVC.h; sourceTree = "<group>"; };
+		BCC442A424206D6000F20238 /* AdvisoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvisoryVC.m; sourceTree = "<group>"; };
+		BCC442A9242074BB00F20238 /* AdvisoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvisoryCell.h; sourceTree = "<group>"; };
+		BCC442AA242074BB00F20238 /* AdvisoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvisoryCell.m; sourceTree = "<group>"; };
+		BCC442AB242074BB00F20238 /* AdvisoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvisoryCell.xib; sourceTree = "<group>"; };
+		BCC442AE2420900400F20238 /* NetWorkResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkResponse.h; sourceTree = "<group>"; };
+		BCC442AF2420900400F20238 /* NetWorkResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkResponse.m; sourceTree = "<group>"; };
+		BCC442B1242094D000F20238 /* GraphicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicCell.h; sourceTree = "<group>"; };
+		BCC442B2242094D000F20238 /* GraphicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicCell.m; sourceTree = "<group>"; };
+		BCC442B3242094D000F20238 /* GraphicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphicCell.xib; sourceTree = "<group>"; };
 		BCE53666241777C60084274B /* CKJTwoBtnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJTwoBtnCell.h; sourceTree = "<group>"; };
 		BCE53667241777C60084274B /* CKJTwoBtnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJTwoBtnCell.m; sourceTree = "<group>"; };
 		BCE53669241883EE0084274B /* DMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSettingVC.swift; sourceTree = "<group>"; };
@@ -1040,6 +1065,22 @@
 				BCB5E8C32418C88200B2B8E4 /* Person.swift */,
 				BCB77735241F08AD008C0618 /* DMLogin2VC.h */,
 				BCB77736241F08AD008C0618 /* DMLogin2VC.m */,
+				BCC4429A24206AB400F20238 /* HomeVC.h */,
+				BCC4429B24206AB400F20238 /* HomeVC.m */,
+				BCC4429D24206D1700F20238 /* VideoVC.h */,
+				BCC4429E24206D1800F20238 /* VideoVC.m */,
+				BCC442A024206D4200F20238 /* GraphicVC.h */,
+				BCC442A124206D4200F20238 /* GraphicVC.m */,
+				BCC442B1242094D000F20238 /* GraphicCell.h */,
+				BCC442B2242094D000F20238 /* GraphicCell.m */,
+				BCC442B3242094D000F20238 /* GraphicCell.xib */,
+				BCC442A324206D6000F20238 /* AdvisoryVC.h */,
+				BCC442A424206D6000F20238 /* AdvisoryVC.m */,
+				BCC442A9242074BB00F20238 /* AdvisoryCell.h */,
+				BCC442AA242074BB00F20238 /* AdvisoryCell.m */,
+				BCC442AB242074BB00F20238 /* AdvisoryCell.xib */,
+				BCC442AE2420900400F20238 /* NetWorkResponse.h */,
+				BCC442AF2420900400F20238 /* NetWorkResponse.m */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
@@ -1123,6 +1164,7 @@
 				BC910D8124136A7D00280936 /* RJCustomInputCell.xib in Resources */,
 				BC910D4C24136A7D00280936 /* zhuyuan出院结算@2x.png in Resources */,
 				BC910D5824136A7D00280936 /* zhuyuan历史住院记录@2x.png in Resources */,
+				BCC442AD242074BB00F20238 /* AdvisoryCell.xib in Resources */,
 				BC910D5624136A7D00280936 /* demo余额.png in Resources */,
 				BC910D5A24136A7D00280936 /* wdyhfsdkhospital.png in Resources */,
 				BC910D5E24136A7D00280936 /* wdyhfsdk编辑.png in Resources */,
@@ -1147,6 +1189,7 @@
 				BCE959E723D586F100B2C5FE /* Main.storyboard in Resources */,
 				BC910D5D24136A7D00280936 /* zhuyuan日清单查询@3x.png in Resources */,
 				BC910D5424136A7D00280936 /* wdyhfsdk勾选空.png in Resources */,
+				BCC442B5242094D000F20238 /* GraphicCell.xib in Resources */,
 				BC910D6724136A7D00280936 /* wdyhfsdkechat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1204,6 +1247,7 @@
 				BC910CD5241365AE00280936 /* CKJLikeQRCell.m in Sources */,
 				BC910CD4241365AE00280936 /* CKJEmptyCell.m in Sources */,
 				BC910CC2241365AE00280936 /* CKJFiveLabelView.m in Sources */,
+				BCC4429F24206D1800F20238 /* VideoVC.m in Sources */,
 				BC910CD9241365AE00280936 /* CKJTableViewCell2.m in Sources */,
 				BC910CB3241365AE00280936 /* NSObject+WDYHFCategory.m in Sources */,
 				BC910CBA241365AE00280936 /* LightStorageManager.m in Sources */,
@@ -1216,11 +1260,14 @@
 				BC910CC4241365AE00280936 /* CKJPayBottomView.m in Sources */,
 				BC910D8624136ABB00280936 /* RJInputData.m in Sources */,
 				BC910D6824136A7D00280936 /* WDYHFHospitalItem.m in Sources */,
+				BCC442A524206D6000F20238 /* AdvisoryVC.m in Sources */,
 				BC910CC1241365AE00280936 /* CKJXBtnsView.m in Sources */,
 				BC910CE0241365AE00280936 /* CKJLibraryHelper.m in Sources */,
 				BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */,
 				BC910CBF241365AE00280936 /* CKJDatePickerView.m in Sources */,
 				BC910CC7241365AE00280936 /* CKJButton.m in Sources */,
+				BCC442A224206D4200F20238 /* GraphicVC.m in Sources */,
+				BCC4429C24206AB400F20238 /* HomeVC.m in Sources */,
 				BC910D9024136EBC00280936 /* CKJLeftRightCenterEqCell.m in Sources */,
 				BC910CE7241365AF00280936 /* CKJImageLeftCell.m in Sources */,
 				BC910CC5241365AE00280936 /* CKJTableEmptyView.m in Sources */,
@@ -1249,6 +1296,7 @@
 				BC910CEE241365AF00280936 /* CKJCommonTableViewHeaderFooterView.m in Sources */,
 				BC910CED241365AF00280936 /* CKJTableViewHeaderFooterEmptyView.m in Sources */,
 				BC910D8324136A7D00280936 /* SelectDateCell.m in Sources */,
+				BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */,
 				BCE959E423D586F100B2C5FE /* ViewController.swift in Sources */,
 				BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */,
 				BCE959E023D586F100B2C5FE /* AppDelegate.swift in Sources */,
@@ -1297,6 +1345,7 @@
 				BC910CCD241365AE00280936 /* CKJSimpleBaseModel.m in Sources */,
 				BC910CBB241365AE00280936 /* CKJBaseModel.m in Sources */,
 				BC910D7924136A7D00280936 /* CKJImageLeftRightCellVC.m in Sources */,
+				BCC442B4242094D000F20238 /* GraphicCell.m in Sources */,
 				BC910D6924136A7D00280936 /* RJBillDetailModel.m in Sources */,
 				BC910D7024136A7D00280936 /* TableViewCellDemoVC.m in Sources */,
 				BC910CE4241365AE00280936 /* CKJCommonTableViewCell.m in Sources */,
@@ -1309,6 +1358,7 @@
 				BC910D7824136A7D00280936 /* RJConfigVC.m in Sources */,
 				BC910CCF241365AE00280936 /* CKJSimpleTableViewStyle.m in Sources */,
 				BC910CC9241365AE00280936 /* CKJBaseTableVC.m in Sources */,
+				BCC442AC242074BB00F20238 /* AdvisoryCell.m in Sources */,
 				BC910D7424136A7D00280936 /* DemoLeftRightCellVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

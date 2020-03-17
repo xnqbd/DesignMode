@@ -17,7 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
  一定要匹配匹配正确
  键值对
  OC版本
- return @{NSStringFromClass([CKJCommonCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJCommonTableViewCell class]), KJPrefix_isRegisterNibKEY : @YES}};
+
+ - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
+     return @{
+         NSStringFromClass([CKJCommonCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJCommonTableViewCell class]), KJPrefix_isRegisterNibKEY : @YES}
+     };
+ }     
+ 
+
  Swift版本
  return [NSStringFromClass(HZYHFWDYHFPayNotesCell2CellModel.self) : [KJPrefix_cellKEY : NSStringFromClass(HZYHFWDYHFPayNotesCell2Cell.self), KJPrefix_isRegisterNibKEY : false]]
 

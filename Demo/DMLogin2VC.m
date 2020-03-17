@@ -7,6 +7,7 @@
 //
 
 #import "DMLogin2VC.h"
+#import "HomeVC.h"
 
 @interface DMLogin2VC ()
 
@@ -101,6 +102,7 @@
 //            [m addRequired:[CKJInputExpressionRequiredModel system_phoneRegError]];
         }];
         
+//        int aa = 0x11;  // -1
         
         CKJCellModel *agree1 = block(@"《用户协议》", ^{
             
@@ -109,13 +111,17 @@
             
         });
 
-        
+        __weak typeof(self) weakSelf = self;
         CKJOneBtnCellModel *login = [CKJOneBtnCellModel oneBtnWithCellHeight:@44 title:@"登录" detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
             [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
                 btnData.normalBgImage = [UIImage kjwd_imageWithColor:[UIColor redColor] size:CGSizeMake(300, 40)];
             }];
         } clickBtn:^(__kindof CKJOneBtnCellModel * _Nonnull cm, UIButton * _Nonnull btn) {
             NSLog(@"%@   ", @"点击登录");
+            
+            HomeVC *vc = [[HomeVC alloc] init];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+            
         } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
             make.edges.equalTo(superview);
         }];
