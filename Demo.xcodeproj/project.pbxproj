@@ -155,6 +155,7 @@
 		BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442AF2420900400F20238 /* NetWorkResponse.m */; };
 		BCC442B4242094D000F20238 /* GraphicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442B2242094D000F20238 /* GraphicCell.m */; };
 		BCC442B5242094D000F20238 /* GraphicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC442B3242094D000F20238 /* GraphicCell.xib */; };
+		BCC442BD2421BCFE00F20238 /* DMDDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */; };
 		BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE53667241777C60084274B /* CKJTwoBtnCell.m */; };
 		BCE5366A241883EE0084274B /* DMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE53669241883EE0084274B /* DMSettingVC.swift */; };
 		BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */; };
@@ -422,6 +423,7 @@
 		BCC442B1242094D000F20238 /* GraphicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicCell.h; sourceTree = "<group>"; };
 		BCC442B2242094D000F20238 /* GraphicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicCell.m; sourceTree = "<group>"; };
 		BCC442B3242094D000F20238 /* GraphicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphicCell.xib; sourceTree = "<group>"; };
+		BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMDDViewController.swift; sourceTree = "<group>"; };
 		BCE53666241777C60084274B /* CKJTwoBtnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJTwoBtnCell.h; sourceTree = "<group>"; };
 		BCE53667241777C60084274B /* CKJTwoBtnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJTwoBtnCell.m; sourceTree = "<group>"; };
 		BCE53669241883EE0084274B /* DMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSettingVC.swift; sourceTree = "<group>"; };
@@ -1012,6 +1014,7 @@
 			isa = PBXGroup;
 			children = (
 				BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */,
+				BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */,
 				BC9E1ABD23D6BC3800169DB3 /* DMOCVC.h */,
 				BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */,
 			);
@@ -1252,6 +1255,7 @@
 				BC910CB3241365AE00280936 /* NSObject+WDYHFCategory.m in Sources */,
 				BC910CBA241365AE00280936 /* LightStorageManager.m in Sources */,
 				BC9E1ABF23D6BC3800169DB3 /* DMOCVC.m in Sources */,
+				BCC442BD2421BCFE00F20238 /* DMDDViewController.swift in Sources */,
 				BC910CEF241365AF00280936 /* CKJTitleStyleHeaderFooterView.m in Sources */,
 				BC910CD8241365AE00280936 /* CKJTableViewCell1.m in Sources */,
 				BC910CC3241365AE00280936 /* CKJToolbar.m in Sources */,

@@ -34,12 +34,12 @@
 
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
-    
-    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetailSettingBlock:^(CKJBaseBtnsCellConfig * _Nonnull m) {
+
+    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
         m.fixHeight = 30;
         m.delegate = [m squareWithNumberOfItemsInSingleLine:4];
     }];
-    CKJBaseBtnsCellConfig *config2 = [CKJBaseBtnsCellConfig configWithDetailSettingBlock:^(CKJBaseBtnsCellConfig * _Nonnull m) {
+    CKJBaseBtnsCellConfig *config2 = [CKJBaseBtnsCellConfig configWithDetail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
         m.delegate = [m squareWithNumberOfItemsInSingleLine:3];
         m.multiHeightByStackView = @0.6;
         m.separatorViewColor = [UIColor kjwd_r:230 g:230 b:230 alpha:1];
@@ -50,15 +50,14 @@
             stackView_superView.kBorderWidth = 1;
         };
     }];
-    CKJScrollViewCellConfig *scrollViewCellConfig = [CKJScrollViewCellConfig configWithDetailSettingBlock:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
-        m.itemWidth = 120;
-        m.itemSpace = 20;
+    CKJScrollViewCellConfig *scrollViewCellConfig = [CKJScrollViewCellConfig scrollViewCellConfigWithItemWidth:120 itemSpace:20 detail:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
         m.items_Edge_ScrollView = UIEdgeInsetsMake(10, 20, 10, 20);
 //        m.scrollView_Edge_SuperView = UIEdgeInsetsMake(10, 20, 10, 20);
         m.delegate = self;
         [m updateIndicatorConfig:^(CKJScrollViewCellIndicatorConfig * _Nonnull i) {
             i.bottom = 10;
-            i.longViewHeight = 5;
+            i.longViewHeight = 3;
+            i.radius = 1.5;
         }];
     }];
     return @{
@@ -67,6 +66,7 @@
         NSStringFromClass([CKJScrollViewCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJScrollViewCell class]), KJPrefix_isRegisterNibKEY : @NO, KJPrefix_configDicKEY_ConfigModel : scrollViewCellConfig}
     };
 }
+
 
 - (void)initSimpleTableViewData {
     
@@ -167,6 +167,5 @@
     }
     return arr;
 }
-
 
 @end

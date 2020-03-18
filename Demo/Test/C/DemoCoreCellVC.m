@@ -25,11 +25,11 @@
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     
-    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig configWithDetailSettingBlock:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
+    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig configWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 80);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetailSettingBlock:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.subTitle_numberOfLines = 3;
         }];
     }];

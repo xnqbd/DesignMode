@@ -30,7 +30,20 @@ typedef void(^CKJBtnsCellItemBlock)(CKJBtnItemData *itemData, __kindof CKJBaseBt
 
 @end
 
+/*
 
+ // MARK: - CKJSimpleTableView 数据源 和 代理
+ override func returnCell_Model_keyValues(_ s: CKJSimpleTableView) -> [String : [String : Any]] {
+
+     let btnsCellConfig1 = CKJBaseBtnsCellConfig.btnsConfig { (m) in
+         m.delegate = m.squareWithNumberOfItems(inSingleLine: 4)
+     }
+     return [
+         NSStringFromClass(CKJBtnsCell1Model.self) : [KJPrefix_cellKEY : NSStringFromClass(CKJBtnsCell1.self), KJPrefix_isRegisterNibKEY : false, KJPrefix_configDicKEY_ConfigModel : btnsCellConfig1]
+     ]
+ }
+ 
+ */
 @interface CKJBaseBtnsCellConfig : CKJStackCellConfig
 
 

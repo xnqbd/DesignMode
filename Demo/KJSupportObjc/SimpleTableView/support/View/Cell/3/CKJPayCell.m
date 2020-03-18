@@ -25,7 +25,7 @@
 }
 
 + (nonnull instancetype)appearanceForProject {
-    CKJPayCellConfig *radioConfig = [CKJPayCellConfig configWithDetailSettingBlock:^(CKJPayCellConfig * _Nonnull m) {
+    CKJPayCellConfig *radioConfig = [CKJPayCellConfig configWithDetail:^(CKJPayCellConfig * _Nonnull m) {
         
         m.fiveLabelViewEdge = UIEdgeInsetsMake(10, 12, 10, 0);
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {

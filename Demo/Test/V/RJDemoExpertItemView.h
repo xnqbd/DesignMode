@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  专家View
  */
-@interface RJDemoExpertItemView : CKJScrollViewCellItemView
+@interface RJDemoExpertItemView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *wrapper;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *jobLab;
 @property (weak, nonatomic) IBOutlet UIButton *departmentLab;
 
+@property (strong, nonatomic) RJDemoExpertItemData *itemData;
 
 @end
 

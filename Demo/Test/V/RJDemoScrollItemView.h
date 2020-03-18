@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CKJScrollViewCell.h"
+#import "CKJWorker.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-@interface RJDemoScrollItemView : CKJScrollViewCellItemView
+@interface RJDemoScrollItemView : UIView
 
 @property (weak, nonatomic) IBOutlet UIView *wrapperView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
 @property (weak, nonatomic) IBOutlet UILabel *lab;
 
+@property (strong, nonatomic) CKJMyVCItem *itemData;
 
 @end
 

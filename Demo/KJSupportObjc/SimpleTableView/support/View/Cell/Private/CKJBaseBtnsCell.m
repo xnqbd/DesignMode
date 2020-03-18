@@ -88,7 +88,7 @@
     return self.esaySystemModel;
 }
 + (instancetype)btnsConfigWithDetail:(void (^_Nullable)(CKJBaseBtnsCellConfig * m))detail {
-    return [self configWithDetailSettingBlock:detail];
+    return [self cellConfigWithDetail:detail];
 }
 
 @end

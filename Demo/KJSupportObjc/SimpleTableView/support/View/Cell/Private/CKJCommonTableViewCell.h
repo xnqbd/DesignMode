@@ -20,13 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CKJCommonCellModel, CKJCommonHeaderFooterModel, CKJCommonTableViewTool, CKJSimpleTableView, CKJCommonSectionModel, CKJEmptyCellModel, CKJCommonCellConfig, CKJCornerLayer;
 
-typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *_m);
+typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *m);
 
 
 
 @interface CKJCommonCellConfig : CKJCommonConfig
 
-+ (instancetype)configWithDetailSettingBlock:(nullable CKJCommonCellConfigBlock)detailSettingBlock;
+
+/// cellConfig
++ (instancetype)cellConfigWithDetail:(nullable CKJCommonCellConfigBlock)detailSettingBlock;
 
 @end
 

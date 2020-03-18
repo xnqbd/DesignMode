@@ -8,6 +8,8 @@
 
 #import "RJDemoScrollItemView.h"
 #import "UIView+CKJDesingable.h"
+#import "NSObject+WDYHFCategory.h"
+
 
 
 @implementation RJDemoScrollItemView
@@ -28,8 +30,10 @@
     }
 }
 
+
+
 - (void)setItemData:(CKJMyVCItem *)itemData {
-    [super setItemData:itemData];
+    _itemData = itemData;
     self.imageV.image = [UIImage kjwd_imageNamed:itemData.image];
     self.lab.text = WDKJ_SpaceString(itemData.title);
 }

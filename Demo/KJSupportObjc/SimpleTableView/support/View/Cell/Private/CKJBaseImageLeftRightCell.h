@@ -37,16 +37,16 @@ NS_ASSUME_NONNULL_BEGIN
  
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     
-    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig configWithDetailSettingBlock:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
+    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig cellConfigWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
         m.superView_margin_imageView = 10;
         m.imageSize = CGSizeMake(60, 60);
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetailSettingBlock:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig cellConfigWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
         }];
     }];
-    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig configWithDetailSettingBlock:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
+    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig cellConfigWithDetail:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
         m.superView_margin_imageView = 10;
         m.imageSize = CGSizeMake(60, 60);
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetailSettingBlock:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig cellConfigWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
         }];
     }];
     

@@ -28,12 +28,12 @@
 }
 
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
-    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetailSettingBlock:^(CKJBaseBtnsCellConfig * _Nonnull m) {
+    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetail:^(__kindof CKJBaseBtnsCellConfig * _Nonnull c) {
 //        m.stackView_Edge_SuperView = UIEdgeInsetsMake(5, 10, 5, 10);
-        m.delegate = [m squareWithNumberOfItemsInSingleLine:3];
-        m.h_itemSpacing = 20;
+        c.delegate = [c squareWithNumberOfItemsInSingleLine:3];
+        c.h_itemSpacing = 20;
     }];
-    CKJScrollViewCellConfig *scrollViewCellConfig = [CKJScrollViewCellConfig configWithDetailSettingBlock:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
+    CKJScrollViewCellConfig *scrollViewCellConfig = [CKJScrollViewCellConfig configWithDetail:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
         m.itemWidth = 100;
         m.itemSpace = 20;
         m.items_Edge_ScrollView = UIEdgeInsetsMake(15, 20, 15, 20);

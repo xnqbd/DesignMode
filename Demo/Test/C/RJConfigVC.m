@@ -38,7 +38,7 @@
 
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
-    SelectDateCellConfig *config1 = [SelectDateCellConfig configWithDetailSettingBlock:^(SelectDateCellConfig * _Nonnull m) {
+    SelectDateCellConfig *config1 = [SelectDateCellConfig configWithDetail:^(SelectDateCellConfig * _Nonnull m) {
         m.endDateUserInteractionEnabled = NO;
         m.beginDate = BeginDate_Today;
         m.endDate = EndDate_Today;

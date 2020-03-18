@@ -33,19 +33,19 @@ typedef NS_ENUM(NSUInteger, TestPayStyle) {
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     
-    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig configWithDetailSettingBlock:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
+    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig cellConfigWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 80);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetailSettingBlock:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.subTitle_numberOfLines = 3;
         }];
     }];
-    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig configWithDetailSettingBlock:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
+    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig cellConfigWithDetail:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 90);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetailSettingBlock:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.title_margin_subTitle = 5;
             m.subTitle_numberOfLines = 3;
         }];

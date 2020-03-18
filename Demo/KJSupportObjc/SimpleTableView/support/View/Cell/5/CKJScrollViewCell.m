@@ -9,8 +9,8 @@
 #import "CKJScrollViewCell.h"
 
 
-@implementation CKJScrollViewCellItemView
-@end
+//@implementation CKJScrollViewCellItemView
+//@end
 
 
 
@@ -31,6 +31,14 @@
 @end
 
 @implementation CKJScrollViewCellConfig
+
++ (instancetype)scrollViewCellConfigWithItemWidth:(CGFloat)itemWidth itemSpace:(CGFloat)itemSpace detail:(void(^_Nullable)(__kindof CKJScrollViewCellConfig *m))detail {
+    CKJScrollViewCellConfig *c = [super cellConfigWithDetail:detail];
+    c.itemWidth = itemWidth;
+    c.itemSpace = itemSpace;
+    return c;
+}
+
 
 - (instancetype)init {
     if (self = [super init]) {

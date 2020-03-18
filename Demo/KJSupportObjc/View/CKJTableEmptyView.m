@@ -11,8 +11,8 @@
 
 @implementation CKJTableEmptyViewConfig
 
-+ (nonnull instancetype)configWithDetailSettingBlock:(nullable void(^)(__kindof CKJTableEmptyViewConfig *m))detailSettingBlock {
-    return [super configWithDetailSettingBlock:detailSettingBlock];
++ (nonnull instancetype)cellConfigWithDetail:(nullable void(^)(__kindof CKJTableEmptyViewConfig *m))detailSettingBlock {
+    return [super configWithDetail:detailSettingBlock];
 }
 
 

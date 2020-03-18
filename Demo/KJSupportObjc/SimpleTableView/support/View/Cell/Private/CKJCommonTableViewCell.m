@@ -25,8 +25,8 @@
 
 @implementation CKJCommonCellConfig
 
-+ (nonnull instancetype)configWithDetailSettingBlock:(nullable CKJCommonCellConfigBlock)detailSettingBlock {
-    return [super configWithDetailSettingBlock:detailSettingBlock];
++ (instancetype)cellConfigWithDetail:(nullable CKJCommonCellConfigBlock)detailSettingBlock {
+    return [super configWithDetail:detailSettingBlock];
 }
 
 @end

@@ -27,15 +27,13 @@
         itemData.tapBlock();
     }
 }
-- (void)setItemData:(id)itemData {
-    [super setItemData:itemData];
+- (void)setItemData:(RJDemoExpertItemData *)itemData {
+    _itemData = itemData;
     
-    RJDemoExpertItemData *data = itemData;
-    
-    self.avatarImageView.image = [UIImage kjwd_imageNamed:data.avatarImageName];
-    self.nameLab.text = WDKJ_SpaceString(data.name);
-    self.jobLab.text = WDKJ_SpaceString(data.job);
-    [self.departmentLab setTitle:WDKJ_SpaceString(data.department) forState:UIControlStateNormal];
+    self.avatarImageView.image = [UIImage kjwd_imageNamed:itemData.avatarImageName];
+    self.nameLab.text = WDKJ_SpaceString(itemData.name);
+    self.jobLab.text = WDKJ_SpaceString(itemData.job);
+    [self.departmentLab setTitle:WDKJ_SpaceString(itemData.department) forState:UIControlStateNormal];
 }
 
 
