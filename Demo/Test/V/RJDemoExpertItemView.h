@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface RJDemoExpertItemData : CKJScrollViewCellItemData
+@interface RJDemoExpertItemData : CKJBaseModel
 
 @property (copy, nonatomic) NSString *avatarImageName;
 @property (copy, nonatomic) NSString *name;

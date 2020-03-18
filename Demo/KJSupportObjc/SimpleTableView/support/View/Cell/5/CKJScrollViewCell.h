@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class CKJScrollViewCell, CKJScrollViewCellItemData, CKJScrollViewCellItemView, CKJScrollViewCellModel;
 
-//typedef void(^CKJScrollViewCellItemBlock)(__kindof CKJScrollViewCellItemData *_Nonnull itemData, NSUInteger index);
 typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 
 
@@ -22,31 +21,17 @@ typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 
 @required;
 
-/** 这个方法 确定ScrollViewCell上子视图的 个数  */
+/** 这个方法 创建CKJScrollViewCell上的子视图并设置数据，而且现在暂时只能是本地数据， 每个CKJSimpleTableView最好只有一个CKJScrollViewCell，假如CKJSimpleTableView里row = 0，是CKJScrollViewCell的5个itemView，如果想要row = 1里面是6个itemView，那么应该再定义一个CKJScrollViewCell的子类，要保证一个CKJSimpleTableView里面只有极少数的CKJScrollViewCell，如果CKJSimpleTableView里有多个CKJScrollViewCell，可能重用会出导致数据错乱问题 */
 - (NSArray <__kindof CKJScrollViewCellItemView *>*)createItemViewForCKJScrollViewCell:(__kindof CKJScrollViewCell *_Nonnull __weak)cell;
-/** 更新ItemView视图数据 */
-- (void)updateItemView:(__kindof UIView *_Nonnull)itemView itemData:(__kindof CKJScrollViewCellItemData *_Nonnull)itemData index:(NSInteger)index;
 
 @end
 
-
-/**
- 这个需要继承于此类 自定义属性，因为这个CKJScrollViewCell 里面的ItemView太多种多样，显示成什么样子的都有，所以ItemData没有办法统一，所以需要自定义
- */
-@interface CKJScrollViewCellItemData : CKJCommonItemData
-
-+ (NSArray <__kindof CKJScrollViewCellItemData *>*_Nonnull)scrollViewCellItemsWithDics:(NSArray <NSDictionary *>*_Nullable)dics detailSetting:(void(^_Nullable)(__kindof __weak CKJScrollViewCellItemData *_Nonnull itemData, NSUInteger index))detailSetting;
-
-@end
 
 
 
 @interface CKJScrollViewCellItemView : CKJCommonItemView
 
-/**
- 当前的itemData
- */
-@property (weak, nonatomic, nullable) __kindof CKJScrollViewCellItemData *itemData;
+@property (strong, nonatomic) id itemData;
 
 @end
 
@@ -92,17 +77,11 @@ typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 
 - (void)updateIndicatorConfig:(void(^)(CKJScrollViewCellIndicatorConfig *i))indicatorConfig;
 
-
 @end
 
 @interface CKJScrollViewCellModel : CKJCommonCellModel
 
-
-@property (strong, nonatomic) NSArray <__kindof CKJScrollViewCellItemData *>*data;
-
-- (void)addItem:(__kindof CKJScrollViewCellItemData *)item;
-
-+ (instancetype)scrollViewWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJScrollViewCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJScrollViewCellRowBlock)didSelectRowBlock;
++ (instancetype)scrollViewWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJScrollViewCellRowBlock)detailSettingBlock;
 
 
 @end

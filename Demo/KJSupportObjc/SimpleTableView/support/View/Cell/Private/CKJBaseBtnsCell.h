@@ -36,11 +36,12 @@ typedef void(^CKJBtnsCellItemBlock)(CKJBtnItemData *itemData, __kindof CKJBaseBt
 
 /// CKJButton 这些按钮的自有宽度的增量，默认为0
 @property (assign, nonatomic) CGFloat fixWidth;
+
 /// CKJButton 这些按钮的自有高度的增量，默认为0，一般用弥补高度fixHeight，一般为了解决调整为图片在上，文字在下，是为了弥补自适应高度的时候CKJButton的高度不足
 @property (assign, nonatomic) CGFloat fixHeight;
 
 
-// 强指针 和 id <CKJStackCellDelegate>delegate;
+/// 强指针 和 id <CKJStackCellDelegate>delegate;
 @property (strong, nonatomic) CKJBaseBtnsCellSystemDelegate *esaySystemModel;
 
 - (__kindof CKJBaseBtnsCellSystemDelegate *)squareWithNumberOfItemsInSingleLine:(NSUInteger)number;

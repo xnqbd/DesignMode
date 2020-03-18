@@ -9,10 +9,6 @@
 #import "RJDemoScrollItemView.h"
 #import "UIView+CKJDesingable.h"
 
-@implementation RJDemoScrollItemData
-
-@end
-
 
 @implementation RJDemoScrollItemView
 
@@ -26,10 +22,16 @@
 
 
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
-    RJDemoScrollItemData *itemData = self.itemData;
-    if (itemData.tapBlock) {
-        itemData.tapBlock();
+    CKJMyVCItem *itemData = self.itemData;
+    if (itemData.click) {
+        itemData.click(nil);
     }
+}
+
+- (void)setItemData:(CKJMyVCItem *)itemData {
+    [super setItemData:itemData];
+    self.imageV.image = [UIImage kjwd_imageNamed:itemData.image];
+    self.lab.text = WDKJ_SpaceString(itemData.title);
 }
 
 

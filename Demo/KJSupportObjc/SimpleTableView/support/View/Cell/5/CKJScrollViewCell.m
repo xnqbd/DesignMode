@@ -8,25 +8,6 @@
 
 #import "CKJScrollViewCell.h"
 
-@implementation CKJScrollViewCellItemData
-
-
-+ (NSArray <__kindof CKJScrollViewCellItemData *>*_Nonnull)scrollViewCellItemsWithDics:(NSArray <NSDictionary *>*_Nullable)dics detailSetting:(void(^_Nullable)(__kindof __weak CKJScrollViewCellItemData *_Nonnull itemData, NSUInteger index))detailSetting {
-    NSMutableArray *result = [NSMutableArray array];
-    for (int i = 0; i < dics.count; i++) {
-        NSDictionary *dic = dics[i];
-        CKJScrollViewCellItemData *m = [[self alloc] init];
-        [m kjwd_setValuesForKeysWithDictionary:dic];
-        if (detailSetting) {
-            detailSetting(m, i);
-        }
-        [result addObject:m];
-    }
-    return result;
-}
-
-
-@end
 
 @implementation CKJScrollViewCellItemView
 @end
@@ -65,14 +46,15 @@
 }
 
 
+
 @end
 
 
 @implementation CKJScrollViewCellModel
 
 
-+ (instancetype)scrollViewWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJScrollViewCellRowBlock)detailSettingBlock didSelectRowBlock:(nullable CKJScrollViewCellRowBlock)didSelectRowBlock {
-    return [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:detailSettingBlock didSelectRowBlock:didSelectRowBlock];
++ (instancetype)scrollViewWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJScrollViewCellRowBlock)detailSettingBlock {
+    return [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detailSettingBlock didSelectRowBlock:nil];
 }
 
 - (instancetype)init {
@@ -80,13 +62,6 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
-}
-
-- (void)addItem:(__kindof CKJScrollViewCellItemData *)item {
-    if ([item isKindOfClass:[CKJScrollViewCellItemData class]] == NO) return;
-    NSMutableArray *array = [NSMutableArray kjwd_arrayWithArray:self.data];
-    [array addObject:item];
-    self.data = array;
 }
 
 @end
@@ -103,28 +78,6 @@
 
 @implementation CKJScrollViewCell
 
-- (void)setupData:(__kindof CKJScrollViewCellModel *)model section:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath tableView:(CKJSimpleTableView *)tableView {
-    if ([model isKindOfClass:[CKJScrollViewCellModel class]] == NO) return;
-    
-    NSArray <__kindof CKJScrollViewCellItemData *>*data = model.data;
-    
-    NSArray <__kindof CKJScrollViewCellItemView *> *viewArrs = self.viewArrs;
-    
-    __weak CKJScrollViewCellConfig *config = self.configModel;
-    __weak id <CKJScrollViewCellDelegate>delegate = config.delegate;
-    
-    
-    for (int i = 0; i < viewArrs.count; i++) {
-        CKJScrollViewCellItemData *itemData = [data kjwd_objectAtIndex:i];
-        CKJScrollViewCellItemView *view = viewArrs[i];
-        view.itemData = itemData;
-
-        if ([delegate respondsToSelector:@selector(updateItemView:itemData:index:)]) {
-            [delegate updateItemView:view itemData:itemData index:i];
-        }
-    }
-}
-
 - (void)setupSubViews {
     
    __weak CKJScrollViewCellConfig *config = self.configModel;
@@ -138,11 +91,7 @@
     }, nil);
     
     
-    if (
-        ([delegate respondsToSelector:@selector(createItemViewForCKJScrollViewCell:)] == NO)
-        ||
-        ([delegate respondsToSelector:@selector(updateItemView:itemData:index:)] == NO)
-        ) {
+    if (![delegate respondsToSelector:@selector(createItemViewForCKJScrollViewCell:)]) {
         NSException *exception = [NSException exceptionWithName:@"必须实现CKJScrollViewCellDelegate协议中的方法" reason:[NSString stringWithFormat:@"%@警告！必须实现CKJScrollViewCellDelegate协议中的方法", self] userInfo:nil];
         [exception raise];
     }
@@ -207,7 +156,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
     CGFloat wid = scrollView.contentSize.width - scrollView.frame.size.width;
-    //    NSLog(@"%f  %f   ", offsetX, boundsW);
+//    NSLog(@"%f  %f   ", offsetX, boundsW);
     if (offsetX < 0) {
         _shortView.kjwd_x = 0;
     } else if (offsetX > wid) {

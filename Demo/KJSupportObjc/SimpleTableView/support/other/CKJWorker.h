@@ -185,7 +185,7 @@ typedef void(^CKJBaseBtnClick)(CKJBaseBtnModel *btnModel, UIButton *btn);
 
 
 
-typedef void(^CKJMyVCItemClick)(id param);
+typedef void(^CKJMyVCItemClick)(id _Nullable param);
 
 /// 我的、个人界面
 @interface CKJMyVCItem : CKJBaseModel

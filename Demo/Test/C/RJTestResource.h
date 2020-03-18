@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray <NSDictionary *>*)item1;
 + (NSArray <NSDictionary *>*)item2;
-+ (NSArray <NSDictionary *>*)item3;
++ (NSArray<NSArray <NSDictionary *>*>*)item3;
 + (NSArray <NSDictionary *>*)item4;
 
 @end

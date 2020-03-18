@@ -11,6 +11,7 @@
 #import "CKJBaseBtnsCell.h"
 #import "RJDemoExpertItemView.h"
 #import "CKJBtnsCell1.h"
+#import "RJTestResource.h"
 
 @interface RJSquareDemo1VC () <CKJScrollViewCellDelegate>
 
@@ -25,7 +26,6 @@
     self.navigationItem.title = @"CKJBtnsCell、CKJScrollViewCell示例1";
     [self initSimpleTableViewData];
 }
-
 
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetailSettingBlock:^(CKJBaseBtnsCellConfig * _Nonnull m) {
@@ -68,31 +68,8 @@
         _sec.modelArray = @[model1];
     }];
     
-    
     CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJScrollViewCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        
-        CKJScrollViewCellModel *model2 = [CKJScrollViewCellModel scrollViewWithCellHeight:@160 cellModel_id:nil detailSettingBlock:^(__kindof CKJScrollViewCellModel * _Nonnull m) {
-            NSArray *data = @[
-                @{@"avatarImageName" : @"newhome_报告", @"name" : @"狄文1", @"job" : @"主任", @"department" : @"胸外科"},
-                @{@"avatarImageName" : @"newhome_药费查询", @"name" : @"赵小强1", @"job" : @"经理", @"department" : @"心内科"},
-                @{@"avatarImageName" : @"newhome_报告", @"name" : @"狄文2", @"job" : @"主任", @"department" : @"胸外科"},
-                @{@"avatarImageName" : @"newhome_药费查询", @"name" : @"赵小强2", @"job" : @"经理", @"department" : @"心内科"},
-                @{@"avatarImageName" : @"newhome_报告", @"name" : @"狄文3", @"job" : @"主任", @"department" : @"胸外科"},
-                @{@"avatarImageName" : @"newhome_药费查询", @"name" : @"赵小强3", @"job" : @"经理", @"department" : @"心内科"},
-                @{@"avatarImageName" : @"newhome_报告", @"name" : @"狄文4", @"job" : @"主任", @"department" : @"胸外科"},
-                @{@"avatarImageName" : @"newhome_药费查询", @"name" : @"赵小强4", @"job" : @"经理", @"department" : @"心内科"},
-                @{@"avatarImageName" : @"newhome_报告", @"name" : @"狄文5", @"job" : @"主任", @"department" : @"胸外科"},
-                @{@"avatarImageName" : @"newhome_药费查询", @"name" : @"赵小强5", @"job" : @"经理", @"department" : @"心内科"}
-            ];
-            
-            m.data = [RJDemoExpertItemData scrollViewCellItemsWithDics:data detailSetting:^(__kindof RJDemoExpertItemData *__weak  _Nonnull itemData, NSUInteger index) {
-                itemData.tapBlock = ^{
-                    NSLog(@"点击了 %@  下标 %lu", itemData.name, index);
-                };
-            }];
-            
-        } didSelectRowBlock:nil];
-        
+        CKJScrollViewCellModel *model2 = [CKJScrollViewCellModel scrollViewWithCellHeight:@160 detailSettingBlock:nil];
         _sec.modelArray = @[model2];
     }];
     
@@ -171,16 +148,23 @@
 #pragma mark - CKJScrollViewCellDelegate
 - (NSArray <__kindof CKJScrollViewCellItemView *>*)createItemViewForCKJScrollViewCell:(__kindof CKJScrollViewCell *_Nonnull __weak)cell {
     NSMutableArray *arr = [NSMutableArray array];
-    for (int i = 0; i < 10; i++) {
-        [arr addObject:[RJDemoExpertItemView kjwd_instanceUsingAutoNib]];
+    
+    NSArray <NSDictionary *>*data = [RJTestResource item1];
+    
+    for (int i = 0; i < data.count; i++) {
+        NSDictionary *dic = data[i];
+        RJDemoExpertItemData *temp = [RJDemoExpertItemData modelWithDic:dic];
+        
+        __weak RJDemoExpertItemData *weakTemp = temp;
+        
+        temp.tapBlock = ^{
+          NSLog(@"点击了 %@   ", weakTemp.name);
+        };
+        RJDemoExpertItemView *view = [RJDemoExpertItemView kjwd_instanceUsingAutoNib];
+        view.itemData = temp;
+        [arr addObject:view];
     }
     return arr;
-}
-- (void)updateItemView:(__kindof RJDemoExpertItemView *)itemView itemData:(__kindof RJDemoExpertItemData *)itemData index:(NSInteger)index {
-    itemView.avatarImageView.image = [UIImage kjwd_imageNamed:itemData.avatarImageName];
-    itemView.nameLab.text = WDKJ_SpaceString(itemData.name);
-    itemView.jobLab.text = WDKJ_SpaceString(itemData.job);
-    [itemView.departmentLab setTitle:WDKJ_SpaceString(itemData.department) forState:UIControlStateNormal];
 }
 
 @end

@@ -27,6 +27,16 @@
         itemData.tapBlock();
     }
 }
+- (void)setItemData:(id)itemData {
+    [super setItemData:itemData];
+    
+    RJDemoExpertItemData *data = itemData;
+    
+    self.avatarImageView.image = [UIImage kjwd_imageNamed:data.avatarImageName];
+    self.nameLab.text = WDKJ_SpaceString(data.name);
+    self.jobLab.text = WDKJ_SpaceString(data.job);
+    [self.departmentLab setTitle:WDKJ_SpaceString(data.department) forState:UIControlStateNormal];
+}
 
 
 @end

@@ -12,13 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RJDemoScrollItemData : CKJScrollViewCellItemData
-
-@property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *imageName;
-@property (copy, nonatomic) CKJBlockType1 tapBlock;
-
-@end
 
 @interface RJDemoScrollItemView : CKJScrollViewCellItemView
 
@@ -26,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
 @property (weak, nonatomic) IBOutlet UILabel *lab;
+
 
 @end
 

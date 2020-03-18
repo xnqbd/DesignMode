@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *tf;
 
+@property (weak, nonatomic) id delegate;
+
 @end
 
 @implementation DemoTestVC
@@ -20,13 +22,20 @@
     [super viewDidLoad];
     
     
+    
+    self.delegate = self;
+    
     self.tf.secureTextEntry = NO;
 //    ss.clearButtonMode = UITextFieldViewModeWhileEditing
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    NSLog(@"%d   ", self.tf.isSecureTextEntry);
+    NSLog(@"%@   ", self.delegate);
+}
+
+- (void)dealloc {
+    NSLog(@"DemoTestVC dealloc ");
 }
 /*
 #pragma mark - Navigation
