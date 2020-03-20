@@ -343,14 +343,14 @@
         section.widthOf_MultipliedByPickerView = 0.25;
         section.modelArray = areas;
         
-        section.defaultSelectIndex = ({
+        section.selectIndex = ({
             NSInteger index = 0;
             index = [areas kjwd_do_filter_returnConformIndex:^BOOL(WDYHFAreaItem *objc) {
                 return [objc.area isEqualToString:WDKJ_ConfirmString(self.defaultAreaItem.area)];
             }].integerValue;
             index;
         });
-        areaSelectIndex = section.defaultSelectIndex;
+        areaSelectIndex = section.selectIndex;
         
         [sections addObject:section];
     }
@@ -363,7 +363,7 @@
         
         section.modelArray = currentArea.hospitals;
         
-        section.defaultSelectIndex = ({
+        section.selectIndex = ({
             NSInteger index = 0;
             index = [currentArea.hospitals kjwd_do_filter_returnConformIndex:^BOOL(WDYHFHospitalItem *objc) {
                 return [objc.org_code isEqualToString:WDKJ_ConfirmString(self.defaultHospitalItem.org_code)];

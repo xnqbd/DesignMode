@@ -1221,7 +1221,7 @@
     NSMutableString *des = [NSMutableString string];
     [self kjwd_enumAllCellModelWithBlock:^(CKJInputCellModel * _Nonnull m, NSInteger section, NSInteger row, BOOL *stop) {
         if ([m isKindOfClass:[CKJInputCellModel class]]) {
-            [des appendFormat:@"%@：%@  ", m.title3Text, m.tfText];
+            [des appendFormat:@"%@：%@  ", m.title3Text, m.getTfText];
         }
     }];
     NSLog(@"输入框的全部内容如下\n%@", des);

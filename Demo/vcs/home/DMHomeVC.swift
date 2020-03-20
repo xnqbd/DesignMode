@@ -57,8 +57,11 @@ class DMHomeVC: CKJBaseTableVC, CKJScrollViewCellDelegate {
                 cd.layout_Button = { (btn: UIButton) in
                     btn.kjwd_layoutButton(with: .top, imageTitleSpace: 13)
                 }
-                cd.click_Button = { (btn: UIButton, itemData: CKJBtnItemData) in
-                    
+                cd.click_Button = { [weak self](btn: UIButton, itemData: CKJBtnItemData) in
+                    if index == 0 {
+                        let vc = DXLoginVC()
+                        self?.navigationController?.pushViewController(vc)
+                    }
                 }
             }
             let arr = CKJBtnsCell1Model.btnsCellModel(withItemsnew: items, cellHeight: NSNumber(90), leftMargin: NSNumber(0), rightMargin: NSNumber(0)) { (m: CKJBaseBtnsCellModel, cellModel_index: UInt) in

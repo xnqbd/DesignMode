@@ -148,6 +148,8 @@ typedef BOOL(^CKJExpressionRequiredBlock)(NSString *_Nullable text, __kindof CKJ
 @property (strong, nonatomic, nullable) CKJStringChooseHelper *stringChoose;
 @property (strong, nonatomic, nullable) CKJDateChooseHelper *dateChoose;
 
+
+
 - (void)updateTFModel:(void(^_Nullable)(CKJTFModel *_Nonnull tfModel))block;
 
 @property (strong, nonatomic, readonly) CKJTFModel *tfModel;
@@ -161,7 +163,7 @@ typedef BOOL(^CKJExpressionRequiredBlock)(NSString *_Nullable text, __kindof CKJ
 - (void)addRequired:(CKJInputExpressionRequiredModel *)model;
 
 
-- (NSString *_Nullable)tfText;
+- (NSString *_Nullable)getTfText;
 
 + (instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock;
 

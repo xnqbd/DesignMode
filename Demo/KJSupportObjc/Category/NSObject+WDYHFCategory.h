@@ -81,7 +81,9 @@ NSString *WDKJ_Sex(NSNumber *sex);
 NSMutableAttributedString *WDCKJAttributed(NSString *_Nullable name, NSDictionary *_Nullable dic);
 NSMutableAttributedString *WDCKJAttributed2(NSString *_Nullable text, UIColor *_Nullable color, NSNumber *_Nullable fontSize);
 NSMutableAttributedString * WDAttTitle(NSString *_Nullable text);
+NSMutableAttributedString * WDAttTitle14(NSString *_Nullable text);
 NSMutableAttributedString * WDAttSubTitle(NSString *_Nullable text);
+NSMutableAttributedString * WDAttSubTitle14(NSString *_Nullable text);
 NSMutableAttributedString *WDAtt13(NSString *_Nullable name);
 NSMutableAttributedString *WDAtt15_5(NSString *_Nullable name);
 
@@ -280,6 +282,9 @@ CGFloat WDAPP_ScreenHeight(void);
 #pragma mark - -----------------NSMutableArray-----------------
 // 关于NSMutableArray线程安全的思考和实现 http://blog.csdn.net/kongdeqin/article/details/53171189
 @interface NSMutableArray <ObjectType> (WDYHFCategory)
+
++ (instancetype)kjwd_enumCount:(NSUInteger)count returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack;
+
 
 + (instancetype)kjwd_arrayWithArray:(nullable NSArray<ObjectType> *)array;
 
@@ -568,7 +573,7 @@ CGFloat WDAPP_ScreenHeight(void);
 #pragma mark - -----------------UIBarButtonItem-----------------
 @interface UIBarButtonItem (WDYHFCategory)
 
-+ (instancetype)kjwd_itemWithTitle:(nullable NSString *)title style:(UIBarButtonItemStyle)style callBack:(void(^)(UIBarButtonItem *sender))callBack;
++ ( instancetype)kjwd_itemWithTitle:(nullable NSString *)title color:(nullable UIColor *)color callBack:(void(^)(UIBarButtonItem *sender))callBack;
 
 
 /**

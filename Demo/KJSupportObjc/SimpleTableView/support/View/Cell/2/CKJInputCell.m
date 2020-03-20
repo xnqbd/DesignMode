@@ -59,7 +59,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 + (instancetype)system_confirmPwdNotEqualPwdWithTableView:(CKJSimpleTableView *)simpleTableView {
     return [CKJInputExpressionRequiredModel modelWithRequiredText:@"输入密码不一致" failExpression:^BOOL(NSString * _Nullable text, CKJInputCellModel * _Nonnull cm) {
         // 密码
-        NSString *_pwd = [simpleTableView inputCellModelOfID:kOInput_Pwd].tfText;
+        NSString *_pwd = [simpleTableView inputCellModelOfID:kOInput_Pwd].getTfText;
         return ![text isEqualToString:_pwd];
     }];
 }
@@ -174,7 +174,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     self.expressionRequiredArray = arr;
 }
 
-- (NSString *_Nullable)tfText {
+- (NSString *_Nullable)getTfText {
     return self.tfModel.text;
 }
 
@@ -334,7 +334,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     __weak typeof(self) weakSelf = self;
 
     CKJInputCellModel *phoneCellModel = [self.simpleTableView cellModelOfID:kOInput_Phone];
-    NSString *text = phoneCellModel.tfText;
+    NSString *text = phoneCellModel.getTfText;
     
     NSString *phone = [text kjwd_trimWhiteAndNewline];
     

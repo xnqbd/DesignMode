@@ -35,7 +35,7 @@ class DMForgetPwdVC: CKJBaseTableVC {
                 m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
                 m.getCodeModel = CKJGetCodeModel(clickCodeBtnBlock: {[weak self] (triggerCodeBlock) in
                     
-                    let _phone = self?.simpleTableView.inputCellModel(ofID: kOInput_Phone)?.tfText();
+                    let _phone = self?.simpleTableView.inputCellModel(ofID: kOInput_Phone)?.getTfText();
                     HZYHFHTTPRequest.kj_after(timeInterval: 0, callBackType: .Success, response: nil, success: { (succ) in
                         triggerCodeBlock(60); // 触发定时器
                         MBProgressHUD.kjwd_showMessage("验证码发送成功", to: self?.view)

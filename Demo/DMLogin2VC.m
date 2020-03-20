@@ -8,6 +8,7 @@
 
 #import "DMLogin2VC.h"
 #import "HomeVC.h"
+#import "MonitorInputVC.h"
 
 @interface DMLogin2VC ()
 
@@ -119,7 +120,11 @@
         } clickBtn:^(__kindof CKJOneBtnCellModel * _Nonnull cm, UIButton * _Nonnull btn) {
             NSLog(@"%@   ", @"点击登录");
             
-            HomeVC *vc = [[HomeVC alloc] init];
+//            HomeVC *vc = [[HomeVC alloc] init];
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+            
+            MonitorInputVC *vc = [[MonitorInputVC alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:vc animated:YES];
             
         } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {

@@ -15,10 +15,10 @@
     if (self = [super initWithSimpleTableView:simpleTableView]) {
         
         // 监护人姓名
-        NSString *_jianhuPersonName = [simpleTableView inputCellModelOfID:JianHuPersonName].tfText;
+        NSString *_jianhuPersonName = [simpleTableView inputCellModelOfID:JianHuPersonName].getTfText;
         
         // 监护人身份证号
-        NSString *_jianHuPersonidCardNumber = [simpleTableView inputCellModelOfID:JianHuPersonidCardNumber].tfText;
+        NSString *_jianHuPersonidCardNumber = [simpleTableView inputCellModelOfID:JianHuPersonidCardNumber].getTfText;
         
         self.Guardian = _jianhuPersonName;
         self.GuardianIdCardNo = _jianHuPersonidCardNumber;

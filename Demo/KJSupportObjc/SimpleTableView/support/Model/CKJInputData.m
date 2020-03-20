@@ -30,31 +30,31 @@ NSString *_Nonnull const kOInput_ConfirmPwd = @"kOInput_ConfirmPwd";
 - (instancetype)initWithSimpleTableView:(CKJSimpleTableView *)simpleTableView {
     
     // 姓名
-    NSString *_name = [simpleTableView inputCellModelOfID:kOInput_Name].tfText;
+    NSString *_name = [simpleTableView inputCellModelOfID:kOInput_Name].getTfText;
     
     // 手机号
-    NSString *_phone = [simpleTableView inputCellModelOfID:kOInput_Phone].tfText;
+    NSString *_phone = [simpleTableView inputCellModelOfID:kOInput_Phone].getTfText;
     
     // 验证码
-    NSString *_verityCode = [simpleTableView inputCellModelOfID:kOInput_VerityCode].tfText;
+    NSString *_verityCode = [simpleTableView inputCellModelOfID:kOInput_VerityCode].getTfText;
     
     // 证件号
-    NSString *_idCardNumber = [simpleTableView inputCellModelOfID:kOInput_idCardNumber].tfText;
+    NSString *_idCardNumber = [simpleTableView inputCellModelOfID:kOInput_idCardNumber].getTfText;
     
     // 出生日期
     NSDate *_birthday = [simpleTableView inputCellModelOfID:kOInput_Birthday].dateChoose.currentSelectedDate;
     
     // 地址
-    NSString *_address = [simpleTableView inputCellModelOfID:kOInput_Address].tfText;
+    NSString *_address = [simpleTableView inputCellModelOfID:kOInput_Address].getTfText;
     
     // 邮箱
-    NSString *_email = [simpleTableView inputCellModelOfID:kOInput_Email].tfText;
+    NSString *_email = [simpleTableView inputCellModelOfID:kOInput_Email].getTfText;
     
     // 密码
-    NSString *_pwd = [simpleTableView inputCellModelOfID:kOInput_Pwd].tfText;
+    NSString *_pwd = [simpleTableView inputCellModelOfID:kOInput_Pwd].getTfText;
     
     // 确认密码
-    NSString *_confirmPwd = [simpleTableView inputCellModelOfID:kOInput_ConfirmPwd].tfText;
+    NSString *_confirmPwd = [simpleTableView inputCellModelOfID:kOInput_ConfirmPwd].getTfText;
     
     
     // 性别

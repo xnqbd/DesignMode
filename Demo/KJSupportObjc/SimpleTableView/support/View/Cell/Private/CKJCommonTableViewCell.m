@@ -197,6 +197,10 @@
     if (cell.bgImageView.contentMode != model.bgConfig.contentMode) {
         cell.bgImageView.contentMode = model.bgConfig.contentMode;
     }
+    if (cell.bgImageView.layer.cornerRadius != model.bgConfig.radius) {
+        cell.bgImageView.layer.cornerRadius = model.bgConfig.radius;
+    }
+    
     
     CKJSimpleTableViewStyle *simpleStyle = self.simpleTableView.simpleStyle;
     

@@ -85,7 +85,7 @@
         [weakSelf.view endEditing:YES];
         
         // 手机号
-        NSString *_phone = [weakSelf.simpleTableView inputCellModelOfID:kOInput_Phone].tfText;
+        NSString *_phone = [weakSelf.simpleTableView inputCellModelOfID:kOInput_Phone].getTfText;
         
         
         

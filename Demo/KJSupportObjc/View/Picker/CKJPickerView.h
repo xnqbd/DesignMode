@@ -9,7 +9,7 @@
 #import "CKJToolView.h"
 #import "CKJBaseModel.h"
 
-
+NS_ASSUME_NONNULL_BEGIN
 
 @class CKJPickerView, CKJPickerComponentModel;
 
@@ -21,13 +21,17 @@
 @property (assign, nonatomic, readonly) NSInteger *component;
 
 @property (copy, nonatomic, nullable) NSString *title;
+@property (copy, nonatomic, nullable) NSAttributedString *attTitle;
 
-@property (copy, nonatomic, nullable) NSAttributedString *attributedTitle;
 
 @property (strong, nonatomic, nullable) UIView *view;
 
++ (instancetype)rowModelWithTitle:(id)title;
 
-#pragma mark - 子类可以重写西面方法，不需要方法的重写返回nil即可
+//@property (copy, nonatomic) vod;
+
+
+#pragma mark - 子类可以重写下面方法，不需要方法的重写返回nil即可
 
 /** 设置Title */
 - (nullable NSString *)returnTitleOfComponent:(NSInteger)component row:(NSInteger)row componentModel:(CKJPickerComponentModel *)componentModel pickerView:(UIPickerView *)pickerView;
@@ -47,7 +51,7 @@
 /**
  默认选中的索引，默认选中第0行，一般是设置初始化的时候默认的索引
  */
-@property (assign, nonatomic) NSInteger defaultSelectIndex;
+@property (assign, nonatomic) NSInteger selectIndex;
 
 /**
  宽度（直接设置宽度等于一个值，比如 width = 100）
@@ -63,12 +67,28 @@
 /**  这里面可能有各种类型的model */
 @property (strong, nonatomic) NSArray <CKJPickerRowModel *>*modelArray;
 
+
++ (NSMutableArray <CKJPickerComponentModel *>*)createComponentsByRows:(NSArray <NSArray <CKJPickerRowModel *>*>*)rowss;
+
++ (instancetype)componentWithDetail:(void(^_Nonnull)(CKJPickerComponentModel *m))detail;
+
 @end
 
 
 @interface CKJPickerView : UIPickerView<UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (strong, nonatomic) NSArray <CKJPickerComponentModel *>* _Nullable dataArr;
 
+/// 应该在刷新之后，然后再设置选中的默认行 [self.picker reloadAllComponents]; [self.picker _setDefaultSelectIndex];
+@property (strong, nonatomic) NSArray <CKJPickerComponentModel *>*dataArr;
+
+
+/// 如果需要默认选中某一行，可以在刷新之后调用这个方法 [self.picker reloadAllComponents]; [self.picker _setDefaultSelectIndex];
+- (void)_setDefaultSelectIndex;
+
+/// 当前滚动停止后回调，选中的数据
+@property (copy, nonatomic, nullable) void(^endScroll_didSelect_callBack)(NSArray <CKJPickerRowModel *>*allSelectRows, CKJPickerRowModel *currentRowModel);
 
 @end
+
+
+NS_ASSUME_NONNULL_END

@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) UIViewContentMode contentMode;
 @property (strong, nonatomic, nullable) NSValue *edge;
 
+@property (assign, nonatomic) CGFloat radius;
+
 @end
 
 

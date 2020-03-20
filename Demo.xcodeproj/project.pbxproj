@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC06DBC724220ECB00E54E68 /* MonitorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC06DBC624220ECB00E54E68 /* MonitorItem.m */; };
+		BC869CAF2421E40B00ED2607 /* MonitorInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */; };
+		BC869CB22421E5C100ED2607 /* BaseMonitorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC869CB12421E5C100ED2607 /* BaseMonitorModel.m */; };
 		BC8FF86323FD303D00F003DC /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8FF86223FD303D00F003DC /* MyVC.swift */; };
 		BC910CB3241365AE00280936 /* NSObject+WDYHFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C1A241365AE00280936 /* NSObject+WDYHFCategory.m */; };
 		BC910CB4241365AE00280936 /* UIView+CKJDesingable.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C1D241365AE00280936 /* UIView+CKJDesingable.m */; };
@@ -137,6 +140,9 @@
 		BC943247241632F400FB9B6F /* HZYHFInterfacedConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */; };
 		BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */; };
 		BC94324B2416362100FB9B6F /* RJCombineHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */; };
+		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
+		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
+		BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */; };
 		BC9E19CC23D5963300169DB3 /* RootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */; };
 		BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */; };
 		BC9E1AB923D5A53C00169DB3 /* RJProjectResorce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB823D5A53C00169DB3 /* RJProjectResorce.swift */; };
@@ -171,6 +177,12 @@
 /* Begin PBXFileReference section */
 		5220DC044D7B74046DF467CF /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		7BD9F5E102E07E8B349FD014 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC06DBC524220ECB00E54E68 /* MonitorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorItem.h; sourceTree = "<group>"; };
+		BC06DBC624220ECB00E54E68 /* MonitorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorItem.m; sourceTree = "<group>"; };
+		BC869CAD2421E40B00ED2607 /* MonitorInputVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorInputVC.h; sourceTree = "<group>"; };
+		BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorInputVC.m; sourceTree = "<group>"; };
+		BC869CB02421E5C100ED2607 /* BaseMonitorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseMonitorModel.h; sourceTree = "<group>"; };
+		BC869CB12421E5C100ED2607 /* BaseMonitorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseMonitorModel.m; sourceTree = "<group>"; };
 		BC8FF86223FD303D00F003DC /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		BC910C18241365AE00280936 /* KJSupportObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJSupportObjc.h; sourceTree = "<group>"; };
 		BC910C1A241365AE00280936 /* NSObject+WDYHFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WDYHFCategory.m"; sourceTree = "<group>"; };
@@ -393,6 +405,11 @@
 		BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFInterfacedConst.swift; sourceTree = "<group>"; };
 		BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFHTTPRequest.swift; sourceTree = "<group>"; };
 		BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RJCombineHttpRequest.swift; sourceTree = "<group>"; };
+		BC9DC8F724246A730039F77A /* DXLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXLoginVC.h; sourceTree = "<group>"; };
+		BC9DC8F824246A730039F77A /* DXLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXLoginVC.xib; sourceTree = "<group>"; };
+		BC9DC8F924246A730039F77A /* DXLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLoginVC.m; sourceTree = "<group>"; };
+		BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJTextFiled.m; sourceTree = "<group>"; };
+		BC9DC8FD24246AE80039F77A /* CKJTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJTextFiled.h; sourceTree = "<group>"; };
 		BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarVC.swift; sourceTree = "<group>"; };
 		BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOBridge.h; sourceTree = "<group>"; };
 		BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeVC.swift; sourceTree = "<group>"; };
@@ -480,6 +497,7 @@
 		BC910C17241365AE00280936 /* KJSupportObjc */ = {
 			isa = PBXGroup;
 			children = (
+				BC9DC8F624246A730039F77A /* Demo */,
 				BC910C18241365AE00280936 /* KJSupportObjc.h */,
 				BC910C19241365AE00280936 /* Category */,
 				BC910C1E241365AE00280936 /* Other */,
@@ -550,6 +568,8 @@
 				BC910C41241365AE00280936 /* CKJXBtnsView.h */,
 				BC910C42241365AE00280936 /* CKJPayBottomView.h */,
 				BC910C43241365AE00280936 /* CKJToolbar.h */,
+				BC9DC8FD24246AE80039F77A /* CKJTextFiled.h */,
+				BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -984,6 +1004,16 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		BC9DC8F624246A730039F77A /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DC8F724246A730039F77A /* DXLoginVC.h */,
+				BC9DC8F924246A730039F77A /* DXLoginVC.m */,
+				BC9DC8F824246A730039F77A /* DXLoginVC.xib */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		BC9E19CA23D5961200169DB3 /* root */ = {
 			isa = PBXGroup;
 			children = (
@@ -1084,6 +1114,12 @@
 				BCC442AB242074BB00F20238 /* AdvisoryCell.xib */,
 				BCC442AE2420900400F20238 /* NetWorkResponse.h */,
 				BCC442AF2420900400F20238 /* NetWorkResponse.m */,
+				BC869CAD2421E40B00ED2607 /* MonitorInputVC.h */,
+				BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */,
+				BC06DBC524220ECB00E54E68 /* MonitorItem.h */,
+				BC06DBC624220ECB00E54E68 /* MonitorItem.m */,
+				BC869CB02421E5C100ED2607 /* BaseMonitorModel.h */,
+				BC869CB12421E5C100ED2607 /* BaseMonitorModel.m */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
@@ -1168,6 +1204,7 @@
 				BC910D4C24136A7D00280936 /* zhuyuan出院结算@2x.png in Resources */,
 				BC910D5824136A7D00280936 /* zhuyuan历史住院记录@2x.png in Resources */,
 				BCC442AD242074BB00F20238 /* AdvisoryCell.xib in Resources */,
+				BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */,
 				BC910D5624136A7D00280936 /* demo余额.png in Resources */,
 				BC910D5A24136A7D00280936 /* wdyhfsdkhospital.png in Resources */,
 				BC910D5E24136A7D00280936 /* wdyhfsdk编辑.png in Resources */,
@@ -1262,6 +1299,7 @@
 				BC910CC8241365AE00280936 /* CKJWorker.m in Sources */,
 				BC94324224162F9500FB9B6F /* DMTheme.swift in Sources */,
 				BC910CC4241365AE00280936 /* CKJPayBottomView.m in Sources */,
+				BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */,
 				BC910D8624136ABB00280936 /* RJInputData.m in Sources */,
 				BC910D6824136A7D00280936 /* WDYHFHospitalItem.m in Sources */,
 				BCC442A524206D6000F20238 /* AdvisoryVC.m in Sources */,
@@ -1303,6 +1341,7 @@
 				BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */,
 				BCE959E423D586F100B2C5FE /* ViewController.swift in Sources */,
 				BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */,
+				BC869CB22421E5C100ED2607 /* BaseMonitorModel.m in Sources */,
 				BCE959E023D586F100B2C5FE /* AppDelegate.swift in Sources */,
 				BC910CE9241365AF00280936 /* CKJPayCell.m in Sources */,
 				BC910CD2241365AE00280936 /* CKJEmptyHeaderFooterCell.m in Sources */,
@@ -1311,6 +1350,7 @@
 				BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */,
 				BC910D7124136A7D00280936 /* RJTestResource.m in Sources */,
 				BC910CCA241365AE00280936 /* CKJCommonSectionModel.m in Sources */,
+				BC06DBC724220ECB00E54E68 /* MonitorItem.m in Sources */,
 				BC910CBC241365AE00280936 /* CKJProjectConfig.m in Sources */,
 				BC9E19CC23D5963300169DB3 /* RootTabBarVC.swift in Sources */,
 				BC910CC6241365AE00280936 /* CKJSimpleTableView.m in Sources */,
@@ -1348,6 +1388,7 @@
 				BC910CB8241365AE00280936 /* CKJRSA.m in Sources */,
 				BC910CCD241365AE00280936 /* CKJSimpleBaseModel.m in Sources */,
 				BC910CBB241365AE00280936 /* CKJBaseModel.m in Sources */,
+				BC869CAF2421E40B00ED2607 /* MonitorInputVC.m in Sources */,
 				BC910D7924136A7D00280936 /* CKJImageLeftRightCellVC.m in Sources */,
 				BCC442B4242094D000F20238 /* GraphicCell.m in Sources */,
 				BC910D6924136A7D00280936 /* RJBillDetailModel.m in Sources */,
@@ -1359,6 +1400,7 @@
 				BC910CD3241365AE00280936 /* CKJOneBtnCell.m in Sources */,
 				BC910CE2241365AE00280936 /* CKJBaseImageLeftRightCell.m in Sources */,
 				BC910CE6241365AF00280936 /* CKJBtnsCell1.m in Sources */,
+				BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */,
 				BC910D7824136A7D00280936 /* RJConfigVC.m in Sources */,
 				BC910CCF241365AE00280936 /* CKJSimpleTableViewStyle.m in Sources */,
 				BC910CC9241365AE00280936 /* CKJBaseTableVC.m in Sources */,

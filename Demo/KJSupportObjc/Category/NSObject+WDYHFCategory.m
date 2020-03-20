@@ -212,8 +212,15 @@ NSMutableAttributedString * WDCKJAttributed2(NSString *_Nullable text, UIColor *
 NSMutableAttributedString * WDAttTitle(NSString *_Nullable text) {
     return WDCKJAttributed2(text, [UIColor kjwd_title], @15.5);
 }
+NSMutableAttributedString * WDAttTitle14(NSString *_Nullable text) {
+    return WDCKJAttributed2(text, [UIColor kjwd_title], @14);
+}
+
 NSMutableAttributedString * WDAttSubTitle(NSString *_Nullable text) {
     return WDCKJAttributed2(text, [UIColor kjwd_subTitle], @15.5);
+}
+NSMutableAttributedString * WDAttSubTitle14(NSString *_Nullable text) {
+    return WDCKJAttributed2(text, [UIColor kjwd_subTitle], @14);
 }
 
 
@@ -813,6 +820,20 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 #pragma mark - -----------------NSMutableArray-----------------
 @implementation NSMutableArray (WDYHFCategory)
+
++ (instancetype)kjwd_enumCount:(NSUInteger)count returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack {
+    NSMutableArray *result = [NSMutableArray array];
+    if (callBack == nil) {
+        return result;
+    }
+    for (NSUInteger i = 0; i < count; i++) {
+        
+        id obj = callBack(i);
+        [result kjwd_addObject:obj];
+        
+    }
+    return result;
+}
 
 + (instancetype)kjwd_arrayWithArray:(nullable NSArray *)array {
     if (WDKJ_IsNull_Array(array)) {
@@ -1555,8 +1576,9 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 @implementation UIBarButtonItem (WDYHFCategory)
 
-+ ( instancetype)kjwd_itemWithTitle:(nullable NSString *)title style:(UIBarButtonItemStyle)style callBack:(void(^)(UIBarButtonItem *sender))callBack {
-    UIBarButtonItem *temp = [[self alloc] initWithTitle:title style:style target:nil action:NULL];
++ ( instancetype)kjwd_itemWithTitle:(nullable NSString *)title color:(nullable UIColor *)color callBack:(void(^)(UIBarButtonItem *sender))callBack {
+    UIBarButtonItem *temp = [[self alloc] initWithTitle:title style:UIBarButtonItemStyleDone target:nil action:NULL];
+    temp.tintColor =  color;
     temp.kjCallBackBlock = callBack;
     temp.target = temp;
     temp.action = @selector(handleCallBack:);
