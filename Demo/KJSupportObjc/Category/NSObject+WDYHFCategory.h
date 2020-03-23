@@ -808,6 +808,8 @@ imageTitleSpace:(CGFloat)space;
 #define CKJDateFormat3 (@"yyyyMMddHHmmss")
 #define CKJDateFormat4 (@"yyyyMMdd")
 
+#define CKJDateFormat5 (@"yyyy-MM-dd HH:mm")
+
 
 /// 传入20190723 返回 2019-07-23
 + (NSString *)kjwd_format1:(NSString *_Nullable)dateStr;
@@ -837,12 +839,12 @@ imageTitleSpace:(CGFloat)space;
 
 /// 返回 yyyy-MM-dd 的字符串
 - (NSString *)kjwd_YearMonthDayString;
-- (NSString *)kjwd_dateYear;
-- (NSString *)kjwd_dateMonth;
-- (NSString *)kjwd_dateDay;
-- (NSString *)kjwd_dateHour;
-- (NSString *)kjwd_dateMinute;
-- (NSString *)kjwd_dateSecond;
+- (NSString *)kjwd_year;
+- (NSString *)kjwd_month;
+- (NSString *)kjwd_day;
+- (NSString *)kjwd_hour;
+- (NSString *)kjwd_minute;
+- (NSString *)kjwd_second;
 
 /// 通过 格式 返回 时间字符串 比如 传入 "yyyyMMdd" 返回 "20180203"
 - (NSString *)kjwd_dateStringWithFormatter:(NSString *)formatterStr;

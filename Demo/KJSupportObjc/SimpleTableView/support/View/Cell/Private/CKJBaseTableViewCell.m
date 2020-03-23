@@ -19,7 +19,7 @@
     NSMutableArray *arr = [NSMutableArray array];
     for (id model in extensionObjs) {
         CKJBaseTableViewCellModel *m = [[self alloc] init];
-        m.extension_Obj = model;
+        m.extension_Obj1 = model;
         if (detailSetting) {
             detailSetting(m, model);
         }

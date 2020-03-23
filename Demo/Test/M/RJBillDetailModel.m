@@ -33,7 +33,7 @@
 //        model.rightLab_MarginTo_SuperViewRight = margin;
         
         // 如果你需要在点击这些Cell的时候得到Self的信息，可以把下面这行打开
-        model.extension_Obj = self;
+        model.extension_Obj1 = self;
     };
     
 //    CKJLeftRightTopEqualCellModel *model1 = [CKJLeftRightTopEqualCellModel modelWithCellHeight:@(cellH) cellModel_id:nil detailSettingBlock:^(__kindof CKJLeftRightTopEqualCellModel * _Nonnull m) {

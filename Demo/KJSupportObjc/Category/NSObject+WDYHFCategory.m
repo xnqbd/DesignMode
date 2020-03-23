@@ -2352,12 +2352,12 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 + ( NSString *)kjwd_return_yMdWithDate:(NSString *_Nullable)dateString {
     NSDate *date = [NSDate kjwd_returnDate:dateString withDateFormat:nil];
-    NSString *dateStr = [NSString stringWithFormat:@"%@-%@-%@", date.kjwd_dateYear, date.kjwd_dateMonth, date.kjwd_dateDay];
+    NSString *dateStr = [NSString stringWithFormat:@"%@-%@-%@", date.kjwd_year, date.kjwd_month, date.kjwd_day];
     return dateStr;
 }
 
 - ( NSDate *)kjwd_set_HmsEqualZero_Date {
-    NSString *str = [NSString stringWithFormat:@"%@-%@-%@ 00:00:00", self.kjwd_dateYear, self.kjwd_dateMonth, self.kjwd_dateDay];
+    NSString *str = [NSString stringWithFormat:@"%@-%@-%@ 00:00:00", self.kjwd_year, self.kjwd_month, self.kjwd_day];
     NSDate *date = [NSDate kjwd_returnDate:str withDateFormat:nil];
     return date;
 }
@@ -2382,26 +2382,26 @@ CGFloat WDAPP_ScreenHeight(void) {
     NSString *dateStr = [formatter stringFromDate:self];
     return dateStr;
 }
-- ( NSString *)kjwd_dateYear {
+- ( NSString *)kjwd_year {
     return [[self kjwd_dateString] substringToIndex:4];
 }
-- ( NSString *)kjwd_dateMonth {
+- ( NSString *)kjwd_month {
     NSString *str = [self kjwd_dateString];
     return [NSString stringWithFormat:@"%@", [str substringWithRange:NSMakeRange(5, 2)]];
 }
-- ( NSString *)kjwd_dateDay {
+- ( NSString *)kjwd_day {
     NSString *str = [self kjwd_dateString];
     return [NSString stringWithFormat:@"%@", [str substringWithRange:NSMakeRange(8, 2)]];
 }
-- ( NSString *)kjwd_dateHour {
+- ( NSString *)kjwd_hour {
     NSString *str = [self kjwd_dateString];
     return [NSString stringWithFormat:@"%@", [str substringWithRange:NSMakeRange(11, 2)]];
 }
-- ( NSString *)kjwd_dateMinute {
+- ( NSString *)kjwd_minute {
     NSString *str = [self kjwd_dateString];
     return [NSString stringWithFormat:@"%@", [str substringWithRange:NSMakeRange(14, 2)]];
 }
-- ( NSString *)kjwd_dateSecond {
+- ( NSString *)kjwd_second {
     NSString *str = [self kjwd_dateString];
     return [NSString stringWithFormat:@"%@", [str substringWithRange:NSMakeRange(17, 2)]];
 }
@@ -3015,7 +3015,7 @@ CGFloat WDAPP_ScreenHeight(void) {
     
     NSString *birthday_year = [self kjwd_idCardBirthday_Year];
     
-    int result = [[NSDate date] kjwd_dateYear].intValue - birthday_year.intValue;
+    int result = [[NSDate date] kjwd_year].intValue - birthday_year.intValue;
     if (result >= 0) {
         return [NSString stringWithFormat:@"%d", result];
     } else {

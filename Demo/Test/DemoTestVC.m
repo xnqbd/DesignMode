@@ -7,6 +7,8 @@
 //
 
 #import "DemoTestVC.h"
+#import "CKJDatePickerView.h"
+#import "NSObject+WDYHFCategory.h"
 
 @interface DemoTestVC ()
 
@@ -20,13 +22,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CKJDatePickerView *p = [[CKJDatePickerView alloc] initWithDateStyle:CKJDateStyle1 scrollToDate:[NSDate date] endScroll_didSelect_callBack:^(NSDate * _Nonnull currentDate) {
+        
+    }];
+    p.hideBackgroundYearLabel = YES;
+    p.dateLabelColor = [UIColor kjwd_subTitle];
+
+    [self.view addSubview:p];
+    [p kjwd_mas_makeConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+        make.center.equalTo(superview);
+        make.size.mas_equalTo(CGSizeMake(330, 160));
+    }];
     
-    
-    
-    self.delegate = self;
-    
-    self.tf.secureTextEntry = NO;
-//    ss.clearButtonMode = UITextFieldViewModeWhileEditing
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

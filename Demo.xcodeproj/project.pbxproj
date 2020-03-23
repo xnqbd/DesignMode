@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC06DBC724220ECB00E54E68 /* MonitorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC06DBC624220ECB00E54E68 /* MonitorItem.m */; };
+		BC11D845242857B000851C5A /* CKJDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC11D844242857B000851C5A /* CKJDatePickerView.m */; };
 		BC869CAF2421E40B00ED2607 /* MonitorInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */; };
 		BC869CB22421E5C100ED2607 /* BaseMonitorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC869CB12421E5C100ED2607 /* BaseMonitorModel.m */; };
 		BC8FF86323FD303D00F003DC /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8FF86223FD303D00F003DC /* MyVC.swift */; };
@@ -23,7 +24,6 @@
 		BC910CBC241365AE00280936 /* CKJProjectConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C2E241365AE00280936 /* CKJProjectConfig.m */; };
 		BC910CBD241365AE00280936 /* CKJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C33241365AE00280936 /* CKJPickerView.m */; };
 		BC910CBE241365AE00280936 /* CKJToolPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C34241365AE00280936 /* CKJToolPickerView.m */; };
-		BC910CBF241365AE00280936 /* CKJDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C35241365AE00280936 /* CKJDatePickerView.m */; };
 		BC910CC0241365AE00280936 /* CKJToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C36241365AE00280936 /* CKJToolView.m */; };
 		BC910CC1241365AE00280936 /* CKJXBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C3A241365AE00280936 /* CKJXBtnsView.m */; };
 		BC910CC2241365AE00280936 /* CKJFiveLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910C3C241365AE00280936 /* CKJFiveLabelView.m */; };
@@ -143,6 +143,11 @@
 		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
 		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
 		BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */; };
+		BC9DC902242484550039F77A /* MonitorInputVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC900242484550039F77A /* MonitorInputVC2.m */; };
+		BC9DC903242484550039F77A /* MonitorInputVC2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC901242484550039F77A /* MonitorInputVC2.xib */; };
+		BC9DC909242487220039F77A /* DMBottomLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC908242487220039F77A /* DMBottomLineView.m */; };
+		BC9DC90C242494A20039F77A /* UnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC90B242494A20039F77A /* UnitCell.m */; };
+		BC9DC90E242494AE0039F77A /* UnitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC90D242494AE0039F77A /* UnitCell.xib */; };
 		BC9E19CC23D5963300169DB3 /* RootTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */; };
 		BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */; };
 		BC9E1AB923D5A53C00169DB3 /* RJProjectResorce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1AB823D5A53C00169DB3 /* RJProjectResorce.swift */; };
@@ -179,6 +184,8 @@
 		7BD9F5E102E07E8B349FD014 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC06DBC524220ECB00E54E68 /* MonitorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorItem.h; sourceTree = "<group>"; };
 		BC06DBC624220ECB00E54E68 /* MonitorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorItem.m; sourceTree = "<group>"; };
+		BC11D843242857B000851C5A /* CKJDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJDatePickerView.h; sourceTree = "<group>"; };
+		BC11D844242857B000851C5A /* CKJDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJDatePickerView.m; sourceTree = "<group>"; };
 		BC869CAD2421E40B00ED2607 /* MonitorInputVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorInputVC.h; sourceTree = "<group>"; };
 		BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorInputVC.m; sourceTree = "<group>"; };
 		BC869CB02421E5C100ED2607 /* BaseMonitorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseMonitorModel.h; sourceTree = "<group>"; };
@@ -208,10 +215,8 @@
 		BC910C32241365AE00280936 /* CKJToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJToolView.h; sourceTree = "<group>"; };
 		BC910C33241365AE00280936 /* CKJPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJPickerView.m; sourceTree = "<group>"; };
 		BC910C34241365AE00280936 /* CKJToolPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJToolPickerView.m; sourceTree = "<group>"; };
-		BC910C35241365AE00280936 /* CKJDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJDatePickerView.m; sourceTree = "<group>"; };
 		BC910C36241365AE00280936 /* CKJToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJToolView.m; sourceTree = "<group>"; };
 		BC910C37241365AE00280936 /* CKJPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJPickerView.h; sourceTree = "<group>"; };
-		BC910C38241365AE00280936 /* CKJDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJDatePickerView.h; sourceTree = "<group>"; };
 		BC910C39241365AE00280936 /* CKJToolPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJToolPickerView.h; sourceTree = "<group>"; };
 		BC910C3A241365AE00280936 /* CKJXBtnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJXBtnsView.m; sourceTree = "<group>"; };
 		BC910C3B241365AE00280936 /* CKJTableEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJTableEmptyView.h; sourceTree = "<group>"; };
@@ -410,6 +415,14 @@
 		BC9DC8F924246A730039F77A /* DXLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLoginVC.m; sourceTree = "<group>"; };
 		BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJTextFiled.m; sourceTree = "<group>"; };
 		BC9DC8FD24246AE80039F77A /* CKJTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJTextFiled.h; sourceTree = "<group>"; };
+		BC9DC8FF242484550039F77A /* MonitorInputVC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorInputVC2.h; sourceTree = "<group>"; };
+		BC9DC900242484550039F77A /* MonitorInputVC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorInputVC2.m; sourceTree = "<group>"; };
+		BC9DC901242484550039F77A /* MonitorInputVC2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorInputVC2.xib; sourceTree = "<group>"; };
+		BC9DC907242487220039F77A /* DMBottomLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMBottomLineView.h; sourceTree = "<group>"; };
+		BC9DC908242487220039F77A /* DMBottomLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMBottomLineView.m; sourceTree = "<group>"; };
+		BC9DC90A242494A20039F77A /* UnitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitCell.h; sourceTree = "<group>"; };
+		BC9DC90B242494A20039F77A /* UnitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitCell.m; sourceTree = "<group>"; };
+		BC9DC90D242494AE0039F77A /* UnitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnitCell.xib; sourceTree = "<group>"; };
 		BC9E19CB23D5963300169DB3 /* RootTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarVC.swift; sourceTree = "<group>"; };
 		BC9E1AAD23D5A05C00169DB3 /* SOBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOBridge.h; sourceTree = "<group>"; };
 		BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeVC.swift; sourceTree = "<group>"; };
@@ -577,14 +590,14 @@
 		BC910C31241365AE00280936 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				BC910C32241365AE00280936 /* CKJToolView.h */,
-				BC910C33241365AE00280936 /* CKJPickerView.m */,
-				BC910C34241365AE00280936 /* CKJToolPickerView.m */,
-				BC910C35241365AE00280936 /* CKJDatePickerView.m */,
-				BC910C36241365AE00280936 /* CKJToolView.m */,
 				BC910C37241365AE00280936 /* CKJPickerView.h */,
-				BC910C38241365AE00280936 /* CKJDatePickerView.h */,
+				BC910C33241365AE00280936 /* CKJPickerView.m */,
 				BC910C39241365AE00280936 /* CKJToolPickerView.h */,
+				BC910C34241365AE00280936 /* CKJToolPickerView.m */,
+				BC910C32241365AE00280936 /* CKJToolView.h */,
+				BC910C36241365AE00280936 /* CKJToolView.m */,
+				BC11D843242857B000851C5A /* CKJDatePickerView.h */,
+				BC11D844242857B000851C5A /* CKJDatePickerView.m */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -1116,10 +1129,18 @@
 				BCC442AF2420900400F20238 /* NetWorkResponse.m */,
 				BC869CAD2421E40B00ED2607 /* MonitorInputVC.h */,
 				BC869CAE2421E40B00ED2607 /* MonitorInputVC.m */,
+				BC9DC8FF242484550039F77A /* MonitorInputVC2.h */,
+				BC9DC900242484550039F77A /* MonitorInputVC2.m */,
+				BC9DC901242484550039F77A /* MonitorInputVC2.xib */,
 				BC06DBC524220ECB00E54E68 /* MonitorItem.h */,
 				BC06DBC624220ECB00E54E68 /* MonitorItem.m */,
 				BC869CB02421E5C100ED2607 /* BaseMonitorModel.h */,
 				BC869CB12421E5C100ED2607 /* BaseMonitorModel.m */,
+				BC9DC907242487220039F77A /* DMBottomLineView.h */,
+				BC9DC908242487220039F77A /* DMBottomLineView.m */,
+				BC9DC90A242494A20039F77A /* UnitCell.h */,
+				BC9DC90B242494A20039F77A /* UnitCell.m */,
+				BC9DC90D242494AE0039F77A /* UnitCell.xib */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
@@ -1213,6 +1234,8 @@
 				BC910D5224136A7D00280936 /* wdyhfsdkright arrow.png in Resources */,
 				BC910D7E24136A7D00280936 /* RJBillCell.xib in Resources */,
 				BC910D5C24136A7D00280936 /* wdyhfsdkmark.png in Resources */,
+				BC9DC90E242494AE0039F77A /* UnitCell.xib in Resources */,
+				BC9DC903242484550039F77A /* MonitorInputVC2.xib in Resources */,
 				BC910D5024136A7D00280936 /* zhuyuan充值记录@3x.png in Resources */,
 				BCE959E923D586F200B2C5FE /* Assets.xcassets in Resources */,
 				BC910D6024136A7D00280936 /* TETTST.xib in Resources */,
@@ -1287,6 +1310,7 @@
 				BC910CD5241365AE00280936 /* CKJLikeQRCell.m in Sources */,
 				BC910CD4241365AE00280936 /* CKJEmptyCell.m in Sources */,
 				BC910CC2241365AE00280936 /* CKJFiveLabelView.m in Sources */,
+				BC11D845242857B000851C5A /* CKJDatePickerView.m in Sources */,
 				BCC4429F24206D1800F20238 /* VideoVC.m in Sources */,
 				BC910CD9241365AE00280936 /* CKJTableViewCell2.m in Sources */,
 				BC910CB3241365AE00280936 /* NSObject+WDYHFCategory.m in Sources */,
@@ -1306,7 +1330,6 @@
 				BC910CC1241365AE00280936 /* CKJXBtnsView.m in Sources */,
 				BC910CE0241365AE00280936 /* CKJLibraryHelper.m in Sources */,
 				BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */,
-				BC910CBF241365AE00280936 /* CKJDatePickerView.m in Sources */,
 				BC910CC7241365AE00280936 /* CKJButton.m in Sources */,
 				BCC442A224206D4200F20238 /* GraphicVC.m in Sources */,
 				BCC4429C24206AB400F20238 /* HomeVC.m in Sources */,
@@ -1348,6 +1371,7 @@
 				BC9E1ABC23D5A7DE00169DB3 /* DMRes.m in Sources */,
 				BC910CC0241365AE00280936 /* CKJToolView.m in Sources */,
 				BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */,
+				BC9DC90C242494A20039F77A /* UnitCell.m in Sources */,
 				BC910D7124136A7D00280936 /* RJTestResource.m in Sources */,
 				BC910CCA241365AE00280936 /* CKJCommonSectionModel.m in Sources */,
 				BC06DBC724220ECB00E54E68 /* MonitorItem.m in Sources */,
@@ -1374,6 +1398,7 @@
 				BC910D7A24136A7D00280936 /* CKJCellVC.m in Sources */,
 				BC910D7324136A7D00280936 /* DemoInsetVC.m in Sources */,
 				BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */,
+				BC9DC902242484550039F77A /* MonitorInputVC2.m in Sources */,
 				BC910D6A24136A7D00280936 /* DemoCoreCellVC.m in Sources */,
 				BC910D7224136A7D00280936 /* KJSupportObjcListVC.m in Sources */,
 				BC910CDE241365AE00280936 /* CKJBaseTableViewCell.m in Sources */,
@@ -1391,6 +1416,7 @@
 				BC869CAF2421E40B00ED2607 /* MonitorInputVC.m in Sources */,
 				BC910D7924136A7D00280936 /* CKJImageLeftRightCellVC.m in Sources */,
 				BCC442B4242094D000F20238 /* GraphicCell.m in Sources */,
+				BC9DC909242487220039F77A /* DMBottomLineView.m in Sources */,
 				BC910D6924136A7D00280936 /* RJBillDetailModel.m in Sources */,
 				BC910D7024136A7D00280936 /* TableViewCellDemoVC.m in Sources */,
 				BC910CE4241365AE00280936 /* CKJCommonTableViewCell.m in Sources */,

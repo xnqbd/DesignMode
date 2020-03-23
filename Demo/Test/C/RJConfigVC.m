@@ -55,7 +55,7 @@
 - (void)kj_tableView:(CKJSimpleTableView *)tableView didSelectRowAtSection:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath model:(__kindof CKJCommonCellModel *)model cell:(__kindof CKJCommonTableViewCell *)cell {
     if ([model isKindOfClass:[CKJLeftRightTopEqualCellModel class]]) {
         
-        RJBillDetailModel *target = model.extension_Obj;
+        RJBillDetailModel *target = model.extension_Obj1;
         
         NSLog(@"这几行每个都可以得到这个数据 %@ ", target);
     }
