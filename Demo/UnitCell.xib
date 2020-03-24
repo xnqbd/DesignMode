@@ -14,34 +14,35 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gL6-Us-nOG" customClass="DMBottomLineView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gL6-Us-nOG">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身高" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE8-au-Ziq">
-                            <rect key="frame" x="5" y="438" width="33" height="20"/>
+                            <rect key="frame" x="10" y="438" width="33" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-ew-BjE">
-                            <rect key="frame" x="378" y="439" width="31" height="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-ew-BjE">
+                            <rect key="frame" x="409" y="448" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-uE-RPr">
-                            <rect key="frame" x="327" y="433" width="46" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-uE-RPr">
+                            <rect key="frame" x="350" y="432" width="49" height="32"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cBQ-ew-BjE" secondAttribute="trailing" constant="5" id="76J-zV-DzU"/>
-                        <constraint firstItem="IE8-au-Ziq" firstAttribute="leading" secondItem="gL6-Us-nOG" secondAttribute="leading" constant="5" id="Dpe-za-Bc3"/>
+                        <constraint firstItem="IE8-au-Ziq" firstAttribute="leading" secondItem="gL6-Us-nOG" secondAttribute="leading" constant="10" id="Dpe-za-Bc3"/>
                         <constraint firstItem="cBQ-ew-BjE" firstAttribute="centerY" secondItem="IE8-au-Ziq" secondAttribute="centerY" id="Hky-dq-d5l"/>
-                        <constraint firstItem="cBQ-ew-BjE" firstAttribute="leading" secondItem="aPl-uE-RPr" secondAttribute="trailing" constant="5" id="UlL-95-0jc"/>
+                        <constraint firstItem="cBQ-ew-BjE" firstAttribute="leading" secondItem="aPl-uE-RPr" secondAttribute="trailing" constant="10" id="UlL-95-0jc"/>
                         <constraint firstItem="IE8-au-Ziq" firstAttribute="centerY" secondItem="gL6-Us-nOG" secondAttribute="centerY" id="Vkp-ZC-X1r"/>
                         <constraint firstItem="aPl-uE-RPr" firstAttribute="centerY" secondItem="IE8-au-Ziq" secondAttribute="centerY" id="Yec-sk-USK"/>
                     </constraints>

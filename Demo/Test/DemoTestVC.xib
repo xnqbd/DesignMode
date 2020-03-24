@@ -17,7 +17,34 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="阿萨德阿Kkj手机壳很方便离开技能大赛谁看见的你" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmC-dj-xMK">
+                    <rect key="frame" x="107" y="444" width="200" height="18.5"/>
+                    <color key="backgroundColor" red="0.16862745100000001" green="0.63137254899999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="UzZ-dn-F9b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="阿萨德阿Kkj手机壳很方便离开技能大赛谁看见的你" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BuY-en-im4" customClass="CKJTextFiled">
+                    <rect key="frame" x="107" y="408" width="200" height="18.5"/>
+                    <color key="backgroundColor" red="0.16862745100000001" green="0.63137254899999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="L8p-fj-zaF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PmC-dj-xMK" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="HxH-Im-4G6"/>
+                <constraint firstItem="BuY-en-im4" firstAttribute="centerX" secondItem="PmC-dj-xMK" secondAttribute="centerX" id="QaP-4a-4Lm"/>
+                <constraint firstItem="PmC-dj-xMK" firstAttribute="top" secondItem="BuY-en-im4" secondAttribute="bottom" constant="17.5" id="Qrx-su-JYc"/>
+                <constraint firstItem="PmC-dj-xMK" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="svG-7B-AN0"/>
+                <constraint firstItem="BuY-en-im4" firstAttribute="width" secondItem="PmC-dj-xMK" secondAttribute="width" id="wlO-3m-CbU"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
         </view>

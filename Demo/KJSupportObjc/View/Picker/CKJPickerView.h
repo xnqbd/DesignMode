@@ -23,10 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic, nullable) NSString *title;
 @property (copy, nonatomic, nullable) NSAttributedString *attTitle;
 
-
 @property (strong, nonatomic, nullable) UIView *view;
 
 + (instancetype)rowModelWithTitle:(id)title;
+
+
+/// int result = [CKJPickerRowModel _getTitles:allSelectRows].kjwd_stringValue.intValue;
++ (NSArray <NSString *>*)_getTitles:(NSArray <CKJPickerRowModel *>*)array;
 
 //@property (copy, nonatomic) vod;
 
@@ -48,10 +51,6 @@ NS_ASSUME_NONNULL_BEGIN
 // 这个row 和 component 不要轻易换名字
 @property (assign, nonatomic, readonly) NSInteger *component;
 
-/**
- 默认选中的索引，默认选中第0行，一般是设置初始化的时候默认的索引
- */
-@property (assign, nonatomic) NSInteger selectIndex;
 
 /**
  宽度（直接设置宽度等于一个值，比如 width = 100）
@@ -70,7 +69,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSMutableArray <CKJPickerComponentModel *>*)createComponentsByRows:(NSArray <NSArray <CKJPickerRowModel *>*>*)rowss;
 
-+ (instancetype)componentWithDetail:(void(^_Nonnull)(CKJPickerComponentModel *m))detail;
++ (instancetype)componentWithDetail:(void(^_Nonnull)(CKJPickerComponentModel *__weak m))detail;
+
+/**
+ 默认选中的索引，默认选中第0行，一般是设置初始化的时候默认的索引
+ */
+@property (assign, nonatomic) NSInteger selectIndex;
+
+/// 设置默认选中的模型
+- (void)_setSelectModel:(CKJPickerRowModel *_Nullable)rowModel;
 
 @end
 

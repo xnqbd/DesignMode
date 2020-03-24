@@ -175,7 +175,7 @@
     } didSelectRowBlock:didSelectRowBlock];
 }
 
-+ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock {
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText arrow:(BOOL)arrow didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock {
     return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
         CGFloat margin = 12;
         if ([title isKindOfClass:[NSString class]]) {
@@ -184,6 +184,9 @@
             m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
         }
         m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:margin];
+        if (arrow) {
+            m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
+        }
     } didSelectRowBlock:didSelectRowBlock];
 }
 

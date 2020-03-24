@@ -7,15 +7,41 @@
 //
 
 #import "UnitCell.h"
+#import "NSObject+WDYHFCategory.h"
 
 @implementation UnitCell
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+
+- (void)_setTitle:(NSString *)title btnTitle:(NSString *_Nullable)btnTitle
+             unit:(NSString *_Nullable)unit
+            click:(void(^)(UIButton * _Nonnull __weak _sender))click {
+    self.title.text = title;
+    if (btnTitle) {
+        [self.btn setTitle:btnTitle forState:UIControlStateNormal];
+    }
+    self.unitLab.text = unit;
+    [self.btn kjwd_addTouchUpInsideForCallBack:click];
 }
-*/
+
+
+
+//- (void)_setTitle2:(NSString *)title btnTitle:(NSString *_Nullable)btnTitle
+//             unit:(NSString *_Nullable)unit
+//             array:(NSArray *)array
+//            click:(void(^)(UIButton * _Nonnull _sender, NSArray *arr))click {
+//    self.title.text = title;
+//    if (btnTitle) {
+//        [self.btn setTitle:btnTitle forState:UIControlStateNormal];
+//    }
+//    self.unitLab.text = unit;
+//    self.btn.ex_Obj1 = array;
+//    
+////    [self.btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
+////        click
+////    }];
+//}
+
+
 
 @end

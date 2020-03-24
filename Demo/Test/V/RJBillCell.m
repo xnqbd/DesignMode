@@ -28,7 +28,7 @@
     
     self.timeLab.text = [[NSDate kjwd_returnDate:model.BillDate withDateFormat:CKJDateFormat4] kjwd_YearMonthDayString];
     
-    self.amountLab.attributedText = WDCKJAttributed4(@"收费：", [UIColor kjwd_title], nil, [NSString stringWithFormat:@"￥%@", model.Total], [UIColor redColor], nil);
+    self.amountLab.attributedText = WDCKJAttAppend(@"收费：", [UIColor kjwd_title], nil, [NSString stringWithFormat:@"￥%@", model.Total], [UIColor redColor], nil);
 }
 
 @end

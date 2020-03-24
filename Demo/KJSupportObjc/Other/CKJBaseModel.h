@@ -68,5 +68,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+@interface CKJGlobalDelegate : CKJBaseModel
+
+
+//@property (copy, nonatomic) NSString *name;
+
+
+@end
+
+
+
+
+
+
 
 NS_ASSUME_NONNULL_END

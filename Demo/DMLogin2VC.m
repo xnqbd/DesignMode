@@ -10,6 +10,8 @@
 #import "HomeVC.h"
 #import "MonitorInputVC2.h"
 #import "MonitorInputVC.h"
+#import "DXLoginVC.h"
+#import "MonitorHomeVC.h"
 
 @interface DMLogin2VC ()
 
@@ -125,7 +127,9 @@
 //            [weakSelf.navigationController pushViewController:vc animated:YES];
             
 //            MonitorInputVC2 *vc = [[MonitorInputVC2 alloc] init];
-            MonitorInputVC *vc = [[MonitorInputVC alloc] init];
+//            MonitorInputVC *vc = [[MonitorInputVC alloc] init];
+//            DXLoginVC *vc = [[DXLoginVC alloc] init];
+            MonitorHomeVC *vc = [[MonitorHomeVC alloc] init];
             vc.hidesBottomBarWhenPushed = YES;
             [weakSelf.navigationController pushViewController:vc animated:YES];
             

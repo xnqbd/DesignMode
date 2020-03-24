@@ -250,7 +250,7 @@ NSMutableAttributedString * WDCKJAttributed3(NSString *_Nullable text, CGFloat h
     //    [attributedString  addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, [text length])];
     return attributedString;
 }
-NSMutableAttributedString * WDCKJAttributed4(NSString *_Nullable text1, UIColor *_Nullable color1, NSNumber *_Nullable fontSize1, NSString *_Nullable text2, UIColor *_Nullable color2, NSNumber *_Nullable fontSize2) {
+NSMutableAttributedString * WDCKJAttAppend(NSString *_Nullable text1, UIColor *_Nullable color1, NSNumber *_Nullable fontSize1, NSString *_Nullable text2, UIColor *_Nullable color2, NSNumber *_Nullable fontSize2) {
     NSMutableAttributedString *att = WDCKJAttributed2(text1, color1, fontSize1);
     [att appendAttributedString:WDCKJAttributed2(text2, color2, fontSize2)];
     return att;
@@ -741,6 +741,13 @@ CGFloat WDAPP_ScreenHeight(void) {
     }
     return string;
 }
+- (NSString *)kjwd_stringValue {
+    NSMutableString *string = [NSMutableString string];
+    for (id obj in self) {
+        [string appendString:[NSString stringWithFormat:@"%@", obj]];
+    }
+    return string;
+}
 
 - ( NSIndexSet *)kjwd_indexSetValue {
     NSMutableIndexSet *set = [NSMutableIndexSet indexSet];
@@ -821,16 +828,20 @@ CGFloat WDAPP_ScreenHeight(void) {
 #pragma mark - -----------------NSMutableArray-----------------
 @implementation NSMutableArray (WDYHFCategory)
 
-+ (instancetype)kjwd_enumCount:(NSUInteger)count returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack {
++ (instancetype)kjwd_enumTo:(NSUInteger)to returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack {
+    return [self kjwd_enumFrom:0 to:to returnItemBlock:callBack];
+}
++ (instancetype)kjwd_enumFrom:(NSUInteger)from to:(NSUInteger)to returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack {
     NSMutableArray *result = [NSMutableArray array];
     if (callBack == nil) {
         return result;
     }
-    for (NSUInteger i = 0; i < count; i++) {
-        
+    if (from > to) {
+        return result;
+    }
+    for (NSUInteger i = from; i <= to; i++) {
         id obj = callBack(i);
         [result kjwd_addObject:obj];
-        
     }
     return result;
 }
@@ -1718,6 +1729,9 @@ CGFloat WDAPP_ScreenHeight(void) {
 @property (copy, nonatomic) void (^triggerTapGestureRecognizerBlock)(void(^disappearBlock)(void));
 @property (copy, nonatomic) void (^gestureRecognizerBlock)(UIGestureRecognizer *sender, UIView *currentView);
 
+
+
+
 @end
 
 
@@ -2100,6 +2114,15 @@ CGFloat WDAPP_ScreenHeight(void) {
 - (void (^)(UIGestureRecognizer *, UIView *))gestureRecognizerBlock {
     void (^temp)(UIGestureRecognizer *, UIView *) = objc_getAssociatedObject(self, @"gestureRecognizerBlock");
     return temp;
+}
+
+// 附加
+- (void)setEx_Obj1:(id)ex_Obj1 {
+    objc_setAssociatedObject(self, @"ex_Obj1", ex_Obj1, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (id)ex_Obj1 {
+    id ex_Obj1 = objc_getAssociatedObject(self, @"ex_Obj1");
+    return ex_Obj1;
 }
 
 @end

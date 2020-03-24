@@ -62,3 +62,14 @@ IB_DESIGNABLE
 
 
 
+
+
+
+@interface CKJBottomLineView : UIView
+
+@property (strong, nonatomic) IBInspectable UIColor *bottomColor;
+
+
+
+@end
+

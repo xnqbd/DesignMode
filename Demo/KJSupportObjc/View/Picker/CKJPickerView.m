@@ -22,6 +22,14 @@
     return m;
 }
 
++ (NSArray <NSString *>*)_getTitles:(NSArray <CKJPickerRowModel *>*)array {
+    NSMutableArray *result = [NSMutableArray array];
+    for (CKJPickerRowModel *m in array) {
+        [result kjwd_addObject:m.title];
+    }
+    return result;
+}
+
 - (nullable NSString *)returnTitleOfComponent:(NSInteger)component row:(NSInteger)row componentModel:(CKJPickerComponentModel *)componentModel pickerView:(UIPickerView *)pickerView {
     return _title;
 }
@@ -82,6 +90,19 @@
         detail(m);
     }
     return m;
+}
+- (void)_setSelectModel:(CKJPickerRowModel *)rowModel {
+    if (WDKJ_IsNullObj(rowModel, [CKJPickerRowModel class])) {
+        return;
+    }
+    NSArray *modelArray = self.modelArray;
+    for (int i = 0; i < modelArray.count; i++) {
+        CKJPickerRowModel *m = modelArray[i];
+        if (m == rowModel) {
+            self.selectIndex = i;
+            break;
+        }
+    }
 }
 
 @end

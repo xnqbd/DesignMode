@@ -305,8 +305,8 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 /// image title 箭头
 + (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
-/// title 和 右标题
-+ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;
+/// title 和 右标题  箭头
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText arrow:(BOOL)arrow didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 
 @end

@@ -103,7 +103,7 @@ NSMutableAttributedString *WDCKJAttributed3(NSString *_Nullable text, CGFloat ho
 /**
  拼接
  */
-NSMutableAttributedString *WDCKJAttributed4(NSString *_Nullable text1, UIColor *_Nullable color1, NSNumber *_Nullable fontSize1, NSString *_Nullable text2, UIColor *_Nullable color2, NSNumber *_Nullable fontSize2);
+NSMutableAttributedString *WDCKJAttAppend(NSString *_Nullable text1, UIColor *_Nullable color1, NSNumber *_Nullable fontSize1, NSString *_Nullable text2, UIColor *_Nullable color2, NSNumber *_Nullable fontSize2);
 
 
 /**
@@ -248,6 +248,9 @@ CGFloat WDAPP_ScreenHeight(void);
 - (NSString *)kjwd_arrayString;
 
 
+/// 传入["0", "5", "8"] 返回 "058"
+- (NSString *)kjwd_stringValue;
+
 /**
  必须保证元素的NSNumber类型
 
@@ -283,7 +286,8 @@ CGFloat WDAPP_ScreenHeight(void);
 // 关于NSMutableArray线程安全的思考和实现 http://blog.csdn.net/kongdeqin/article/details/53171189
 @interface NSMutableArray <ObjectType> (WDYHFCategory)
 
-+ (instancetype)kjwd_enumCount:(NSUInteger)count returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack;
++ (instancetype)kjwd_enumTo:(NSUInteger)to returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack;
++ (instancetype)kjwd_enumFrom:(NSUInteger)from to:(NSUInteger)to returnItemBlock:(id(^_Nonnull)(NSUInteger i))callBack;
 
 
 + (instancetype)kjwd_arrayWithArray:(nullable NSArray<ObjectType> *)array;
@@ -630,6 +634,9 @@ CGFloat WDAPP_ScreenHeight(void);
 
 #pragma mark - -----------------UIView-----------------
 @interface UIView (WDYHFCategory)
+
+@property (strong, nonatomic, nullable) id ex_Obj1;
+
 
 
 /// 返回当前视图的控制器

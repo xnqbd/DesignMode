@@ -38,7 +38,7 @@
 
 - (NSArray <CKJPickerComponentModel *>*)sportTime {
     CKJPickerComponentModel *c1 = [CKJPickerComponentModel componentWithDetail:^(CKJPickerComponentModel * _Nonnull m) {
-        m.modelArray = [NSMutableArray kjwd_enumCount:24 returnItemBlock:^id _Nonnull(NSUInteger i) {
+        m.modelArray = [NSMutableArray kjwd_enumTo:23 returnItemBlock:^id _Nonnull(NSUInteger i) {
             CKJPickerRowModel *row = [CKJPickerRowModel rowModelWithTitle:[NSString stringWithFormat:@"%02lu", i]];
             return row;
         }];
@@ -50,7 +50,7 @@
     }];
     
     CKJPickerComponentModel *c3 = [CKJPickerComponentModel componentWithDetail:^(CKJPickerComponentModel * _Nonnull m) {
-        m.modelArray = [NSMutableArray kjwd_enumCount:60 returnItemBlock:^id _Nonnull(NSUInteger i) {
+        m.modelArray = [NSMutableArray kjwd_enumTo:59 returnItemBlock:^id _Nonnull(NSUInteger i) {
             CKJPickerRowModel *row = [CKJPickerRowModel rowModelWithTitle:[NSString stringWithFormat:@"%02lu", i]];
             return row;
         }];

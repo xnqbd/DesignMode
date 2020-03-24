@@ -11,7 +11,10 @@
 @implementation CKJTextFiled
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
-    return CGRectInset( bounds , 10 , 0 );
+    NSLog(@"textRectForBounds %@   ", NSStringFromCGRect(bounds));
+    NSLog(@"新的 %@   ", NSStringFromCGRect(CGRectInset( bounds , 30 , 0 )));
+    
+    return CGRectInset( bounds , 30 , 0 );
 }
 
 //控制编辑文本时所在的位置，左右缩 10
