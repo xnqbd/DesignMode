@@ -30,7 +30,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.showLine = NO;
+        [self _showLine:NO];
         self.leftLab_textAlignment = NSTextAlignmentLeft;
         self.rightLab_textAlignment = NSTextAlignmentRight;
     }

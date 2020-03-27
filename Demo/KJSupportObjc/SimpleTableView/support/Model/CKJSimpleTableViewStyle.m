@@ -70,6 +70,7 @@
         self.haveTitleStyle = [[CKJInputHaveTitleStyle alloc] init];
         self.sectionFooterHeight = @10;
         self.sectionHeaderHeight = @0;
+        self.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 0)];
     }
     return self;
 }

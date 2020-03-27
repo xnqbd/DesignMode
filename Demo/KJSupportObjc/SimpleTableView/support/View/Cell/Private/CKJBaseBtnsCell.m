@@ -107,7 +107,7 @@
     for (int i = 0; i < items.count; i++) {
         NSArray <CKJBtnItemData *>*temp = items[i];
         CKJBaseBtnsCellModel *cellModel = [self baseBtnsCellWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:^(__kindof CKJBaseBtnsCellModel * _Nonnull m) {
-            m.showLine = NO;
+            [m _showLine:NO];
             m.stackItems = temp;
             m.stackView_leftMargin = leftMargin;
             m.stackView_rightMargin = rightMargin;

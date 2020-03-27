@@ -445,7 +445,6 @@
     _arrowImageView9.image = image;
     _arrowImageView9.hidden = image ? NO : YES;
     
-
     [_arrowImageView9 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
         make.centerY.equalTo(superview);
         make.right.equalTo(superview).offset(-(right));

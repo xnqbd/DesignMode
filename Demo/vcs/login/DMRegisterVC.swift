@@ -22,7 +22,7 @@ class DMRegisterVC: CKJBaseTableVC {
         let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
             let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), detailSettingBlock: { (m) in
                 m.localImage = UIImage.kjwd_imageNamed("logo")
-                m.showLine = false;
+                m._showLine(false)
             }) { (make, superView) in
                 make.center.equalTo()(superView)
                 make.size.equalTo()(CGSize(width: 120, height: 120))

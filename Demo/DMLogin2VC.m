@@ -36,7 +36,7 @@
 
         CKJCellModel *one = [CKJCellModel ckjCellWithCellHeight:@30 cellModel_id:nil detailSettingBlock:^(__kindof CKJCellModel * _Nonnull m) {
             m.selectionStyle = UITableViewCellSelectionStyleNone;
-            m.showLine = NO;
+            [m _showLine:NO];
             m.image2Model = [CKJImage2Model image2ModelWithNormalImage:[UIImage kjwd_imageNamed:@"login_radio"] size:[NSValue valueWithCGSize:CGSizeMake(50, 25)] left:10 detail:^(CKJImage2Model * _Nonnull i) {
                 i.selectedImage = [UIImage kjwd_imageNamed:@"login_radio_sle"];
                 i.normalAttributedTitle = WDCKJAttributed2(@" 同意", [UIColor orangeColor], @13);
@@ -58,7 +58,7 @@
             [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
                 bg.edge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsZero];
             }];
-            m.showLine = NO;
+            [m _showLine:NO];
             m.localImage = [UIImage kjwd_imageNamed:@"背景"];
         } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
             make.edges.equalTo(superview);
@@ -69,7 +69,7 @@
         NSValue *edge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(10, 20, 10, 20)];
         
         CKJInputCellModel *phone = [CKJInputCellModel inputWithCellHeight:@60 cellModel_id:kOInput_Phone detailSettingBlock:^(__kindof CKJInputCellModel * _Nonnull m) {
-            m.showLine = NO;
+            [m _showLine:NO];
             [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
                 bg.image = [UIImage kjwd_imageNamed:@"login_input"];
                 bg.edge = edge;
@@ -84,7 +84,7 @@
         
         
         CKJInputCellModel *pwd = [CKJInputCellModel inputWithCellHeight:@60 cellModel_id:kOInput_Pwd detailSettingBlock:^(__kindof CKJInputCellModel * _Nonnull m) {
-            m.showLine = NO;
+            [m _showLine:NO];
             [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
                 bg.image = [UIImage kjwd_imageNamed:@"login_input"];
                 bg.edge = edge;

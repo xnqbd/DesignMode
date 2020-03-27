@@ -48,6 +48,11 @@ typedef void(^CKJSectionBlock)(__kindof CKJCommonSectionModel * _sec);
 /// 区尾高度，依次看section.footerHeight，style.sectionFooterHeight的值，如果都为nil，最后自适应高度
 @property (copy, nonatomic, nullable) NSNumber *footerHeight;
 
+
+/// 分割线edge
+@property (strong, nonatomic, nullable) NSValue *lineEdge;
+
+
 @property (strong, nonatomic) __kindof CKJCommonHeaderFooterModel *headerModel;
 @property (strong, nonatomic) __kindof CKJCommonHeaderFooterModel *footerModel;
 

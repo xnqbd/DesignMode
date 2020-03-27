@@ -28,7 +28,7 @@ typedef void(^CKJImageViewCellRowBlock)(__kindof CKJImageViewCellModel *_Nonnull
      [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
          bg.edge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsZero];
      }];
-     m.showLine = NO;
+     [m _showLine:NO];
      m.localImage = [UIImage kjwd_imageNamed:@"背景"];
  } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
      make.edges.equalTo(superview);

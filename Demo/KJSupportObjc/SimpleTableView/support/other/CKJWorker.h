@@ -49,7 +49,6 @@ UIKIT_EXTERN NSString *_Nonnull const KJPrefix_cCornerRadius;
 
 
 
-
 @interface CKJWorker : CKJBaseModel
 
 

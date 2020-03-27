@@ -139,7 +139,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.showLine = YES;
+        [self _showLine:YES];
     }
     return self;
 }

@@ -157,10 +157,10 @@
     NSString *title = header.title.text;
     
     [header.cancel kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-        
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     }];
     [header.add kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-        
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
     }];
     
     

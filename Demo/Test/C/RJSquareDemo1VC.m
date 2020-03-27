@@ -87,7 +87,7 @@
     KJ_typeweakself
     CKJCellModel *model1 = [CKJCellModel ckjCellWithCellHeight:@40 cellModel_id:nil detailSettingBlock:^(__kindof CKJCellModel * _Nonnull m) {
         [m addGroupId:dateGroupId];
-        m.showLine = NO;
+        [m _showLine:NO];
         m.selectionStyle = UITableViewCellSelectionStyleNone;
         m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"月份筛选", [UIColor blackColor], @17) left:15];
     } didSelectRowBlock:nil];
@@ -135,7 +135,7 @@
     
     CKJTableViewCell1Model *model4 = [CKJTableViewCell1Model baseTableViewCellWithCellHeight:@40 cellModel_id:nil detailSettingBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
         [m addGroupId:dateGroupId];
-        m.showLine = NO;
+        [m _showLine:NO];
         m.selectionStyle = UITableViewCellSelectionStyleNone;
         m.textLabelAttStr = WDCKJAttributed2(@"显示最近半年明细", [UIColor kjwd_subTitle], @13.5);
         m.textAlignment = NSTextAlignmentCenter;

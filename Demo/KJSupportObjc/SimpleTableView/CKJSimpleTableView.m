@@ -160,16 +160,27 @@
     [cell setupData:model section:section row:row selectIndexPath:indexPath tableView:tableView];
     
     // 分割线
-    if (WDKJ_IsNullObj(model.lineEdge, [NSValue class])) {
-        if (model.showLine) {
-            cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
-        } else {
-            cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width + 1000, 0, 0);
-        }
-    } else {
-        cell.separatorInset = model.lineEdge.UIEdgeInsetsValue;
-    }
+//    if (WDKJ_IsNullObj(model.lineEdge, [NSValue class])) {
+//        if (model.showLine) {
+//            cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
+//        } else {
+//            cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width + 1000, 0, 0);
+//        }
+//    } else {
+//        cell.separatorInset = model.lineEdge.UIEdgeInsetsValue;
+//    }
     
+//    if (cell.separatorInset) {
+//        <#statements#>
+//    }
+    
+    if (model.lineEdge) {
+        cell.separatorInset = model.lineEdge.UIEdgeInsetsValue;
+    } else if (sectionModel.lineEdge) {
+        cell.separatorInset = sectionModel.lineEdge.UIEdgeInsetsValue;
+    } else if (self.simpleStyle.lineEdge) {
+        cell.separatorInset = self.simpleStyle.lineEdge.UIEdgeInsetsValue;
+    }
     
     return cell;
 }

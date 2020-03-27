@@ -26,7 +26,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.showLine = NO;
+        [self _showLine:NO];
         self.bgConfig.bgColor = [UIColor kjwd_rbg:247 alpha:1];
     }
     return self;

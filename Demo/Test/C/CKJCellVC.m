@@ -171,7 +171,7 @@
         
         
         CKJCellModel *model20 = [CKJCellModel ckjCellWithCellHeight:@65 cellModel_id:nil detailSettingBlock:^(CKJCellModel *m) {
-            m.showLine = NO;
+            [m _showLine:NO];
             m.image2Model = [CKJImage2Model image2ModelWithImageString:@"wdyhfsdkmark" size:CGSizeMake(30, 30) left:leftMarign];
             m.subTitle4Model = [CKJSubTitle4Model subTitle4ModelWithAttributedText:WDCKJAttributed2(@"结算失败。现金支付部分将在30分钟内，原路退回，请留意查看！", [UIColor kjwd_r:24 g:167 b:99 alpha:1], @16) top:10 left:10 bottom:10 right:10];
         } didSelectRowBlock:nil];

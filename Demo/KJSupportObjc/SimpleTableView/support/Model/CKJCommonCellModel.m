@@ -53,7 +53,6 @@
     if (self = [super init]) {
         self.displayInTableView = YES;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
-        self.showLine = YES;
         self.bgConfig = [[CKJCommonCellBGImageViewConfig alloc] init];
     }
     return self;
@@ -66,6 +65,14 @@
 - (void)updateBGConfig:(void(^_Nullable)(CKJCommonCellBGImageViewConfig *bg))BGConfig {
     if (BGConfig) {
         BGConfig(self.bgConfig);
+    }
+}
+
+- (void)_showLine:(BOOL)show {
+    if (show) {
+        self.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 0)];
+    } else {
+        self.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 2000, 0, 0)];
     }
 }
 

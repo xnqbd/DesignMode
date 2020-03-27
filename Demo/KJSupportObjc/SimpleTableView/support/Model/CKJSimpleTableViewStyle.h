@@ -87,6 +87,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 可能为nil，默认10
 @property (copy, nonatomic, nullable) NSNumber *sectionFooterHeight;
 
+/// 分割线edge
+@property (strong, nonatomic, nullable) NSValue *lineEdge;
 
 #pragma mark - 输入框相关
 

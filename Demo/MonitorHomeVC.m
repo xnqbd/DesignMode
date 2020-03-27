@@ -20,12 +20,12 @@
     return UITableViewStylePlain;
 }
 
-- (void)layoutTableViewFrame:(CKJSimpleTableView *)tableV {
-    [tableV kjwd_mas_makeConstraints:^(MASConstraintMaker *make, UIView *superview) {
-        make.centerX.top.bottom.equalTo(superview);
-        make.left.equalTo(superview).offset(20);
-    }];
-}
+//- (void)layoutTableViewFrame:(CKJSimpleTableView *)tableV {
+//    [tableV kjwd_mas_makeConstraints:^(MASConstraintMaker *make, UIView *superview) {
+//        make.centerX.top.bottom.equalTo(superview);
+//        make.left.equalTo(superview).offset(20);
+//    }];
+//}
 
 - (void)pop {
     [self.navigationController popViewControllerAnimated:YES];
@@ -55,9 +55,11 @@
 
     [self.simpleTableView updateStyle:^(CKJSimpleTableViewStyle * _Nonnull style) {
         style.rowHeight = @44;
+        style.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
     }];
 
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+        
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
             m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttBold(@"数据监测", [UIColor kjwd_title], @16) left:12];
             m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon2"] right:nil];

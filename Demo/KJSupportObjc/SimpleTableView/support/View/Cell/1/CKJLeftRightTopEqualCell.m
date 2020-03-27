@@ -59,7 +59,7 @@
     model.rightAttStr = rightAtt;
     model.leftLabelSetting = leftSetting;
     model.rightLabelSetting = rightSetting;
-    model.showLine = showLine;
+    [model _showLine:showLine];
     return model;
 }
 

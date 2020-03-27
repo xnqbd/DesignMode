@@ -14,7 +14,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.showLine = NO;
+        [self _showLine:NO];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
@@ -23,7 +23,7 @@
 + (instancetype)emptyCellModelWithHeight:(CGFloat)cellHeight showLine:(BOOL)showLine {
     CKJEmptyCellModel *model = [[CKJEmptyCellModel alloc] init];
     model.cellHeight = @(cellHeight);
-    model.showLine = showLine;
+    [model _showLine:showLine];
     return model;
 }
 

@@ -47,7 +47,7 @@
     model.rightAttStr = rightAtt;
     model.leftLabelSetting = leftSetting;
     model.rightLabelSetting = [CKJLeftRightCenterEqual_RightLabelSetting settingWithRightMargin:rightMargin];
-    model.showLine = showLine;
+    [model _showLine:showLine];
     return model;
 }
 

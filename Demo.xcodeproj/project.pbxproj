@@ -151,7 +151,6 @@
 		BC94324B2416362100FB9B6F /* RJCombineHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */; };
 		BC9A41D6242CA196009E388B /* MonitorHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */; };
 		BC9A41D7242CA196009E388B /* MonitorHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */; };
-		BC9A41DD242D9A21009E388B /* ProjC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DC242D9A21009E388B /* ProjC.m */; };
 		BC9A41E0242D9B2F009E388B /* CKJProjectConfig+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */; };
 		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
 		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
@@ -439,8 +438,6 @@
 		BC9A41D3242CA196009E388B /* MonitorHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorHistoryCell.h; sourceTree = "<group>"; };
 		BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorHistoryCell.m; sourceTree = "<group>"; };
 		BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorHistoryCell.xib; sourceTree = "<group>"; };
-		BC9A41DB242D9A21009E388B /* ProjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjC.h; sourceTree = "<group>"; };
-		BC9A41DC242D9A21009E388B /* ProjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjC.m; sourceTree = "<group>"; };
 		BC9A41DE242D9B2F009E388B /* CKJProjectConfig+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKJProjectConfig+Extension.h"; sourceTree = "<group>"; };
 		BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CKJProjectConfig+Extension.m"; sourceTree = "<group>"; };
 		BC9A41E1242D9C01009E388B /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
@@ -1145,8 +1142,6 @@
 				BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */,
 				BCC4429A24206AB400F20238 /* HomeVC.h */,
 				BCC4429B24206AB400F20238 /* HomeVC.m */,
-				BC9A41DB242D9A21009E388B /* ProjC.h */,
-				BC9A41DC242D9A21009E388B /* ProjC.m */,
 				BC9A41E1242D9C01009E388B /* VideoVC.h */,
 				BCC4429E24206D1800F20238 /* VideoVC.m */,
 				BCC442A024206D4200F20238 /* GraphicVC.h */,
@@ -1462,7 +1457,6 @@
 				BC2F5ED52429F9E00081704E /* PTheme.m in Sources */,
 				BC910D7224136A7D00280936 /* KJSupportObjcListVC.m in Sources */,
 				BC910CDE241365AE00280936 /* CKJBaseTableViewCell.m in Sources */,
-				BC9A41DD242D9A21009E388B /* ProjC.m in Sources */,
 				BC910CE8241365AF00280936 /* CKJImageRightCell.m in Sources */,
 				BC910CCE241365AE00280936 /* CKJCommonHeaderFooterModel.m in Sources */,
 				BC910D6B24136A7D00280936 /* RJSquareDemo2VC.m in Sources */,

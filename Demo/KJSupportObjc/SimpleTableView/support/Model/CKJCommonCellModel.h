@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor *bgColor;
 
 @property (assign, nonatomic) UIViewContentMode contentMode;
+
+
 @property (strong, nonatomic, nullable) NSValue *edge;
 
 @property (assign, nonatomic) CGFloat radius;
@@ -74,10 +76,12 @@ typedef void(^CKJCommonCellModelRowBlock)(__kindof CKJCommonCellModel *m);
 
 
 /// 是否显示分割线， 默认显示(如果lineEdge有值，showLine属性不起作用)
-@property (assign, nonatomic) BOOL showLine;
-/// 分割线edge
+//@property (assign, nonatomic) BOOL showLine;
+
+/// 分割线edge， 依次看cell.lineEdge，section.lineEdge，style.lineEdge(这个有默认值)的值
 @property (strong, nonatomic, nullable) NSValue *lineEdge;
 
+- (void)_showLine:(BOOL)show;
 
 /// 行高，依次看cell.cellHeight，section.rowHeight，style.rowHeight的值，如果都为nil，最后自适应高度，也可以设置UITableViewAutomaticDimension
 @property (copy, nonatomic, nullable) NSNumber *cellHeight;
