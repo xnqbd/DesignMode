@@ -70,7 +70,6 @@
         self.haveTitleStyle = [[CKJInputHaveTitleStyle alloc] init];
         self.sectionFooterHeight = @10;
         self.sectionHeaderHeight = @0;
-        self.bgColor = [UIColor kjwd_rbg:247 alpha:1];
     }
     return self;
 }

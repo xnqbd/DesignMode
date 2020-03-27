@@ -187,10 +187,10 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 /**
  默认自适应宽度
  */
-+ (instancetype)title3ModelWithAttributedText:(nullable NSAttributedString *)text left:(CGFloat)left;
++ (instancetype)title3ModelWithText:(nullable id)text left:(CGFloat)left;
 
-
-+ (instancetype)title3ModelWithAttributedText:(nullable NSAttributedString *)text left:(CGFloat)left width:(CGFloat)width;
+/// 固定宽度
++ (instancetype)title3ModelWithText:(nullable id)text left:(CGFloat)left width:(CGFloat)width;
 
 /** 改变文字 */
 - (void)changeText:(nullable NSString *)text;
@@ -275,7 +275,7 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 
      CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
          CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
-             m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(@"关于") left:10];
+             m.title3Model = [CKJTitle3Model title3ModelWithText:WDAttTitle(@"关于") left:10];
              m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDAttTitle(@"复旦儿科"), [UIColor kjwd_subTitle], nil) left:0 right:0];
              m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
          } didSelectRowBlock:nil];

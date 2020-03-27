@@ -48,14 +48,22 @@
 
 @implementation CKJTitle3Model
 
-+ (instancetype)title3ModelWithAttributedText:(nullable NSAttributedString *)text left:(CGFloat)left {
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    if ([attributedText isKindOfClass:[NSString class]]) {
+        _attributedText = WDAttTitle(attributedText);
+    } else if ([attributedText isKindOfClass:[NSAttributedString class]]) {
+        _attributedText = attributedText;
+    }
+}
+
++ (instancetype)title3ModelWithText:(nullable id)text left:(CGFloat)left {
     CKJTitle3Model *model = [[self alloc] init];
     model.attributedText = text;
     model.leftMargin = left;
     return model;
 }
 
-+ (nonnull instancetype)title3ModelWithAttributedText:(nullable NSAttributedString *)text left:(CGFloat)left width:(CGFloat)width {
++ (instancetype)title3ModelWithText:(nullable id)text left:(CGFloat)left width:(CGFloat)width {
     CKJTitle3Model *model = [[self alloc] init];
     model.attributedText = text;
     model.leftMargin = left;
@@ -120,9 +128,8 @@
     return model;
 }
 + (nonnull instancetype)arrow9SystemModel {
-    return [[self alloc] init];
+    return [CKJProjectConfig arrow9SystemModel];
 }
-
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -150,11 +157,7 @@
 
 + (instancetype)generalWithTitle:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock {
     return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
-        if ([title isKindOfClass:[NSString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(title) left:12];
-        } else if ([title isKindOfClass:[NSAttributedString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
-        }
+        m.title3Model = [CKJTitle3Model title3ModelWithText:title left:kO_super_margin_title];
         if (arrow) {
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         }
@@ -164,11 +167,7 @@
 + (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock {
     return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
         m.image2Model = [CKJImage2Model image2ModelWithImageString:imageName size:imageSize left:15];
-        if ([title isKindOfClass:[NSString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(title) left:12];
-        } else if ([title isKindOfClass:[NSAttributedString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
-        }
+        m.title3Model = [CKJTitle3Model title3ModelWithText:title left:kO_super_margin_title];
         if (arrow) {
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         }
@@ -177,13 +176,8 @@
 
 + (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText arrow:(BOOL)arrow didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock {
     return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
-        CGFloat margin = 12;
-        if ([title isKindOfClass:[NSString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle(title) left:12];
-        } else if ([title isKindOfClass:[NSAttributedString class]]) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:title left:12];
-        }
-        m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:margin];
+        m.title3Model = [CKJTitle3Model title3ModelWithText:title left:kO_super_margin_title];
+        m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:8];
         if (arrow) {
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         }

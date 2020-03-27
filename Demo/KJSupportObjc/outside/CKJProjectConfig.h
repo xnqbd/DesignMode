@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)commitBtnColor;
 
++ (CGFloat)super_margin_title;
+
++ (CKJArrow9Model *)arrow9SystemModel;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

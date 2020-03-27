@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"列表";
+//    self.view.backgroundColor = [UIColor redColor];
     [self.simpleTableView updateStyle:^(CKJSimpleTableViewStyle * _Nonnull style) {
         style.rowHeight = @44;
 //        style.sectionHeaderHeight = @0;
@@ -36,11 +37,14 @@
     CKJGeneralCellModel *(^block)(NSString *title, NSString *vcClass) = ^CKJGeneralCellModel *(NSString *title, NSString *vcClass) {
         
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(title, [UIColor kjwd_title], @16) left:15];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(title, [UIColor kjwd_title], @16) left:15];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             UIViewController *vc = [[NSClassFromString(vcClass) alloc] init];
-            [weakSelf.navigationController pushViewController:vc animated:YES];
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//            vc.modalPresentationStyle = UIModalPresentationPopover;
+
+            [weakSelf presentViewController:vc animated:YES completion:nil];
         }];
         return model1;
     };

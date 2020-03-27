@@ -17,5 +17,6 @@
 #import "MBProgressHUD+KJSupport.h"
 #import "DMLogin2VC.h"
 #import "DXLoginVC.h"
+#import "NaVC.h"
 
 #endif /* SOBridge_h */

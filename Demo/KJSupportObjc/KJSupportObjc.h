@@ -57,4 +57,6 @@
 
 #import "CKJFixMode.h"
 
+#import "CKJProjectConfig.h"
+
 #endif /* KJSupportObjc_h */

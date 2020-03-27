@@ -55,7 +55,7 @@
     CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithHeaderHeight:@10 detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:kPriceCellID detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             m.image2Model = [CKJImage2Model image2ModelWithImageString:@"demo余额.png" size:CGSizeMake(22, 22) left:15];
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"余额", [UIColor kjwd_title], nil) left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"余额", [UIColor kjwd_title], nil) left:10];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"620.86元", [UIColor kjwd_subTitle], @14) left:0 right:0];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {

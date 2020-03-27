@@ -8,6 +8,12 @@
 
 #import "CKJBaseModel.h"
 #import "NSObject+WDYHFCategory.h"
+#import "CKJGeneralCell.h"
+
+
+CGFloat const kO_super_margin_title = 12;
+//CGFloat const kO_super_margin_title = 12;
+
 
 @implementation CKJBaseModel
 
@@ -56,3 +62,8 @@
 @implementation CKJNetWorkDataModel
 
 @end
+
+
+
+
+

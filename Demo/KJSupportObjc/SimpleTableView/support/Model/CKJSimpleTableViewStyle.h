@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// CKJSimpleTableView 背景颜色
-@property (strong, nonatomic) UIColor *bgColor;
+//@property (strong, nonatomic) UIColor *bgColor;
 
 /// 分区圆角样式
 @property (strong, nonatomic, nullable) CKJSectionCornerStyle *sectionCornerStyle;

@@ -1560,7 +1560,9 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 - (void)kjwd_setClearNavigationBar {
     //设置导航栏背景图片为一个空的image，这样就透明了
-    [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    UIImage *image = [UIImage kjwd_imageWithColor:[UIColor clearColor] size:CGSizeMake(100, 40)];
+    UIImage *image = [[UIImage alloc] init];
+    [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     //去掉透明后导航栏下边的黑边
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
 }

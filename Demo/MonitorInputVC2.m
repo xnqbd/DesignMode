@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor systemOrangeColor];
+//    self.view.backgroundColor = [UIColor systemOrangeColor];
     
     self.grayColor = [UIColor kjwd_rbg:247 alpha:1];
     UIView *onlyView = [[UIView alloc] init];
@@ -151,8 +151,11 @@
     
     
     
-    NSString *title = @"记血压";
-    header.title.text = title;
+    
+    
+    header.title.text = [NSString stringWithFormat:@"记%@", _type];
+    NSString *title = header.title.text;
+    
     [header.cancel kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
         
     }];

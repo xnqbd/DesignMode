@@ -11,6 +11,14 @@
 #import "CKJCombineCellProtocol.h"
 #import "NSObject+WDYHFCategory.h"
 
+
+
+UIKIT_EXTERN CGFloat const kO_super_margin_title; // 12
+
+
+
+@class CKJArrow9Model;
+
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -67,14 +75,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
-@interface CKJGlobalDelegate : CKJBaseModel
-
-
-//@property (copy, nonatomic) NSString *name;
-
-
-@end
 
 
 

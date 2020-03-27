@@ -149,6 +149,10 @@
 		BC943247241632F400FB9B6F /* HZYHFInterfacedConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */; };
 		BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */; };
 		BC94324B2416362100FB9B6F /* RJCombineHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */; };
+		BC9A41D6242CA196009E388B /* MonitorHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */; };
+		BC9A41D7242CA196009E388B /* MonitorHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */; };
+		BC9A41DD242D9A21009E388B /* ProjC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DC242D9A21009E388B /* ProjC.m */; };
+		BC9A41E0242D9B2F009E388B /* CKJProjectConfig+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */; };
 		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
 		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
 		BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */; };
@@ -432,6 +436,14 @@
 		BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFInterfacedConst.swift; sourceTree = "<group>"; };
 		BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZYHFHTTPRequest.swift; sourceTree = "<group>"; };
 		BC94324A2416362100FB9B6F /* RJCombineHttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RJCombineHttpRequest.swift; sourceTree = "<group>"; };
+		BC9A41D3242CA196009E388B /* MonitorHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorHistoryCell.h; sourceTree = "<group>"; };
+		BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorHistoryCell.m; sourceTree = "<group>"; };
+		BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorHistoryCell.xib; sourceTree = "<group>"; };
+		BC9A41DB242D9A21009E388B /* ProjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjC.h; sourceTree = "<group>"; };
+		BC9A41DC242D9A21009E388B /* ProjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjC.m; sourceTree = "<group>"; };
+		BC9A41DE242D9B2F009E388B /* CKJProjectConfig+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKJProjectConfig+Extension.h"; sourceTree = "<group>"; };
+		BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CKJProjectConfig+Extension.m"; sourceTree = "<group>"; };
+		BC9A41E1242D9C01009E388B /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
 		BC9DC8F724246A730039F77A /* DXLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXLoginVC.h; sourceTree = "<group>"; };
 		BC9DC8F824246A730039F77A /* DXLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXLoginVC.xib; sourceTree = "<group>"; };
 		BC9DC8F924246A730039F77A /* DXLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLoginVC.m; sourceTree = "<group>"; };
@@ -458,7 +470,6 @@
 		BCB7773D241F1E5F008C0618 /* DemoTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTestVC.xib; sourceTree = "<group>"; };
 		BCC4429A24206AB400F20238 /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		BCC4429B24206AB400F20238 /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		BCC4429D24206D1700F20238 /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
 		BCC4429E24206D1800F20238 /* VideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoVC.m; sourceTree = "<group>"; };
 		BCC442A024206D4200F20238 /* GraphicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicVC.h; sourceTree = "<group>"; };
 		BCC442A124206D4200F20238 /* GraphicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicVC.m; sourceTree = "<group>"; };
@@ -1130,9 +1141,13 @@
 				BCB5E8C32418C88200B2B8E4 /* Person.swift */,
 				BCB77735241F08AD008C0618 /* DMLogin2VC.h */,
 				BCB77736241F08AD008C0618 /* DMLogin2VC.m */,
+				BC9A41DE242D9B2F009E388B /* CKJProjectConfig+Extension.h */,
+				BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */,
 				BCC4429A24206AB400F20238 /* HomeVC.h */,
 				BCC4429B24206AB400F20238 /* HomeVC.m */,
-				BCC4429D24206D1700F20238 /* VideoVC.h */,
+				BC9A41DB242D9A21009E388B /* ProjC.h */,
+				BC9A41DC242D9A21009E388B /* ProjC.m */,
+				BC9A41E1242D9C01009E388B /* VideoVC.h */,
 				BCC4429E24206D1800F20238 /* VideoVC.m */,
 				BCC442A024206D4200F20238 /* GraphicVC.h */,
 				BCC442A124206D4200F20238 /* GraphicVC.m */,
@@ -1151,6 +1166,9 @@
 				BC2F5ED92429FF650081704E /* MonitorHistoryVC.h */,
 				BC2F5EDA2429FF650081704E /* MonitorHistoryVC.m */,
 				BC2F5EDB2429FF650081704E /* MonitorHistoryVC.xib */,
+				BC9A41D3242CA196009E388B /* MonitorHistoryCell.h */,
+				BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */,
+				BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */,
 				BC2F5ED32429F9E00081704E /* PTheme.h */,
 				BC2F5ED42429F9E00081704E /* PTheme.m */,
 				BC2F5EDE242A06E80081704E /* NaVC.h */,
@@ -1257,6 +1275,7 @@
 				BC910D8124136A7D00280936 /* RJCustomInputCell.xib in Resources */,
 				BC910D4C24136A7D00280936 /* zhuyuan出院结算@2x.png in Resources */,
 				BC910D5824136A7D00280936 /* zhuyuan历史住院记录@2x.png in Resources */,
+				BC9A41D7242CA196009E388B /* MonitorHistoryCell.xib in Resources */,
 				BCC442AD242074BB00F20238 /* AdvisoryCell.xib in Resources */,
 				BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */,
 				BC910D5624136A7D00280936 /* demo余额.png in Resources */,
@@ -1361,6 +1380,7 @@
 				BC910D6824136A7D00280936 /* WDYHFHospitalItem.m in Sources */,
 				BCC442A524206D6000F20238 /* AdvisoryVC.m in Sources */,
 				BC910CC1241365AE00280936 /* CKJXBtnsView.m in Sources */,
+				BC9A41E0242D9B2F009E388B /* CKJProjectConfig+Extension.m in Sources */,
 				BC910CE0241365AE00280936 /* CKJLibraryHelper.m in Sources */,
 				BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */,
 				BC910CC7241365AE00280936 /* CKJButton.m in Sources */,
@@ -1408,6 +1428,7 @@
 				BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */,
 				BC9DC90C242494A20039F77A /* UnitCell.m in Sources */,
 				BC910D7124136A7D00280936 /* RJTestResource.m in Sources */,
+				BC9A41D6242CA196009E388B /* MonitorHistoryCell.m in Sources */,
 				BC910CCA241365AE00280936 /* CKJCommonSectionModel.m in Sources */,
 				BC06DBC724220ECB00E54E68 /* MonitorItem.m in Sources */,
 				BC910CBC241365AE00280936 /* CKJProjectConfig.m in Sources */,
@@ -1441,6 +1462,7 @@
 				BC2F5ED52429F9E00081704E /* PTheme.m in Sources */,
 				BC910D7224136A7D00280936 /* KJSupportObjcListVC.m in Sources */,
 				BC910CDE241365AE00280936 /* CKJBaseTableViewCell.m in Sources */,
+				BC9A41DD242D9A21009E388B /* ProjC.m in Sources */,
 				BC910CE8241365AF00280936 /* CKJImageRightCell.m in Sources */,
 				BC910CCE241365AE00280936 /* CKJCommonHeaderFooterModel.m in Sources */,
 				BC910D6B24136A7D00280936 /* RJSquareDemo2VC.m in Sources */,

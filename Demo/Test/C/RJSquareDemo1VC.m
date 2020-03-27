@@ -53,7 +53,7 @@
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJBtnsCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJCellModel *model1 = [CKJCellModel ckjCellWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJCellModel * _Nonnull m) {
             m.selectionStyle = UITableViewCellSelectionStyleNone;
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"预交金明细", [UIColor kjwd_title], nil) left:15];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:@"预交金明细" left:15];
             
             m.btn7Model = [CKJCellBtnModel btnModelWithSize:CGSizeMake(60, 30) normalImage:nil rightMargin:12 detailSettingBlock:^(CKJCellBtnModel * _Nonnull sender) {
                 sender.normalAttributedTitle = WDCKJAttributed2(@"筛选", [UIColor kjwd_r:25 g:130 b:197 alpha:1], nil);
@@ -89,7 +89,7 @@
         [m addGroupId:dateGroupId];
         m.showLine = NO;
         m.selectionStyle = UITableViewCellSelectionStyleNone;
-        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"月份筛选", [UIColor blackColor], @17) left:15];
+        m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"月份筛选", [UIColor blackColor], @17) left:15];
     } didSelectRowBlock:nil];
     
     [cellModels addObject:model1];

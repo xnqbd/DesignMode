@@ -75,7 +75,7 @@
                 bg.edge = edge;
             }];
             m.image2Model = [CKJImage2Model image2ModelWithImageString:@"login_icon_number" size:size left:left];
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:nil left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:nil left:10];
             [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
                 tfModel.clearButtonMode = UITextFieldViewModeWhileEditing;
             }];
@@ -90,7 +90,7 @@
                 bg.edge = edge;
             }];
             m.image2Model = [CKJImage2Model image2ModelWithImageString:@"login_icon_key" size:size left:left];
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:nil left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:nil left:10];
             [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
                 tfModel.clearButtonMode = UITextFieldViewModeWhileEditing;
             }];

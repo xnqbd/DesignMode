@@ -176,7 +176,7 @@ typedef NS_ENUM(NSUInteger, TestPayStyle) {
         } didSelectRowBlock:nil];
         
         CKJGeneralCellModel *model9 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed2(@"获取当前支付方式", [UIColor kjwd_title], nil) left:15];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"获取当前支付方式", [UIColor kjwd_title], nil) left:15];
         } didSelectRowBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             CKJCommonCellModel *radio = m.cell.simpleTableView.currentSelectRadioCellModel;
             // 需要判断空的情况

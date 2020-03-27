@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MonitorInputVC2 : UIViewController
 
+@property (copy, nonatomic) NSString *type;
+
 @end
 
 NS_ASSUME_NONNULL_END

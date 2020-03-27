@@ -251,7 +251,7 @@
     
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithHeaderHeight:@10 detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle14(@"2020年2月25日 10:30") left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDAttTitle14(@"2020年2月25日 10:30") left:10];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:nil];
         [_sec addCellModel:model1];
@@ -269,7 +269,7 @@
 //                    m.stringChoose = [CKJStringChooseHelper new];
                     m.extension_Obj1 = dic;
                     
-                    m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDAttTitle14(leftTitle) left:10];
+                    m.title3Model = [CKJTitle3Model title3ModelWithText:WDAttTitle14(leftTitle) left:10];
                     [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
                         tfModel.textAlignment = NSTextAlignmentRight;
                         tfModel.attributedPlaceholder = WDAttSubTitle(placeHolder);

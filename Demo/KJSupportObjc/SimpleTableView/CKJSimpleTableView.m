@@ -62,7 +62,7 @@
     self.separatorColor = [UIColor kjwd_rbg:220 alpha:1];
     
     self.simpleStyle = [[CKJSimpleTableViewStyle alloc] init];
-    self.backgroundColor = self.simpleStyle.bgColor;
+    self.backgroundColor = [UIColor kjwd_rbg:247 alpha:1];
 }
 
 - (__kindof CKJCommonSectionModel *_Nullable)lastSection {
@@ -1279,7 +1279,7 @@
     CKJInputHaveTitleStyle *style = self.simpleStyle.haveTitleStyle;
 
     CKJInputCellModel *model = [CKJInputCellModel inputWithCellHeight:nil cellModel_id:cellId detailSettingBlock:^(CKJInputCellModel * _Nonnull m) {
-        m.title3Model = [CKJTitle3Model title3ModelWithAttributedText:WDCKJAttributed(title, style.titleAttributes) left:style.left];
+        m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed(title, style.titleAttributes) left:style.left];
         m.title3Model.width = style.titleWidth;
         
         [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {

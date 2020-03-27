@@ -7,8 +7,9 @@
 //
 
 #import "NaVC.h"
+#import "NSObject+WDYHFCategory.h"
 
-@interface NaVC ()
+@interface NaVC ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @end
 
@@ -17,6 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.delegate = self;
+    self.interactivePopGestureRecognizer.delegate = self;
+
+    
+    [self kjwd_setClearNavigationBar];
+    [self kjwd_setTitleColorFontDic:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+}
+
+
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    self.interactivePopGestureRecognizer.enabled = [self.viewControllers count] > 1 ;
 }
 
 
