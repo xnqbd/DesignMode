@@ -11,6 +11,8 @@
 
 @implementation CKJProjectConfig
 
+// 这些方法可能存在方法交换，所以方法名字尽量不要更改
+
 + (UIColor *)commitBtnColor {
     return [UIColor kjwd_r:25 g:130 b:197 alpha:1];
 }

@@ -17,9 +17,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *oneLab;
-
-@property (weak, nonatomic) IBOutlet UILabel *unitLab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
+@property (weak, nonatomic) IBOutlet UILabel *unitLab;
 @property (weak, nonatomic) IBOutlet UILabel *fourLab;
 @property (weak, nonatomic) IBOutlet CKJSimpleTableView *simpleTableView;
 
@@ -29,13 +28,11 @@
 
 @implementation MonitorHistoryVC
 
-
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     return @{
         NSStringFromClass([MonitorHistoryCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([MonitorHistoryCell class]), KJPrefix_isRegisterNibKEY : @YES}
     };
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,15 +47,35 @@
     }];
     
     if ([_type isEqualToString:@"血糖"]) {
-        self.view.backgroundColor = [UIColor kjwd_r:245 g:228 b:130 alpha:1];
+        self.view.backgroundColor = [UIColor kjwd_r:245 g:118 b:130 alpha:1];
+        self.oneLab.text = @"早餐前";
+        self.numLab.attributedText =  WDCKJAttBold(@"7.6", [UIColor whiteColor], @50);
+        self.unitLab.text = @"mmol/L";
+        self.fourLab.text = @"高血糖";
     } else if ([_type isEqualToString:@"睡眠"]) {
         self.view.backgroundColor = [UIColor kjwd_r:85 g:113 b:225 alpha:1];
+        self.oneLab.text = @"睡眠时长";
+        NSMutableAttributedString *temp = WDCKJAttAppend(@"9", [UIColor whiteColor], @50, @"小时", [UIColor whiteColor], @15);
+        [temp appendAttributedString:WDCKJAttAppend(@"45", [UIColor whiteColor], @50, @"分钟", [UIColor whiteColor], @15)];
+        self.numLab.attributedText = temp;
+//        self.unitLab.text = @"";
+//        self.fourLab.text = @"";
     } else if ([_type isEqualToString:@"体重"]) {
         self.view.backgroundColor = [UIColor kjwd_r:90 g:169 b:248 alpha:1];
+        self.oneLab.attributedText = WDCKJAttAppend([NSString stringWithFormat:@"身高:%@cm   ", @"170"], [UIColor whiteColor], @15, [NSString stringWithFormat:@"BMI:%@", @"27.9"], [UIColor whiteColor], @15);
+        self.numLab.attributedText = WDCKJAttBold(@"70kg", [UIColor whiteColor], @50);
+//        self.unitLab.text = @"";
+        self.fourLab.text = @"肥胖";
     } else if ([_type isEqualToString:@"血压"]) {
         self.view.backgroundColor = [UIColor kjwd_r:90 g:86 b:188 alpha:1];
+        self.oneLab.text = @"收缩压/舒张压mmhg";
+        self.numLab.attributedText =  WDCKJAttBold(@"142/78", [UIColor whiteColor], @50);
+        self.fourLab.text = @"轻度高血压";
     } else if ([_type isEqualToString:@"运动"]) {
         self.view.backgroundColor = [UIColor kjwd_r:253 g:170 b:81 alpha:1];
+        self.oneLab.text = @"运动时长 min";
+        self.numLab.attributedText =  WDCKJAttBold(@"70", [UIColor whiteColor], @50);
+        self.fourLab.text = @"步行";
     }
     
     [_recordBtn setTitle:[NSString stringWithFormat:@"记录%@", _type] forState:UIControlStateNormal];
@@ -69,7 +86,7 @@
 - (IBAction)recordingAction:(UIButton *)sender {
     MonitorInputVC2 *vc = [[MonitorInputVC2 alloc] init];
     vc.type = _type;
-    
+    vc.typeColor = self.view.backgroundColor;
     NaVC *navc = [[NaVC alloc] initWithRootViewController:vc];
     [self presentViewController:navc animated:YES completion:nil];
 }
@@ -77,7 +94,6 @@
 - (void)createData {
 
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        
         
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithTitle:WDCKJAttBold(@"历史记录", [UIColor blackColor], @16) arrow:NO didSelectRowBlock:nil];
         model1.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsZero];

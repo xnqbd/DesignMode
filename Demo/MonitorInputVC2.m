@@ -53,6 +53,9 @@
     
 //
     MHeaderView *header = [MHeaderView kjwd_instanceUsingAutoNib];
+
+    [header.add setTitleColor:_typeColor forState:UIControlStateNormal];
+
     [header kjwd_addToSuperView:onlyView constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
         make.left.right.top.equalTo(superview);
         make.height.equalTo(@80);

@@ -27,6 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon1"] style:(UIBarButtonItemStyleDone) target:self action:@selector(popAction:)];
+    [backItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.leftBarButtonItem = backItem;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

@@ -152,6 +152,8 @@
 		BC9A41D6242CA196009E388B /* MonitorHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41D4242CA196009E388B /* MonitorHistoryCell.m */; };
 		BC9A41D7242CA196009E388B /* MonitorHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */; };
 		BC9A41E0242D9B2F009E388B /* CKJProjectConfig+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */; };
+		BC9A41E5242DE46D009E388B /* MonitorInstrumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41E3242DE46D009E388B /* MonitorInstrumentCell.m */; };
+		BC9A41E6242DE46D009E388B /* MonitorInstrumentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A41E4242DE46D009E388B /* MonitorInstrumentCell.xib */; };
 		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
 		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
 		BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */; };
@@ -441,6 +443,9 @@
 		BC9A41DE242D9B2F009E388B /* CKJProjectConfig+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKJProjectConfig+Extension.h"; sourceTree = "<group>"; };
 		BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CKJProjectConfig+Extension.m"; sourceTree = "<group>"; };
 		BC9A41E1242D9C01009E388B /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
+		BC9A41E2242DE46D009E388B /* MonitorInstrumentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorInstrumentCell.h; sourceTree = "<group>"; };
+		BC9A41E3242DE46D009E388B /* MonitorInstrumentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorInstrumentCell.m; sourceTree = "<group>"; };
+		BC9A41E4242DE46D009E388B /* MonitorInstrumentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorInstrumentCell.xib; sourceTree = "<group>"; };
 		BC9DC8F724246A730039F77A /* DXLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXLoginVC.h; sourceTree = "<group>"; };
 		BC9DC8F824246A730039F77A /* DXLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXLoginVC.xib; sourceTree = "<group>"; };
 		BC9DC8F924246A730039F77A /* DXLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLoginVC.m; sourceTree = "<group>"; };
@@ -1166,6 +1171,9 @@
 				BC9A41D5242CA196009E388B /* MonitorHistoryCell.xib */,
 				BC2F5ED32429F9E00081704E /* PTheme.h */,
 				BC2F5ED42429F9E00081704E /* PTheme.m */,
+				BC9A41E2242DE46D009E388B /* MonitorInstrumentCell.h */,
+				BC9A41E3242DE46D009E388B /* MonitorInstrumentCell.m */,
+				BC9A41E4242DE46D009E388B /* MonitorInstrumentCell.xib */,
 				BC2F5EDE242A06E80081704E /* NaVC.h */,
 				BC2F5EDF242A06E80081704E /* NaVC.m */,
 				BC869CAD2421E40B00ED2607 /* MonitorInputVC.h */,
@@ -1275,6 +1283,7 @@
 				BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */,
 				BC910D5624136A7D00280936 /* demo余额.png in Resources */,
 				BC910D5A24136A7D00280936 /* wdyhfsdkhospital.png in Resources */,
+				BC9A41E6242DE46D009E388B /* MonitorInstrumentCell.xib in Resources */,
 				BC910D5E24136A7D00280936 /* wdyhfsdk编辑.png in Resources */,
 				BC910D5924136A7D00280936 /* zhuyuan历史住院记录@3x.png in Resources */,
 				BC910D7B24136A7D00280936 /* RJDemoExpertItemView.xib in Resources */,
@@ -1406,6 +1415,7 @@
 				BCB5E8C42418C88200B2B8E4 /* Person.swift in Sources */,
 				BC910CE3241365AE00280936 /* CKJChooseHelper.m in Sources */,
 				BC910D952414B28300280936 /* DMLoginVC.swift in Sources */,
+				BC9A41E5242DE46D009E388B /* MonitorInstrumentCell.m in Sources */,
 				BC910D922413709D00280936 /* DMNavigationController.swift in Sources */,
 				BC2F5EB92429DAA10081704E /* MonitorHomeVC.m in Sources */,
 				BC910CEE241365AF00280936 /* CKJCommonTableViewHeaderFooterView.m in Sources */,

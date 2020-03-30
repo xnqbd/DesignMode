@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MonitorInputVC2 : UIViewController
 
 @property (copy, nonatomic) NSString *type;
+@property (strong, nonatomic) UIColor *typeColor;
+
 
 @end
 

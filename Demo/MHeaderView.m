@@ -7,15 +7,13 @@
 //
 
 #import "MHeaderView.h"
+#import "NSObject+WDYHFCategory.h"
 
 @implementation MHeaderView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib {
+    [super awakeFromNib];
+//    self.title.textColor = [UIColor kjwd_subTitle];
 }
-*/
 
 @end

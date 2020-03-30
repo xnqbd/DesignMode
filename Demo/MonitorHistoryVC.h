@@ -6,11 +6,11 @@
 //  Copyright © 2020 admin2. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CKJBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MonitorHistoryVC : UIViewController
+@interface MonitorHistoryVC : CKJBaseViewController
 
 @property (copy, nonatomic) NSString *type;
 

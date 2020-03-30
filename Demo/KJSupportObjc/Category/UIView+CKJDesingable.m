@@ -50,6 +50,11 @@
 }
 
 
+
+/*
+ self.thebgV.backgroundColor = [UIColor whiteColor];
+ [self.thebgV kjwd_cornerRadius:8 shadowColor:nil shadowOffset:CGSizeZero shadowOpacity:nil shadowRadius:@5];
+ */
 - (void)kjwd_cornerRadius:(CGFloat)cornerRadius shadowColor:(nullable UIColor *)shadowColor shadowOffset:(CGSize)shadowOffset shadowOpacity:(nullable NSNumber *)shadowOpacity shadowRadius:(nullable NSNumber *)shadowRadius {
     
     if (self.backgroundColor == nil) {
