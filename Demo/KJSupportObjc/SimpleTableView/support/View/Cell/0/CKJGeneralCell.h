@@ -241,11 +241,13 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 @end
 
 
+@class CKJArrow9Model;
+typedef void(^CKJArrow9Click)(CKJArrow9Model *_a);
 
 @interface CKJArrow9Model : CKJBaseModel
 
 /**
- 默认距右边5
+ 默认距右边5，有时候这个值会被 CKJGeneralSetting.arrow9_margin_super 覆盖
  */
 @property (assign, nonatomic) CGFloat right;
 /**
@@ -253,10 +255,25 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
  */
 @property (strong, nonatomic, nullable) UIImage *image;
 
+
+/// 默认为nil， UIImageView的大小由self.image自身大小，但是self.imageView_Size有值的话，由这值控制，但是如果self.image为nil的话，UIImageView大小会置为0, 0
+@property (strong, nonatomic, nullable) NSValue *imageView_Size;
+
+
+///默认是 UIViewContentModeCenter，center、right都不会变形， 如果指定了imageView_Size，但还是想保持原来的大小，可以设置为UIViewContentModeCenter
+@property (assign, nonatomic) UIViewContentMode imageView_content_Mode;
+ 
+@property (copy, nonatomic, nullable) CKJArrow9Click click;
+
+
+/// 只读
+@property (weak, nonatomic) UIImageView *readOnly_ImageView;
+
+
 /**
  right默认为5，默认是箭头图片
  */
-+ (instancetype)arrow9ModelWithImage:(nullable UIImage *)image right:(nullable NSNumber *)right;
++ (instancetype)arrow9ModelWithImage:(nullable UIImage *)image right:(nullable NSNumber *)right click:(nullable CKJArrow9Click)click;
 
 + (instancetype)arrow9SystemModel;
 
@@ -287,6 +304,17 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 */
 
 
+@interface CKJGeneralSetting : CKJBaseModel
+
+@property (assign, nonatomic) CGFloat super_margin_image2;
+@property (assign, nonatomic) CGFloat image2_margin_title;
+@property (assign, nonatomic) CGFloat likePriceLabel8_margin_arrow9;
+@property (assign, nonatomic) CGFloat arrow9_margin_super;
+
+@end
+
+
+
 @interface CKJGeneralCellModel : CKJCommonCellModel
 
 @property (strong, nonatomic, nullable) CKJImage2Model *image2Model;
@@ -305,8 +333,11 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 /// image title 箭头
 + (instancetype)generalWithImageName:(NSString *)imageName imageSize:(CGSize)imageSize title:(id)title arrow:(BOOL)arrow didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
-/// title 和 右标题  箭头
-+ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText arrow:(BOOL)arrow didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock;
+/// title 右标题
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(nullable NSAttributedString *)likePriceAttText setting:(nullable CKJGeneralSetting *)setting didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
+
+/// title 右标题 箭头
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(nullable NSAttributedString *)likePriceAttText setting:(CKJGeneralSetting *)setting arrow:(nullable CKJArrow9Model *)arrow  didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock;
 
 
 @end

@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMo-iU-mYf">
-                        <rect key="frame" x="12" y="10" width="296" height="121"/>
+                        <rect key="frame" x="20" y="10" width="280" height="121"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="m_monitor_yiqi" translatesAutoresizingMaskIntoConstraints="NO" id="VgO-1r-Cv4">
                                 <rect key="frame" x="22" y="35.5" width="63" height="50.5"/>
@@ -51,7 +51,7 @@
                     <constraint firstItem="xMo-iU-mYf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="64x-QG-lWX"/>
                     <constraint firstItem="xMo-iU-mYf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KiN-SG-2bF"/>
                     <constraint firstItem="xMo-iU-mYf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mN0-RC-bKO"/>
-                    <constraint firstItem="xMo-iU-mYf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="rJa-x6-cV0"/>
+                    <constraint firstItem="xMo-iU-mYf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="rJa-x6-cV0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

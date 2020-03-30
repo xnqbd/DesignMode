@@ -1090,8 +1090,14 @@ imageTitleSpace:(CGFloat)space;
 
 @end
 
+#pragma mark - -----------------NSDecimalNumber-----------------
+@interface NSMutableAttributedString (WDYHFCategory)
 
-#pragma mark - -----------------NSAttributedString-----------------
+- (NSMutableAttributedString *)kjwd_append:(NSAttributedString *_Nullable)att;
+
+@end
+
+#pragma mark - -----------------NSDecimalNumber-----------------
 @interface NSDecimalNumber (WDYHFCategory)
 
 

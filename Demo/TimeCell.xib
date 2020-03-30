@@ -23,8 +23,8 @@
                                 <constraint firstAttribute="width" secondItem="3dm-DZ-TZe" secondAttribute="height" multiplier="28:28" id="Dws-q4-Eea"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-sg-g5e">
-                            <rect key="frame" x="10" y="393" width="92" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-sg-g5e">
+                            <rect key="frame" x="10" y="393" width="392" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="选择日期时间">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,6 +33,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="CqV-sg-g5e" firstAttribute="trailing" secondItem="3dm-DZ-TZe" secondAttribute="trailing" id="1l7-gg-pAk"/>
                         <constraint firstItem="CqV-sg-g5e" firstAttribute="leading" secondItem="n2v-eH-agI" secondAttribute="leading" constant="10" id="Ewa-58-gGX"/>
                         <constraint firstAttribute="trailing" secondItem="3dm-DZ-TZe" secondAttribute="trailing" constant="10" id="dps-uz-EbH"/>
                         <constraint firstItem="CqV-sg-g5e" firstAttribute="centerY" secondItem="n2v-eH-agI" secondAttribute="centerY" id="hRF-mK-VvQ"/>

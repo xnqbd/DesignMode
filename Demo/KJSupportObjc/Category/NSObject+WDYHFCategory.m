@@ -3289,6 +3289,19 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 @end
 
+
+#pragma mark - -----------------NSMutableAttributedString-----------------
+@implementation NSMutableAttributedString (WDYHFCategory)
+
+- (NSMutableAttributedString *)kjwd_append:(NSAttributedString *_Nullable)att {
+    if (!WDKJ_IsNullObj(att, [NSAttributedString class])) {
+        [self appendAttributedString:att];
+    }
+    return self;
+}
+
+@end
+
 #pragma mark - -----------------NSDecimalNumber-----------------
 @implementation NSDecimalNumber (WDYHFCategory)
 

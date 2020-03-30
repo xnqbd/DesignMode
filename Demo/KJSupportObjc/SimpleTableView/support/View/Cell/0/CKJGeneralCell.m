@@ -119,12 +119,13 @@
 
 @implementation CKJArrow9Model
 
-+ (instancetype)arrow9ModelWithImage:(UIImage *)image right:(nullable NSNumber *)right {
++ (instancetype)arrow9ModelWithImage:(nullable UIImage *)image right:(nullable NSNumber *)right click:(nullable CKJArrow9Click)click {
     CKJArrow9Model *model = [[self alloc] init];
     if ([right isKindOfClass:[NSNumber class]]) {
         model.right = right.floatValue;
     }
     model.image = image;
+    model.click = click;
     return model;
 }
 + (nonnull instancetype)arrow9SystemModel {
@@ -138,12 +139,16 @@
         UIImage *arrow = [UIImage imageNamed:@"kj_arrow1" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
         arrow = [arrow kjwd_scaleToSize:CGSizeMake(16, 16)];
         self.image = arrow;
+        self.imageView_content_Mode = UIViewContentModeCenter;
     }
     return self;
 }
 
 @end
 
+@implementation CKJGeneralSetting
+
+@end
 
 @implementation CKJGeneralCellModel
 
@@ -174,15 +179,22 @@
     } didSelectRowBlock:didSelectRowBlock];
 }
 
-+ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText arrow:(BOOL)arrow didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock {
-    return[self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
-        m.title3Model = [CKJTitle3Model title3ModelWithText:title left:kO_super_margin_title];
-        m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:8];
-        if (arrow) {
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(NSAttributedString *)likePriceAttText setting:(CKJGeneralSetting *)setting didSelectRowBlock:(CKJGeneralCellModelRowBlock)didSelectRowBlock {
+    return [self generalWithTitle:title likePriceAttText:likePriceAttText setting:setting arrow:nil didSelectRowBlock:didSelectRowBlock];
+}
++ (instancetype)generalWithTitle:(id)title likePriceAttText:(nullable NSAttributedString *)likePriceAttText setting:(CKJGeneralSetting *)setting arrow:(nullable CKJArrow9Model *)arrow  didSelectRowBlock:(nullable CKJGeneralCellModelRowBlock)didSelectRowBlock {
+    return [self generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        m.title3Model = [CKJTitle3Model title3ModelWithText:title left:setting.image2_margin_title];
+        m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:likePriceAttText left:0 right:setting.likePriceLabel8_margin_arrow9];
+        if (arrow == nil) {
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
+        } else {
+            m.arrow9Model = arrow;
         }
+        m.arrow9Model.right = setting.arrow9_margin_super;
     } didSelectRowBlock:didSelectRowBlock];
 }
+
 
 
 @end
@@ -292,6 +304,8 @@
 
 
 - (void)createRight {
+    __weak typeof(self) weakSelf = self;
+    
     // 右
     CKJRightView *rightWrapView = [CKJRightView new];
     [self.onlyView addSubview:rightWrapView];
@@ -305,7 +319,13 @@
     
     // 右边箭头图片
     CKJArrowImageView9 *arrowImageView9 = [CKJArrowImageView9 new];
-    arrowImageView9.contentMode = UIViewContentModeScaleAspectFit;
+    [arrowImageView9 kjwd_addGestureRecognizer:[[UITapGestureRecognizer alloc] init] handleBlock:^(UIGestureRecognizer * _Nonnull _gestureRecognizer, UIView * _Nonnull _currentView) {
+        CKJArrow9Model *arrow9 = weakSelf.cellModel.arrow9Model;
+        if (arrow9.click) {
+            arrow9.click(arrow9);
+        }
+    }];
+    arrowImageView9.contentMode = UIViewContentModeCenter;
     [rightWrapView addSubview:arrowImageView9];
     self.arrowImageView9 = arrowImageView9;
 }
@@ -439,18 +459,29 @@
 
 - (void)origin_arrowImageView9_Constraint {
     CKJArrow9Model *arrow9 = self.cellModel.arrow9Model;
+    arrow9.readOnly_ImageView = _arrowImageView9;
+    NSValue *size = arrow9.imageView_Size;
     CGFloat right = arrow9.right;
     UIImage *image = arrow9.image;
     
     _arrowImageView9.image = image;
     _arrowImageView9.hidden = image ? NO : YES;
+    _arrowImageView9.userInteractionEnabled = arrow9.click ? YES : NO;
+    if (_arrowImageView9.contentMode != arrow9.imageView_content_Mode) {
+        _arrowImageView9.contentMode = arrow9.imageView_content_Mode;
+    }
     
     [_arrowImageView9 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
         make.centerY.equalTo(superview);
         make.right.equalTo(superview).offset(-(right));
         if (image) {
-            make.width.equalTo(@(image.size.width));
-            make.height.equalTo(@(image.size.height));
+            if (size) {
+                make.width.equalTo(@(size.CGSizeValue.width));
+                make.height.equalTo(@(size.CGSizeValue.height));
+            } else {
+                make.width.equalTo(@(image.size.width));
+                make.height.equalTo(@(image.size.height));
+            }
         } else {
             make.width.height.equalTo(@0);
         }

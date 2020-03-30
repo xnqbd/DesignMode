@@ -56,7 +56,7 @@
     CKJGeneralCellModel *status = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
         m.title3Model = [CKJTitle3Model title3ModelWithText:@"实名状态"  left:15];
         UIImage *image = [[UIImage kjwd_imageNamed:@"new_personal_已实名"] kjwd_scaleToSize:CGSizeMake(60, 20)];
-        m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:image right:@15];
+        m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:image right:@15 click:nil];
         m.selectionStyle = UITableViewCellSelectionStyleNone;
     } didSelectRowBlock:nil];
     

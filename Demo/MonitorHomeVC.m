@@ -65,15 +65,24 @@
         style.rowHeight = @44;
         style.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
     }];
+    
+    
+    CKJGeneralSetting *setting = [[CKJGeneralSetting alloc] init];
+    setting.image2_margin_title = 20;
+    setting.likePriceLabel8_margin_arrow9 = 8;
+    setting.arrow9_margin_super = 20;
 
+    
+    CKJGeneralCellModel *(^create)(id title, CKJArrow9Click click) = ^CKJGeneralCellModel *(id title, CKJArrow9Click click) {
+        
+        CKJArrow9Model *add1 = [CKJArrow9Model arrow9ModelWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon2"] right:nil click:click];
+        add1.imageView_Size = [NSValue valueWithCGSize:CGSizeMake(40, 40)];
+        
+        CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithTitle:WDCKJAttBold(title, [UIColor kjwd_title], @16) likePriceAttText:nil setting:setting arrow:add1 didSelectRowBlock:nil];
+        return model1;
+    };
+    
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        
-        CGFloat left = 20;
-        
-        CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttBold(@"数据监测", [UIColor kjwd_title], @16) left:left];
-            m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon2"] right:nil];
-        } didSelectRowBlock:nil];
         
         __weak typeof(self) weakSelf = self;
         void (^block)(NSString *) = ^(NSString *flag){
@@ -82,22 +91,24 @@
             [weakSelf.navigationController pushViewController:vc animated:YES];
         };
         
-        CKJGeneralCellModel *model2 = [CKJGeneralCellModel generalWithTitle:@"血压检测" likePriceAttText:WDCKJAttAppend(@"142/78", PTheme.red, @16, @"mmhg", PTheme.red, @13) arrow:YES didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        CKJGeneralCellModel *model1 = create(@"数据检测", ^(CKJArrow9Model *m) {
+            NSLog(@"点击数据检测添加");
+        });
+        
+        CKJGeneralCellModel *model2 = [CKJGeneralCellModel generalWithTitle:@"血压检测" likePriceAttText:WDCKJAttAppend(@"142/78", PTheme.red, @16, @"mmhg", PTheme.red, @13) setting:setting arrow:nil  didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
             block(@"血压");
         }];
-        CKJGeneralCellModel *model3 = [CKJGeneralCellModel generalWithTitle:@"血糖检测" likePriceAttText:WDCKJAttAppend(@"7.6", PTheme.red, @16, @"mmol/L", PTheme.red, @13) arrow:YES didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        CKJGeneralCellModel *model3 = [CKJGeneralCellModel generalWithTitle:@"血糖检测" likePriceAttText:WDCKJAttAppend(@"7.6", PTheme.red, @16, @"mmol/L", PTheme.red, @13) setting:setting arrow:nil  didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
             block(@"血糖");
         }];
-        CKJGeneralCellModel *model4 = [CKJGeneralCellModel generalWithTitle:@"体重检测" likePriceAttText:WDCKJAttAppend(@"70", PTheme.red, @16, @"kg", PTheme.red, @13) arrow:YES didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        CKJGeneralCellModel *model4 = [CKJGeneralCellModel generalWithTitle:@"体重检测" likePriceAttText:WDCKJAttAppend(@"70", PTheme.red, @16, @"kg", PTheme.red, @13) setting:setting arrow:nil  didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
             block(@"体重");
         }];
-        CKJGeneralCellModel *model5 = [CKJGeneralCellModel generalWithTitle:@"运动检测" likePriceAttText:WDCKJAttAppend(@"70", PTheme.red, @16, @"min", PTheme.red, @13) arrow:YES didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        CKJGeneralCellModel *model5 = [CKJGeneralCellModel generalWithTitle:@"运动检测" likePriceAttText:WDCKJAttAppend(@"70", PTheme.red, @16, @"min", PTheme.red, @13) setting:setting arrow:nil  didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
             block(@"运动");
         }];
-        NSMutableAttributedString *sleep = WDCKJAttAppend(@"3", PTheme.red, @16, @"小时", PTheme.red, @13);
-        [sleep appendAttributedString:WDCKJAttAppend(@"0", PTheme.red, @16, @"分钟", PTheme.red, @13)];
         
-        CKJGeneralCellModel *model6 = [CKJGeneralCellModel generalWithTitle:@"睡眠检测" likePriceAttText:sleep arrow:YES didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
+        CKJGeneralCellModel *model6 = [CKJGeneralCellModel generalWithTitle:@"睡眠检测" likePriceAttText:[WDCKJAttAppend(@"3", PTheme.red, @16, @"小时", PTheme.red, @13) kjwd_append:WDCKJAttAppend(@"0", PTheme.red, @16, @"分钟", PTheme.red, @13)] setting:setting arrow:nil  didSelectRowBlock:^(CKJGeneralCellModel *__weak  _Nonnull m) {
             block(@"睡眠");
         }];
         _sec.modelArray = @[model1, model2, model3, model4, model5, model6];
@@ -107,11 +118,11 @@
         
 //        CKJEmptyCellModel *model0 = [CKJEmptyCellModel emptyCellModelWithHeight:20 showLine:NO];
         
-        CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
-            [m _showLine:NO];
-            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttBold(@"我的仪器", [UIColor kjwd_title], @16) left:12];
-            m.arrow9Model = [CKJArrow9Model arrow9ModelWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon2"] right:nil];
-        } didSelectRowBlock:nil];
+        
+        CKJGeneralCellModel *model1 = create(@"我的仪器", ^(CKJArrow9Model *m) {
+            NSLog(@"点击我的仪器添加");
+        });
+        [model1 _showLine:NO];
         
         
         MonitorInstrumentCellModel *model2 = [MonitorInstrumentCellModel commonWithCellHeight:@100 cellModel_id:nil detailSettingBlock:^(__kindof CKJCommonCellModel * _Nonnull m) {

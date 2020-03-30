@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    self.title.textColor = [UIColor kjwd_subTitle];
+    [self.cancel setTitleColor:[UIColor kjwd_subTitle] forState:UIControlStateNormal];
 }
 
 @end
