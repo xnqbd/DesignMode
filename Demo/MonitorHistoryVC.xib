@@ -71,13 +71,13 @@
                             <rect key="frame" x="0.0" y="151" width="414" height="666"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2lu-pn-RBP" customClass="CKJSimpleTableView">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="666"/>
+                                    <rect key="frame" x="10" y="0.0" width="394" height="666"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="2lu-pn-RBP" firstAttribute="centerX" secondItem="9Wt-H1-Yau" secondAttribute="centerX" id="0ct-e8-y6y"/>
-                                <constraint firstAttribute="trailing" secondItem="2lu-pn-RBP" secondAttribute="trailing" constant="20" id="ECb-tH-pzm"/>
+                                <constraint firstAttribute="trailing" secondItem="2lu-pn-RBP" secondAttribute="trailing" constant="10" id="ECb-tH-pzm"/>
                                 <constraint firstItem="2lu-pn-RBP" firstAttribute="top" secondItem="9Wt-H1-Yau" secondAttribute="top" id="d9n-OR-nAJ"/>
                                 <constraint firstAttribute="bottom" secondItem="2lu-pn-RBP" secondAttribute="bottom" id="tGO-H1-NMe"/>
                             </constraints>

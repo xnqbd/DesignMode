@@ -33,6 +33,21 @@
         NSStringFromClass([MonitorHistoryCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([MonitorHistoryCell class]), KJPrefix_isRegisterNibKEY : @YES}
     };
 }
+- (void)tableView:(CKJSimpleTableView *)tableView willDisplayCell:(__kindof CKJCommonTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath section:(NSInteger)section row:(NSInteger)row model:(__kindof CKJCommonCellModel *)model sectionModel:(CKJCommonSectionModel *)sectionModel {
+    if ([cell isKindOfClass:[MonitorHistoryCell class]]) {
+        MonitorHistoryCell *_cell = cell;
+        
+        if (model.extension_Interger != YES) {
+            _cell.coverV.layer.transform = CATransform3DIdentity;
+            [UIView animateWithDuration:0.5 animations:^{
+                _cell.coverV.layer.transform = CATransform3DMakeTranslation(cell.kjwd_width, 0, 0);
+            }];
+            model.extension_Interger = YES;
+        }
+    }
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -110,8 +125,6 @@
     }];
     
     self.simpleTableView.dataArr = @[section1];
-    
-    
 }
 
 

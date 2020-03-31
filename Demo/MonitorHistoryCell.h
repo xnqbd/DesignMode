@@ -17,10 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface MonitorHistoryCell : CKJCommonTableViewCell
-
 @property (strong, nonatomic) IBOutlet UILabel *timeLab;
 @property (strong, nonatomic) IBOutlet UILabel *centerLab;
 @property (strong, nonatomic) IBOutlet UILabel *rightLab;
+
+@property (strong, nonatomic) IBOutlet UIView *coverV;
 
 @end
 
