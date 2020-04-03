@@ -11,7 +11,7 @@
 #import "CKJSimpleTableView.h"
 #import "CKJLibraryHelper.h"
 #import <Masonry/Masonry.h>
-#import "MBProgressHUD+KJSupport.h"
+#import "CKJHUD+KJSupport.h"
 
 
 // Empty required
@@ -116,7 +116,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 /// 检验手机号
 + (BOOL)varityPhoneFail:(NSString *)phone {
     
-    //  可以复制文字  @"手机号为空或有误"    或代码  [MBProgressHUD showError:@"手机号为空或有误"];
+    //  可以复制文字  @"手机号为空或有误"    或代码  [CKJHUD showError:@"手机号为空或有误"];
        
     if (WDKJ_IsEmpty_Str(phone)) {
         return YES;
@@ -340,8 +340,8 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     
     if ([CKJTFModel varityPhoneFail:phone]) {
         NSLog(@"%@ ", @"手机号为空或有误");
-        //[MBProgressHUD showError:@"手机号为空或有误"];
-        [MBProgressHUD kjwd_showMessage:@"手机号为空或有误"];
+        //[CKJHUD showError:@"手机号为空或有误"];
+        [CKJHUD kjwd_showMessage:@"手机号为空或有误"];
         return;
     }   
     CKJTriggerCodeBlock succ = ^(NSUInteger seconds) {

@@ -14,7 +14,7 @@
 #import "KJSupportObjcListVC.h"
 #import "RJInputData.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import "MBProgressHUD+KJSupport.h"
+#import "CKJHUD+KJSupport.h"
 #import "DMLogin2VC.h"
 #import "DXLoginVC.h"
 #import "NaVC.h"

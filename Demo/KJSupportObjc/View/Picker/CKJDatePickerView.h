@@ -29,6 +29,24 @@ typedef enum{
 }CKJDateStyle;
 
 
+/*
+
+ CKJDatePickerView *p = [[CKJDatePickerView alloc] initWithDateStyle:CKJDateStyle1 scrollToDate:date endScroll_didSelect_callBack:^(NSDate * _Nonnull currentDate) {
+     _sender.ex_Obj1 = currentDate;
+     NSString *temp = [currentDate kjwd_dateStringWithFormatter:@"yyyy年MM月dd日 HH:mm"];
+     [_sender setTitle:temp forState:UIControlStateNormal];
+ }];
+ p.backgroundColor = weakSelf.grayColor;
+ p.hideBackgroundYearLabel = YES;
+ p.dateLabelColor = [UIColor kjwd_subTitle];
+ [p kjwd_addToSuperView:weakOnlyView constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+     make.left.right.equalTo(superview);
+     make.height.equalTo(@(PickerHeight));
+     make.bottom.equalTo(superview.kjwdMas_safeAreaBottom).offset(0);
+ }];
+ weakSelf.picker = p;
+ 
+ */
 
 @interface CKJDatePickerView : UIView
 

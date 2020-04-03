@@ -46,7 +46,7 @@ class DMRegisterVC: CKJBaseTableVC {
                     let _phone = self?.simpleTableView.inputCellModel(ofID: kOInput_Phone)?.getTfText();
                     HZYHFHTTPRequest.kj_after(timeInterval: 0, callBackType: .Success, response: nil, success: { (succ) in
                         triggerCodeBlock(60); // 触发定时器
-                        MBProgressHUD.kjwd_showMessage("验证码发送成功", to: self?.view)
+                        CKJHUD.kjwd_showMessage("验证码发送成功", to: self?.view)
                         self?.simpleTableView.inputCellModel(ofID: kOInput_VerityCode)?.tfModel.readOnly_currentTF?.becomeFirstResponder()
                     }, failure: { (fail) in
                     }, exception: nil) {

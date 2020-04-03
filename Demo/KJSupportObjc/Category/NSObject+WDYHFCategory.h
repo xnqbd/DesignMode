@@ -1163,6 +1163,8 @@ typedef void (^TouchedCountDownButtonHandler)(CKJCountDownButton *countDownButto
 /// buildVersion
 + (NSString *)currentBuildVersion;
 
++ (NSString *)bundleId;
+
 + (CGFloat)screenWidth;
 + (CGFloat)screenHeight;
 + (NSString *)kjwd_documentPath;

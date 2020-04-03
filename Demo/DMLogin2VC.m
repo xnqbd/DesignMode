@@ -13,7 +13,7 @@
 #import "DXLoginVC.h"
 #import "MonitorHomeVC.h"
 
-@interface DMLogin2VC ()
+@interface DMLogin2VC () <UIWebViewDelegate>
 
 @end
 

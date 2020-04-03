@@ -1,20 +1,23 @@
 //
-//  MBProgressHUD+KJSupport.h
+//  CKJHUD+KJSupport.h
 //  Demo
 //
 //  Created by admin2 on 2020/3/7.
 //  Copyright © 2020 admin2. All rights reserved.
 //
 
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "CKJHUD.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MBProgressHUD (KJSupport)
+@interface CKJHUD (KJSupport)
 
 + (void)kjwd_showMessage:(NSString *)msg;
 + (void)kjwd_showMessage:(NSString *)msg toView:(nullable UIView *)view;
 
++ (CKJHUD *)addHudMessage:(NSString *)msg toView:(UIView *)view;
++ (void)hideHUDForView:(UIView *)view;
++ (void)hideHUD;
 
 @end
 

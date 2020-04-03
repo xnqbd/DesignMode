@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CKJTextFiled : UITextField
 
+@property (assign, nonatomic) IBInspectable CGFloat _leftInset;
+@property (assign, nonatomic) IBInspectable CGFloat _rightInset;
+
 @end
 
 NS_ASSUME_NONNULL_END

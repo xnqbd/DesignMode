@@ -11,7 +11,7 @@ target 'Demo' do
   pod 'Masonry'
   pod 'ActionSheetPicker-3.0'
   pod 'SDWebImage', '~> 3.7'
-  pod 'MBProgressHUD'
+  
   pod 'IQKeyboardManager'
   pod 'SwiftyJSON'
   pod 'SwifterSwift'

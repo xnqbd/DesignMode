@@ -316,7 +316,6 @@
         __weak typeof(self) weakSelf = self;
         CKJDatePickerView *p = [[CKJDatePickerView alloc] initWithDateStyle:CKJDateStyle1 scrollToDate:model.extension_Obj2 endScroll_didSelect_callBack:^(NSDate * _Nonnull currentDate) {
             model.extension_Obj2 = currentDate;
-            
             [model.cell.simpleTableView reloadData];
         }];
         p.hideBackgroundYearLabel = YES;

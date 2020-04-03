@@ -84,7 +84,7 @@
 		BC910CF0241365AF00280936 /* KJSupportObjc.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC910CAC241365AE00280936 /* KJSupportObjc.bundle */; };
 		BC910CF1241365AF00280936 /* CKJFixMode.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910CAE241365AE00280936 /* CKJFixMode.m */; };
 		BC910CF2241365AF00280936 /* KJSupportHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910CB1241365AE00280936 /* KJSupportHeader.m */; };
-		BC910CF52413686F00280936 /* MBProgressHUD+KJSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910CF42413686F00280936 /* MBProgressHUD+KJSupport.m */; };
+		BC910CF52413686F00280936 /* CKJHUD+KJSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910CF42413686F00280936 /* CKJHUD+KJSupport.m */; };
 		BC910D4C24136A7D00280936 /* zhuyuan出院结算@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC910CF824136A7D00280936 /* zhuyuan出院结算@2x.png */; };
 		BC910D4D24136A7D00280936 /* zhuyuan充值记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC910CF924136A7D00280936 /* zhuyuan充值记录@2x.png */; };
 		BC910D4E24136A7D00280936 /* zhuyuan预交金充值@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC910CFA24136A7D00280936 /* zhuyuan预交金充值@2x.png */; };
@@ -154,6 +154,8 @@
 		BC9A41E0242D9B2F009E388B /* CKJProjectConfig+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */; };
 		BC9A41E5242DE46D009E388B /* MonitorInstrumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A41E3242DE46D009E388B /* MonitorInstrumentCell.m */; };
 		BC9A41E6242DE46D009E388B /* MonitorInstrumentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9A41E4242DE46D009E388B /* MonitorInstrumentCell.xib */; };
+		BC9A420E24330D3B009E388B /* CKJHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A420C24330D3B009E388B /* CKJHUD.m */; };
+		BC9A421124331278009E388B /* CKJKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9A420F24331278009E388B /* CKJKeyChain.m */; };
 		BC9DC8FA24246A730039F77A /* DXLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9DC8F824246A730039F77A /* DXLoginVC.xib */; };
 		BC9DC8FB24246A730039F77A /* DXLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8F924246A730039F77A /* DXLoginVC.m */; };
 		BC9DC8FE24246AE80039F77A /* CKJTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9DC8FC24246AE80039F77A /* CKJTextFiled.m */; };
@@ -166,6 +168,7 @@
 		BC9E1ABC23D5A7DE00169DB3 /* DMRes.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1ABB23D5A7DE00169DB3 /* DMRes.m */; };
 		BC9E1ABF23D6BC3800169DB3 /* DMOCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */; };
 		BCB5E8C42418C88200B2B8E4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5E8C32418C88200B2B8E4 /* Person.swift */; };
+		BCB61B0924345AD5008BDAE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB61B0824345AD5008BDAE1 /* UIKit.framework */; };
 		BCB77737241F08AD008C0618 /* DMLogin2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB77736241F08AD008C0618 /* DMLogin2VC.m */; };
 		BCB7773E241F1E5F008C0618 /* DemoTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB7773C241F1E5F008C0618 /* DemoTestVC.m */; };
 		BCB7773F241F1E5F008C0618 /* DemoTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCB7773D241F1E5F008C0618 /* DemoTestVC.xib */; };
@@ -346,8 +349,8 @@
 		BC910CAF241365AE00280936 /* CKJFixMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJFixMode.h; sourceTree = "<group>"; };
 		BC910CB1241365AE00280936 /* KJSupportHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJSupportHeader.m; sourceTree = "<group>"; };
 		BC910CB2241365AE00280936 /* KJSupportHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJSupportHeader.h; sourceTree = "<group>"; };
-		BC910CF32413686F00280936 /* MBProgressHUD+KJSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+KJSupport.h"; sourceTree = "<group>"; };
-		BC910CF42413686F00280936 /* MBProgressHUD+KJSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+KJSupport.m"; sourceTree = "<group>"; };
+		BC910CF32413686F00280936 /* CKJHUD+KJSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CKJHUD+KJSupport.h"; sourceTree = "<group>"; };
+		BC910CF42413686F00280936 /* CKJHUD+KJSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CKJHUD+KJSupport.m"; sourceTree = "<group>"; };
 		BC910CF824136A7D00280936 /* zhuyuan出院结算@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuyuan出院结算@2x.png"; sourceTree = "<group>"; };
 		BC910CF924136A7D00280936 /* zhuyuan充值记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuyuan充值记录@2x.png"; sourceTree = "<group>"; };
 		BC910CFA24136A7D00280936 /* zhuyuan预交金充值@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhuyuan预交金充值@2x.png"; sourceTree = "<group>"; };
@@ -446,6 +449,10 @@
 		BC9A41E2242DE46D009E388B /* MonitorInstrumentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorInstrumentCell.h; sourceTree = "<group>"; };
 		BC9A41E3242DE46D009E388B /* MonitorInstrumentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorInstrumentCell.m; sourceTree = "<group>"; };
 		BC9A41E4242DE46D009E388B /* MonitorInstrumentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonitorInstrumentCell.xib; sourceTree = "<group>"; };
+		BC9A420C24330D3B009E388B /* CKJHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJHUD.m; sourceTree = "<group>"; };
+		BC9A420D24330D3B009E388B /* CKJHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJHUD.h; sourceTree = "<group>"; };
+		BC9A420F24331278009E388B /* CKJKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJKeyChain.m; sourceTree = "<group>"; };
+		BC9A421024331278009E388B /* CKJKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJKeyChain.h; sourceTree = "<group>"; };
 		BC9DC8F724246A730039F77A /* DXLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXLoginVC.h; sourceTree = "<group>"; };
 		BC9DC8F824246A730039F77A /* DXLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DXLoginVC.xib; sourceTree = "<group>"; };
 		BC9DC8F924246A730039F77A /* DXLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXLoginVC.m; sourceTree = "<group>"; };
@@ -465,6 +472,7 @@
 		BC9E1ABD23D6BC3800169DB3 /* DMOCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOCVC.h; sourceTree = "<group>"; };
 		BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOCVC.m; sourceTree = "<group>"; };
 		BCB5E8C32418C88200B2B8E4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BCB61B0824345AD5008BDAE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BCB77735241F08AD008C0618 /* DMLogin2VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLogin2VC.h; sourceTree = "<group>"; };
 		BCB77736241F08AD008C0618 /* DMLogin2VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMLogin2VC.m; sourceTree = "<group>"; };
 		BCB7773B241F1E5F008C0618 /* DemoTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTestVC.h; sourceTree = "<group>"; };
@@ -506,6 +514,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB61B0924345AD5008BDAE1 /* UIKit.framework in Frameworks */,
 				C541301ACC0C500A130B58C4 /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +525,7 @@
 		7BDFBDDAB0805697C041ACD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCB61B0824345AD5008BDAE1 /* UIKit.framework */,
 				7BD9F5E102E07E8B349FD014 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
@@ -584,8 +594,12 @@
 				BC910C2A241365AE00280936 /* LightStorageManager.m */,
 				BC910C2B241365AE00280936 /* CKJRSA.h */,
 				BC910C2C241365AE00280936 /* CKJBaseModel.m */,
-				BC910CF32413686F00280936 /* MBProgressHUD+KJSupport.h */,
-				BC910CF42413686F00280936 /* MBProgressHUD+KJSupport.m */,
+				BC910CF32413686F00280936 /* CKJHUD+KJSupport.h */,
+				BC910CF42413686F00280936 /* CKJHUD+KJSupport.m */,
+				BC9A420D24330D3B009E388B /* CKJHUD.h */,
+				BC9A420C24330D3B009E388B /* CKJHUD.m */,
+				BC9A421024331278009E388B /* CKJKeyChain.h */,
+				BC9A420F24331278009E388B /* CKJKeyChain.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1407,7 +1421,7 @@
 				BC910CD0241365AE00280936 /* CKJDemoCell.m in Sources */,
 				BC910CB4241365AE00280936 /* UIView+CKJDesingable.m in Sources */,
 				BC910CF1241365AF00280936 /* CKJFixMode.m in Sources */,
-				BC910CF52413686F00280936 /* MBProgressHUD+KJSupport.m in Sources */,
+				BC910CF52413686F00280936 /* CKJHUD+KJSupport.m in Sources */,
 				BC910D982414B4E600280936 /* DMLoginManager.swift in Sources */,
 				BC910D7F24136A7D00280936 /* RJDemoScrollItemView.m in Sources */,
 				BC910D6C24136A7D00280936 /* PersonInfoDemoVC.m in Sources */,
@@ -1422,6 +1436,7 @@
 				BC910CED241365AF00280936 /* CKJTableViewHeaderFooterEmptyView.m in Sources */,
 				BC910D8324136A7D00280936 /* SelectDateCell.m in Sources */,
 				BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */,
+				BC9A421124331278009E388B /* CKJKeyChain.m in Sources */,
 				BCE959E423D586F100B2C5FE /* ViewController.swift in Sources */,
 				BCE53668241777C60084274B /* CKJTwoBtnCell.m in Sources */,
 				BC869CB22421E5C100ED2607 /* BaseMonitorModel.m in Sources */,
@@ -1429,6 +1444,7 @@
 				BC910CE9241365AF00280936 /* CKJPayCell.m in Sources */,
 				BC910CD2241365AE00280936 /* CKJEmptyHeaderFooterCell.m in Sources */,
 				BC9E1ABC23D5A7DE00169DB3 /* DMRes.m in Sources */,
+				BC9A420E24330D3B009E388B /* CKJHUD.m in Sources */,
 				BC910CC0241365AE00280936 /* CKJToolView.m in Sources */,
 				BC9E1AB423D5A3F100169DB3 /* DMHomeVC.swift in Sources */,
 				BC9DC90C242494A20039F77A /* UnitCell.m in Sources */,

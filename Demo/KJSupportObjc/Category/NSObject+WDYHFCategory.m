@@ -3477,6 +3477,11 @@ CGFloat WDAPP_ScreenHeight(void) {
     return buildVersion;
 }
 
++ (NSString *)bundleId {
+    NSString *result = [[NSBundle mainBundle]bundleIdentifier];
+    return result;
+}
+
 + (CGFloat)screenWidth {
     return [UIScreen mainScreen].bounds.size.width;
 }

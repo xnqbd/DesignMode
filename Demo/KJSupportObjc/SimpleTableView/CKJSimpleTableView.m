@@ -11,7 +11,7 @@
 #import "CKJTableViewCell1.h"
 #import "CKJTableViewCell2.h"
 #import "CKJEmptyCell.h"
-#import "MBProgressHUD+KJSupport.h"
+#import "CKJHUD+KJSupport.h"
 
 @interface CKJSimpleTableView ()
 
@@ -1161,7 +1161,7 @@
                     
                     if (expModel.required && expModel.requiredExpression) {
                         if (expModel.requiredExpression(m.tfModel.text, m)) {
-                            [MBProgressHUD kjwd_showMessage:[NSString stringWithFormat:@"%@", expModel.requiredText] toView:view];
+                            [CKJHUD kjwd_showMessage:[NSString stringWithFormat:@"%@", expModel.requiredText] toView:view];
                             return YES;
                         }
                     }
@@ -1177,7 +1177,7 @@
 //
 //                    if (expModel.required && expModel.requiredExpression) {
 //                        if (expModel.requiredExpression(m.tfModel.attributedText, m)) {
-//                            [MBProgressHUD showError:[NSString stringWithFormat:@"%@", expModel.requiredText] toView:view];
+//                            [CKJHUD showError:[NSString stringWithFormat:@"%@", expModel.requiredText] toView:view];
 //                            return YES;
 //                        }
 //                    }

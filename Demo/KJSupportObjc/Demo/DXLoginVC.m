@@ -68,15 +68,15 @@
     NSString *code = self.codeTf.text;
 
 //    if (name == nil || [name isEqualToString:@""]) {
-//        [MBProgressHUD showError:@"登录名不能为空"];
+//        [CKJHUD showError:@"登录名不能为空"];
 //        return;
 //    }
 //    if (pwd == nil || [pwd isEqualToString:@""]) {
-//        [MBProgressHUD showError:@"密码不能为空"];
+//        [CKJHUD showError:@"密码不能为空"];
 //        return;
 //    }
 //    if (code == nil || [code isEqualToString:@""]) {
-//        [MBProgressHUD showError:@"验证码不能为空"];
+//        [CKJHUD showError:@"验证码不能为空"];
 //        return;
 //    }
     

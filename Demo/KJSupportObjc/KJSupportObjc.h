@@ -20,7 +20,7 @@
 // pod 'Masonry'
 // pod 'ActionSheetPicker-3.0'
 // pod 'SDWebImage'
-// pod 'MBProgressHUD'
+
 
 
 

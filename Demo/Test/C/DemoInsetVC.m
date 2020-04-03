@@ -56,7 +56,7 @@
                 //
                 //                } failureBlock:^(NSError *error) {
                 //                    if (error.localizedDescription) {
-                //                        [MBProgressHUD showError:error.localizedDescription];
+                //                        [CKJHUD showError:error.localizedDescription];
                 //                    }
                 //                }];
             } detailSettingBlock:nil];
