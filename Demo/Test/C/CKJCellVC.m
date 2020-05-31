@@ -101,7 +101,7 @@
         
     }];
     
-    CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         _sec.rowHeight = @(rowHeight);
         
         CKJCellModel *model0 = [CKJCellModel ckjCellWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(CKJCellModel *m) {
@@ -131,7 +131,8 @@
             m.likePrice61Model = [CKJLikePriceLabel61Model likePriceModelWithAttText:WDAtt15_5([@"18377216632" kjwd_PhoneLeftMargin:3 rightMargin:2 starNumber:6]) left:0 right:10];
             
             m.btn7Model = [CKJCellBtnModel btnModelWithSize:image.size normalImage:image rightMargin:rightMarign detailSettingBlock:nil didClickBtnHandle:^(CKJCell * _Nonnull cell, CKJCellBtnModel * _Nonnull btn5Model) {
-                NSLog(@"进行编辑%@", cell.cellModel.title3Text);
+                CKJCellModel *cellModel = cell.cellModel;
+                NSLog(@"进行编辑%@", cellModel.title3Text);
             }];
         } didSelectRowBlock:nil];
         
@@ -139,7 +140,8 @@
             m.selectionStyle = UITableViewCellSelectionStyleNone;
             m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"通知座机", [UIColor kjwd_subTitle], @15) left:leftMarign];
             m.btn7Model = [CKJCellBtnModel btnModelWithSize:image.size normalImage:image rightMargin:10 detailSettingBlock:nil didClickBtnHandle:^(CKJCell * _Nonnull cell, CKJCellBtnModel * _Nonnull btn5Model) {
-                NSLog(@"进行编辑%@", cell.cellModel.title3Text);
+                CKJCellModel *cellModel = cell.cellModel;
+                NSLog(@"进行编辑%@", cellModel.title3Text);
             }];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"021-832781", [UIColor kjwd_subTitle], @15) left:6 right:rightMarign];
         } didSelectRowBlock:nil];
@@ -220,7 +222,6 @@
     [self.simpleTableView kjwd_reloadData];
 }
 
-
 - (void)kj_tableView:(CKJSimpleTableView *)tableView didSelectRowAtSection:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath model:(__kindof CKJCommonCellModel *)model cell:(__kindof CKJCommonTableViewCell *)cell {
     NSLog(@"你点击了 %ld分区   %ld行， 一般情况下你可以在 CKJCommonCellModel.didSelectRowBlock这个block里面设置就可以得到回调", (long)section, (long)row);
 }
@@ -238,9 +239,9 @@
         weakSelf.selectAreaItem = (WDYHFAreaItem *)[data kjwd_objectAtIndex:0];
         weakSelf.selectHospitalItem = (WDYHFHospitalItem *)[data kjwd_objectAtIndex:1];
         
-        CKJCellModel *model = [weakSelf.simpleTableView cellModelOfID:kkkk_HospitalCellID];
-        [model.title3Model changeText:weakSelf.selectHospitalItem.org_name];
-        [weakSelf.simpleTableView kjwd_reloadData];
+        [weakSelf.simpleTableView searchCellModelOfID:kkkk_HospitalCellID doSomething:^(CKJCellModel * _Nonnull m) {
+           [m.title3Model changeText:weakSelf.selectHospitalItem.org_name];
+        }];
     };
     
     
@@ -343,14 +344,14 @@
         section.widthOf_MultipliedByPickerView = 0.25;
         section.modelArray = areas;
         
-        section.selectIndex = ({
-            NSInteger index = 0;
-            index = [areas kjwd_do_filter_returnConformIndex:^BOOL(WDYHFAreaItem *objc) {
-                return [objc.area isEqualToString:WDKJ_ConfirmString(self.defaultAreaItem.area)];
-            }].integerValue;
-            index;
-        });
-        areaSelectIndex = section.selectIndex;
+//        section.defaultSelectIndex = ({
+//            NSInteger index = 0;
+//            index = [areas kjwd_do_filter_returnConformIndex:^BOOL(WDYHFAreaItem *objc) {
+//                return [objc.area isEqualToString:WDKJ_ConfirmString(self.defaultAreaItem.area)];
+//            }].integerValue;
+//            index;
+//        });
+//        areaSelectIndex = section.defaultSelectIndex;
         
         [sections addObject:section];
     }
@@ -363,13 +364,13 @@
         
         section.modelArray = currentArea.hospitals;
         
-        section.selectIndex = ({
-            NSInteger index = 0;
-            index = [currentArea.hospitals kjwd_do_filter_returnConformIndex:^BOOL(WDYHFHospitalItem *objc) {
-                return [objc.org_code isEqualToString:WDKJ_ConfirmString(self.defaultHospitalItem.org_code)];
-            }].integerValue;
-            index;
-        });
+//        section.defaultSelectIndex = ({
+//            NSInteger index = 0;
+//            index = [currentArea.hospitals kjwd_do_filter_returnConformIndex:^BOOL(WDYHFHospitalItem *objc) {
+//                return [objc.org_code isEqualToString:WDKJ_ConfirmString(self.defaultHospitalItem.org_code)];
+//            }].integerValue;
+//            index;
+//        });
         
         [sections addObject:section];
     }

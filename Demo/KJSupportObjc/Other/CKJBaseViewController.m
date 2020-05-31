@@ -28,9 +28,17 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIBarButtonItem * backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage kjwd_imageNamed:@"m_monitor_icon1"] style:(UIBarButtonItemStyleDone) target:self action:@selector(popAction:)];
-    [backItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.leftBarButtonItem = backItem;
+
+    if (self.navigationController.viewControllers.count > 1) {
+        
+        NSBundle *resourcesBundle = [CKJWorker kjbundle];
+        UIImage *arrow = [UIImage imageNamed:@"kj_return_white" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
+        arrow = [arrow kjwd_scaleToSize:CGSizeMake(30, 30)];
+        
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:arrow style:(UIBarButtonItemStyleDone) target:self action:@selector(popAction:)];
+        [backItem setTintColor:[UIColor whiteColor]];
+        self.navigationItem.leftBarButtonItem = backItem;
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -122,7 +130,9 @@
 }
 
 
-
+- (void)_set_subViews {
+    
+}
 
 
 

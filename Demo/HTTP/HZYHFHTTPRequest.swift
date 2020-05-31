@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import SwifterSwift
-import SwiftyJSON
-import Alamofire
+//import SwifterSwift
+//
+//import SwiftyJSON
+//import Alamofire
 
 enum CKJCallBackType {
     case Success, Failure, Exception

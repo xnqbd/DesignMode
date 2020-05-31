@@ -54,7 +54,7 @@ class MyVC: CKJBaseTableVC {
                 CKJMyVCItem.init(image: "设置", title: "设置", click: { [weak self](temp) in
                     let vc = DMSettingVC()
                     vc.hidesBottomBarWhenPushed = true
-                    self?.navigationController?.pushViewController(vc)
+                    self?.navigationController?.pushViewController(vc, animated: true)
                 })
             ]
         ]
@@ -78,7 +78,7 @@ class MyVC: CKJBaseTableVC {
                 _sec.add(CKJGeneralCellModel.general(withTitle: "KJSupportObjc", arrow: true) {[weak self] m in
                     let vc = KJSupportObjcListVC()
                     vc.hidesBottomBarWhenPushed = true
-                    self?.navigationController?.pushViewController(vc)
+                    self?.navigationController?.pushViewController(vc, animated: true)
                 })
                 _sec.add(CKJGeneralCellModel.general(withTitle: "设置rootVC = ViewController()", arrow: true) { m in
                     let vc = ViewController()

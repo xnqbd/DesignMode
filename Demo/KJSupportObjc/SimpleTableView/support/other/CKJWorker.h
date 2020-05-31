@@ -169,7 +169,7 @@ typedef void(^CKJBaseBtnClick)(CKJBaseBtnModel *btnModel, UIButton *btn);
 /**
  对UIButton的图片和文字 进行排布回调
  sender.layoutButton = ^(UIButton *btn) {
- [btn kjwd_layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:0];
+     [btn kjwd_layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:0];
  };
  
  */

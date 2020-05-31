@@ -48,7 +48,6 @@ typedef void(^CKJStackCellModelRowBlock)(__kindof CKJStackCellModel *_Nonnull m)
  分割View的高度
  */
 @property (copy, nonatomic, nullable) NSNumber *separatorViewHeight;
-
 /**
  分割View 高度相对于StackView的倍数，默认0（0~1）
  */
@@ -58,7 +57,7 @@ typedef void(^CKJStackCellModelRowBlock)(__kindof CKJStackCellModel *_Nonnull m)
  */
 @property (strong, nonatomic, nullable) UIColor *separatorViewColor;
 
-@property (copy, nonatomic, nullable) void (^detailSetting)(UIView *_Nonnull stackView_superView);
+@property (copy, nonatomic, nullable) void (^detailSettingStackView_superView)(UIView *_Nonnull stackView_superView);
 
 
 @end
@@ -84,7 +83,7 @@ typedef void(^CKJStackCellModelRowBlock)(__kindof CKJStackCellModel *_Nonnull m)
 @end
 
 
-@interface CKJStackCell : CKJCommonTableViewCell<CKJStackCellModel *>
+@interface CKJStackCell : CKJCommonTableViewCell //<CKJStackCellModel *>
 
 @end
 

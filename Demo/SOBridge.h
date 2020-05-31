@@ -16,7 +16,5 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "CKJHUD+KJSupport.h"
 #import "DMLogin2VC.h"
-#import "DXLoginVC.h"
-#import "NaVC.h"
 
 #endif /* SOBridge_h */

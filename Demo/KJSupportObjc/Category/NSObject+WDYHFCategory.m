@@ -200,11 +200,19 @@ NSMutableAttributedString * WDCKJAttributed(NSString *_Nullable name, NSDictiona
     return str;
 }
 
-NSMutableAttributedString * WDCKJAttributed2(NSString *_Nullable text, UIColor *_Nullable color, NSNumber *_Nullable fontSize) {
+NSMutableAttributedString * WDCKJAttributed2(NSString *_Nullable text, UIColor *_Nullable color, id _Nullable fontSize) {
     UIColor *_color = WDKJ_IsNullObj(color, [UIColor class]) ? [UIColor blackColor] : color;
-    CGFloat _fontSize = WDKJ_IsNull_Num(fontSize) ? 15.5 : fontSize.integerValue;
     
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:WDKJ_ConfirmString(text) attributes:@{NSForegroundColorAttributeName : _color, NSFontAttributeName : [UIFont systemFontOfSize:_fontSize]}];
+    UIFont *font = [UIFont systemFontOfSize:15.5];
+    
+    if ([fontSize isKindOfClass:[NSNumber class]]) {
+        font = [UIFont systemFontOfSize:((NSNumber *)fontSize).floatValue];
+    } else  if ([fontSize isKindOfClass:[UIFont class]]) {
+        font = fontSize;
+    } else {
+    }
+    
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:WDKJ_ConfirmString(text) attributes:@{NSForegroundColorAttributeName : _color, NSFontAttributeName : font}];
     
     return str;
 }
@@ -531,6 +539,17 @@ CGFloat WDAPP_ScreenHeight(void) {
     return resData;
 }
 
++ (instancetype)kjwd_dataWithContentsOfURL:(id)url {
+    NSData *data = nil;
+    if ([url isKindOfClass:[NSString class]]) {
+        data = [NSData dataWithContentsOfURL:[NSURL kjwd_URLWithString:url]];
+    } else if ([url isKindOfClass:[NSURL class]]) {
+        data = [NSData dataWithContentsOfURL:url];
+    }
+    return data ? data : [NSData data];
+}
+
+
 @end
 
 
@@ -766,6 +785,14 @@ CGFloat WDAPP_ScreenHeight(void) {
         [arr addObject:@(i)];
     }
     return arr;
+}
+
+- (NSMutableArray *)kjwd_mergeArray:(NSArray *_Nullable)otherArray {
+    NSMutableArray *result = [NSMutableArray arrayWithArray:self];
+    if (WDKJ_IsNull_Array(otherArray) == NO) {
+        [result addObjectsFromArray:otherArray];
+    }
+    return result;
 }
 
 - ( NSSet *)kjwd_intersectWithArray:(NSArray *)array {
@@ -1415,6 +1442,7 @@ CGFloat WDAPP_ScreenHeight(void) {
     return [UIColor kjwd_r:230 g:230 b:230 alpha:1];
 }
 
+
 + (UIColor *)kjwd_blueBtnColor {
     return [UIColor kjwd_r:25 g:130 b:197 alpha:1];
 }
@@ -1440,12 +1468,15 @@ CGFloat WDAPP_ScreenHeight(void) {
     NSCharacterSet *encode_set= [NSCharacterSet URLQueryAllowedCharacterSet];
     NSString *urlString_encode = [urlString stringByAddingPercentEncodingWithAllowedCharacters:encode_set];
     url = [NSURL URLWithString:urlString_encode];
-    return url;
+   
+    return url ? url : [[NSURL alloc] init];
 }
 
-+ (void)kjwd_openURLWithString:(nullable NSString *)urlString options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion {
++ (void)kjwd_openURLWithString:(NSString *_Nullable)urlString options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *_Nullable)options completionHandler:(void (^_Nullable)(BOOL success))completion {
     NSURL *url = [self kjwd_URLWithString:urlString];
-    
+    if (options == nil) {
+        options = @{};
+    }
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         if(@available(iOS 10.0, *)) {
             [[UIApplication sharedApplication] openURL:url options:options completionHandler:completion];
@@ -2048,7 +2079,7 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 
 
-- (void)kjwd_addGestureRecognizer:(UIGestureRecognizer *)ges handleBlock:(void(^)(UIGestureRecognizer * gestureRecognizer, UIView * currentView))handleBlock {
+- (void)kjwd_addGestureRecognizer:(UIGestureRecognizer *)ges handleBlock:(void(^)(__kindof UIGestureRecognizer * gestureRecognizer, __kindof UIView * currentView))handleBlock {
     [ges addTarget:self action:@selector(kjwd_gestureRecognizerAction:)];
     [self addGestureRecognizer:ges];
     self.gestureRecognizerBlock = handleBlock;
@@ -2056,6 +2087,12 @@ CGFloat WDAPP_ScreenHeight(void) {
 - (void)kjwd_gestureRecognizerAction:(UIGestureRecognizer *)sender {
     self.gestureRecognizerBlock ? self.gestureRecognizerBlock(sender, self) : nil;
 }
+- (void)kjwd_addTapGestureRecognizerHandleBlock:(void(^)(UITapGestureRecognizer *_gestureRecognizer, UIView *_currentView))handleBlock {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [self kjwd_addGestureRecognizer:tap handleBlock:handleBlock];
+}
+
+
 
 // ----------------- runtime ------------
 
@@ -2215,6 +2252,36 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 - (void)btnCallBack:(UIButton *)sender {
     self.kjCallBackBlock ? self.kjCallBackBlock(self) : nil;
+}
+
+
+/// 实心样式的
++ (instancetype)fillStyleWithTitle:(id)title bgColor:(UIColor *_Nullable)bgColor radius:(NSNumber *_Nullable)radius callBack:(void(^_Nullable)(UIButton * _sender))callBack {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:18];
+    btn.layer.masksToBounds = YES;
+    
+    if ([radius isKindOfClass:[NSNumber class]]) {
+        btn.layer.cornerRadius = radius.floatValue;
+    } else {
+        btn.layer.cornerRadius = 5;
+    }
+    
+    if ([title isKindOfClass:[NSString class]]) {
+        [btn setTitle:(NSString *)title forState:UIControlStateNormal];
+    } else if ([title isKindOfClass:[NSAttributedString class]]) {
+        [btn setAttributedTitle:(NSAttributedString *)title forState:UIControlStateNormal];
+    }
+    
+    if ([bgColor isKindOfClass:[UIColor class]]) {
+        btn.backgroundColor = bgColor;
+    } else {
+        btn.backgroundColor = [UIColor kjwd_blueBtnColor];
+    }
+    
+    [btn kjwd_addTouchUpInsideForCallBack:callBack];
+    return btn;
 }
 
 
@@ -2460,12 +2527,22 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 
 
-- ( NSDate *)kjwd_tomorrowDate {
+- ( NSDate *)kjwd_tomorrow {
     NSDate *date = [self dateByAddingTimeInterval:60 * 60 * 24];//后一天
     return date;
 }
-- ( NSDate *)kjwd_yesterdayDate {
+- ( NSDate *)kjwd_yesterDay {
     NSDate *date = [self dateByAddingTimeInterval:- 60 * 60 * 24];//前一天
+    return date;
+}
+/** 明年 */
+- (NSDate *)kjwd_nextyear {
+    NSDate *date = [self dateByAddingTimeInterval:60 * 60 * 24 * 365];
+    return date;
+}
+/** 去年 */
+- (NSDate *)kjwd_yesterYear {
+    NSDate *date = [self dateByAddingTimeInterval:- 60 * 60 * 24 * 365];//前一天
     return date;
 }
 + (NSString *)kjwd_returnWordsForTime:(NSString *)str {
@@ -2529,7 +2606,7 @@ CGFloat WDAPP_ScreenHeight(void) {
     UIImage *empty = [[UIImage alloc] init];
     if (WDKJ_IsEmpty_Str(urlStr)) return empty;
     NSURL *url = [NSURL kjwd_URLWithString:urlStr];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSData *data = [NSData kjwd_dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     if (image == nil) {
         return empty;
@@ -2727,6 +2804,58 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 
 
+/*
+ 渐变色生成图片
+ 
+ gradientType
+ 1. 上到下
+ 2. 左到右
+ 3. 左上到右下
+ 4. 右上到左下
+ 
+ */
++ (UIImage *)kjwd_gradientColorImageFromColors:(NSArray <UIColor *>*)colors gradientType:(NSInteger)gradientType imgSize:(CGSize)imgSize {
+    
+    NSMutableArray *ar = [NSMutableArray array];
+    for(UIColor *c in colors) {
+        [ar addObject:(id)c.CGColor];
+    }
+    UIGraphicsBeginImageContextWithOptions(imgSize, YES, 1);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)ar, NULL);
+    CGPoint start = CGPointMake(0.0, 0.0);;
+    CGPoint end = CGPointMake(0.0, 0.0);;
+    switch (gradientType) {
+        case 1: // 从上到下
+            start = CGPointMake(0.0, 0.0);
+            end = CGPointMake(0.0, imgSize.height);
+            break;
+        case 2: // 从左到右
+            start = CGPointMake(0.0, 0.0);
+            end = CGPointMake(imgSize.width, 0.0);
+            break;
+        case 3: // 左上到右下
+            start = CGPointMake(0.0, 0.0);
+            end = CGPointMake(imgSize.width, imgSize.height);
+            break;
+        case 4: // 右上到左下
+            start = CGPointMake(imgSize.width, 0.0);
+            end = CGPointMake(0.0, imgSize.height);
+            break;
+        default:
+            break;
+    }
+    CGContextDrawLinearGradient(context, gradient, start, end,kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    CGGradientRelease(gradient);
+    CGContextRestoreGState(context);
+    CGColorSpaceRelease(colorSpace);
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end
 
 
@@ -2767,10 +2896,10 @@ CGFloat WDAPP_ScreenHeight(void) {
 }
 
 /// 手机号码验证
-- (BOOL)kjwd_varityPhoneFail {
+- (BOOL)kjwd_varityPhoneSuccess {
     NSString *phone = @"^(1)\\d{10}$";
     NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phone];
-    return [regextestcm evaluateWithObject:self] == NO;
+    return [regextestcm evaluateWithObject:self];
 }
 
 /// 默认左3位  右2位， *6位， 比如  177******94
@@ -3252,11 +3381,11 @@ CGFloat WDAPP_ScreenHeight(void) {
 
 /*
  例子
- NSString *_stext = cookie;
+ NSString *originStr = cookie;
  NSMutableArray <NSString *>*reg_result = [NSMutableArray array];
- [[_stext kjwd_searchWithRegularExpression:regexStr options:NSRegularExpressionCaseInsensitive] enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+ [[originStr kjwd_searchWithRegularExpression:regexStr options:NSRegularExpressionCaseInsensitive] enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
      NSRange range = [obj rangeAtIndex:2];
-     NSString *temp = [_stext substringWithRange:range];
+     NSString *temp = [originStr substringWithRange:range];
      [reg_result addObject:temp];
  }];
  NSLog(@"%@   ",     reg_result);
@@ -3274,6 +3403,42 @@ CGFloat WDAPP_ScreenHeight(void) {
     }
     NSArray <NSTextCheckingResult *>*matches = [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
     return matches;
+}
+
+- (NSArray <NSString *>*)kjwd_general_searchWithReg:(NSString *)reg options:(NSRegularExpressionOptions)options {
+    NSMutableArray <NSString *>*result = [NSMutableArray array];
+    NSArray *regRes = [self kjwd_searchWithRegularExpression:reg options:options];
+    for (int i = 0; i < regRes.count; i++) {
+        NSTextCheckingResult *temp = regRes[i];
+        NSRange range = temp.range;
+        //从原文本中将字段取出并存入一个NSMutableArray中
+        [result addObject:[self substringWithRange:range]];
+    }
+    return result;
+}
+
+
+/*
+ NSArray <NSString *>*result = [originStr kjwd_general_searchWithRegularExpression:@"(.*)小时(.*)分钟" options:NSRegularExpressionCaseInsensitive].firstObject;
+
+ if (result.count) {
+     NSString *hour = [result kjwd_objectAtIndex:0];
+     NSString *minute = [result kjwd_objectAtIndex:1];
+ }
+*/
+- (NSArray <NSArray <NSString *>*>*)kjwd_group_searchWithReg:(NSString *)reg options:(NSRegularExpressionOptions)options {
+    NSString *originStr = self;
+    NSMutableArray <NSArray <NSString *>*>*section_reg_result = [NSMutableArray array];
+    [[originStr kjwd_searchWithRegularExpression:reg options:options] enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSMutableArray <NSString *>*cell_reg_result = [NSMutableArray array];
+        for (int i = 1; i < obj.numberOfRanges; i++) {
+            NSRange range = [obj rangeAtIndex:i];
+            NSString *temp = [originStr substringWithRange:range];
+            [cell_reg_result addObject:temp];
+        }
+        [section_reg_result addObject:cell_reg_result];
+    }];
+    return section_reg_result;
 }
 
 

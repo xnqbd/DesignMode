@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CKJWorker.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
 @property (weak, nonatomic) IBOutlet UILabel *lab;
 
-@property (strong, nonatomic) CKJMyVCItem *itemData;
+@property (copy, nonatomic) CKJBlockType1 tapBlock;
 
 @end
 

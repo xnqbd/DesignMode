@@ -11,6 +11,11 @@
 
 @implementation CKJImageRightCellConfig
 
++ (instancetype)imageRightCellConfigWithDetail:(void(^)(__kindof CKJImageRightCellConfig * _Nonnull m))detail {
+    return [super configWithDetail:detail];
+}
+
+
 @end
 
 

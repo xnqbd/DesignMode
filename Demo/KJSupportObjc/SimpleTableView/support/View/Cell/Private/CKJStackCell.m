@@ -166,8 +166,8 @@
         }
     }];
     
-    if (config.detailSetting) {
-        config.detailSetting(stackView_superView);
+    if (config.detailSettingStackView_superView) {
+        config.detailSettingStackView_superView(stackView_superView);
     }
     
     BOOL debug = NO;

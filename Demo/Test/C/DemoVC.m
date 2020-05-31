@@ -35,7 +35,7 @@
     
     for (int i = 0; i < 2; i++) {
 
-        CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+        CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
             CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
                 m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttBold(@"行政部", [UIColor blackColor], @17) left:10];
                 m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitle], @14) left:0 right:15];
@@ -52,7 +52,7 @@
     }
     
 
-    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttBold(@"行政部", [UIColor blackColor], @17) left:10];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"20", [UIColor kjwd_subTitle], @14) left:0 right:15];

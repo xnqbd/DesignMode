@@ -7,13 +7,8 @@
 //
 
 #import "DemoLeftRightCellVC.h"
-#import "CKJLeftRightTopEqualCell.h"
-#import "CKJLeftRightCenterEqualCell.h"
 
 @interface DemoLeftRightCellVC ()
-
-
-@property (strong, nonatomic) CKJLeftRightCenterEqual_LeftLabelSetting *leftSetting;
 
 @end
 
@@ -22,27 +17,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"CKJLeftRightCell示例";
-    self.leftSetting = [CKJLeftRightCenterEqual_LeftLabelSetting settingWithLeftMargin:15 detail:nil];
     [self initSimpleTableViewData];
 }
 
+#pragma mark - CKJSimpleTableView 数据源 和 代理
+
 - (void)initSimpleTableViewData {
-    KJ_typeweakself
-    
+    CGFloat margin = 20;
     CKJLeftRightTopEqualCellModel *(^createTopEqualModel)(NSString *left, NSString *right) = ^CKJLeftRightTopEqualCellModel *(NSString *left, NSString *right) {
-        CKJLeftRightTopEqualCellModel *model1 = [CKJLeftRightTopEqualCellModel topEqualWithLeftAtt:WDAttTitle(left) rightAtt:WDAttSubTitle(right) leftRightMargin:15 showLine:NO detail:^(CKJLeftRightTopEqualCellModel * _Nonnull m) {
+        CKJLeftRightTopEqualCellModel *model1 = [CKJLeftRightTopEqualCellModel topEqualWithLeftAtt:WDCKJAttributed2(left, [UIColor kjwd_title], nil) rightAtt:WDCKJAttributed2(right, [UIColor kjwd_subTitle], nil) leftRightMargin:margin showLine:YES detail:^(CKJLeftRightTopEqualCellModel * _Nonnull m) {
+        
             m.rightLab_textAlignment = NSTextAlignmentLeft;
-            [m updateSetting:^(CKJLeftRightTopEqual_LeftLabelSetting * _Nonnull left, CKJLeftRightTopEqual_RightLabelSetting * _Nonnull right) {
-                left.leftLab_width = @185;
-            }];
+            m.cellHeight = @(UITableViewAutomaticDimension);
         }];
         return model1;
     };
     
     CKJLeftRightCenterEqualCellModel *(^createCenterEqualModel)(NSString *left, NSString *right) = ^CKJLeftRightCenterEqualCellModel *(NSString *left, NSString *right) {
-        CKJLeftRightCenterEqualCellModel *model1 = [CKJLeftRightCenterEqualCellModel centerEqualWithLeftAtt:WDAttTitle(left) rightAtt:WDAttSubTitle(right) leftSetting:weakSelf.leftSetting rightMargin:15 showLine:YES];
+        CKJLeftRightCenterEqualCellModel *model1 = [CKJLeftRightCenterEqualCellModel centerEqualWithLeftAtt:WDCKJAttributed2(left, [UIColor kjwd_title], nil) rightAtt:WDCKJAttributed2(right, [UIColor kjwd_subTitle], nil) leftRightMargin:margin showLine:YES];
+        model1.rightLab_textAlignment = NSTextAlignmentRight;
         return model1;
     };
+    
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJLeftRightTopEqualCell顶部对齐", [UIColor kjwd_subTitle], @14) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         CKJLeftRightTopEqualCellModel *model1 = createTopEqualModel(@"就诊人：", @"张三");
         CKJLeftRightTopEqualCellModel *model2 = createTopEqualModel(@"身份证号：", @"330501****3715");

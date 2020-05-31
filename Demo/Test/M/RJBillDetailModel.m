@@ -25,17 +25,17 @@
     
     CGFloat margin = 20;
     CGFloat cellH = 0;
-    
-    CKJLeftRightTopEqualCellRowBlock block = ^(CKJLeftRightTopEqualCellModel *model) {
-        //         model.showLine = YES;
-        // model.rightLab_textAlignment = NSTextAlignmentRight;
+//    
+//    CKJLeftRightTopEqualCellRowBlock block = ^(CKJLeftRightTopEqualCellModel *model) {
+//        //         model.showLine = YES;
+//        // model.rightLab_textAlignment = NSTextAlignmentRight;
 //        model.leftLab_MarginTo_SuperViewLeft = margin;
 //        model.rightLab_MarginTo_SuperViewRight = margin;
-        
-        // 如果你需要在点击这些Cell的时候得到Self的信息，可以把下面这行打开
-        model.extension_Obj1 = self;
-    };
-    
+//        
+//        // 如果你需要在点击这些Cell的时候得到Self的信息，可以把下面这行打开
+//        model.extension_Obj1 = self;
+//    };
+//    
 //    CKJLeftRightTopEqualCellModel *model1 = [CKJLeftRightTopEqualCellModel modelWithCellHeight:@(cellH) cellModel_id:nil detailSettingBlock:^(__kindof CKJLeftRightTopEqualCellModel * _Nonnull m) {
 //        m.leftAttStr = WDCKJAttributed2(@"类别名称：", color333, nil);
 //        m.rightAttStr = WDCKJAttributed2(self.ProjectType, color333, nil);

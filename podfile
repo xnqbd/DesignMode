@@ -7,17 +7,20 @@ target 'Demo' do
 
   # Pods for Demo
   source 'https://github.com/CocoaPods/Specs.git'
-
+  
   pod 'Masonry'
   pod 'ActionSheetPicker-3.0'
   pod 'SDWebImage', '~> 3.7'
   
   pod 'IQKeyboardManager'
-  pod 'SwiftyJSON'
+  # pod 'SwiftyJSON'
   pod 'SwifterSwift'
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'JXCategoryView'
   pod 'MJRefresh'
+  
+  pod 'UICountingLabel'
+  pod 'FSCalendar'
   
 end

@@ -53,7 +53,7 @@ typedef void(^CKJBaseLeftRightCellModelRowBlock)(__kindof CKJBaseLeftRightCellMo
 
 
 
-@interface CKJBaseLeftRightCellModel<L, R> : CKJCommonCellModel
+@interface CKJBaseLeftRightCellModel : CKJCommonCellModel
 
 
 @property(assign, nonatomic) NSTextAlignment leftLab_textAlignment;
@@ -68,17 +68,14 @@ typedef void(^CKJBaseLeftRightCellModelRowBlock)(__kindof CKJBaseLeftRightCellMo
  */
 @property (copy, nonatomic, nullable) NSAttributedString *rightAttStr;
 
-
-
-@property (strong, nonatomic) L leftLabelSetting;
-@property (strong, nonatomic) R rightLabelSetting;
-
+@property (strong, nonatomic) __kindof CKJBaseLeftLabelSetting *leftLabelSetting;
+@property (strong, nonatomic) __kindof CKJBaseRightLabelSetting *rightLabelSetting;
 
 
 @end
 
 
-@interface CKJBaseLeftRightCell : CKJCommonTableViewCell <CKJBaseLeftRightCellModel *>
+@interface CKJBaseLeftRightCell : CKJCommonTableViewCell //<CKJBaseLeftRightCellModel *>
 
 @property (strong, nonatomic) UILabel *leftLab;
 @property (strong, nonatomic) UILabel *rightLab;

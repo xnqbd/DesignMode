@@ -30,6 +30,19 @@
 
 @implementation CKJSimpleTableView
 
++ (UIView *)createSimpleTableViewWithEdge:(UIEdgeInsets)edge style:(UITableViewStyle)style detail:(void(^)(CKJSimpleTableView *s))detail {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor whiteColor];
+    CKJSimpleTableView *tableView = [[self alloc] initWithFrame:CGRectZero style:style];
+    [tableView kjwd_addToSuperView:view constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+        make.edges.equalTo(superview).insets(edge);
+    }];
+    if (detail) {
+        detail(tableView);
+    }
+    return view;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if (self = [super initWithFrame:frame style:style]) {
         [self kjInit];
@@ -549,6 +562,10 @@
     }
     return nil;
 }
+- (nullable __kindof CKJCellModel *)ckjCellModelOfID:( NSString *)cellModel_id {
+    return (CKJCellModel *)[self cellModelOfID:cellModel_id];
+}
+
 - (nullable __kindof CKJInputCellModel *)inputCellModelOfID:(nonnull NSString *)cellModel_id {
     return (CKJInputCellModel *)[self cellModelOfID:cellModel_id];
 }
@@ -1156,11 +1173,11 @@
                 for (CKJInputExpressionRequiredModel *expModel in m.expressionRequiredArray) {
                     
                     if (expModel.required && !expModel.requiredExpression) {
-                        NSLog(@"你缺少 对输入框文本限制处理，请设置 requiredExpression，  这是本Cell信息---> titl3: %@  Placeholder: %@  ", m.title3Text, m.tfModel.attributedPlaceholder.string);
+                        NSLog(@"你缺少 对输入框文本限制处理，请设置 requiredExpression，  这是本Cell信息---> titl3: %@  Placeholder: %@  ", m.title3Text, m.tfModel.attPlaceholder.string);
                     }
                     
                     if (expModel.required && expModel.requiredExpression) {
-                        if (expModel.requiredExpression(m.tfModel.text, m)) {
+                        if (expModel.requiredExpression(m.tfModel.attText.string, m)) {
                             [CKJHUD kjwd_showMessage:[NSString stringWithFormat:@"%@", expModel.requiredText] toView:view];
                             return YES;
                         }
@@ -1188,25 +1205,41 @@
     return NO;
 }
 
-- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail {
+- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(id)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail {
 
-    CKJInputHaveTitleStyle *style = self.simpleStyle.haveTitleStyle;
+    CKJSimpleTableViewStyle *style = self.simpleStyle;
+    
+    CKJInputHaveTitleStyle *titleStyle = style.haveTitleStyle;
 
     CKJInputCellModel *model = [CKJInputCellModel inputWithCellHeight:nil cellModel_id:cellId detailSettingBlock:^(CKJInputCellModel * _Nonnull m) {
-        m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed(title, style.titleAttributes) left:style.left];
-        m.title3Model.width = style.titleWidth;
+        m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed(title, titleStyle.titleAttributes) left:titleStyle.left];
+        m.title3Model.width = titleStyle.titleWidth;
         
         [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
-            [tfModel _setPlaceholder:placeholder];
-            tfModel.text = text;
-            tfModel.tfTextAttributed = style.tfTextAttributed;
+            if ([placeholder isKindOfClass:[NSString class]]) {
+                [tfModel _setPlaceholder:placeholder];
+            } else if ([placeholder isKindOfClass:[NSAttributedString class]]) {
+                tfModel.attPlaceholder = placeholder;
+            }
+            
+            tfModel.attText = WDCKJAttributed2(text, style.tfTextAttributed[NSForegroundColorAttributeName], style.tfTextAttributed[NSFontAttributeName]);
+            tfModel.textAlignment = style.tfAlignment;
+            tfModel.rightMargin = style.tfStyle_Right + 3;
         }];
         
         if (!WDKJ_IsEmpty_Str(emptyRequirdText)) {
             [m addRequired:WDKJ_ER(emptyRequirdText)];
         }
         detail ? detail(m) : nil;
-
+        
+        if (m.stringChoose || m.dateChoose) {
+            m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
+            m.arrow9Model.right = style.tfStyle_Right;
+            [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
+                tfModel.userInteractionEnabled = NO;
+                tfModel.rightMargin = 5;
+            }];
+        }
     }];
     return model;
 }
@@ -1257,6 +1290,10 @@
         }
         if (isRegisterNib) {
             //            NSLog(@"注册Nib %@ ", nibName);
+            
+            nibName = [CKJAPPHelper return_ModelName:nibName];
+           
+            
             [self registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellReuseIdentifier:cellClass];
         } else {
             //            NSLog(@"注册Class %@ ", cellClass);
@@ -1419,7 +1456,7 @@
  @param CellModelClass CellModelClass类（必须是CKJCommonCellModel子类）
  @param callBack 可以详细设置CellModel数据， 比如高度或者其他
  */
-+ (instancetype _Nonnull)kjwd_arrayWithResponseDataModels:(NSArray <__kindof CKJNetWorkDataModel *>* _Nullable)ResponseDataModels CellModelClass:(Class _Nonnull)CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel * _Nonnull currentModel))callBack {
++ (instancetype _Nonnull)kjwd_arrayWithResponseDataModels:(NSArray * _Nullable)ResponseDataModels CellModelClass:(Class _Nonnull)CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel * _Nonnull currentModel))callBack {
     
     ResponseDataModels = WDKJ_ConfirmArray(ResponseDataModels);
     
@@ -1439,5 +1476,29 @@
     return result;
 }
 
+
+
++ (instancetype)kjwd_arrayWithResponseDics:(NSArray <NSDictionary *>* _Nullable)responseDics ResponseDataModelClass:(Class)responseDataModelClass CellModelClass:(Class _Nonnull)CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel *currentModel, id dataModel))callBack {
+    NSMutableArray *result = [NSMutableArray array];
+    
+    
+    responseDics = WDKJ_ConfirmArray(responseDics);
+    
+    [responseDics enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CKJCommonCellModel *cellModel = [[CellModelClass alloc] init];
+        if ([cellModel isKindOfClass:[CKJCommonCellModel class]] == NO) {
+            return;
+        }
+        
+        NSObject *model = [[responseDataModelClass alloc] init];
+        [model setValuesForKeysWithDictionary:WDKJ_ConfirmDic(obj)];
+        if (callBack) {
+            callBack(cellModel, model);
+        }
+        cellModel.networkData = model;
+        [result addObject:cellModel];
+    }];
+    return result;
+}
 
 @end

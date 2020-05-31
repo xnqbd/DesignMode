@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (instancetype)init {
 //    if (self = [super init]) {
-//        self.showLine = NO;
+//        [self _showLine:NO];
 //    }
 //    return self;
 //}
@@ -61,7 +61,7 @@ typedef void(^CKJCommonCellModelRowBlock)(__kindof CKJCommonCellModel *m);
 
 // sectionProperty_
 
-@interface CKJCommonCellModel<NetWorkDataType> : CKJSimpleBaseModel
+@interface CKJCommonCellModel : CKJSimpleBaseModel
 
 /**
  背景设置
@@ -116,7 +116,7 @@ typedef void(^CKJCommonCellModelRowBlock)(__kindof CKJCommonCellModel *m);
 /**
  每行对应的网络数据，这个属性是id类型
  */
-@property (strong, nonatomic, nullable) NetWorkDataType networkData;
+@property (strong, nonatomic, nullable) id networkData;
 
 
 

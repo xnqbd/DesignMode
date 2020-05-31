@@ -40,7 +40,7 @@ typedef void(^CKJTwoBtnCellBlock)(__kindof CKJTwoBtnCellModel *_Nonnull m);
 
 @end
 
-@interface CKJTwoBtnCell : CKJCommonTableViewCell <CKJTwoBtnCellModel *>
+@interface CKJTwoBtnCell : CKJCommonTableViewCell //<CKJTwoBtnCellModel *>
 
 @property (strong, nonatomic) UIButton *leftBtn;
 @property (strong, nonatomic) UIButton *rightBtn;

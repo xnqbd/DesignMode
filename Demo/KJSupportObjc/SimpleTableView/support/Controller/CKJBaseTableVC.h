@@ -11,6 +11,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*
+
+CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    
+ 
+    
+ 
+    _sec.modelArray = @[model1, model2, model3, model4];
+}];
+
+self.simpleTableView.dataArr = @[section1];
+
+
+*/
+
+
+
 
 #warning  注意: 继承于本来的子类， 需实现 CKJSimpleTableViewDataSource 协议
 @interface CKJBaseTableVC : CKJBaseViewController <CKJSimpleTableViewDataSource, CKJSimpleTableViewDelegate, TitleStyleHeaderFooterViewDelegate>

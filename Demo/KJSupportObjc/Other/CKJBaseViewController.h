@@ -26,6 +26,7 @@
 - (void)kj_addNotification;
 - (void)kj_removeNotification;
 
+- (void)_set_subViews;
 
 /**
  增加补充数据

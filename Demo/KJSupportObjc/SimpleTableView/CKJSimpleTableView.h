@@ -49,8 +49,37 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*
+
+     CKJSimpleTableView *tableView = [[CKJSimpleTableView alloc] init];
+     tableView.backgroundColor = [UIColor clearColor];
+     tableView.simpleTableViewDataSource = self;
+     tableView.simpleTableViewDelegate = self;
+     [tableView kjwd_addToSuperView:bgV constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+        make.left.right.equalTo(superview);
+     }];
+     self.simpleTableView = tableView;
+ */
+
+
 @interface CKJSimpleTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
 
+
+
+/*
+ UIView *tabV = [CKJSimpleTableView createSimpleTableViewWithEdge:UIEdgeInsetsMake(0, 20, 0, 20) style:UITableViewStylePlain detail:^(CKJSimpleTableView * _Nonnull s) {
+     s.backgroundColor = [UIColor clearColor];
+     s.contentInset = UIEdgeInsetsMake(22, 0, 0, 0);
+     s.simpleTableViewDataSource = self;
+     s.simpleTableViewDelegate = self;
+     self.simpleTableView = s;
+ }];
+ [tabV kjwd_addToSuperView:bgV constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
+     make.left.right.equalTo(superview);
+     make.top.equalTo(headerView.mas_bottom);
+ }];
+ */
++ (UIView *)createSimpleTableViewWithEdge:(UIEdgeInsets)edge style:(UITableViewStyle)style detail:(void(^)(CKJSimpleTableView * s))detail;
 
 @property (strong, nonatomic) NSArray <__kindof CKJCommonSectionModel *>* _Nullable dataArr;
 - (__kindof CKJCommonSectionModel *_Nullable)lastSection;
@@ -87,6 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
  @return 对应的模型
  */
 - (nullable __kindof CKJCommonCellModel *)cellModelOfID:( NSString *)cellModel_id;
+- (nullable __kindof CKJCellModel *)ckjCellModelOfID:( NSString *)cellModel_id;
 - (nullable __kindof CKJInputCellModel *)inputCellModelOfID:( NSString *)cellModel_id;
 - (nullable __kindof CKJCommonSectionModel *)sectionModelOfID:( NSString *)sectionModel_id;
 
@@ -260,7 +290,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 标题(可为空) 输入框
 /// @param title 如果不需要标题，可以设置为nil或""
 /// @param emptyRequirdText 如果不需要空必须，可以设置为nil或""
-- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(NSString *)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail;
+- (CKJInputCellModel *)_newtitle:(NSString *_Nullable)title tfText:(NSString *)text placeholder:(id)placeholder emptyRequirdText:(nullable NSString *)emptyRequirdText cellId:(nonnull NSString *)cellId detail:(nullable CKJInputCellModelRowBlock)detail;
 
 
 
@@ -280,7 +310,13 @@ NS_ASSUME_NONNULL_BEGIN
  @param CellModelClass CellModelClass类（必须是CKJCommonCellModel子类）
  @param callBack 可以详细设置CellModel数据， 比如高度或者其他
  */
-+ (instancetype )kjwd_arrayWithResponseDataModels:(NSArray <__kindof CKJNetWorkDataModel *>* _Nullable)ResponseDataModels CellModelClass:(Class )CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel * currentModel))callBack;
++ (instancetype )kjwd_arrayWithResponseDataModels:(NSArray * _Nullable)ResponseDataModels CellModelClass:(Class )CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel * currentModel))callBack;
+
+/**
+ Dics 转 CellMoldes和ResponseDataModels
+ */
++ (instancetype)kjwd_arrayWithResponseDics:(NSArray <NSDictionary *>* _Nullable)responseDics ResponseDataModelClass:(Class)responseDataModelClass CellModelClass:(Class _Nonnull)CellModelClass callBack:(void(^_Nullable )(__kindof CKJCommonCellModel *currentModel, id dataModel))callBack;
+
 
 
 @end

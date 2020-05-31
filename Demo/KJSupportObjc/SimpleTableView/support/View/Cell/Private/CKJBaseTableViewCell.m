@@ -31,7 +31,7 @@
 
 
 - (void)_setText:(nullable NSString *)text {
-    self.textLabelAttStr = WDCKJAttributed2(text, [UIColor kjwd_colorWithHexString:@"333333"], @16);
+    self.attText = WDCKJAttributed2(text, [UIColor kjwd_colorWithHexString:@"333333"], @16);
 }
 - (instancetype)init {
     if (self = [super init]) {
@@ -60,14 +60,14 @@
 - (void)setupData:(CKJBaseTableViewCellModel *)model section:(NSInteger)section row:(NSInteger)row selectIndexPath:(NSIndexPath *)indexPath tableView:(CKJSimpleTableView *)tableView {
     if ([model isKindOfClass:[CKJBaseTableViewCellModel class]] == NO) return;
     
-    NSAttributedString *textLabelAttStr = model.textLabelAttStr;
+    NSAttributedString *attText = model.attText;
     UIEdgeInsets edge = model.edge;
     NSInteger numberOfLines = model.numberOfLines;
     NSTextAlignment alignment = model.textAlignment;
     
     UILabel *titleLab = self.titleLab;
     
-    titleLab.attributedText = WDKJ_ConfirmAttString(textLabelAttStr);
+    titleLab.attributedText = WDKJ_ConfirmAttString(attText);
     [titleLab kjwd_mas_updateConstraints:^(MASConstraintMaker *make, UIView *superview) {
         make.edges.equalTo(superview).insets(edge);
     }];

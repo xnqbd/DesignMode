@@ -7,6 +7,7 @@
 //
 
 #import "CKJSimpleTableViewStyle.h"
+#import "CKJInputCell.h"
 
 //@implementation CKJShareStyle
 //
@@ -55,8 +56,7 @@
     if (self = [super init]) {
         self.left = 15;
         self.right = 15;
-        self.titleAttributes = @{NSForegroundColorAttributeName : [UIColor kjwd_title], NSFontAttributeName : [UIFont systemFontOfSize:14]};
-        self.tfTextAttributed = self.titleAttributes;
+        self.titleAttributes = @{NSForegroundColorAttributeName : [UIColor kjwd_title], NSFontAttributeName : [UIFont systemFontOfSize:kOConst_Input_Tf_FontSize]};
     }
     return self;
 }
@@ -71,6 +71,10 @@
         self.sectionFooterHeight = @10;
         self.sectionHeaderHeight = @0;
         self.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(0, 15, 0, 0)];
+        self.tfTextAttributed = @{NSForegroundColorAttributeName : [UIColor kjwd_title], NSFontAttributeName : [UIFont systemFontOfSize:kOConst_Input_Tf_FontSize]};
+        self.tfPlaceHolderAttributed = @{NSForegroundColorAttributeName : [UIColor kjwd_r:190 g:190 b:190 alpha:1], NSFontAttributeName : [UIFont systemFontOfSize:kOConst_Input_Tf_FontSize]};
+        self.tfAlignment = NSTextAlignmentLeft;
+        self.tfStyle_Right = 15;
     }
     return self;
 }

@@ -11,8 +11,6 @@
 
 #define kPickerSize self.datePicker.frame.size
 
-#define MAXYEAR 2099
-#define MINYEAR 1900
 
 
 @interface NSDate (CKJDatePickerExtension)
@@ -139,16 +137,17 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 @property (nonatomic,assign) CKJDateStyle datePickerStyle;
 @property (strong, nonatomic) UILabel *showYearView;
 
+@property (assign, nonatomic) NSInteger max_year;
+@property (assign, nonatomic) NSInteger min_year;
+
 @end
 
 
 @implementation CKJDatePickerView
 
 
-- (instancetype)initWithDateStyle:(CKJDateStyle)datePickerStyle scrollToDate:(NSDate *)scrollToDate endScroll_didSelect_callBack:(void(^)(NSDate *currentDate))endScroll_didSelect_callBack {
+- (instancetype)initWithDateStyle:(CKJDateStyle)datePickerStyle maxDate:(NSDate *)maxDate minDate:(NSDate *)minDate scrollToDate:(NSDate *)scrollToDate endScroll_didSelect_callBack:(void(^)(NSDate *currentDate))endScroll_didSelect_callBack {
     if (self = [super init]) {
-        
-        
         self.datePickerStyle = datePickerStyle;
         self.scrollToDate = scrollToDate;
         switch (datePickerStyle) {
@@ -185,10 +184,53 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
         }
         
         [self setupUI];
-        
-        [self defaultConfig];
-        
+
         self.endScroll = endScroll_didSelect_callBack;
+
+        
+        if (!_scrollToDate) {
+            _scrollToDate = [NSDate date];
+        }
+
+        
+        if (!maxDate) {
+            maxDate = [NSDate _date:@"2099-12-31 23:59" WithFormat:@"yyyy-MM-dd HH:mm"];
+        }
+        if (!minDate) {
+            minDate = [NSDate _date:@"1900-01-01 00:00" WithFormat:@"yyyy-MM-dd HH:mm"];
+        }
+        
+        
+        //循环滚动时需要用到
+        preRow = (self.scrollToDate.kjwd_year.intValue-self.min_year)*12+self.scrollToDate.kjwd_month.intValue-1;
+        
+        //设置年月日时分数据
+        _yearArray = [self setArray:_yearArray];
+        _monthArray = [self setArray:_monthArray];
+        _dayArray = [self setArray:_dayArray];
+        _hourArray = [self setArray:_hourArray];
+        _minuteArray = [self setArray:_minuteArray];
+        
+        for (int i=0; i<60; i++) {
+            NSString *num = [NSString stringWithFormat:@"%02d",i];
+            if (0<i && i<=12)
+                [_monthArray addObject:num];
+            if (i<24)
+                [_hourArray addObject:num];
+            [_minuteArray addObject:num];
+        }
+        
+        self.max_year = maxDate.year;
+        self.min_year = minDate.year;
+        
+        
+        for (NSInteger i= self.min_year; i <= self.max_year; i++) {
+            NSString *num = [NSString stringWithFormat:@"%ld",(long)i];
+            [_yearArray addObject:num];
+        }
+        self.maxLimitDate = maxDate;
+        self.minLimitDate = minDate;
+
     }
     return self;
 }
@@ -213,47 +255,6 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     [_datePicker kjwd_addToSuperView:_showYearView constraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
         make.edges.equalTo(superview);
     }];
-}
-
--(void)defaultConfig {
-    
-    if (!_scrollToDate) {
-        _scrollToDate = [NSDate date];
-    }
-    
-    
-    //循环滚动时需要用到
-    preRow = (self.scrollToDate.kjwd_year.intValue-MINYEAR)*12+self.scrollToDate.kjwd_month.intValue-1;
-    
-    //设置年月日时分数据
-    _yearArray = [self setArray:_yearArray];
-    _monthArray = [self setArray:_monthArray];
-    _dayArray = [self setArray:_dayArray];
-    _hourArray = [self setArray:_hourArray];
-    _minuteArray = [self setArray:_minuteArray];
-    
-    for (int i=0; i<60; i++) {
-        NSString *num = [NSString stringWithFormat:@"%02d",i];
-        if (0<i && i<=12)
-            [_monthArray addObject:num];
-        if (i<24)
-            [_hourArray addObject:num];
-        [_minuteArray addObject:num];
-    }
-    for (NSInteger i=MINYEAR; i<=MAXYEAR; i++) {
-        NSString *num = [NSString stringWithFormat:@"%ld",(long)i];
-        [_yearArray addObject:num];
-    }
-    
-    //最大最小限制
-    if (!self.maxLimitDate) {
-        self.maxLimitDate = [NSDate _date:@"2099-12-31 23:59" WithFormat:@"yyyy-MM-dd HH:mm"];
-    }
-    //最小限制
-    if (!self.minLimitDate) {
-        self.minLimitDate = [NSDate _date:@"1900-01-01 00:00" WithFormat:@"yyyy-MM-dd HH:mm"];
-    }
-    
 }
 
 
@@ -322,7 +323,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     NSInteger hourNum = _hourArray.count;
     NSInteger minuteNUm = _minuteArray.count;
     
-    NSInteger timeInterval = MAXYEAR - MINYEAR;
+    NSInteger timeInterval = self.max_year - self.min_year;
     
     switch (self.datePickerStyle) {
         case CKJDateStyle1:
@@ -727,14 +728,14 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     
     [self DaysfromYear:date.year andMonth:date.month];
     
-    yearIndex = date.year-MINYEAR;
+    yearIndex = date.year-self.min_year;
     monthIndex = date.month-1;
     dayIndex = date.day-1;
     hourIndex = date.hour;
     minuteIndex = date.minute;
     
     //循环滚动时需要用到
-    preRow = (self.scrollToDate.year-MINYEAR)*12+self.scrollToDate.month-1;
+    preRow = (self.scrollToDate.year-self.min_year)*12+self.scrollToDate.month-1;
     
     NSArray *indexArray;
     
@@ -763,7 +764,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     
     for (int i=0; i<indexArray.count; i++) {
         if ((self.datePickerStyle == CKJDateStyle2 || self.datePickerStyle == CKJDateStyle5)&& i==0) {
-            NSInteger mIndex = [indexArray[i] integerValue]+(12*(self.scrollToDate.year - MINYEAR));
+            NSInteger mIndex = [indexArray[i] integerValue]+(12*(self.scrollToDate.year - self.min_year));
             [self.datePicker selectRow:mIndex inComponent:i animated:animated];
         } else {
             [self.datePicker selectRow:[indexArray[i] integerValue] inComponent:i animated:animated];

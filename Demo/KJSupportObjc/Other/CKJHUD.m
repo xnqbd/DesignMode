@@ -476,7 +476,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 - (void)updateIndicators {
 	
 	BOOL isActivityIndicator = [indicator isKindOfClass:[UIActivityIndicatorView class]];
-	BOOL isRoundIndicator = [indicator isKindOfClass:[MBRoundProgressView class]];
+	BOOL isRoundIndicator = [indicator isKindOfClass:[CKJRoundProgressView class]];
 	
 	if (mode == CKJHUDModeIndeterminate) {
 		if (!isActivityIndicator) {
@@ -494,21 +494,21 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	else if (mode == CKJHUDModeDeterminateHorizontalBar) {
 		// Update to bar determinate indicator
 		[indicator removeFromSuperview];
-		self.indicator = MB_AUTORELEASE([[MBBarProgressView alloc] init]);
+		self.indicator = MB_AUTORELEASE([[CKJBarProgressView alloc] init]);
 		[self addSubview:indicator];
 	}
 	else if (mode == CKJHUDModeDeterminate || mode == CKJHUDModeAnnularDeterminate) {
 		if (!isRoundIndicator) {
 			// Update to determinante indicator
 			[indicator removeFromSuperview];
-			self.indicator = MB_AUTORELEASE([[MBRoundProgressView alloc] init]);
+			self.indicator = MB_AUTORELEASE([[CKJRoundProgressView alloc] init]);
 			[self addSubview:indicator];
 		}
 		if (mode == CKJHUDModeAnnularDeterminate) {
-			[(MBRoundProgressView *)indicator setAnnular:YES];
+			[(CKJRoundProgressView *)indicator setAnnular:YES];
 		}
-		[(MBRoundProgressView *)indicator setProgressTintColor:self.activityIndicatorColor];
-		[(MBRoundProgressView *)indicator setBackgroundTintColor:[self.activityIndicatorColor colorWithAlphaComponent:0.1f]];
+		[(CKJRoundProgressView *)indicator setProgressTintColor:self.activityIndicatorColor];
+		[(CKJRoundProgressView *)indicator setBackgroundTintColor:[self.activityIndicatorColor colorWithAlphaComponent:0.1f]];
 	}
 	else if (mode == CKJHUDModeCustomView && customView != indicator) {
 		// Update custom view indicator
@@ -784,7 +784,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBRoundProgressView
+@implementation CKJRoundProgressView
 
 #pragma mark - Lifecycle
 
@@ -890,7 +890,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBBarProgressView
+@implementation CKJBarProgressView
 
 #pragma mark - Lifecycle
 

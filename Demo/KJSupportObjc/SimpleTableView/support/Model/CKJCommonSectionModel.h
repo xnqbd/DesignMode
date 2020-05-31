@@ -17,7 +17,7 @@ typedef void(^CKJSectionBlock)(__kindof CKJCommonSectionModel * _sec);
 
 /*
 
- CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+ CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
      
      _sec.modelArray = @[model1, model2, model3, model4];
  }];
@@ -69,7 +69,7 @@ typedef void(^CKJSectionBlock)(__kindof CKJCommonSectionModel * _sec);
 + (instancetype)sectionWithHeaderHeight:(NSNumber *_Nullable)headerHeight footerHeight:(NSNumber *_Nullable)footerHeight detailSetting:(CKJSectionBlock _Nullable)detailSetting;
 
 
-+ (instancetype)sectionWithDetailSetting:(CKJSectionBlock _Nullable)detailSetting;
++ (instancetype)sectionWithDetail:(CKJSectionBlock _Nullable)detailSetting;
 
 
 /// 头 NSAttributedString

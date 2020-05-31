@@ -18,6 +18,8 @@ typedef void(^CKJImageRightCellModelRowBlock)(__kindof CKJImageRightCellModel *_
 
 @interface CKJImageRightCellConfig : CKJBaseImageLeftRightCellConfig
 
++ (instancetype)imageRightCellConfigWithDetail:(void(^)(__kindof CKJImageRightCellConfig * _Nonnull m))detail;
+
 
 @end
 

@@ -19,6 +19,7 @@
     self.navigationItem.title = @"CKJGeneralCell示例";
     [self.simpleTableView updateStyle:^(CKJSimpleTableViewStyle * _Nonnull style) {
         style.rowHeight = @44;
+        
     }];
     [self initSimpleTableViewData];
 }
@@ -29,7 +30,7 @@
         
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
             m.image2Model = [CKJImage2Model image2ModelWithImageString:@"touxiang.jpg" size:CGSizeMake(25, 25) left:15];
-            m.title3Model = [CKJTitle3Model title3ModelWithText:@"title3" left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"title3", [UIColor kjwd_title], nil) left:10];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"likePrice8", [UIColor kjwd_subTitle], @14) left:0 right:0];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:nil];
@@ -39,16 +40,16 @@
     CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithHeaderHeight:@10 detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
         CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithText:@"title3" left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"title3", [UIColor kjwd_title], nil) left:10];
         } didSelectRowBlock:nil];
         
         CKJGeneralCellModel *model2 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithText:@"title3" left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"title3", [UIColor kjwd_title], nil) left:10];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:nil];
         
         CKJGeneralCellModel *model3 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel * _Nonnull m) {
-            m.title3Model = [CKJTitle3Model title3ModelWithText:@"title3" left:10];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"title3", [UIColor kjwd_title], nil) left:10];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"likePrice8", [UIColor kjwd_subTitle], @14) left:0 right:0];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:nil];
@@ -59,7 +60,7 @@
             UIImage *image = [[UIImage kjwd_imageWithColor:[UIColor redColor] size:CGSizeMake(3, 22)] kjwd_setCornerRadius:1.5];
             
             m.image2Model = [CKJImage2Model image2ModelWithNormalImage:image size:nil left:15];
-            m.title3Model = [CKJTitle3Model title3ModelWithText:@"title3" left:7];
+            m.title3Model = [CKJTitle3Model title3ModelWithText:WDCKJAttributed2(@"title3", [UIColor kjwd_title], nil) left:7];
             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDCKJAttributed2(@"更多", [UIColor kjwd_subTitle], @14) left:0 right:0];
             m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
         } didSelectRowBlock:nil];

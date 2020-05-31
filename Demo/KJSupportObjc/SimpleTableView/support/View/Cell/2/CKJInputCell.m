@@ -12,7 +12,9 @@
 #import "CKJLibraryHelper.h"
 #import <Masonry/Masonry.h>
 #import "CKJHUD+KJSupport.h"
+#import "CKJSimpleTableViewStyle.h"
 
+CGFloat const kOConst_Input_Tf_FontSize = 14;
 
 // Empty required
 CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
@@ -44,7 +46,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 /// 手机号格式错误
 + (instancetype)system_phoneRegError {
     return [CKJInputExpressionRequiredModel modelWithRequiredText:@"手机号格式错误" failExpression:^BOOL(NSString * _Nullable text, __kindof CKJCommonCellModel * _Nonnull cm) {
-        return [text kjwd_varityPhoneFail];
+        return ![text kjwd_varityPhoneSuccess];
     }];
 }
 
@@ -67,27 +69,40 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 @end
 
 
+@interface CKJTFModel ()
+
+@end
+
 @implementation CKJTFModel
 
 
 - (void)__privateMethod__exeCallBack {
     if (_block) {
-        _block(_text);
+        _block(_attText.string);
     }
 }
 
-- (void)setText:(NSString *)text {
-    if (![_text isEqualToString:text]) {
-        _text = text;
+- (void)setAttText:(NSAttributedString *)attText {
+    if (attText == nil || [attText isKindOfClass:[NSAttributedString class]]) {
+        _attText = attText;
+        self.readOnly_currentTF.attributedText = attText;
         if (self.updateText) {
-            self.updateText(text);
+            self.updateText(attText.string);
         }
     }
 }
 
+- (void)_setText:(NSString *)text {
+    NSDictionary *att = self.readOnly_cm.style.tfTextAttributed;
+    if (att) {
+        self.attText = WDCKJAttributed2(text, att[NSForegroundColorAttributeName], att[NSFontAttributeName]);
+    } else {
+        self.attText = WDCKJAttributed2(text, [UIColor kjwd_title], @(kOConst_Input_Tf_FontSize));
+    }
+}
 
 - (void)_setPlaceholder:(NSString *_Nullable)placeholder; {
-    self.attributedPlaceholder = WDCKJAttributed2(placeholder, [UIColor kjwd_r:190 g:190 b:190 alpha:1], @15);
+    self.attPlaceholder = WDCKJAttributed2(placeholder, [UIColor kjwd_r:190 g:190 b:190 alpha:1], @(kOConst_Input_Tf_FontSize));
 }
 - (void)_afterSecondsListenTextChange:(CGFloat)seconds callBack:(void(^_Nullable)(NSString *_Nullable text))callBack {
     _seconds = seconds;
@@ -106,8 +121,6 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
         self.userInteractionEnabled = YES;
         self.keyboardType = UIKeyboardTypeDefault;
         self.rightMargin = 0;
-        self.tfTextAttributed = @{NSFontAttributeName : [UIFont systemFontOfSize:15],
-                                  NSForegroundColorAttributeName : [UIColor kjwd_title]};
         self.secureTextEntry = NO;
     }
     return self;
@@ -121,7 +134,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     if (WDKJ_IsEmpty_Str(phone)) {
         return YES;
     }
-    return [phone kjwd_varityPhoneFail];
+    return ![phone kjwd_varityPhoneSuccess];
 }
 
 @end
@@ -175,7 +188,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 }
 
 - (NSString *_Nullable)getTfText {
-    return self.tfModel.text;
+    return self.tfModel.attText.string;
 }
 
 - (void)updateTFModel:(void(^_Nullable)(CKJTFModel *_Nonnull tfModel))block {
@@ -187,7 +200,7 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
 + (nonnull instancetype)inputWithCellHeight:(nullable NSNumber *)cellHeight cellModel_id:(nullable NSString *)cellModel_id detailSettingBlock:(nullable CKJInputCellModelRowBlock)detailSettingBlock {
     CKJInputCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:cellModel_id detailSettingBlock:^(__kindof CKJCommonCellModel * _Nonnull m) {
         [m updateTFModel:^(CKJTFModel * _Nonnull tfModel) {
-            if ([cellModel_id isEqualToString:kOInput_Phone]) {
+            if ([cellModel_id isEqualToString:kOInput_Phone] || [cellModel_id isEqualToString:kOInput_SpecialPhone]) {
                  tfModel.keyboardType = UIKeyboardTypePhonePad;
                 tfModel.maxInputLength = @11;
                 [tfModel _setPlaceholder:@"请输入手机号"];
@@ -245,9 +258,12 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     if ([model isKindOfClass:[CKJInputCellModel class]] == NO) return;
 
     CKJInputCellModel *_model = model;
+    _model.style = tableView.simpleStyle;
     CKJTFModel *tfModel = _model.tfModel;
 
     [CKJLibraryHelper commomCode1WithTFModel:tfModel tf:_tf];
+    
+    tfModel.readOnly_cm = model;
     
     CKJGetCodeModel *getCodeModel = _model.getCodeModel;
     
@@ -284,10 +300,10 @@ CKJInputExpressionRequiredModel * WDKJ_ER(NSString *emptyRequiredText) {
     [super setupSubViews];
     
     UITextField *tf = [[UITextField alloc] init];
-    
     [tf addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventAllEditingEvents];
     tf.font = [UIFont systemFontOfSize:15];
     [self.tfWrapperView addSubview:tf];
+    
     self.tf = tf;
     
     [tf kjwd_mas_makeConstraints:^(MASConstraintMaker *make, UIView *superview) {

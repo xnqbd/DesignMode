@@ -62,18 +62,18 @@ class DMRegisterVC: CKJBaseTableVC {
                 m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
             }
             let empty1 = CKJEmptyCellModel(height: 20, showLine: false)
-            let regiter = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"注册", detailSettingBlock: { (m) in
-                m.updateBtnData { (d) in
-                    d.cornerRadius = 4;
-                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
-                }
-            }, clickBtn: {[weak self](m, btn) in
-                
-            }) { (make, superView) in
-                make.edges.equalTo()
-            }
+//            let regiter = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"注册", detailSettingBlock: { (m) in
+//                m.updateBtnData { (d) in
+//                    d.cornerRadius = 4;
+//                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
+//                }
+//            }, clickBtn: {[weak self](m, btn) in
+//
+//            }) { (make, superView) in
+//                make.edges.equalTo()
+//            }
             
-            _sec.modelArray = [logo, name, idCardNumber, phone, code, pwd, confirmPwd, empty1, regiter]
+            _sec.modelArray = [logo, name, idCardNumber, phone, code, pwd, confirmPwd, empty1]
         }
         
         simpleTableView.dataArr = [section1]

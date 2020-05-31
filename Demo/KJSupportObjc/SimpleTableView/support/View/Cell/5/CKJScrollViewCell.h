@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 
-
-
 @protocol CKJScrollViewCellDelegate <NSObject>
 
 @required;
@@ -25,15 +23,6 @@ typedef void(^CKJScrollViewCellRowBlock)(CKJScrollViewCellModel *m);
 - (NSArray <__kindof UIView *>*)createItemViewForCKJScrollViewCell:(__kindof CKJScrollViewCell *_Nonnull __weak)cell;
 
 @end
-
-
-
-
-//@interface CKJScrollViewCellItemView : CKJCommonItemView
-//
-//@property (strong, nonatomic) id itemData;
-//
-//@end
 
 
 @interface CKJScrollViewCellIndicatorConfig : NSObject

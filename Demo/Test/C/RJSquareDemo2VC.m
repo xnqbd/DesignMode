@@ -13,7 +13,6 @@
 #import "UIView+CKJDesingable.h"
 #import "CKJBtnsCell1.h"
 #import "CKJBtnsCell2.h"
-#import "RJTestResource.h"
 
 @interface RJSquareDemo2VC ()<CKJScrollViewCellDelegate>
 
@@ -34,17 +33,16 @@
 
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
-
-    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig configWithDetail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
+    
+    CKJBaseBtnsCellConfig *config1 = [CKJBaseBtnsCellConfig btnsConfigWithH_itemSpacing:0 detail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
         m.fixHeight = 30;
         m.delegate = [m squareWithNumberOfItemsInSingleLine:4];
     }];
-    CKJBaseBtnsCellConfig *config2 = [CKJBaseBtnsCellConfig configWithDetail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
+    CKJBaseBtnsCellConfig *config2 = [CKJBaseBtnsCellConfig btnsConfigWithH_itemSpacing:1 detail:^(CKJBaseBtnsCellConfig * _Nonnull m) {
         m.delegate = [m squareWithNumberOfItemsInSingleLine:3];
         m.multiHeightByStackView = @0.6;
         m.separatorViewColor = [UIColor kjwd_r:230 g:230 b:230 alpha:1];
-        m.h_itemSpacing = 1;
-        m.detailSetting = ^(UIView * _Nonnull stackView_superView) {
+        m.detailSettingStackView_superView = ^(UIView * _Nonnull stackView_superView) {
             stackView_superView.kCornerRadius = (kHeight - 2 * kBottom) / 2.0;
             stackView_superView.kBorderColor = [UIColor kjwd_230Color];
             stackView_superView.kBorderWidth = 1;
@@ -52,13 +50,7 @@
     }];
     CKJScrollViewCellConfig *scrollViewCellConfig = [CKJScrollViewCellConfig scrollViewCellConfigWithItemWidth:120 itemSpace:20 detail:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
         m.items_Edge_ScrollView = UIEdgeInsetsMake(10, 20, 10, 20);
-//        m.scrollView_Edge_SuperView = UIEdgeInsetsMake(10, 20, 10, 20);
         m.delegate = self;
-        [m updateIndicatorConfig:^(CKJScrollViewCellIndicatorConfig * _Nonnull i) {
-            i.bottom = 10;
-            i.longViewHeight = 3;
-            i.radius = 1.5;
-        }];
     }];
     return @{
         NSStringFromClass([CKJBtnsCell1Model class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJBtnsCell1 class]), KJPrefix_isRegisterNibKEY : @NO, KJPrefix_configDicKEY_ConfigModel : config1},
@@ -67,13 +59,34 @@
     };
 }
 
-
 - (void)initSimpleTableViewData {
     
     KJ_typeweakself
     
     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJBtnsCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        NSArray *data = [RJTestResource item3];
+        
+        UIImage *(^b_image)(NSString *imageName) = ^UIImage *(NSString *imageName) {
+            return [[UIImage kjwd_imageNamed:imageName] kjwd_scaleToSize:CGSizeMake(30, 30)];
+        };
+        NSArray *data = @[
+            @[
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"报告查询"), KJPrefix_cNormalImage : b_image(@"newhome_报告")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"药费查询"), KJPrefix_cNormalImage : b_image(@"newhome_药费查询")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"处方查询"), KJPrefix_cNormalImage : b_image(@"newhome_处方")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"药品查询"), KJPrefix_cNormalImage : b_image(@"newhome_药品")}
+            ],
+            
+            @[
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"精准预约"), KJPrefix_cNormalImage : b_image(@"newhome_预约")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"日间手术"), KJPrefix_cNormalImage : b_image(@"newhome_手术")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"小i机器人"), KJPrefix_cNormalImage : b_image(@"newhome_机器人")},
+                @{KJPrefix_cNormalAttTitle : WDAtt13(@"更多"), KJPrefix_cNormalImage : b_image(@"newhome_更多"),  KJPrefix_cSelectedAttTitle : WDAtt13(@"日间手术"), KJPrefix_cSelectedImage : b_image(@"日间手术")}
+            ],
+            @[
+                @{KJPrefix_cNormalAttTitle : WDCKJAttributed2(@"预约检查", nil, @13), KJPrefix_cNormalImage : b_image(@"预约检查")}
+            ]
+        ];
+        
         data = [CKJBtnItemData returnItemsWithDicsnew:data detailSetting:^(CKJBtnItemData *__weak  _Nonnull itemData, NSUInteger index) {
             itemData.layout_Button = ^(UIButton * _Nonnull btn) {
                 [btn kjwd_layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop imageTitleSpace:10];
@@ -111,7 +124,17 @@
         _sec.modelArray = arr;
     }];
     CKJCommonSectionModel *section2 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJBtnsCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        NSArray <CKJBtnItemData *>*items = [CKJBtnItemData returnItemsWithDics:[RJTestResource item4] detailSetting:^(CKJBtnItemData * _Nonnull __weak itemData, NSUInteger index) {
+        
+        UIImage *(^b_image)(NSString *imageName) = ^UIImage *(NSString *imageName) {
+            return [[UIImage kjwd_imageNamed:imageName] kjwd_scaleToSize:CGSizeMake(30, 30)];
+        };
+        
+        NSArray *data = @[
+            @{KJPrefix_cNormalAttTitle : WDAtt13(@"报告查询"), KJPrefix_cNormalImage : b_image(@"newhome_报告")},
+            @{KJPrefix_cNormalAttTitle : WDAtt13(@"药费查询"), KJPrefix_cNormalImage : b_image(@"newhome_药费查询")},
+            @{KJPrefix_cNormalAttTitle : WDAtt13(@"处方查询"), KJPrefix_cNormalImage : b_image(@"newhome_处方")}
+        ];
+        NSArray <CKJBtnItemData *>*items = [CKJBtnItemData returnItemsWithDics:data detailSetting:^(CKJBtnItemData * _Nonnull __weak itemData, NSUInteger index) {
             itemData.layout_Button = ^(UIButton * _Nonnull btn) {
                 [btn kjwd_layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop imageTitleSpace:10];
             };
@@ -126,8 +149,7 @@
     }];
     
     CKJCommonSectionModel *section3 = [CKJCommonSectionModel sectionWithHeaderAttString:WDCKJAttributed2(@"CKJScrollViewCell示例", [UIColor kjwd_subTitle], nil) headerAlignment:NSTextAlignmentLeft detailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
-        
-        CKJScrollViewCellModel *model1 = [CKJScrollViewCellModel scrollViewWithCellHeight:@100 detailSettingBlock:nil];
+        CKJScrollViewCellModel *model1 = [CKJScrollViewCellModel scrollViewWithCellHeight:@85 detailSettingBlock:nil];
         _sec.modelArray = @[model1];
     }];
     
@@ -136,33 +158,26 @@
 }
 
 #pragma mark - CKJScrollViewCellDelegate
-- (NSArray <__kindof CKJScrollViewCellItemView *>*)createItemViewForCKJScrollViewCell:(__kindof CKJScrollViewCell *_Nonnull __weak)cell {
+- (NSArray <__kindof UIView *>*)createItemViewForCKJScrollViewCell:(__kindof CKJScrollViewCell *_Nonnull __weak)cell {
     NSArray *data = @[
-        [CKJMyVCItem itemWithImage:@"newhome_入院取号" title:@"入院取号" click:^(id  _Nonnull param) {
-
-        }],
-        [CKJMyVCItem itemWithImage:@"newhome_出院取号" title:@"出院取号" click:^(id  _Nonnull param) {
-            
-        }],
-        [CKJMyVCItem itemWithImage:@"newhome_住院清单" title:@"住院日清单" click:^(id  _Nonnull param) {
-            
-        }],
-        [CKJMyVCItem itemWithImage:@"newhome_出院取号2" title:@"出院取号" click:^(id  _Nonnull param) {
-            
-        }],
-        [CKJMyVCItem itemWithImage:@"newhome_出院取号3" title:@"出院取号" click:^(id  _Nonnull param) {
-            
-        }],
-        [CKJMyVCItem itemWithImage:@"newhome_出院取号4" title:@"出院取号" click:^(id  _Nonnull param) {
-            
-        }]
+        @{@"title" : @"入院取号", @"imageName" : @"newhome_入院取号"},
+        @{@"title" : @"出院取号", @"imageName" : @"newhome_出院取号"},
+        @{@"title" : @"住院日清单", @"imageName" : @"newhome_住院清单"},
+        @{@"title" : @"入院取号2", @"imageName" : @"newhome_入院取号"},
+        @{@"title" : @"出院取号2", @"imageName" : @"newhome_出院取号"},
+        @{@"title" : @"住院日清单2", @"imageName" : @"newhome_住院清单"}
     ];
     
     NSMutableArray *arr = [NSMutableArray array];
     for (int i = 0; i < data.count; i++) {
-        CKJMyVCItem *itemData = data[i];
+        NSDictionary *itemData = data[i];
+        NSString *title = itemData[@"title"];
         RJDemoScrollItemView *itemView = [RJDemoScrollItemView kjwd_instanceUsingAutoNib];
-        itemView.itemData = itemData;
+        itemView.imageV.image = [UIImage kjwd_imageNamed:itemData[@"imageName"]];
+        itemView.lab.text = title;
+        itemView.tapBlock = ^{
+            NSLog(@"点击了 %@   ", title);
+        };
         [arr addObject:itemView];
     }
     return arr;

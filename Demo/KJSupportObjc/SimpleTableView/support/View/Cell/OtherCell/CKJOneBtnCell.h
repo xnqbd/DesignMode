@@ -29,20 +29,28 @@ typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
  }) { (make, superView) in
      make.edges.equalTo()
  }
+
  
  
 
- CKJOneBtnCellModel *login = [CKJOneBtnCellModel oneBtnWithCellHeight:@50 title:@"登录" detailSettingBlock:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
+    // 如果想要上面的cell 分割线
+    idCardNumber.lineEdge = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsZero];
+
+ 
+     CKJOneBtnCellModel *commit = [CKJOneBtnCellModel oneBtnWithCellHeight:@(UITableViewAutomaticDimension) title:@"提交" detail:^(__kindof CKJOneBtnCellModel * _Nonnull m) {
+     [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
+         bg.bgColor = self.simpleTableView.backgroundColor;
+     }];
      [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
-         btnData.cornerRadius = 3;
-         btnData.normalBgImage = [UIImage kjwd_imageWithColor:[UIColor redColor] size:CGSizeMake(300, 40)];
+         btnData.cornerRadius = 6;
+         btnData.normalBgImage = [UIImage kjwd_imageWithColor:[UIColor kjwd_blueBtnColor] size:CGSizeMake(300, 40)];
      }];
  } clickBtn:^(__kindof CKJOneBtnCellModel * _Nonnull cm, UIButton * _Nonnull btn) {
-     NSLog(@"%@   ", @"点击登录");
+     NSLog(@"%@   ", @"点击提交");
  } updateConstraint:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {
-     make.edges.equalTo(superview);
+     make.height.equalTo(@50);
+     make.edges.equalTo(superview).insets(UIEdgeInsetsMake(20, 30, 20, 30));
  }];
- 
  
  */
 @interface CKJOneBtnCellModel : CKJCommonCellModel
@@ -57,13 +65,13 @@ typedef void(^CKJOneBtnCellRowBlock)(__kindof CKJOneBtnCellModel *_Nonnull m);
 - (void)updateBtnData:(void(^)(CKJBtnItemData *btnData))block;
 
 /// 在detailSettingBlock详细设置
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
-/// 标题(默认白色，15)
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detail:(nullable CKJOneBtnCellRowBlock)detail clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
+/// 标题(默认白色，16)
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detail:(nullable CKJOneBtnCellRowBlock)detail clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint;
 
 @end
 
-@interface CKJOneBtnCell : CKJCommonTableViewCell<CKJOneBtnCellModel *>
+@interface CKJOneBtnCell : CKJCommonTableViewCell //<CKJOneBtnCellModel *>
 
 @end
 

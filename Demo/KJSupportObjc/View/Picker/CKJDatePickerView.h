@@ -84,7 +84,7 @@ typedef enum{
 @property (nonatomic, assign) BOOL hideBackgroundYearLabel;
 
 
-- (instancetype)initWithDateStyle:(CKJDateStyle)datePickerStyle scrollToDate:(NSDate *)scrollToDate endScroll_didSelect_callBack:(void(^)(NSDate *currentDate))endScroll_didSelect_callBack;
+- (instancetype)initWithDateStyle:(CKJDateStyle)datePickerStyle maxDate:(NSDate *)maxDate minDate:(NSDate *)minDate scrollToDate:(NSDate *)scrollToDate endScroll_didSelect_callBack:(void(^)(NSDate *currentDate))endScroll_didSelect_callBack;
 
 
 

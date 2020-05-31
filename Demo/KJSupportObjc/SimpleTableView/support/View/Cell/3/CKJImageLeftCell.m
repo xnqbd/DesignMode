@@ -13,6 +13,10 @@
 
 @implementation CKJImageLeftCellConfig
 
++ (instancetype)imageLeftCellConfigWithDetail:(void(^)(__kindof CKJImageLeftCellConfig * _Nonnull m))detail {
+    return [super configWithDetail:detail];
+}
+
 
 @end
 

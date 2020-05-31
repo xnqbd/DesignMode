@@ -85,7 +85,7 @@
     return m;
 }
 
-+ (nonnull instancetype)sectionWithDetailSetting:(CKJSectionBlock _Nullable)detailSetting {
++ (nonnull instancetype)sectionWithDetail:(CKJSectionBlock _Nullable)detailSetting {
     CKJCommonSectionModel *m = [[self alloc] init];
     m.headerHeight = nil;
     m.footerHeight = nil;

@@ -59,11 +59,3 @@ CGFloat const kO_super_margin_title = 12;
 
 
 
-@implementation CKJNetWorkDataModel
-
-@end
-
-
-
-
-

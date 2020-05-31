@@ -59,7 +59,9 @@ typedef void(^CKJBtnsCellItemBlock)(CKJBtnItemData *itemData, __kindof CKJBaseBt
 
 - (__kindof CKJBaseBtnsCellSystemDelegate *)squareWithNumberOfItemsInSingleLine:(NSUInteger)number;
 
-+ (instancetype)btnsConfigWithDetail:(void (^_Nullable)(CKJBaseBtnsCellConfig * m))detail;
+/// 初始化
+/// @param h_itemSpacing 水平item之间距离
++ (instancetype)btnsConfigWithH_itemSpacing:(CGFloat)h_itemSpacing detail:(void (^_Nullable)(CKJBaseBtnsCellConfig * m))detail;
 
 @end
 

@@ -16,23 +16,25 @@
     }
 }
 
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
-    CKJOneBtnCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detailSettingBlock didSelectRowBlock:nil];
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight detail:(nullable CKJOneBtnCellRowBlock)detail clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
+    CKJOneBtnCellModel *m = [self commonWithCellHeight:cellHeight cellModel_id:nil detailSettingBlock:detail didSelectRowBlock:nil];
     m.updateConstraint = updateConstraint;
     m.clickBtn = clickBtn;
     return m;
 }
-+ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detailSettingBlock:(nullable CKJOneBtnCellRowBlock)detailSettingBlock clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
-    CKJOneBtnCellModel *m = [self oneBtnWithCellHeight:cellHeight detailSettingBlock:detailSettingBlock clickBtn:clickBtn updateConstraint:updateConstraint];
++ (instancetype)oneBtnWithCellHeight:(nullable NSNumber *)cellHeight title:(id)title detail:(nullable CKJOneBtnCellRowBlock)detail clickBtn:(CKJOneBtnCellClickBtn)clickBtn updateConstraint:(void(^)(MASConstraintMaker *make, UIView *superview))updateConstraint {
+    CKJOneBtnCellModel *m = [self oneBtnWithCellHeight:cellHeight detail:nil clickBtn:clickBtn updateConstraint:updateConstraint];
     [m updateBtnData:^(CKJBtnItemData * _Nonnull btnData) {
         btnData.cornerRadius = 5;
-        
         if ([title isKindOfClass:[NSString class]]) {
-            btnData.normalAttTitle = WDCKJAttributed2(title, [UIColor whiteColor], @15);
+            btnData.normalAttTitle = WDCKJAttributed2(title, [UIColor whiteColor], @16);
         } else if ([title isKindOfClass:[NSAttributedString class]]) {
             btnData.normalAttTitle = title;
         }
     }];
+    if (detail) {
+        detail(m);
+    }
     return m;
 }
 
@@ -59,8 +61,9 @@
      __weak typeof(self) weakSelf = self;
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-        if (weakSelf.cellModel.clickBtn) {
-            weakSelf.cellModel.clickBtn(weakSelf.cellModel, _sender);
+        CKJOneBtnCellModel *cellModel = weakSelf.cellModel;
+        if (cellModel.clickBtn) {
+            cellModel.clickBtn(cellModel, _sender);
         }
     }];
     [btn kjwd_masWithSuperView:self.subviews_SuperView makeConstraints:^(MASConstraintMaker * _Nonnull make, UIView * _Nonnull superview) {

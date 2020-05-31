@@ -7,9 +7,9 @@
 //
 
 #import "RegisterDemoVC.h"
-
 #import "RJCustomInputCell.h"
 #import "RJInputData.h"
+
 
 @interface RegisterDemoVC ()
 
@@ -27,8 +27,9 @@
         style.haveTitleStyle.titleWidth = @55;
     }];
     
-    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
+         
         CKJInputCellModel *name = [self.simpleTableView _newtitle:@"姓名" tfText:@"" placeholder:@"请输入姓名" emptyRequirdText:@"姓名" cellId:kOInput_Name detail:nil];
         CKJInputCellModel *phone = [self.simpleTableView _newtitle:@"手机号" tfText:@"" placeholder:@"请输入手机号" emptyRequirdText:@"手机号" cellId:kOInput_Phone detail:^(__kindof CKJInputCellModel * _Nonnull m) {
             [m addRequired:[CKJInputExpressionRequiredModel system_phoneRegError]];

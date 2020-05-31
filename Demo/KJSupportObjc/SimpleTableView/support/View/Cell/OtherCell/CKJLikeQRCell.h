@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface CKJLikeQRCell : CKJCommonTableViewCell<CKJLikeQRCellModel *>
+@interface CKJLikeQRCell : CKJCommonTableViewCell //<CKJLikeQRCellModel *>
 
 
 /**

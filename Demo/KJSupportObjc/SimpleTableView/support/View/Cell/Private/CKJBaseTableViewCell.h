@@ -34,7 +34,7 @@ typedef void(^CKJBaseTableViewCellRowBlock)(__kindof CKJBaseTableViewCellModel *
 @property (assign, nonatomic) NSTextAlignment textAlignment;
 
 
-@property (copy, nonatomic, nullable) NSAttributedString *textLabelAttStr;
+@property (copy, nonatomic, nullable) NSAttributedString *attText;
 
 /**
  设置textLabel 使用 [UIColor kjwd_title], 15.5字号

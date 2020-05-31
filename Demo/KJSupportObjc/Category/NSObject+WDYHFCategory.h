@@ -10,6 +10,10 @@
 #import <Masonry/Masonry.h>
 
 
+
+
+
+
 typedef NS_ENUM(NSInteger, KJWDArc4randomType) {
     /**
      *  0-9
@@ -79,7 +83,7 @@ BOOL WDKJ_CompareNumberOrString(id numberOrString, NSString *_myStr);
 NSString *WDKJ_Sex(NSNumber *sex);
 
 NSMutableAttributedString *WDCKJAttributed(NSString *_Nullable name, NSDictionary *_Nullable dic);
-NSMutableAttributedString *WDCKJAttributed2(NSString *_Nullable text, UIColor *_Nullable color, NSNumber *_Nullable fontSize);
+NSMutableAttributedString *WDCKJAttributed2(NSString *_Nullable text, UIColor *_Nullable color, id _Nullable fontSize);
 NSMutableAttributedString * WDAttTitle(NSString *_Nullable text);
 NSMutableAttributedString * WDAttTitle14(NSString *_Nullable text);
 NSMutableAttributedString * WDAttSubTitle(NSString *_Nullable text);
@@ -158,6 +162,7 @@ CGFloat WDAPP_ScreenHeight(void);
 @interface NSData (WDYHFCategory)
 
 - (NSString *)kjwd_utf8String;
++ (instancetype)kjwd_dataWithContentsOfURL:(id)url;
 
 @end
 
@@ -264,6 +269,12 @@ CGFloat WDAPP_ScreenHeight(void);
  @return 下标数组
  */
 - (NSArray <NSNumber *>*)kjwd_indexArray;
+
+
+/**
+ 合并
+ */
+- (NSMutableArray *)kjwd_mergeArray:(NSArray *_Nullable)otherArray;
 
 /**
  交集
@@ -514,10 +525,11 @@ CGFloat WDAPP_ScreenHeight(void);
  打开URL
  
  @param urlString  比如 电话 tel:18822221111，
- @param options 可以传@{}
+ @param options 可以传nil
  @param completion 可以传nil
  */
-+ (void)kjwd_openURLWithString:(nullable NSString *)urlString options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion;
++ (void)kjwd_openURLWithString:(NSString *_Nullable)urlString options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *_Nullable)options completionHandler:(void (^_Nullable)(BOOL success))completion;
+
 
 
 @end
@@ -715,7 +727,9 @@ CGFloat WDAPP_ScreenHeight(void);
  @param ges 手势
  @param handleBlock 手势触发的回调
  */
-- (void)kjwd_addGestureRecognizer:(UIGestureRecognizer *)ges handleBlock:(void(^)(UIGestureRecognizer *_gestureRecognizer, UIView *_currentView))handleBlock;
+- (void)kjwd_addGestureRecognizer:(UIGestureRecognizer *)ges handleBlock:(void(^)(__kindof UIGestureRecognizer * gestureRecognizer, __kindof UIView * currentView))handleBlock;
+
+- (void)kjwd_addTapGestureRecognizerHandleBlock:(void(^)(UITapGestureRecognizer *_gestureRecognizer, UIView *_currentView))handleBlock;
 
 @end
 
@@ -757,8 +771,8 @@ imageTitleSpace:(CGFloat)space;
 - (void)kjwd_addTouchUpInsideForCallBack:(void(^_Nullable)(UIButton * _sender))callBack;
 - (void)kjwd_addControlEvents:(UIControlEvents)controlEvents forCallBack:(void(^_Nullable)(UIButton * _sender))callBack;
 
-
-
+/// 实心样式的
++ (instancetype)fillStyleWithTitle:(id)title bgColor:(UIColor *_Nullable)bgColor radius:(NSNumber *_Nullable)radius callBack:(void(^_Nullable)(UIButton * _sender))callBack;
 
 
 @end
@@ -805,6 +819,15 @@ imageTitleSpace:(CGFloat)space;
 
 
 
+
+/*
+ 
+ [a compare:b] == NSOrderedAscending  升序   a < b     a日期较早
+ [a compare:b] == NSOrderedSame,      相等
+ [a compare:b] == NSOrderedDescending 降序   a > b     a日期较晚
+ 
+ 
+ */
 
 #pragma mark - -----------------NSDate-----------------
 @interface NSDate (WDYHFCategory)
@@ -865,9 +888,14 @@ imageTitleSpace:(CGFloat)space;
 - (BOOL)kjwd_isSameDayToDate2:(NSDate *)date2;
 
 /** 明天 */
-- (NSDate *)kjwd_tomorrowDate;
+- (NSDate *)kjwd_tomorrow;
 /** 昨天 */
-- (NSDate *)kjwd_yesterdayDate;
+- (NSDate *)kjwd_yesterDay;
+/** 明年 */
+- (NSDate *)kjwd_nextyear;
+/** 去年 */
+- (NSDate *)kjwd_yesterYear;
+
 
 /**
  * 返回 1小时前 这样的字符 (传入2017-12-21 20:53:00.0  这样的字符串)
@@ -913,6 +941,19 @@ imageTitleSpace:(CGFloat)space;
                            textAttributes:(nullable NSDictionary *)textAttributes
                                  circular:(BOOL)isCircular;
 
+
+/*
+ 渐变色生成图片
+ 
+ gradientType
+ 1. 上到下
+ 2. 左到右
+ 3. 左上到右下
+ 4. 右上到左下
+ 
+ */
++ (UIImage *)kjwd_gradientColorImageFromColors:(NSArray <UIColor *>*)colors gradientType:(NSInteger)gradientType imgSize:(CGSize)imgSize;
+
 @end
 
 #pragma mark - -----------------NSPredicate-----------------
@@ -935,7 +976,7 @@ imageTitleSpace:(CGFloat)space;
 - (BOOL)kjwd_validateEmail;
 
 /// 手机号码验证
-- (BOOL)kjwd_varityPhoneFail;
+- (BOOL)kjwd_varityPhoneSuccess;
 
 /// 默认左3位  右2位， *6位， 比如  177******94
 - (NSString *)kjwd_Phone_defaultStar;
@@ -1087,6 +1128,11 @@ imageTitleSpace:(CGFloat)space;
 /// 查找符合正则的结果数组
 /// @param options 一般传入NSRegularExpressionCaseInsensitive不区分字母大小写
 - (NSArray <NSTextCheckingResult *>*)kjwd_searchWithRegularExpression:(NSString *)reg options:(NSRegularExpressionOptions)options;
+
+- (NSArray <NSString *>*)kjwd_general_searchWithReg:(NSString *)reg options:(NSRegularExpressionOptions)options;
+
+/// 正则 捕获组
+- (NSArray <NSArray <NSString *>*>*)kjwd_group_searchWithReg:(NSString *)reg options:(NSRegularExpressionOptions)options;
 
 @end
 

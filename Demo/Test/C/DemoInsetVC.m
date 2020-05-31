@@ -33,7 +33,7 @@
     
     KJ_typeweakself
     
-    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
         
         CKJInputCellModel *name = [self.simpleTableView _newtitle:@"姓名" tfText:@"" placeholder:@"请输入家长真实姓名" emptyRequirdText:@"姓名" cellId:kOInput_Name detail:nil];
         
@@ -47,7 +47,7 @@
             m.getCodeModel = [CKJGetCodeModel modelWithClickCodeBtnBlock:^(CKJTriggerCodeBlock  _Nonnull triggerCodeBlock) {
                 
                 //                // 手机号
-                //                NSString *_phone = [weakSelf.simpleTableView inputCellModelOfID:kOInput_Phone].tfText;
+                //                NSString *_phone = [weakSelf.simpleTableView inputCellModelOfID:kOInput_Phone].getTfText;
                 //
                 //
                 //                [RJCombineHttpRequest getPhoneSmsCodeWithPhoneNum:_phone BusinessId:@"EditAccountMobile" animated:YES SuccessBlock:^(id responseObject) {
@@ -56,7 +56,7 @@
                 //
                 //                } failureBlock:^(NSError *error) {
                 //                    if (error.localizedDescription) {
-                //                        [CKJHUD showError:error.localizedDescription];
+                //                        [CKJHUD kjwd_showMessage:error.localizedDescription];
                 //                    }
                 //                }];
             } detailSettingBlock:nil];

@@ -55,8 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 左边title的属性
 @property (copy, nonatomic) NSDictionary *titleAttributes;
 
-/// 输入框文本的属性 只支持（文字大小和颜色）
-@property (strong, nonatomic) NSDictionary *tfTextAttributed;
 
 + (instancetype)styleWithLeft:(NSNumber *_Nullable)left titleWidth:(NSNumber *_Nullable)titleWidth detail:(void(^_Nullable)(CKJInputHaveTitleStyle *cs))detail;
 
@@ -69,11 +67,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否需要更新OnlyView的约束（一般情况都是NO）
 @property (assign, nonatomic) BOOL needUpdateOnlyViewConstraints;
 @property (strong, nonatomic, nullable) NSValue *onlyViewEdge;
-
-
-/// CKJSimpleTableView 背景颜色
-//@property (strong, nonatomic) UIColor *bgColor;
-
 /// 分区圆角样式
 @property (strong, nonatomic, nullable) CKJSectionCornerStyle *sectionCornerStyle;
 
@@ -87,10 +80,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// 可能为nil，默认10
 @property (copy, nonatomic, nullable) NSNumber *sectionFooterHeight;
 
-/// 分割线edge
+/// 默认为UIEdgeInsetsMake(0, 15, 0, 0)， 分割线edge
 @property (strong, nonatomic, nullable) NSValue *lineEdge;
 
 #pragma mark - 输入框相关
+
+/// 输入框文本的属性 只支持（文字大小和颜色）
+@property (strong, nonatomic) NSDictionary *tfTextAttributed;
+@property (strong, nonatomic) NSDictionary *tfPlaceHolderAttributed;
+@property (nonatomic, assign) NSTextAlignment tfAlignment;
+
+/// 默认15
+@property (assign, nonatomic) CGFloat tfStyle_Right;
 
 /// 一个title3，一个输入框
 @property (strong, nonatomic) CKJInputHaveTitleStyle *haveTitleStyle;

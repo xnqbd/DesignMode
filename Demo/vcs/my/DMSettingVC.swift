@@ -45,16 +45,16 @@ class DMSettingVC: CKJBaseTableVC {
             _sec.modelArray = [model1, model2, model3, model4, model5, model6, model7, model8]
         }
         let section2 = CKJCommonSectionModel.section { (_sec) in
-            let model1 = CKJOneBtnCellModel.oneBtn(withCellHeight: nil, title: WDAttTitle("退出登录"), detailSettingBlock: nil, clickBtn: {[weak self](m, btn) in
-//                self?.commitAction()
-                UIAlertController.kjwd_alertTitle("提示提示", message: "确定退出登录吗？", alertAction_Left: "取消", leftBlock: nil, right: "确定", rightBlock: {
-                    DMLoginManager.manager.cancelLogin()
-                }, presentingVC: self)
-                
-            }) { (make, superView) in
-                make.edges.equalTo()
-            }
-            _sec.modelArray = [model1]
+//            let model1 = CKJOneBtnCellModel.oneBtn(withCellHeight: nil, title: WDAttTitle("退出登录"), detailSettingBlock: nil, clickBtn: {[weak self](m, btn) in
+////                self?.commitAction()
+//                UIAlertController.kjwd_alertTitle("提示提示", message: "确定退出登录吗？", alertAction_Left: "取消", leftBlock: nil, right: "确定", rightBlock: {
+//                    DMLoginManager.manager.cancelLogin()
+//                }, presentingVC: self)
+//                
+//            }) { (make, superView) in
+//                make.edges.equalTo()
+//            }
+//            _sec.modelArray = [model1]
             
             
         }

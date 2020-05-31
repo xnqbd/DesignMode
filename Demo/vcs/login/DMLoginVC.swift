@@ -52,24 +52,24 @@ class DMLoginVC: CKJBaseTableVC {
             
             let empty1 = CKJEmptyCellModel(height: 10, showLine: false)
             
-            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"登录", detailSettingBlock: { (m) in
-                m.updateBtnData { (d) in
-                    d.cornerRadius = 4;
-                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
-                }
-            }, clickBtn: {[weak self](m, btn) in
-                self?.commitAction()
-            }) { (make, superView) in
-                make.edges.equalTo()
-            }
-            
-            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { [weak self] (btn, data) in
-                self?.navigationController?.pushViewController(DMForgetPwdVC())
-                }, rightTitle: "注册", rightHandle: { [weak self] (btn, data) in
-                    self?.navigationController?.pushViewController(DMRegisterVC())
-                }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
-            
-            _sec.modelArray = [logo, phone, pwd, empty1, login, leftRight]
+//            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"登录", detailSettingBlock: { (m) in
+//                m.updateBtnData { (d) in
+//                    d.cornerRadius = 4;
+//                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
+//                }
+//            }, clickBtn: {[weak self](m, btn) in
+//                self?.commitAction()
+//            }) { (make, superView) in
+//                make.edges.equalTo()
+//            }
+//
+//            let leftRight = CKJTwoBtnCellModel.twoBtn(withCellHeight: NSNumber(value: 50), leftTitle: "忘记密码", leftHandle: { [weak self] (btn, data) in
+//                self?.navigationController?.pushViewController(DMForgetPwdVC())
+//                }, rightTitle: "注册", rightHandle: { [weak self] (btn, data) in
+//                    self?.navigationController?.pushViewController(DMRegisterVC())
+//                }, fontSize: nil, textColor: nil, detailSettingBlock: nil)
+//
+            _sec.modelArray = [logo, phone, pwd, empty1]
         }
         
         simpleTableView.dataArr = [section1]

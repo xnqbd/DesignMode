@@ -50,9 +50,11 @@
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
     if ([attributedText isKindOfClass:[NSString class]]) {
-        _attributedText = WDAttTitle(attributedText);
+        _attributedText = WDAttTitle((NSString *)attributedText);
+        self.readOnly_title3Label.attributedText = _attributedText;
     } else if ([attributedText isKindOfClass:[NSAttributedString class]]) {
         _attributedText = attributedText;
+        self.readOnly_title3Label.attributedText = _attributedText;
     }
 }
 
@@ -115,6 +117,19 @@
 - (void)changeText:(nullable NSString *)text {
     self.attributedText = [CKJWorker changeOriginAtt:self.attributedText text:text];
 }
+
+
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    if ([attributedText isKindOfClass:[NSString class]]) {
+        _attributedText = WDCKJAttributed2((NSString *)attributedText, [UIColor kjwd_subTitle], @14);
+        self.readOnly_alikePriceLabel8.attributedText = _attributedText;
+    } else if ([attributedText isKindOfClass:[NSAttributedString class]]) {
+        _attributedText = attributedText;
+        self.readOnly_alikePriceLabel8.attributedText = _attributedText;
+    }
+}
+
+
 @end
 
 @implementation CKJArrow9Model
@@ -289,7 +304,8 @@
     
     __weak typeof(self) weakSelf = self;
     [imageBtn2 kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull _sender) {
-        CKJImage2Model *image2Model = weakSelf.cellModel.image2Model;
+        CKJGeneralCellModel *cellModel = weakSelf.cellModel;
+        CKJImage2Model *image2Model = cellModel.image2Model;
         if (image2Model.click) {
             image2Model.click(image2Model, _sender);
         }
@@ -320,7 +336,8 @@
     // 右边箭头图片
     CKJArrowImageView9 *arrowImageView9 = [CKJArrowImageView9 new];
     [arrowImageView9 kjwd_addGestureRecognizer:[[UITapGestureRecognizer alloc] init] handleBlock:^(UIGestureRecognizer * _Nonnull _gestureRecognizer, UIView * _Nonnull _currentView) {
-        CKJArrow9Model *arrow9 = weakSelf.cellModel.arrow9Model;
+        CKJGeneralCellModel *cellModel = weakSelf.cellModel;
+        CKJArrow9Model *arrow9 = cellModel.arrow9Model;
         if (arrow9.click) {
             arrow9.click(arrow9);
         }
@@ -362,7 +379,9 @@
 
     CGFloat leftMargin = image2Model.leftMargin;
     
-    CGFloat title3LeftMargin = self.cellModel.title3Model.leftMargin;
+    __weak CKJGeneralCellModel *cellModel = self.cellModel;
+    
+    CGFloat title3LeftMargin = cellModel.title3Model.leftMargin;
     
     [CKJWorker reloadWithBtnModel:image2Model btn:self.imageBtn2 emptyHandle:^(CKJImage2Model * _Nonnull btnM) {
            [self.imageBtn2 kjwd_mas_remakeConstraints:^(MASConstraintMaker *make, UIView *superview) {
@@ -420,8 +439,11 @@
 
     CKJGeneralCellModel *model = self.cellModel;
     
-    NSAttributedString *titleAtt = model.title3Model.attributedText;
-    NSNumber *width = model.title3Model.width;
+    CKJTitle3Model *title3Model = model.title3Model;
+    title3Model.readOnly_title3Label = self.title3;
+    
+    NSAttributedString *titleAtt = title3Model.attributedText;
+    NSNumber *width = title3Model.width;
     
     self.title3.attributedText = WDKJ_ConfirmAttString(titleAtt);
     
@@ -440,14 +462,16 @@
 - (void)update_alikePriceLabel8_Constraint {
     
     CKJGeneralCellModel *model = self.cellModel;
+    CKJLikePriceLabel8Model *likePrice8Model = model.likePrice8Model;
+    likePrice8Model.readOnly_alikePriceLabel8 = self.alikePriceLabel8;
     
 //    左                     中间      右
 //    [imageBtn2, title3]    []      [likePrice8, arrowImageView9]
     
-    self.alikePriceLabel8.attributedText = WDKJ_ConfirmAttString(model.likePrice8Model.attributedText);
+    self.alikePriceLabel8.attributedText = WDKJ_ConfirmAttString(likePrice8Model.attributedText);
     
-    CGFloat left = model.likePrice8Model.leftMargin;
-    CGFloat right = model.likePrice8Model.rightMargin;
+    CGFloat left = likePrice8Model.leftMargin;
+    CGFloat right = likePrice8Model.rightMargin;
     
     [_alikePriceLabel8 kjwd_mas_updateConstraints:^(MASConstraintMaker *make, UIView *superview) {
         MASViewAttribute *temp = self.arrowImageView9.mas_left;
@@ -458,7 +482,8 @@
 }
 
 - (void)origin_arrowImageView9_Constraint {
-    CKJArrow9Model *arrow9 = self.cellModel.arrow9Model;
+    CKJGeneralCellModel *cellModel = self.cellModel;
+    CKJArrow9Model *arrow9 = cellModel.arrow9Model;
     arrow9.readOnly_ImageView = _arrowImageView9;
     NSValue *size = arrow9.imageView_Size;
     CGFloat right = arrow9.right;

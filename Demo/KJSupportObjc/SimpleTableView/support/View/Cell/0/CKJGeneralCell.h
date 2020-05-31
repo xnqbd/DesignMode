@@ -155,7 +155,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class CKJGeneralCellModel, CKJGeneralCell, CKJCell;
-typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
+typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak weakM);
 
 
 
@@ -176,6 +176,9 @@ typedef void(^CKJGeneralCellModelRowBlock)(CKJGeneralCellModel * __weak m);
 
 @interface CKJTitle3Model : CKJBaseModel
 
+@property (weak, nonatomic) UILabel *readOnly_title3Label;
+
+// 设置此值可自动更新UI（不需要reload TableView）
 @property (copy, nonatomic, nullable) NSAttributedString *attributedText;
 @property (assign, nonatomic) CGFloat leftMargin;
 
@@ -227,8 +230,9 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 
 @interface CKJLikePriceLabel8Model : CKJBaseModel
 
-@property (copy, nonatomic, nullable) NSAttributedString *attributedText;
 
+// 设置此值可自动更新UI（不需要reload TableView）
+@property (copy, nonatomic, nullable) NSAttributedString *attributedText;
 
 @property (assign, nonatomic) CGFloat leftMargin;
 @property (assign, nonatomic) CGFloat rightMargin;
@@ -237,6 +241,8 @@ typedef void(^CKJSubTitle4Click)(__kindof CKJCell *c);
 
 /** 改变文字 */
 - (void)changeText:(nullable NSString *)text;
+
+@property (weak, nonatomic) UILabel *readOnly_alikePriceLabel8;
 
 @end
 
@@ -290,10 +296,10 @@ typedef void(^CKJArrow9Click)(CKJArrow9Model *_a);
          style.rowHeight = @44;
      }];
 
-     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+     CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
          CKJGeneralCellModel *model1 = [CKJGeneralCellModel generalWithCellHeight:nil cellModel_id:nil detailSettingBlock:^(__kindof CKJGeneralCellModel *__weak  _Nonnull m) {
              m.title3Model = [CKJTitle3Model title3ModelWithText:WDAttTitle(@"关于") left:10];
-             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDAttTitle(@"复旦儿科"), [UIColor kjwd_subTitle], nil) left:0 right:0];
+             m.likePrice8Model = [CKJLikePriceLabel8Model likePriceLabel8ModelWithAttText:WDAttTitle(@"毛一鸣") left:0 right:10];
              m.arrow9Model = [CKJArrow9Model arrow9SystemModel];
          } didSelectRowBlock:nil];
          _sec.modelArray = @[model1];
@@ -343,13 +349,14 @@ typedef void(^CKJArrow9Click)(CKJArrow9Model *_a);
 @end
 
 
-@interface CKJGeneralCell : CKJCommonTableViewCell<CKJGeneralCellModel *>
+@interface CKJGeneralCell : CKJCommonTableViewCell //<CKJGeneralCellModel *>
 
 @property (nonnull, strong, nonatomic, readonly) CKJLeftView *leftWrapView;
 @property (nonnull, strong, nonatomic, readonly) UIButton *imageBtn2;
 @property (nonnull, strong, nonatomic, readonly) UILabel *title3;
 
 @property (nonnull, strong, nonatomic, readonly) CKJRightView *rightWrapView;
+@property (nonnull, strong, nonatomic, readonly) UILabel *alikePriceLabel8;
 @property (nonnull, strong, nonatomic, readonly) UIImageView *arrowImageView9;
 
 

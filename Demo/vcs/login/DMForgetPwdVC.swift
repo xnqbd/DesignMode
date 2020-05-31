@@ -58,22 +58,22 @@ class DMForgetPwdVC: CKJBaseTableVC {
                 m.lineEdge = NSValue(uiEdgeInsets: UIEdgeInsets.zero)
             }
 
-            
-            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"找回密码", detailSettingBlock: { (m) in
-                m.updateBtnData { (d) in
-                    d.cornerRadius = 4;
-                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
-                }
-            }, clickBtn: {[weak self](m, btn) in
-                
-            }) { (make, superView) in
-                make.edges.equalTo()
-            }
+//            
+//            let login = CKJOneBtnCellModel.oneBtn(withCellHeight: NSNumber(value: 46), title:"找回密码", detailSettingBlock: { (m) in
+//                m.updateBtnData { (d) in
+//                    d.cornerRadius = 4;
+//                    d.normalBgImage = UIImage.kjwd_image(with: DMTheme.btnColor, size: CGSize(width: 300, height: 40))
+//                }
+//            }, clickBtn: {[weak self](m, btn) in
+//                
+//            }) { (make, superView) in
+//                make.edges.equalTo()
+//            }
             
             let empty1 = CKJEmptyCellModel(height: 30, showLine: false)
             
             
-            _sec.modelArray = [phone, code, pwd, confirmPwd, empty1, login]
+            _sec.modelArray = [phone, code, pwd, confirmPwd, empty1]
         }
         
         simpleTableView.dataArr = [section1]

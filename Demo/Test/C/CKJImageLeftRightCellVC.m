@@ -33,19 +33,19 @@ typedef NS_ENUM(NSUInteger, TestPayStyle) {
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     
-    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig cellConfigWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
+    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig imageLeftCellConfigWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 80);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig fiveLabelViewConfigWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.subTitle_numberOfLines = 3;
         }];
     }];
-    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig cellConfigWithDetail:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
+    CKJImageRightCellConfig *rightConfig = [CKJImageRightCellConfig imageRightCellConfigWithDetail:^(__kindof CKJImageRightCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 90);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig fiveLabelViewConfigWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.title_margin_subTitle = 5;
             m.subTitle_numberOfLines = 3;
         }];
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, TestPayStyle) {
 
 - (void)initSimpleTableViewData {
     
-//    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetailSetting:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
+//    CKJCommonSectionModel *section1 = [CKJCommonSectionModel sectionWithDetail:^(__kindof CKJCommonSectionModel * _Nonnull _sec) {
 //
 //        CKJPayCellModel *model1 = [CKJPayCellModel modelWithCellHeight:@(UITableViewAutomaticDimension) cellModel_id:nil detailSettingBlock:^(__kindof CKJPayCellModel * _Nonnull m) {
 //
@@ -78,14 +78,14 @@ typedef NS_ENUM(NSUInteger, TestPayStyle) {
 //        __weak CKJPayCellModel *weakModel1 = model1;
 //
 //        CKJTableViewCell1Model *model2 = [CKJTableViewCell1Model baseTableViewCellWithCellHeight:@(UITableViewAutomaticDimension) cellModel_id:nil detailSettingBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
-//            m.textLabelAttStr = WDAtt15_5(@"点击展开");
+//            m.attText = WDAtt15_5(@"点击展开");
 //        } didSelectRowBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
 //            weakModel1.displayInTableView = YES;
 //            [m.cell.simpleTableView reloadData];
 //        }];
 //
 //        CKJTableViewCell1Model *model3 = [CKJTableViewCell1Model baseTableViewCellWithCellHeight:@(UITableViewAutomaticDimension) cellModel_id:nil detailSettingBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
-//            m.textLabelAttStr = WDAtt15_5(@"点击隐藏");
+//            m.attText = WDAtt15_5(@"点击隐藏");
 //        } didSelectRowBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
 //            weakModel1.displayInTableView = NO;
 //            [m.cell.simpleTableView reloadData];

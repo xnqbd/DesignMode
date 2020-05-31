@@ -42,14 +42,10 @@ typedef void(^CKJLeftRightTopEqualCellRowBlock)(__kindof CKJLeftRightTopEqualCel
 
 
 
-@interface CKJLeftRightTopEqualCellModel : CKJBaseLeftRightCellModel<CKJLeftRightTopEqual_LeftLabelSetting *, CKJLeftRightTopEqual_RightLabelSetting *>
-
-
-//+ (instancetype)topEqualWithLeftAtt:(NSAttributedString *)leftAtt rightAtt:(NSAttributedString *)rightAtt leftSetting:(CKJLeftRightTopEqual_LeftLabelSetting *)leftSetting rightSetting:(CKJLeftRightTopEqual_RightLabelSetting *)rightSetting  showLine:(BOOL)showLine;
-
+@interface CKJLeftRightTopEqualCellModel : CKJBaseLeftRightCellModel //<CKJLeftRightTopEqual_LeftLabelSetting *, CKJLeftRightTopEqual_RightLabelSetting *>
 
 /// 默认
-+ (instancetype)topEqualWithLeftAtt:(NSAttributedString *)leftAtt rightAtt:(NSAttributedString *)rightAtt leftRightMargin:(CGFloat)leftRightMargin  showLine:(BOOL)showLine detail:(void(^_Nullable)(CKJLeftRightTopEqualCellModel *m))detail;
++ (instancetype)topEqualWithLeftAtt:(NSAttributedString *)leftAtt rightAtt:(NSAttributedString *)rightAtt leftRightMargin:(CGFloat)leftRightMargin showLine:(BOOL)showLine detail:(void(^_Nullable)(CKJLeftRightTopEqualCellModel *m))detail;
 
 - (void)updateSetting:(void(^_Nullable)(CKJLeftRightTopEqual_LeftLabelSetting *left, CKJLeftRightTopEqual_RightLabelSetting *right))setting;
 

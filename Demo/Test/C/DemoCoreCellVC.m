@@ -25,11 +25,11 @@
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
     
-    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig configWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
+    CKJImageLeftCellConfig *leftConfig = [CKJImageLeftCellConfig imageLeftCellConfigWithDetail:^(__kindof CKJImageLeftCellConfig * _Nonnull m) {
         [m updateImgConfig:^(CKJImageViewConfig * _Nonnull c) {
             c.imageSize = CGSizeMake(80, 80);
         }];
-        m.fiveConfig = [CKJFiveLabelViewConfig configWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
+        m.fiveConfig = [CKJFiveLabelViewConfig fiveLabelViewConfigWithDetail:^(__kindof CKJFiveLabelViewConfig * _Nonnull m) {
             m.subTitle_numberOfLines = 3;
         }];
     }];
@@ -72,7 +72,7 @@
         } didSelectRowBlock:nil];
         
         CKJTableViewCell1Model *model3 = [CKJTableViewCell1Model baseTableViewCellWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
-            m.textLabelAttStr = WDCKJAttributed2(@"点击本行更新余额", [UIColor kjwd_subTitle], nil);
+            m.attText = WDCKJAttributed2(@"点击本行更新余额", [UIColor kjwd_subTitle], nil);
             m.textAlignment = NSTextAlignmentCenter;
         } didSelectRowBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
             [m.cell.simpleTableView kjwd_filterCellModelForID:kPriceCellID finishBlock:^(CKJGeneralCellModel * _Nonnull m) {
@@ -80,7 +80,6 @@
                 NSString *point = [NSString kjwd_returnArc4randomWithNum:2 type:KJWDArc4randomType_Number];
                 [m.likePrice8Model changeText:[NSString stringWithFormat:@"%@.%@元", arc1, point]];
             }];
-            [m.cell.simpleTableView kjwd_reloadData];
         }];
         _sec.modelArray = @[model1, model2, model3];
     }];

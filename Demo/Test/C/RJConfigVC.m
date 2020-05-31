@@ -38,16 +38,19 @@
 
 #pragma mark - CKJSimpleTableView 数据源 和 代理
 - (nonnull NSDictionary <NSString *, NSDictionary <NSString *, id>*> *)returnCell_Model_keyValues:(CKJSimpleTableView *_Nonnull)s {
-    SelectDateCellConfig *config1 = [SelectDateCellConfig configWithDetail:^(SelectDateCellConfig * _Nonnull m) {
+    SelectDateCellConfig *config1 = [SelectDateCellConfig cellConfigWithDetail:^(SelectDateCellConfig * _Nonnull m) {
         m.endDateUserInteractionEnabled = NO;
         m.beginDate = BeginDate_Today;
         m.endDate = EndDate_Today;
     }];
     
     
+    
     return @{
         NSStringFromClass([RJBillCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([RJBillCell class]), KJPrefix_isRegisterNibKEY : @YES},
-        NSStringFromClass([SelectDateCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([SelectDateCell class]), KJPrefix_isRegisterNibKEY : @NO, KJPrefix_configDicKEY_ConfigModel : config1}        
+        NSStringFromClass([SelectDateCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([SelectDateCell class]), KJPrefix_isRegisterNibKEY : @NO, KJPrefix_configDicKEY_ConfigModel : config1},
+        NSStringFromClass([CKJLeftRightTopEqualCellModel class]) : @{KJPrefix_cellKEY : NSStringFromClass([CKJLeftRightTopEqualCell class]), KJPrefix_isRegisterNibKEY : @NO},
+        
     };
 }
 
@@ -110,7 +113,9 @@
         _sec.footerHeight = @15;
         
         SelectDateCellModel *model1 = [SelectDateCellModel commonWithCellHeight:@44 cellModel_id:nil detailSettingBlock:^(SelectDateCellModel *m) {
-            m.bgConfig.bgColor = [UIColor groupTableViewBackgroundColor];
+            [m updateBGConfig:^(CKJCommonCellBGImageViewConfig * _Nonnull bg) {
+                bg.bgColor = [UIColor groupTableViewBackgroundColor];
+            }];
         } didSelectRowBlock:nil];
         
         _sec.modelArray = @[model1];
@@ -144,7 +149,7 @@
         CKJTableViewCell1Model *model1 = [CKJTableViewCell1Model baseTableViewCellWithCellHeight:@40 cellModel_id:nil detailSettingBlock:^(__kindof CKJTableViewCell1Model * _Nonnull m) {
             m.selectionStyle = UITableViewCellSelectionStyleNone;
             NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:WDKJ_ConfirmString(obj[@"DeptName"]) attributes:@{NSForegroundColorAttributeName : [UIColor blackColor], NSFontAttributeName : [UIFont boldSystemFontOfSize:18]}];
-            m.textLabelAttStr = att;
+            m.attText = att;
         } didSelectRowBlock:nil];
         
         section.modelArray = @[model1, model2];

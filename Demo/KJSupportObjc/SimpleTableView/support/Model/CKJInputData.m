@@ -23,6 +23,24 @@ NSString *_Nonnull const kOInput_Email = @"kOInput_Email";
 NSString *_Nonnull const kOInput_Pwd = @"kOInput_Pwd";
 NSString *_Nonnull const kOInput_ConfirmPwd = @"kOInput_ConfirmPwd";
 
+///// 国家
+//NSString *_Nonnull const kOInput_Country  = @"kOInput_Country";
+//NSString *_Nonnull const kOInput_Province = @"kOInput_Province";
+//NSString *_Nonnull const kOInput_City     = @"kOInput_City";
+///// 民族
+//NSString *_Nonnull const kOInput_Nation   = @"kOInput_Nation";
+
+
+/// 特别人 名字
+NSString *_Nonnull const kOInput_SpecialName = @"kOInput_SpecialName";
+/// 特别人 手机号
+NSString *_Nonnull const kOInput_SpecialPhone = @"kOInput_SpecialPhone";
+/// 特别人 证件类型
+NSString *_Nonnull const kOInput_SpecialIdCardType = @"kOInput_SpecialIdCardType";
+/// 特别人 证件号
+NSString *_Nonnull const kOInput_SpecialIdCardNumber = @"kOInput_SpecialIdCardNumber";
+
+
 
 
 @implementation CKJInputData
@@ -32,17 +50,26 @@ NSString *_Nonnull const kOInput_ConfirmPwd = @"kOInput_ConfirmPwd";
     // 姓名
     NSString *_name = [simpleTableView inputCellModelOfID:kOInput_Name].getTfText;
     
+    // 性别
+    CKJStringChooseItem *_sex = [simpleTableView inputCellModelOfID:kOInput_Sex].stringChoose.currentSelectedItem;
+    
     // 手机号
     NSString *_phone = [simpleTableView inputCellModelOfID:kOInput_Phone].getTfText;
     
     // 验证码
     NSString *_verityCode = [simpleTableView inputCellModelOfID:kOInput_VerityCode].getTfText;
     
+    // 证件类型
+    CKJStringChooseItem *_idCardType = [simpleTableView inputCellModelOfID:kOInput_idCardType].stringChoose.currentSelectedItem;
+    
     // 证件号
     NSString *_idCardNumber = [simpleTableView inputCellModelOfID:kOInput_idCardNumber].getTfText;
     
     // 出生日期
     NSDate *_birthday = [simpleTableView inputCellModelOfID:kOInput_Birthday].dateChoose.currentSelectedDate;
+    
+    // 关系
+    CKJStringChooseItem *_relationShip = [simpleTableView inputCellModelOfID:kOInput_Relationship].stringChoose.currentSelectedItem;
     
     // 地址
     NSString *_address = [simpleTableView inputCellModelOfID:kOInput_Address].getTfText;
@@ -57,15 +84,15 @@ NSString *_Nonnull const kOInput_ConfirmPwd = @"kOInput_ConfirmPwd";
     NSString *_confirmPwd = [simpleTableView inputCellModelOfID:kOInput_ConfirmPwd].getTfText;
     
     
-    // 性别
-    CKJStringChooseItem *_sex = [simpleTableView inputCellModelOfID:kOInput_Sex].stringChoose.currentSelectedItem;
+
+    NSString *_specialName = [simpleTableView inputCellModelOfID:kOInput_SpecialName].getTfText;
     
-    // 证件类型
-    CKJStringChooseItem *_idCardType = [simpleTableView inputCellModelOfID:kOInput_idCardType].stringChoose.currentSelectedItem;
+    NSString *_specialPhone = [simpleTableView inputCellModelOfID:kOInput_SpecialPhone].getTfText;
+
+    CKJStringChooseItem *_specialIdCardType = [simpleTableView inputCellModelOfID:kOInput_SpecialIdCardType].stringChoose.currentSelectedItem;
     
-    // 关系
-    CKJStringChooseItem *_relationShip = [simpleTableView inputCellModelOfID:kOInput_Relationship].stringChoose.currentSelectedItem;
-    
+    NSString *_specialIdCardNumber = [simpleTableView inputCellModelOfID:kOInput_SpecialIdCardNumber].getTfText;
+
     
     self.name = _name;
     self.phone = _phone;
@@ -81,6 +108,10 @@ NSString *_Nonnull const kOInput_ConfirmPwd = @"kOInput_ConfirmPwd";
     self.idCardType = _idCardType;
     self.relationship = _relationShip;
     
+    self.specialName = _specialName;
+    self.specialPhone = _specialPhone;
+    self.specialIdCardType = _specialIdCardType;
+    self.specialIdCardNumber = _specialIdCardNumber;
     
     return self;
 }

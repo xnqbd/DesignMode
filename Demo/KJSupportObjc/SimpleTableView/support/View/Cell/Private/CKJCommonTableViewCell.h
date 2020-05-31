@@ -37,7 +37,7 @@ typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *m);
 
 
 
-@interface CKJCommonTableViewCell <E : CKJCommonCellModel *> : UITableViewCell
+@interface CKJCommonTableViewCell : UITableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier configDic:(NSDictionary *)configDic;
 
@@ -65,7 +65,7 @@ typedef void(^CKJCommonCellConfigBlock)(__kindof CKJCommonCellConfig *m);
 @property (copy, nonatomic, nullable) NSDictionary *readOnly_configDic;
 @property (strong, nonatomic, readonly, nullable) __kindof CKJCommonCellConfig *configModel;
 
-@property (nonatomic, strong, nonnull) E cellModel;
+@property (nonatomic, strong, nonnull) __kindof CKJCommonCellModel *cellModel;
 
 @property (assign, nonatomic, readonly) NSInteger section;
 @property (assign, nonatomic, readonly) NSInteger row;

@@ -42,7 +42,8 @@
         [btn setTitleColor:[UIColor kjwd_title] forState:UIControlStateNormal];
         
         [btn kjwd_addTouchUpInsideForCallBack:^(UIButton * _Nonnull sender) {
-            NSArray *data = cell.cellModel.stackItems;
+            CKJStackCellModel *cellModel = cell.cellModel;
+            NSArray *data = cellModel.stackItems;
             CKJBtnItemData *itemData = [data kjwd_objectAtIndex:i];
             if (itemData.click_Button) {
                 itemData.click_Button(sender, itemData);
@@ -87,8 +88,14 @@
     self.esaySystemModel = [CKJBaseBtnsCellSystemDelegate esayWithNumberOfItemsInSingleLine:number];
     return self.esaySystemModel;
 }
-+ (instancetype)btnsConfigWithDetail:(void (^_Nullable)(CKJBaseBtnsCellConfig * m))detail {
-    return [self cellConfigWithDetail:detail];
+
++ (instancetype)btnsConfigWithH_itemSpacing:(CGFloat)h_itemSpacing detail:(void (^_Nullable)(CKJBaseBtnsCellConfig * m))detail {
+    return [self cellConfigWithDetail:^(__kindof CKJBaseBtnsCellConfig * _Nonnull m) {
+        m.h_itemSpacing = h_itemSpacing;
+        if (detail) {
+            detail(m);
+        }
+    }];
 }
 
 @end

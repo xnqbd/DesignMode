@@ -33,10 +33,13 @@
 @implementation CKJScrollViewCellConfig
 
 + (instancetype)scrollViewCellConfigWithItemWidth:(CGFloat)itemWidth itemSpace:(CGFloat)itemSpace detail:(void(^_Nullable)(__kindof CKJScrollViewCellConfig *m))detail {
-    CKJScrollViewCellConfig *c = [super cellConfigWithDetail:detail];
-    c.itemWidth = itemWidth;
-    c.itemSpace = itemSpace;
-    return c;
+    return [super cellConfigWithDetail:^(__kindof CKJScrollViewCellConfig * _Nonnull m) {
+        m.itemWidth = itemWidth;
+        m.itemSpace = itemSpace;
+        if (detail) {
+            detail(m);
+        }
+    }];
 }
 
 
@@ -77,7 +80,7 @@
 
 @interface CKJScrollViewCell () <UIScrollViewDelegate>
 
-@property (strong, nonatomic) NSArray <__kindof CKJScrollViewCellItemView *>*viewArrs;
+@property (strong, nonatomic) NSArray <__kindof UIView *>*viewArrs;
 
 @property (strong, nonatomic) UIView *shortView;
 @property (strong, nonatomic) UIView *longView;
@@ -120,7 +123,7 @@
         make.right.equalTo(superview).offset(-(scrollViewEdge.right));
     }];
     
-    NSArray <__kindof CKJScrollViewCellItemView *>*viewArrs = [delegate createItemViewForCKJScrollViewCell:self];
+    NSArray <__kindof UIView *>*viewArrs = [delegate createItemViewForCKJScrollViewCell:self];
     self.viewArrs = viewArrs;
     
     UIEdgeInsets edge = config.items_Edge_ScrollView;
