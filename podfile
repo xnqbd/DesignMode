@@ -4,21 +4,35 @@
 target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Demo
   source 'https://github.com/CocoaPods/Specs.git'
   
   pod 'Masonry'
   pod 'ActionSheetPicker-3.0'
   pod 'SDWebImage', '~> 3.7'
+  pod 'FLEX'
   
   pod 'IQKeyboardManager'
-  # pod 'SwiftyJSON'
+  pod 'SwiftyJSON'
   pod 'SwifterSwift'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'RxSwift'
+  
+end
+
+
+target 'OtherTest' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for Demo
+  source 'https://github.com/CocoaPods/Specs.git'
+  
   pod 'JXCategoryView'
   pod 'MJRefresh'
+  pod 'GPUImage'
   
   pod 'UICountingLabel'
   pod 'FSCalendar'

@@ -61,6 +61,9 @@
 
 #import "CKJProjectConfig.h"
 
+#import "CKJRSA.h"
+
+
 #endif /* KJSupportObjc_h */
 
 

@@ -136,6 +136,12 @@
 		BC0E547224828F70003018CC /* RJDemoExpertItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0E543A24828F70003018CC /* RJDemoExpertItemView.m */; };
 		BC0E547324828F70003018CC /* SelectDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0E543B24828F70003018CC /* SelectDateCell.m */; };
 		BC0E54E32483ECA6003018CC /* CKJCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0E54E22483ECA6003018CC /* CKJCountingLabel.m */; };
+		BC0E55292484CD17003018CC /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E55282484CD17003018CC /* WebVC.swift */; };
+		BC0E55302487DD04003018CC /* AVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E552F2487DD03003018CC /* AVViewController.swift */; };
+		BC61D0A32488C93500AB28D2 /* 111.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = BC61D0A22488C93000AB28D2 /* 111.xlsx */; };
+		BC61D0A52489DBF100AB28D2 /* CKJAVCaptureTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D0A42489DBF000AB28D2 /* CKJAVCaptureTool.swift */; };
+		BC61D0A7248BB4EC00AB28D2 /* DMWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D0A6248BB4EB00AB28D2 /* DMWebView.swift */; };
+		BC68484124BDB612001EE797 /* 舟山yd0001.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC68484024BDB612001EE797 /* 舟山yd0001.txt */; };
 		BC8FF86323FD303D00F003DC /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8FF86223FD303D00F003DC /* MyVC.swift */; };
 		BC910D8624136ABB00280936 /* RJInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910D8424136ABB00280936 /* RJInputData.m */; };
 		BC910D922413709D00280936 /* DMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC910D912413709D00280936 /* DMNavigationController.swift */; };
@@ -156,6 +162,7 @@
 		BCB77737241F08AD008C0618 /* DMLogin2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB77736241F08AD008C0618 /* DMLogin2VC.m */; };
 		BCC442B02420900400F20238 /* NetWorkResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC442AF2420900400F20238 /* NetWorkResponse.m */; };
 		BCC442BD2421BCFE00F20238 /* DMDDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */; };
+		BCDF07D424BEF4CD005D1A2C /* WTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDF07D324BEF4CD005D1A2C /* WTestViewController.m */; };
 		BCE5366A241883EE0084274B /* DMSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE53669241883EE0084274B /* DMSettingVC.swift */; };
 		BCE5366C2418AA090084274B /* DMForgetPwdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */; };
 		BCE5366E2418B0460084274B /* DMRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5366D2418B0460084274B /* DMRegisterVC.swift */; };
@@ -399,6 +406,12 @@
 		BC0E54E02483EAAA003018CC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BC0E54E12483ECA5003018CC /* CKJCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKJCountingLabel.h; sourceTree = "<group>"; };
 		BC0E54E22483ECA6003018CC /* CKJCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKJCountingLabel.m; sourceTree = "<group>"; };
+		BC0E55282484CD17003018CC /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		BC0E552F2487DD03003018CC /* AVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVViewController.swift; sourceTree = "<group>"; };
+		BC61D0A22488C93000AB28D2 /* 111.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = 111.xlsx; sourceTree = "<group>"; };
+		BC61D0A42489DBF000AB28D2 /* CKJAVCaptureTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKJAVCaptureTool.swift; sourceTree = "<group>"; };
+		BC61D0A6248BB4EB00AB28D2 /* DMWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMWebView.swift; sourceTree = "<group>"; };
+		BC68484024BDB612001EE797 /* 舟山yd0001.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "舟山yd0001.txt"; sourceTree = "<group>"; };
 		BC8FF86223FD303D00F003DC /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		BC910D8424136ABB00280936 /* RJInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJInputData.m; sourceTree = "<group>"; };
 		BC910D8524136ABB00280936 /* RJInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJInputData.h; sourceTree = "<group>"; };
@@ -426,6 +439,8 @@
 		BCC442AE2420900400F20238 /* NetWorkResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkResponse.h; sourceTree = "<group>"; };
 		BCC442AF2420900400F20238 /* NetWorkResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkResponse.m; sourceTree = "<group>"; };
 		BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMDDViewController.swift; sourceTree = "<group>"; };
+		BCDF07D224BEF4CD005D1A2C /* WTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestViewController.h; sourceTree = "<group>"; };
+		BCDF07D324BEF4CD005D1A2C /* WTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTestViewController.m; sourceTree = "<group>"; };
 		BCE53669241883EE0084274B /* DMSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSettingVC.swift; sourceTree = "<group>"; };
 		BCE5366B2418AA090084274B /* DMForgetPwdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMForgetPwdVC.swift; sourceTree = "<group>"; };
 		BCE5366D2418B0460084274B /* DMRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRegisterVC.swift; sourceTree = "<group>"; };
@@ -1027,6 +1042,8 @@
 			isa = PBXGroup;
 			children = (
 				BC9E1AB323D5A3F100169DB3 /* DMHomeVC.swift */,
+				BC0E552F2487DD03003018CC /* AVViewController.swift */,
+				BC61D0A42489DBF000AB28D2 /* CKJAVCaptureTool.swift */,
 				BCC442BC2421BCFE00F20238 /* DMDDViewController.swift */,
 				BC9E1ABD23D6BC3800169DB3 /* DMOCVC.h */,
 				BC9E1ABE23D6BC3800169DB3 /* DMOCVC.m */,
@@ -1080,11 +1097,17 @@
 				BC94324124162F9500FB9B6F /* DMTheme.swift */,
 				BCB5E8C32418C88200B2B8E4 /* Person.swift */,
 				BCB77735241F08AD008C0618 /* DMLogin2VC.h */,
+				BC61D0A22488C93000AB28D2 /* 111.xlsx */,
+				BC68484024BDB612001EE797 /* 舟山yd0001.txt */,
 				BCB77736241F08AD008C0618 /* DMLogin2VC.m */,
 				BC9A41DE242D9B2F009E388B /* CKJProjectConfig+Extension.h */,
 				BC9A41DF242D9B2F009E388B /* CKJProjectConfig+Extension.m */,
 				BCC442AE2420900400F20238 /* NetWorkResponse.h */,
 				BCC442AF2420900400F20238 /* NetWorkResponse.m */,
+				BCDF07D224BEF4CD005D1A2C /* WTestViewController.h */,
+				BCDF07D324BEF4CD005D1A2C /* WTestViewController.m */,
+				BC0E55282484CD17003018CC /* WebVC.swift */,
+				BC61D0A6248BB4EB00AB28D2 /* DMWebView.swift */,
 				BC910D962414B4D500280936 /* manager */,
 				BC910D8424136ABB00280936 /* RJInputData.m */,
 				BC943243241632F400FB9B6F /* HTTP */,
@@ -1162,6 +1185,7 @@
 				BC0E544624828F70003018CC /* demo余额.png in Resources */,
 				BCE959EC23D586F200B2C5FE /* LaunchScreen.storyboard in Resources */,
 				BC0E545324828F70003018CC /* yhf下箭头.png in Resources */,
+				BC68484124BDB612001EE797 /* 舟山yd0001.txt in Resources */,
 				BC0E544024828F70003018CC /* zhuyuan充值记录@3x.png in Resources */,
 				BC0E546B24828F70003018CC /* RJDemoExpertItemView.xib in Resources */,
 				BC0E544C24828F70003018CC /* wdyhfsdkmark.png in Resources */,
@@ -1179,6 +1203,7 @@
 				BC0E544224828F70003018CC /* wdyhfsdkright arrow.png in Resources */,
 				BC0E545424828F70003018CC /* billDetail.geojson in Resources */,
 				BC0E545024828F70003018CC /* TETTST.xib in Resources */,
+				BC61D0A32488C93500AB28D2 /* 111.xlsx in Resources */,
 				BC0E544B24828F70003018CC /* yhf通知.png in Resources */,
 				BC0E544824828F70003018CC /* zhuyuan历史住院记录@2x.png in Resources */,
 				BC0E547124828F70003018CC /* RJCustomInputCell.xib in Resources */,
@@ -1247,6 +1272,7 @@
 			files = (
 				BC0E547224828F70003018CC /* RJDemoExpertItemView.m in Sources */,
 				BC0E53C824828F3A003018CC /* CKJImageViewCell.m in Sources */,
+				BC0E55302487DD04003018CC /* AVViewController.swift in Sources */,
 				BC0E53D324828F3A003018CC /* CKJLibraryHelper.m in Sources */,
 				BC0E53AD24828F3A003018CC /* CKJDatePickerView.m in Sources */,
 				BC0E53B224828F3A003018CC /* CKJToolbar.m in Sources */,
@@ -1290,6 +1316,7 @@
 				BC0E539D24828F3A003018CC /* NSObject+WDYHFCategory.m in Sources */,
 				BC0E53E124828F3A003018CC /* CKJCommonTableViewHeaderFooterView.m in Sources */,
 				BC0E53D524828F3A003018CC /* CKJBaseImageLeftRightCell.m in Sources */,
+				BC61D0A52489DBF100AB28D2 /* CKJAVCaptureTool.swift in Sources */,
 				BC0E546624828F70003018CC /* DemoImageLeftRightCellVC.m in Sources */,
 				BC0E545A24828F70003018CC /* DemoCoreCellVC.m in Sources */,
 				BC0E53A924828F3A003018CC /* CKJProjectConfig.m in Sources */,
@@ -1334,6 +1361,7 @@
 				BC0E53E524828F3A003018CC /* KJSupportHeader.m in Sources */,
 				BC943248241632F400FB9B6F /* HZYHFHTTPRequest.swift in Sources */,
 				BC0E53DE24828F3A003018CC /* CKJCell.m in Sources */,
+				BC61D0A7248BB4EC00AB28D2 /* DMWebView.swift in Sources */,
 				BC0E53E424828F3A003018CC /* CKJFixMode.m in Sources */,
 				BC0E53B824828F3A003018CC /* CKJButton.m in Sources */,
 				BC0E53A424828F3A003018CC /* CKJGlobalHeader.m in Sources */,
@@ -1344,6 +1372,7 @@
 				BC0E546324828F70003018CC /* DemoInsetVC.m in Sources */,
 				BC0E53BC24828F3A003018CC /* CKJCommonCellModel.m in Sources */,
 				BC0E53A024828F3A003018CC /* CKJBaseViewController.m in Sources */,
+				BCDF07D424BEF4CD005D1A2C /* WTestViewController.m in Sources */,
 				BC0E53CA24828F3A003018CC /* CKJLeftRightCenterEqCell.m in Sources */,
 				BC0E539F24828F3A003018CC /* FileManagerTool.m in Sources */,
 				BC0E53DD24828F3A003018CC /* CKJInputCell.m in Sources */,
@@ -1362,6 +1391,7 @@
 				BC0E545D24828F70003018CC /* RegisterDemo2VC.m in Sources */,
 				BC0E53AA24828F3A003018CC /* CKJSearch_TF.m in Sources */,
 				BC0E53B124828F3A003018CC /* CKJFiveLabelView.m in Sources */,
+				BC0E55292484CD17003018CC /* WebVC.swift in Sources */,
 				BC0E53A724828F3A003018CC /* LightStorageManager.m in Sources */,
 				BC0E547324828F70003018CC /* SelectDateCell.m in Sources */,
 			);

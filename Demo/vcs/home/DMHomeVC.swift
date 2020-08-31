@@ -7,118 +7,59 @@
 //
 
 import UIKit
+import Alamofire
 
 class DMHomeVC: CKJBaseTableVC {
     
-//    // MARK: - CKJSimpleTableView 数据源 和 代理
-//    override func returnCell_Model_keyValues(_ s: CKJSimpleTableView) -> [String : [String : Any]] {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "入院办理";
+        
+        simpleTableView.updateStyle { (s) in
+            s.rowHeight = NSNumber(value: 44)
+            s.lineEdge = UIEdgeInsets.zero as NSValue
+        }
+        
+        let set = CKJGeneralSetting()
+        set.image2_margin_title = 12;
+        set.arrow9_margin_super = 12;
+        
+        
+        let section1 = CKJCommonSectionModel.section { (_sec) in
+            let model1 = CKJGeneralCellModel.general(withTitle: "1", arrow: true) { [weak self] (m) in
+                
+                
+                let ss = CKJRSA.encryptString("好了19👌%kU-_", publicKey: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnhixMy20eAUmedcOOwfD28JNVIzZgb/DUW8RdvS9jKzJYikYI8qD2fxsLV6Jv73jL5CWp0oHq4UY8/1Xltj0z3dYgIsgp5qc6crmXUIZ0mvlNmlqSSi5IK40lynGwYSDYHPxknWyKWX1v4/hEdw44xTWdoZMQ3XbP/OYZMXt3BwIDAQAB")
+                
+                
+
+                
+                
+                let de = CKJRSA.decryptString(ss ?? "" , privateKey: "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKeGLEzLbR4BSZ51w47B8Pbwk1UjNmBv8NRbxF29L2MrMliKRgjyoPZ/GwtXom/veMvkJanSgerhRjz/VeW2PTPd1iAiyCnmpzpyuZdQhnSa+U2aWpJKLkgrjSXKcbBhINgc/GSdbIpZfW/j+ER3DjjFNZ2hkxDdds/85hkxe3cHAgMBAAECgYB4mGQHnGGeufqPMeNnP0IB4kmNfl3EqpDJro37lRcp4ozJpDCqfE9XY0TKs3lh7xgcXs6mI74Wobj4bC8fwELpi0B23QPy9nZrYiRm0u/UGY2CUN9kA47tPmrg7wC60dWeO7S0wHPGFRrDFSOyLHD89FPQbVdgXQLqBeep6J3ZsQJBANTnX1m434uCA8g9vDBHZ90I5u90tHLVaen4kLClIWB6FIpvQMMSsnHsj2Zq5nSa+YLVd1aAl0bG+k+unPAoj7MCQQDJbzxB3ZNACgSZqeBRKnfASQuMOvTSWZG6UGC875dryPtIN6Q10CeUNsoGuUqEiHICZVU+7eSJvmSkqqoEyjFdAkEAz/0Y0XYiLQ/e0gg9iIy5kt3XfabtgiGrTr9d2rP3X2DkIDl/cxMY8OLBVLSqXs/nYUFZTFBjeOl6L83N03BMsQJATfr1Dd6UcbcvHrnH8EQLhfIBOXFdc81fAAy71oi+SujMdqGrvXVuzQ8E2OOEeJhF4q2N+cWosrZ1SdYT6bTItQJACMLttZ/tH4IeOKB5+Nob38TlSeZOlQpDJlNjT4iefFw3fVTRE4XA3jdbRnngfG8GzGz4m9OqZCGm6WWQvXLv+Q==")
+                
+                print("\(ss)  \(de)")
+            
+            }
+            
+            let model2 = CKJGeneralCellModel.general(withTitle: "WebVC", arrow: true) { [weak self] (m) in
 //
-//        let btnsCellConfig1 = CKJBaseBtnsCellConfig.btnsConfig { (m) in
-//            m.delegate = m.squareWithNumberOfItems(inSingleLine: 4)
-//        }
-//        let scrollConfig = CKJScrollViewCellConfig(itemWidth: 90, itemSpace: 10) { (m) in
-//            m.items_Edge_ScrollView = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-//            m.delegate = self;
-//            m.updateIndicatorConfig { (i) in
-//                i.bottom = 10
-//                i.longViewHeight = 3;
-//                i.radius = 1.5
-//            }
-//        }
-//        return [
-//            NSStringFromClass(CKJScrollViewCellModel.self) : [KJPrefix_cellKEY : NSStringFromClass(CKJScrollViewCell.self), KJPrefix_isRegisterNibKEY : false, KJPrefix_configDicKEY_ConfigModel : scrollConfig],
-//            NSStringFromClass(CKJBtnsCell1Model.self) : [KJPrefix_cellKEY : NSStringFromClass(CKJBtnsCell1.self), KJPrefix_isRegisterNibKEY : false, KJPrefix_configDicKEY_ConfigModel : btnsCellConfig1]
-//        ]
-//    }
-//
-//
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = UIColor.red
-//
-//        //        simpleTableView.updateStyle { (s) in
-//        //            s.rowHeight = NSNumber(40)
-//        //            s.haveTitleStyle.left = 20
-//        //            s.haveTitleStyle.titleWidth = NSNumber(60);
-//        //        }
-//
-//        let section1 = CKJCommonSectionModel.section { (_sec: CKJCommonSectionModel) in
-//
-//            let logo = CKJImageViewCellModel.imageView(withCellHeight: NSNumber(value: 132), detailSettingBlock: { (m) in
-//                m.localImage = UIImage.kjwd_imageNamed("backgroundimage")
-//            }) { (make, superView) in
-//                make.edges.equalTo()
-//            }
-//            _sec.add(logo)
-//
-//            let items = CKJBtnItemData.returnItems(withDicsnew: DMRes.item2()) { (cd: CKJBtnItemData, index: UInt) in
-//                cd.layout_Button = { (btn: UIButton) in
-//                    btn.kjwd_layoutButton(with: .top, imageTitleSpace: 13)
-//                }
-//                cd.click_Button = { [weak self](btn: UIButton, itemData: CKJBtnItemData) in
-//                    if index == 0 {
-//                        let vc = DXLoginVC()
-//                        self?.navigationController?.pushViewController(vc)
-//                    }
-//                }
-//            }
-//            let arr = CKJBtnsCell1Model.btnsCellModel(withItemsnew: items, cellHeight: NSNumber(90), leftMargin: NSNumber(0), rightMargin: NSNumber(0)) { (m: CKJBaseBtnsCellModel, cellModel_index: UInt) in
-//            }
-//
-//            _sec.add(arr);
-//        }
-//
-//
-//
-//        let section2 = CKJCommonSectionModel.section { (_sec) in
-//
-//
-//            let scroll = CKJScrollViewCellModel.scrollView(withCellHeight: NSNumber(value: 100), detailSettingBlock: nil)
-//            _sec.modelArray = [scroll]
-////            let model1 = CKJGeneralCellModel.general(withCellHeight: NSNumber(44), cellModel_id: nil, detailSettingBlock: { (m) in
-////                m.title3Model = CKJTitle3Model.init(attributedText: WDAtt15_5("你好"), left: 20)
-////                m.likePrice8Model = CKJLikePriceLabel8Model.init(attText: WDAtt15_5("100.00"), left: 0, right: 10)
-////                m.arrow9Model = CKJArrow9Model.arrow9System();
-////            }) { (m) in
-////                print("点击了")
-////            }
-////
-////            let model2 = CKJCellModel.ckjCell(withCellHeight: nil, cellModel_id: nil, detailSettingBlock: { (m) in
-////                m.title3Model = CKJTitle3Model.init(attributedText: WDAtt15_5("CKJCell"), left: 20)
-////                m.likePrice61Model = CKJLikePriceLabel61Model.likePriceModel(withAttText: WDAtt15_5("CKJCell"), left: 0, right: 10)
-////                m.arrow9Model = CKJArrow9Model.arrow9System();
-////            }, didSelectRowBlock: nil)
-//            //            let model3 = self.simpleTableView._newtitle("用户名", tfText: "", placeholder: "请输入用户名", emptyRequirdText: nil, cellId: kOInput_Name, detail: { (m) in
-//            //
-//            //                m.updateTFModel { (tfm) in
-//            ////                    tfm.
-//            //                }
-//            //            }, didSelectRowBlock: nil)
-//
-//
-//            //            _sec.modelArray = [model1, model2, model3]
-//        }
-//        simpleTableView.dataArr = [section1, section2]
-//    }
-//
-//    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-//        view.endEditing(true)
-//    }
-//
-//
-//    func createItemView(for cell: CKJScrollViewCell) -> [UIView] {
-//        var arr: [UIView] = []
-//        for _ in 0..<10 {
-//            let btn1 = UIButton(type: .custom)
-//            //btn1.backgroundColor = UIColor.kjwd_arc4()
-//            let image = UIImage.kjwd_imageNamed("电子健康卡").kjwd_scale(to: CGSize(width: 40, height: 40))
-//            btn1.setAttributedTitle(WDAtt15_5("电子健康卡"), for: .normal)
-//            btn1.setImage(image, for: .normal)
-//            btn1.kjwd_layoutButton(with: .top, imageTitleSpace: 10)
-//            arr.append(btn1)
-//        }
-//        return arr
-//    }
+//                NSString(scon)
+//                let data = [NSString ];
+                
+//                self?.navigationController?.pushViewController(DMOCVC(), animated: true)
+            }
+            
+            let model3 = CKJGeneralCellModel.general(withTitle: "捕获视频", arrow: true) { [weak self] (m) in
+                //
+                
+                self?.navigationController?.pushViewController(AVViewController(), animated: true)
+            }
+            
+            _sec.modelArray = [model1, model2, model3]
+        }
+        
+        
+        simpleTableView.dataArr = [section1]
+    }
+    
 }

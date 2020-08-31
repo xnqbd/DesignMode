@@ -2,6 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AAA/AAA.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OCMac/OCMac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OCTest/OCTest.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Mac/Mac.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OtherTest/OtherTest.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Demo.xcodeproj">
    </FileRef>
    <FileRef

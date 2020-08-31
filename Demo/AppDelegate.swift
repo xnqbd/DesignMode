@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FLEX
 
 
 @UIApplicationMain
@@ -22,8 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
 //        [IQKeyboardManager sharedManager].enable = YES;
     
-        
+//        DMLoginManager.manager.loginState = .online
         DMLoginManager.manager.loginStateInit()
+        FLEXManager.shared.showExplorer()
+        
+        
+//        window?.rootViewController = WebVC()
         
         window?.makeKeyAndVisible()
         

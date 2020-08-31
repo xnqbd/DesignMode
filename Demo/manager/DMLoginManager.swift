@@ -49,6 +49,7 @@ class DMLoginManager: CKJBaseModel {
     
     
     func loginStateInit() {
+        self.loginState = .online
         if self.loginState == .online {
             UIWindow.kjwd_appdelegate().rootViewController = RootTabBarVC()
         } else {
