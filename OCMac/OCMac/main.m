@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CKJAES.h"
+#import "KLK.h"
 
-//
+
+
+
 //@interface Cat : NSObject
 //
 //
@@ -50,46 +54,76 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-//        Person *p = [[Person alloc] init];
-////        NSLog(@"%@   ", p);
+        NSString *key = @"r1qx0w8hb8xvnxvn";
+        
+        
+        
+        NSString *originalString = @"加密这个字符串";
+        NSString * secretStr = @"秘钥是这个";
+        //CBC加密字符串
+        NSString * encryptCBC = [CKJAES  encryptAESData: originalString Withkey:key ivkey: key];
+        //CBC解密字符串
+        NSString * decryptCBC = [CKJAES  decryptAESData: encryptCBC Withkey:key ivkey: key];
+        
+        [[NSString alloc] initWithData:<#(nonnull NSData *)#> encoding:<#(NSStringEncoding)#>]
+        NSLog(@"%@    %@ ", encryptCBC, decryptCBC);
+        
+//        for (int i = 0; i < 10; i++) {
 //
-//        NSMutableArray *array = [NSMutableArray arrayWithObjects:@[@"张三", @"李四"], nil];
-////        NSArray *array = @[@"张三", @"李四"];
-//        NSLog(@"%p   ", array);
+////            NSString *en = [CKJAES aes_encryptString:@"你好啊12783jabsdg3993😝" key:key];
+//            //            NSLog(@"密文 %@    明文 %@   ", en, [CKJAES aes_decryptString:en key:key]);
 //
-//        p.kjArr = array.copy;   // 这里调用了copy，产生的是不可变数组，下一行代码就会崩溃
+//            NSString *en = [CKJAES AES128Encrypt:@"你好啊12783jabsdg3993😝" key:key];
+//            NSLog(@"密文 %@    明文 %@   ", en, [CKJAES AES128Decrypt:en key:key]);
 //
-//        NSLog(@"%p   ", p.kjArr);
 //
-////        p.kjArr = @[@"张三", @"李四"];
-//        [p.kjArr removeObjectAtIndex:0];
+////            NSString *en = [KLK encryptStringWithString:@"你好啊12783jabsdg3993😝" andKey:key];
+////            NSLog(@"密文 %@    明文 %@   ", en, [KLK decryptStringWithString:en andKey:key]);
+//
+//        }
         
-//      https?:\/\/(.)
-//      https?:\\/\\/
-//        ((\d+.){3})   \\d+)(?=:)
-        NSString *reg = @"https?:\\/\\/(((\\d+.){3}\\d+)):?";
-        NSString *origin = @"https://10.1.94.146";
         
-        NSError *error = NULL;
-          NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:reg options:NSRegularExpressionCaseInsensitive error:&error];
-          if (error) {
-              NSLog(@"使用正则筛选字符串有误， 错误信息：%@   ", error);
-              
-          }
         
-        NSMutableArray <NSString *>*reg_result = [NSMutableArray array];
+        //        Person *p = [[Person alloc] init];
+        ////        NSLog(@"%@   ", p);
+        //
+        //        NSMutableArray *array = [NSMutableArray arrayWithObjects:@[@"张三", @"李四"], nil];
+        ////        NSArray *array = @[@"张三", @"李四"];
+        //        NSLog(@"%p   ", array);
+        //
+        //        p.kjArr = array.copy;   // 这里调用了copy，产生的是不可变数组，下一行代码就会崩溃
+        //
+        //        NSLog(@"%p   ", p.kjArr);
+        //
+        ////        p.kjArr = @[@"张三", @"李四"];
+        //        [p.kjArr removeObjectAtIndex:0];
         
-          NSArray <NSTextCheckingResult *>*matches = [regex matchesInString:origin options:0 range:NSMakeRange(0, origin.length)];
-        
-        [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-
-            NSRange range = [obj rangeAtIndex:1];
-            NSString *temp = [origin substringWithRange:range];
-            [reg_result addObject:temp];
-        }];
-        
-        NSLog(@"%@   ", reg_result);
-//        NSLog(@"%@   ", @"https?:\\/\\/\(\(\\d+.){3}\\d+)(?=:)");
+        //      https?:\/\/(.)
+        //      https?:\\/\\/
+        //        ((\d+.){3})   \\d+)(?=:)
+        //        NSString *reg = @"https?:\\/\\/(((\\d+.){3}\\d+)):?";
+        //        NSString *origin = @"https://10.1.94.146";
+        //
+        //        NSError *error = NULL;
+        //          NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:reg options:NSRegularExpressionCaseInsensitive error:&error];
+        //          if (error) {
+        //              NSLog(@"使用正则筛选字符串有误， 错误信息：%@   ", error);
+        //
+        //          }
+        //
+        //        NSMutableArray <NSString *>*reg_result = [NSMutableArray array];
+        //
+        //          NSArray <NSTextCheckingResult *>*matches = [regex matchesInString:origin options:0 range:NSMakeRange(0, origin.length)];
+        //
+        //        [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //
+        //            NSRange range = [obj rangeAtIndex:1];
+        //            NSString *temp = [origin substringWithRange:range];
+        //            [reg_result addObject:temp];
+        //        }];
+        //
+        //        NSLog(@"%@   ", reg_result);
+        //        NSLog(@"%@   ", @"https?:\\/\\/\(\(\\d+.){3}\\d+)(?=:)");
         
     }
     return 0;

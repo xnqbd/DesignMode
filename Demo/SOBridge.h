@@ -19,4 +19,6 @@
 #import "FileManagerTool.h"
 #import "DMOCVC.h"
 
+@import RNCryptor;
+
 #endif /* SOBridge_h */

@@ -8,6 +8,7 @@
 
 import UIKit
 import FLEX
+import RNCryptor
 
 
 @UIApplicationMain
@@ -31,6 +32,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.rootViewController = WebVC()
         
         window?.makeKeyAndVisible()
+        
+        
+        
+        
+//        let key = "1234567890123456"
+//
+//        let data = "asjhdbqiws家舍不得".data(using: .utf8)
+//
+//        let enData = RNCryptor.encrypt(data: data!, withPassword: key)
+//
+//
+//        let enStr = String.init(data: enData, encoding: .utf8)
+//
+//        print(enStr)
+//
+//
+//        RNCryptor.Encryptor.
+        
+        // Encryption
+        let data = "asjhdbqiws家舍不得".data(using: .utf8)!
+        let password = "Secret password"
+        let enData = RNCryptor.encrypt(data: data, withPassword: password)
+
+        let enStr = String.init(data: enData, encoding: .utf8)
+        print(enStr)
+        // Decryption
+//        do {
+//            let originalData = try RNCryptor.decrypt(data: ciphertext, withPassword: password)
+//            // ...
+//        } catch {
+//            print(error)
+//        }
+        
         
         
         return true

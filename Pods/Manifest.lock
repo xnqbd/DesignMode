@@ -1,12 +1,26 @@
 PODS:
   - ActionSheetPicker-3.0 (2.4.2)
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
+    - AFNetworking/NSURLSession
   - Alamofire (5.1.0)
   - FLEX (4.1.1)
-  - FSCalendar (2.8.1)
   - IQKeyboardManager (6.5.5)
-  - JXCategoryView (1.5.5)
   - Masonry (1.1.0)
-  - MJRefresh (3.4.1)
+  - RNCryptor (5.1.0)
+  - RxSwift (5.1.1)
   - SDWebImage (3.8.3):
     - SDWebImage/Core (= 3.8.3)
   - SDWebImage/Core (3.8.3)
@@ -37,54 +51,50 @@ PODS:
   - SwifterSwift/SwiftStdlib (5.2.0)
   - SwifterSwift/UIKit (5.2.0)
   - SwiftyJSON (5.0.0)
-  - UICountingLabel (1.4.1)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - AFNetworking
   - Alamofire
   - FLEX
-  - FSCalendar
   - IQKeyboardManager
-  - JXCategoryView
   - Masonry
-  - MJRefresh
+  - RNCryptor (~> 5.0)
+  - RxSwift
   - SDWebImage (~> 3.7)
   - SnapKit
   - SwifterSwift
   - SwiftyJSON
-  - UICountingLabel
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - ActionSheetPicker-3.0
+    - AFNetworking
     - Alamofire
     - FLEX
-    - FSCalendar
     - IQKeyboardManager
-    - JXCategoryView
     - Masonry
-    - MJRefresh
+    - RNCryptor
+    - RxSwift
     - SDWebImage
     - SnapKit
     - SwifterSwift
     - SwiftyJSON
-    - UICountingLabel
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 5b62e07b00bd970509cf5ece99cb7447eae5dd0d
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
-  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
-  JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
 
-PODFILE CHECKSUM: afaf0e5d8feb7155778e5f6491b2d9ffa7f360c0
+PODFILE CHECKSUM: 4c7fa4c06255a6fd68d4d53e14ac27f832d956ed
 
 COCOAPODS: 1.9.0

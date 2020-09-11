@@ -22,6 +22,10 @@
 		BC53976824B41FA900F3AED9 /* CKJAuthID.m in Sources */ = {isa = PBXBuildFile; fileRef = BC53976624B41FA900F3AED9 /* CKJAuthID.m */; };
 		BC53976B24B4200100F3AED9 /* NSObject+WDYHFCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC53976924B4200100F3AED9 /* NSObject+WDYHFCategory.m */; };
 		BC68484324BDB742001EE797 /* 舟山yd0001.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC68484224BDB742001EE797 /* 舟山yd0001.txt */; };
+		BC7992692508D48000BB19A1 /* demo3.js in Resources */ = {isa = PBXBuildFile; fileRef = BC7992682508D48000BB19A1 /* demo3.js */; };
+		BC79926B2508D98100BB19A1 /* demo10.js in Resources */ = {isa = PBXBuildFile; fileRef = BC79926A2508D98100BB19A1 /* demo10.js */; };
+		BC79926D2508D98800BB19A1 /* demo11.js in Resources */ = {isa = PBXBuildFile; fileRef = BC79926C2508D98800BB19A1 /* demo11.js */; };
+		BC79929F250A068200BB19A1 /* www in Resources */ = {isa = PBXBuildFile; fileRef = BC79929E250A068200BB19A1 /* www */; };
 		BCABB8592499B595005FBF1A /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = BCABB8582499B595005FBF1A /* NotificationService.m */; };
 		BCABB85D2499B595005FBF1A /* NF.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BCABB8552499B595005FBF1A /* NF.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BCABB86B2499B793005FBF1A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCABB86A2499B793005FBF1A /* UserNotifications.framework */; };
@@ -33,6 +37,9 @@
 		BCF8FDF224EBBF58004B40AF /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8FDF124EBBF58004B40AF /* ThreeViewController.m */; };
 		BCF8FDF524EBBF6E004B40AF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8FDF424EBBF6E004B40AF /* User.m */; };
 		BCF90C6624FC8C1200B9C6EE /* AA.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF90C6524FC8C1200B9C6EE /* AA.plist */; };
+		BCF90C6924FCF15100B9C6EE /* DistributionSummary.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF90C6824FCF15100B9C6EE /* DistributionSummary.plist */; };
+		BCF90CCA2508B7BA00B9C6EE /* demo1.js in Resources */ = {isa = PBXBuildFile; fileRef = BCF90CC72508B7BA00B9C6EE /* demo1.js */; };
+		BCF90CCC2508C47E00B9C6EE /* demo2.js in Resources */ = {isa = PBXBuildFile; fileRef = BCF90CCB2508C47E00B9C6EE /* demo2.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +116,10 @@
 		BC53976924B4200100F3AED9 /* NSObject+WDYHFCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WDYHFCategory.m"; sourceTree = "<group>"; };
 		BC53976A24B4200100F3AED9 /* NSObject+WDYHFCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WDYHFCategory.h"; sourceTree = "<group>"; };
 		BC68484224BDB742001EE797 /* 舟山yd0001.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "舟山yd0001.txt"; sourceTree = "<group>"; };
+		BC7992682508D48000BB19A1 /* demo3.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = demo3.js; sourceTree = "<group>"; };
+		BC79926A2508D98100BB19A1 /* demo10.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = demo10.js; sourceTree = "<group>"; };
+		BC79926C2508D98800BB19A1 /* demo11.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = demo11.js; sourceTree = "<group>"; };
+		BC79929E250A068200BB19A1 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		BCABB8552499B595005FBF1A /* NF.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NF.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCABB8572499B595005FBF1A /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		BCABB8582499B595005FBF1A /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -126,6 +137,9 @@
 		BCF8FDF324EBBF6E004B40AF /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		BCF8FDF424EBBF6E004B40AF /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BCF90C6524FC8C1200B9C6EE /* AA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AA.plist; sourceTree = "<group>"; };
+		BCF90C6824FCF15100B9C6EE /* DistributionSummary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DistributionSummary.plist; sourceTree = "<group>"; };
+		BCF90CC72508B7BA00B9C6EE /* demo1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo1.js; sourceTree = "<group>"; };
+		BCF90CCB2508C47E00B9C6EE /* demo2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo2.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,14 +215,17 @@
 				BC53976224B41FA900F3AED9 /* BiometricAuth */,
 				BC390E17248F32D600C60FF0 /* AppDelegate.h */,
 				BC390E18248F32D600C60FF0 /* AppDelegate.m */,
+				BC79929E250A068200BB19A1 /* www */,
 				BC31DA7A24971AB1008109C9 /* TwoViewController.h */,
 				BC31DA7B24971AB1008109C9 /* TwoViewController.m */,
 				BC390E1D248F32D600C60FF0 /* ViewController.h */,
 				BC390E1E248F32D600C60FF0 /* ViewController.m */,
+				BCF90CC42508B7BA00B9C6EE /* js */,
 				BC53976A24B4200100F3AED9 /* NSObject+WDYHFCategory.h */,
 				BC68484224BDB742001EE797 /* 舟山yd0001.txt */,
 				BC53976924B4200100F3AED9 /* NSObject+WDYHFCategory.m */,
 				BCF8FDF024EBBF58004B40AF /* ThreeViewController.h */,
+				BCF90C6824FCF15100B9C6EE /* DistributionSummary.plist */,
 				BCF8FDF124EBBF58004B40AF /* ThreeViewController.m */,
 				BCF8FDF324EBBF6E004B40AF /* User.h */,
 				BCF8FDF424EBBF6E004B40AF /* User.m */,
@@ -263,6 +280,18 @@
 				BCABB8752499B793005FBF1A /* Info.plist */,
 			);
 			path = NContent;
+			sourceTree = "<group>";
+		};
+		BCF90CC42508B7BA00B9C6EE /* js */ = {
+			isa = PBXGroup;
+			children = (
+				BCF90CCB2508C47E00B9C6EE /* demo2.js */,
+				BCF90CC72508B7BA00B9C6EE /* demo1.js */,
+				BC7992682508D48000BB19A1 /* demo3.js */,
+				BC79926A2508D98100BB19A1 /* demo10.js */,
+				BC79926C2508D98800BB19A1 /* demo11.js */,
+			);
+			path = js;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,9 +440,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC390E27248F32D700C60FF0 /* LaunchScreen.storyboard in Resources */,
+				BC79926D2508D98800BB19A1 /* demo11.js in Resources */,
+				BCF90CCA2508B7BA00B9C6EE /* demo1.js in Resources */,
+				BCF90CCC2508C47E00B9C6EE /* demo2.js in Resources */,
+				BC7992692508D48000BB19A1 /* demo3.js in Resources */,
+				BCF90C6924FCF15100B9C6EE /* DistributionSummary.plist in Resources */,
 				BC390E24248F32D700C60FF0 /* Assets.xcassets in Resources */,
 				BC390E22248F32D600C60FF0 /* Main.storyboard in Resources */,
+				BC79929F250A068200BB19A1 /* www in Resources */,
 				BCDF07DF24C05573005D1A2C /* gesture_headIcon@2x.png in Resources */,
+				BC79926B2508D98100BB19A1 /* demo10.js in Resources */,
 				BC31DA81249865D2008109C9 /* 1.docx in Resources */,
 				BC68484324BDB742001EE797 /* 舟山yd0001.txt in Resources */,
 				BCF90C6624FC8C1200B9C6EE /* AA.plist in Resources */,

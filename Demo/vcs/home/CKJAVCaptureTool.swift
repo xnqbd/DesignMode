@@ -43,11 +43,11 @@ class CKJAVCaptureTool: NSObject {
         guard case videoInput = try? AVCaptureDeviceInput(device: device) else { return }
         
         
-        if session.canAddInput(videoInput) {
-            session.addInput(videoInput)
-        } else {
-            print("加入输入流 input 失败")
-        }
+//        if session.canAddInput(videoInput) {
+//            session.addInput(videoInput)
+//        } else {
+//            print("加入输入流 input 失败")
+//        }
     }
     
     
@@ -67,7 +67,7 @@ class CKJAVCaptureTool: NSObject {
         
         
         
-        session.removeInput(<#T##input: AVCaptureInput##AVCaptureInput#>)
+//        session.removeInput(<#T##input: AVCaptureInput##AVCaptureInput#>)
         
     }
 }

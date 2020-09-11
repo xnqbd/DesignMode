@@ -7,6 +7,8 @@
 //
 
 #import "WTestViewController.h"
+#import "SOBridge.h"
+#import <Demo-Swift.h>
 
 @interface WTestViewController ()
 
@@ -17,20 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    
 //    CKJSimpleTableView *ss;
     
 //    function enumFun(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //
 //    };
 //
-    NSArray *arr;
-    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-    }];
-    
-    [arr enumerateObjectsUsingBlock:function (id obj, index) {
-        
-    }];
+//    NSArray *arr;
+//    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        
+//    }];
+//    
+//    [arr enumerateObjectsUsingBlock:function (id obj, index) {
+//        
+//    }];
     
 //    [ss kjwd_enumAllCellModelWithBlock:^(__kindof CKJCommonCellModel * _Nonnull m, NSInteger section, NSInteger row, BOOL * _Nonnull stop) {
 //

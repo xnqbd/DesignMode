@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		BC207A0A2490E00100F016C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207A092490E00100F016C7 /* main.m */; };
 		BCF8FDDD24E50A6E004B40AF /* SSSSK.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8FDDC24E50A6E004B40AF /* SSSSK.m */; };
-		BCF8FDEF24EBB6EC004B40AF /* NSObject+KK.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8FDEE24EBB6EC004B40AF /* NSObject+KK.m */; };
+		BCF90C6C24FF6B5800B9C6EE /* CKJAES.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF90C6B24FF6B5800B9C6EE /* CKJAES.m */; };
+		BCF90C6F24FF726A00B9C6EE /* KLK.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF90C6E24FF726A00B9C6EE /* KLK.m */; };
+		BCF90C8B25087DC400B9C6EE /* NSData+Encryption_CKJAES.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF90C8A25087DC300B9C6EE /* NSData+Encryption_CKJAES.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,9 +33,14 @@
 		BCF8FDDB24E50A6E004B40AF /* SSSSK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSSK.h; sourceTree = "<group>"; };
 		BCF8FDDC24E50A6E004B40AF /* SSSSK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSSK.m; sourceTree = "<group>"; };
 		BCF8FDEC24EBAF1A004B40AF /* OCMac.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCMac.profdata; sourceTree = "<group>"; };
-		BCF8FDED24EBB6EC004B40AF /* NSObject+KK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KK.h"; sourceTree = "<group>"; };
-		BCF8FDEE24EBB6EC004B40AF /* NSObject+KK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KK.m"; sourceTree = "<group>"; };
 		BCF90C6424FC8A8C00B9C6EE /* K.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = K.plist; sourceTree = "<group>"; };
+		BCF90C6724FCD51600B9C6EE /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
+		BCF90C6A24FF6B5800B9C6EE /* CKJAES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKJAES.h; sourceTree = "<group>"; };
+		BCF90C6B24FF6B5800B9C6EE /* CKJAES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKJAES.m; sourceTree = "<group>"; };
+		BCF90C6D24FF726A00B9C6EE /* KLK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLK.h; sourceTree = "<group>"; };
+		BCF90C6E24FF726A00B9C6EE /* KLK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLK.m; sourceTree = "<group>"; };
+		BCF90C8925087DC300B9C6EE /* NSData+Encryption_CKJAES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption_CKJAES.h"; sourceTree = "<group>"; };
+		BCF90C8A25087DC300B9C6EE /* NSData+Encryption_CKJAES.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption_CKJAES.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				BC207A092490E00100F016C7 /* main.m */,
+				BCF90C6724FCD51600B9C6EE /* manifest.plist */,
 				BCF8FDD424E3F169004B40AF /* server.cer */,
 				BCF8FDDB24E50A6E004B40AF /* SSSSK.h */,
 				BCF8FDDC24E50A6E004B40AF /* SSSSK.m */,
+				BCF90C6A24FF6B5800B9C6EE /* CKJAES.h */,
+				BCF90C6B24FF6B5800B9C6EE /* CKJAES.m */,
+				BCF90C8925087DC300B9C6EE /* NSData+Encryption_CKJAES.h */,
+				BCF90C8A25087DC300B9C6EE /* NSData+Encryption_CKJAES.m */,
+				BCF90C6D24FF726A00B9C6EE /* KLK.h */,
+				BCF90C6E24FF726A00B9C6EE /* KLK.m */,
 				BCF90C6424FC8A8C00B9C6EE /* K.plist */,
-				BCF8FDED24EBB6EC004B40AF /* NSObject+KK.h */,
-				BCF8FDEE24EBB6EC004B40AF /* NSObject+KK.m */,
 			);
 			path = OCMac;
 			sourceTree = "<group>";
@@ -144,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF90C6C24FF6B5800B9C6EE /* CKJAES.m in Sources */,
 				BC207A0A2490E00100F016C7 /* main.m in Sources */,
-				BCF8FDEF24EBB6EC004B40AF /* NSObject+KK.m in Sources */,
+				BCF90C8B25087DC400B9C6EE /* NSData+Encryption_CKJAES.m in Sources */,
+				BCF90C6F24FF726A00B9C6EE /* KLK.m in Sources */,
 				BCF8FDDD24E50A6E004B40AF /* SSSSK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

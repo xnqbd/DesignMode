@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MobileManage.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+				<key>dateExpires</key>
+				<string>2023/2/8</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>ActionSheetPicker_3_0.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>INTULocationManager.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>LBXPermission.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Masonry.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SDWebImage.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>41330EC0FFA8404E5E28102C3377C2AEE67648BA</string>
+						<key>dateExpires</key>
+						<string>2023/2/8</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>TZImagePickerController.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>TFEY5JV6HS</string>
+						<key>name</key>
+						<string>Wonders Information Co., LTD.</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>TFEY5JV6HS.mobi.wonders.apps.ios.anymail</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>TFEY5JV6HS</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>TFEY5JV6HS.mobi.wonders.apps.ios.anymail</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>MobileManage.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>c335f6d6-d52d-4565-bc2e-d42bb5e6bade</string>
+				<key>name</key>
+				<string>anymailUniversal Distribution</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>TFEY5JV6HS</string>
+				<key>name</key>
+				<string>Wonders Information Co., LTD.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

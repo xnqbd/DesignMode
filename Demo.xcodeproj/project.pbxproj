@@ -142,6 +142,8 @@
 		BC61D0A52489DBF100AB28D2 /* CKJAVCaptureTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D0A42489DBF000AB28D2 /* CKJAVCaptureTool.swift */; };
 		BC61D0A7248BB4EC00AB28D2 /* DMWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC61D0A6248BB4EB00AB28D2 /* DMWebView.swift */; };
 		BC68484124BDB612001EE797 /* 舟山yd0001.txt in Resources */ = {isa = PBXBuildFile; fileRef = BC68484024BDB612001EE797 /* 舟山yd0001.txt */; };
+		BC7992DE250B271F00BB19A1 /* WDHTTPRequestCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7992DC250B271F00BB19A1 /* WDHTTPRequestCore.m */; };
+		BC7992DF250B271F00BB19A1 /* WDHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7992DD250B271F00BB19A1 /* WDHTTPRequest.m */; };
 		BC8FF86323FD303D00F003DC /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8FF86223FD303D00F003DC /* MyVC.swift */; };
 		BC910D8624136ABB00280936 /* RJInputData.m in Sources */ = {isa = PBXBuildFile; fileRef = BC910D8424136ABB00280936 /* RJInputData.m */; };
 		BC910D922413709D00280936 /* DMNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC910D912413709D00280936 /* DMNavigationController.swift */; };
@@ -412,6 +414,10 @@
 		BC61D0A42489DBF000AB28D2 /* CKJAVCaptureTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKJAVCaptureTool.swift; sourceTree = "<group>"; };
 		BC61D0A6248BB4EB00AB28D2 /* DMWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMWebView.swift; sourceTree = "<group>"; };
 		BC68484024BDB612001EE797 /* 舟山yd0001.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "舟山yd0001.txt"; sourceTree = "<group>"; };
+		BC7992DA250B271E00BB19A1 /* WDHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHTTPRequest.h; sourceTree = "<group>"; };
+		BC7992DB250B271E00BB19A1 /* WDHTTPRequestCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHTTPRequestCore.h; sourceTree = "<group>"; };
+		BC7992DC250B271F00BB19A1 /* WDHTTPRequestCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHTTPRequestCore.m; sourceTree = "<group>"; };
+		BC7992DD250B271F00BB19A1 /* WDHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHTTPRequest.m; sourceTree = "<group>"; };
 		BC8FF86223FD303D00F003DC /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		BC910D8424136ABB00280936 /* RJInputData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJInputData.m; sourceTree = "<group>"; };
 		BC910D8524136ABB00280936 /* RJInputData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJInputData.h; sourceTree = "<group>"; };
@@ -975,6 +981,26 @@
 			path = V;
 			sourceTree = "<group>";
 		};
+		BC7992D8250B26FC00BB19A1 /* oc */ = {
+			isa = PBXGroup;
+			children = (
+				BC7992DA250B271E00BB19A1 /* WDHTTPRequest.h */,
+				BC7992DD250B271F00BB19A1 /* WDHTTPRequest.m */,
+				BC7992DB250B271E00BB19A1 /* WDHTTPRequestCore.h */,
+				BC7992DC250B271F00BB19A1 /* WDHTTPRequestCore.m */,
+			);
+			path = oc;
+			sourceTree = "<group>";
+		};
+		BC7992D9250B270500BB19A1 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */,
+				BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */,
+			);
+			path = swift;
+			sourceTree = "<group>";
+		};
 		BC8FF86123FD302000F003DC /* my */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,8 +1032,8 @@
 		BC943243241632F400FB9B6F /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
-				BC943244241632F400FB9B6F /* HZYHFInterfacedConst.swift */,
-				BC943245241632F400FB9B6F /* HZYHFHTTPRequest.swift */,
+				BC7992D9250B270500BB19A1 /* swift */,
+				BC7992D8250B26FC00BB19A1 /* oc */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -1350,6 +1376,7 @@
 				BC0E53A524828F3A003018CC /* CKJKeyChain.m in Sources */,
 				BC0E53D224828F3A003018CC /* CKJInputCustomSuperCell.m in Sources */,
 				BC0E53E224828F3A003018CC /* CKJTitleStyleHeaderFooterView.m in Sources */,
+				BC7992DE250B271F00BB19A1 /* WDHTTPRequestCore.m in Sources */,
 				BC0E53BB24828F3A003018CC /* CKJCommonSectionModel.m in Sources */,
 				BC0E547024828F70003018CC /* RJBillCell.m in Sources */,
 				BC0E53AC24828F3A003018CC /* CKJToolPickerView.m in Sources */,
@@ -1379,6 +1406,7 @@
 				BC0E53B524828F3A003018CC /* CKJTableEmptyView.m in Sources */,
 				BC0E53A324828F3A003018CC /* CKJHUD+KJSupport.m in Sources */,
 				BC0E53CC24828F3A003018CC /* CKJTableViewCell2.m in Sources */,
+				BC7992DF250B271F00BB19A1 /* WDHTTPRequest.m in Sources */,
 				BC0E53DF24828F3A003018CC /* CKJScrollViewCell.m in Sources */,
 				BC0E53D924828F3A003018CC /* CKJBtnsCell1.m in Sources */,
 				BC0E546224828F70003018CC /* KJSupportObjcListVC.m in Sources */,
